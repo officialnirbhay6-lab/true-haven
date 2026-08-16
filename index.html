@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueHaven Stays | Curated Luxury Airbnb Rentals in Dubai</title>
+    <meta name="description" content="Book 5-star luxury 1BHK vacation rentals in Downtown Dubai & Business Bay. Featuring rooftop infinity pool at Paramount Midtown & direct Burj Khalifa views at Burj Vista.">
+    
+    <!-- Fonts: Plus Jakarta Sans & Inter for Airbnb Cereal aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome / Feather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS Design System -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Homepage Wrapper -->
+    <div id="mainPage">
+    <div class="immersive-hero-wrapper">
+        <!-- Single Background Panoramic Image (Zero Blur, 100% Crisp) -->
+        <div class="immersive-bg" style="background-image: url('assets/hero_bg.jpg');"></div>
+
+        <!-- Top Glassmorphism Navigation Header -->
+        <header class="top-nav glass-nav">
+            <div class="container nav-wrapper">
+                <!-- Brand Logo -->
+                <a href="#" class="brand-logo">
+                    <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img">
+                    <div class="brand-text">
+                        <span class="brand-name">TrueHaven</span>
+                        <span class="brand-sub">LUXURY STAYS</span>
+                    </div>
+                </a>
+
+                <!-- Signature Glassmorphism Search Pill Bar -->
+                <div class="search-bar-pill nav-search-pill glass-search-pill" style="position: relative;">
+                    <div class="search-field-segment" id="searchWhereBtn">
+                        <div class="segment-label">WHERE</div>
+                        <div class="segment-value" id="whereValue">Business Bay & Downtown</div>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field-segment" id="searchWhenBtn">
+                        <div class="segment-label">WHEN</div>
+                        <div class="segment-value" id="whenValue">Add dates</div>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field-segment" id="searchWhoBtn">
+                        <div class="segment-label">WHO</div>
+                        <div class="segment-value" id="whoValue">2 Guests</div>
+                    </div>
+                    <button class="search-orb" id="searchSubmitBtn" title="Search Properties">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                    <!-- WHERE POPOVER MENU -->
+                    <div class="search-popover" id="wherePopover" style="display: none;">
+                        <div class="popover-title"><i class="fa-solid fa-location-dot"></i> Select Location</div>
+                        <div class="popover-option active" onclick="selectNavLocation('all', 'Business Bay & Downtown')">
+                            <i class="fa-solid fa-city"></i>
+                            <div>
+                                <strong>All Locations</strong>
+                                <span>Business Bay & Downtown Dubai</span>
+                            </div>
+                        </div>
+                        <div class="popover-option" onclick="selectNavLocation('business-bay', 'Business Bay (Paramount)')">
+                            <i class="fa-solid fa-building"></i>
+                            <div>
+                                <strong>Business Bay</strong>
+                                <span>Paramount Midtown Suite</span>
+                            </div>
+                        </div>
+                        <div class="popover-option" onclick="selectNavLocation('downtown', 'Downtown Dubai (Burj Vista)')">
+                            <i class="fa-solid fa-tower-observation"></i>
+                            <div>
+                                <strong>Downtown Dubai</strong>
+                                <span>Burj Vista Executive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WHEN POPOVER CALENDAR -->
+                    <div class="search-popover calendar-popover" id="whenPopover" style="display: none;">
+                        <div class="popover-title"><i class="fa-regular fa-calendar-days"></i> Select Dates</div>
+                        <div class="calendar-inputs">
+                            <div class="cal-field">
+                                <label>CHECK-IN</label>
+                                <input type="date" id="navCheckInInput" onchange="updateNavDates()">
+                            </div>
+                            <div class="cal-field">
+                                <label>CHECKOUT</label>
+                                <input type="date" id="navCheckOutInput" onchange="updateNavDates()">
+                            </div>
+                        </div>
+                        <div class="cal-footer">
+                            <span id="navNightsCalc" style="font-size: 13px; font-weight: 600; color: #0F1E36;">3 nights selected</span>
+                            <button class="button-primary" onclick="applyNavDates()" style="padding: 6px 14px; font-size: 12px; border-radius: 8px;">Apply Dates</button>
+                        </div>
+                    </div>
+
+                    <!-- WHO POPOVER GUEST SELECTOR -->
+                    <div class="search-popover" id="whoPopover" style="display: none;">
+                        <div class="popover-title"><i class="fa-solid fa-users"></i> Select Guests</div>
+                        <div class="guest-stepper-row">
+                            <div>
+                                <strong>Guests</strong>
+                                <span>Up to 6 guests max</span>
+                            </div>
+                            <div class="stepper-controls">
+                                <button type="button" class="stepper-btn" onclick="changeNavGuests(-1)">-</button>
+                                <span id="navGuestCount" style="font-weight: 800; font-size: 15px; width: 24px; text-align: center; color: #0F1E36;">2</span>
+                                <button type="button" class="stepper-btn" onclick="changeNavGuests(1)">+</button>
+                            </div>
+                        </div>
+                        <button class="button-primary" onclick="applyNavGuests()" style="width: 100%; margin-top: 14px; padding: 8px; font-size: 13px; border-radius: 8px;">Confirm Guests</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Banner Content (Direct Text on Image) -->
+        <section class="hero-banner-section">
+            <div class="container hero-banner-container">
+                <div class="hero-banner-content">
+                    <span class="hero-badge">LUXURY VACATION HOMES IN DUBAI</span>
+                    <h1 class="hero-headline">Crafted for<br><span class="highlight-text">Elevated Living</span></h1>
+                    <div class="gold-accent-line"></div>
+                    <p class="hero-sub">Boutique 1BR Luxury Residences in Business Bay & Downtown Dubai</p>
+
+                    <!-- 4 Bullet Feature Points with Icons -->
+                    <div class="hero-bullets-grid">
+                        <div class="hero-bullet-item">
+                            <div class="bullet-icon">🌆</div>
+                            <div class="bullet-text">
+                                <strong>Views Worth Waking Up To</strong>
+                                <span>Burj Khalifa & Skyline Vistas</span>
+                            </div>
+                        </div>
+                        <div class="hero-bullet-item">
+                            <div class="bullet-icon">🛋️</div>
+                            <div class="bullet-text">
+                                <strong>Thoughtfully Designed</strong>
+                                <span>Luxury Living & Interiors</span>
+                            </div>
+                        </div>
+                        <div class="hero-bullet-item">
+                            <div class="bullet-icon">📍</div>
+                            <div class="bullet-text">
+                                <strong>Prime Dubai Locations</strong>
+                                <span>Business Bay & Downtown</span>
+                            </div>
+                        </div>
+                        <div class="hero-bullet-item">
+                            <div class="bullet-icon">🏊</div>
+                            <div class="bullet-text">
+                                <strong>Luxury Amenities</strong>
+                                <span>Infinity Pool & Gyms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Featured Properties Grid -->
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <div class="section-title-row">
+                <div>
+                    <h2 class="section-headline">Our Premier Residences</h2>
+                    <p class="section-sub">Luxury 1BR apartments in Business Bay & Downtown Dubai</p>
+                </div>
+                <div class="filter-pills">
+                    <button class="filter-pill active" data-filter="all">All Properties</button>
+                    <button class="filter-pill" data-filter="business-bay">Business Bay</button>
+                    <button class="filter-pill" data-filter="downtown">Downtown Dubai</button>
+                </div>
+            </div>
+
+            <div class="properties-grid">
+
+                <!-- Property 1: Paramount Midtown -->
+                <article class="property-card" data-location="business-bay" data-id="paramount">
+                    <div class="property-card-photo">
+                        <!-- Guest Favorite Badge -->
+                        <div class="guest-favorite-badge">
+                            <i class="fa-solid fa-crown"></i> Guest favorite
+                        </div>
+                        
+                        <!-- Wishlist Heart Button -->
+                        <button class="heart-btn" title="Save to Wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <!-- Photo Carousel -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="paramountTrack">
+                                <img src="assets/paramount_infinity_pool.jpg" alt="Paramount Midtown Rooftop Infinity Pool" class="carousel-img">
+                                <img src="assets/paramount_night_view.png" alt="Paramount Balcony Night View of Burj Khalifa" class="carousel-img">
+                                <img src="assets/paramount_living.jpg" alt="Paramount Midtown Luxury Living Room" class="carousel-img">
+                                <img src="assets/paramount_exterior.png" alt="Paramount Midtown Tower Exterior" class="carousel-img">
+                                <img src="assets/paramount_gym.jpg" alt="Paramount Midtown Fitness Gym" class="carousel-img">
+                            </div>
+                            <button class="carousel-arrow prev" onclick="moveCarousel('paramountTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-arrow next" onclick="moveCarousel('paramountTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="carousel-dots" id="paramountDots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card-meta" onclick="openPropertyDetail('paramount')" style="cursor: pointer;">
+                        <div class="meta-title-row">
+                            <h3 class="meta-title">Paramount Midtown Luxury Suite</h3>
+                            <div class="meta-rating">
+                                <i class="fa-solid fa-star"></i> 4.98 (48)
+                            </div>
+                        </div>
+                        <p class="meta-location">Al Mustaqbal Street, Business Bay, Dubai</p>
+                        <p class="meta-highlight">🏊 Rooftop Infinity Pool · Panoramic Skyline Views</p>
+                        <p class="meta-specs">1BR · 2 Beds · 1.5 Baths · Up to 4 Guests</p>
+                        <div class="meta-price-row">
+                            <div class="price-box">
+                                <span class="price-amount">$240</span> <span class="price-period">/ night</span>
+                                <span class="price-aed">(AED 880)</span>
+                            </div>
+                            <button class="button-primary" onclick="event.stopPropagation(); openPropertyDetail('paramount')">View & Reserve</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property 2: Burj Vista -->
+                <article class="property-card" data-location="downtown" data-id="burj-vista">
+                    <div class="property-card-photo">
+                        <!-- Guest Favorite Badge -->
+                        <div class="guest-favorite-badge">
+                            <i class="fa-solid fa-crown"></i> Guest favorite
+                        </div>
+                        
+                        <!-- Wishlist Heart Button -->
+                        <button class="heart-btn" title="Save to Wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <!-- Photo Carousel -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="burjTrack">
+                                <img src="assets/burj_vista_view.jpg" alt="Burj Vista Balcony Direct View of Burj Khalifa" class="carousel-img">
+                                <img src="assets/burj_vista_pool.png" alt="Burj Vista Infinity Pool with Canopy" class="carousel-img">
+                                <img src="assets/burj_vista_loungers.png" alt="Burj Vista Pool Sun Loungers & Palm Garden" class="carousel-img">
+                                <img src="assets/burj_vista_gym.png" alt="Burj Vista Fitness Gym" class="carousel-img">
+                            </div>
+                            <button class="carousel-arrow prev" onclick="moveCarousel('burjTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-arrow next" onclick="moveCarousel('burjTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="carousel-dots" id="burjDots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="property-card-meta" onclick="openPropertyDetail('burj-vista')" style="cursor: pointer;">
+                        <div class="meta-title-row">
+                            <h3 class="meta-title">Burj Vista Executive Residence</h3>
+                            <div class="meta-rating">
+                                <i class="fa-solid fa-star"></i> 4.99 (62)
+                            </div>
+                        </div>
+                        <p class="meta-location">Sheikh Mohammed Bin Rashid Blvd, Downtown Dubai</p>
+                        <p class="meta-highlight">🗼 Direct Burj Khalifa View · Metro & Dubai Mall Link</p>
+                        <p class="meta-specs">1BR · 3 Beds · 1.5 Baths · Up to 6 Guests</p>
+                        <div class="meta-price-row">
+                            <div class="price-box">
+                                <span class="price-amount">$290</span> <span class="price-period">/ night</span>
+                                <span class="price-aed">(AED 1,065)</span>
+                            </div>
+                            <button class="button-primary" onclick="event.stopPropagation(); openPropertyDetail('burj-vista')">View & Reserve</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Places to Visit in Dubai Section -->
+    <section class="places-section">
+        <div class="container">
+            <div class="section-title-row">
+                <div>
+                    <h2 class="section-headline">Places to Visit in Dubai</h2>
+                    <p class="section-sub">Explore world-renowned destinations right around our residences</p>
+                </div>
+            </div>
+
+            <div class="places-grid-container">
+                <!-- Top Row: 2 Cards -->
+                <div class="places-grid-top">
+                    <div class="place-card">
+                        <img src="assets/place_marina.jpg" alt="Dubai Marina">
+                        <div class="place-card-overlay">
+                            <span class="place-title">Dubai Marina</span>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <img src="assets/place_bluewaters.png" alt="Dubai Bluewaters">
+                        <div class="place-card-overlay">
+                            <span class="place-title">Dubai Bluewaters</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: 3 Cards -->
+                <div class="places-grid-bottom">
+                    <div class="place-card">
+                        <img src="assets/place_downtown.jpg" alt="Dubai Downtown">
+                        <div class="place-card-overlay">
+                            <span class="place-title">Dubai Downtown</span>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <img src="assets/place_palm.jpg" alt="Dubai Palm Jumeirah">
+                        <div class="place-card-overlay">
+                            <span class="place-title">Dubai Palm Jumeirah</span>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <img src="assets/place_business_bay.jpg" alt="Dubai Business Bay">
+                        <div class="place-card-overlay">
+                            <span class="place-title">Dubai Business Bay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Guest Reviews Ticker Section (Right-to-Left Infinite Sliding) -->
+    <section class="reviews-marquee-section" id="reviews">
+        <div class="container" style="margin-bottom: 36px;">
+            <div class="section-title-row" style="justify-content: center; text-align: center;">
+                <div>
+                    <span class="badge-pill">VERIFIED GUEST FEEDBACK</span>
+                    <h2 class="section-headline">Loved by Travelers Worldwide</h2>
+                    <p class="section-sub">★ 5.0 Rating · 150+ verified guest stays at Paramount Midtown & Burj Vista</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marquee Track Container -->
+        <div class="marquee-container">
+            <div class="marquee-track">
+
+                <!-- REVIEW CARD 1 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"The Burj Vista view of Burj Khalifa from the balcony was absolutely breathtaking! TrueHaven didn't miss a single detail — ultra fast wifi, Nespresso coffee, and smooth check-in."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #0F1E36;">SC</div>
+                        <div>
+                            <div class="author-name">Sophia Chen 🇬🇧</div>
+                            <div class="author-location">London, United Kingdom</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 2 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Staying at Paramount Midtown was the highlight of our Dubai trip. The rooftop infinity pool view is unbeatable. WhatsApp concierge made everything effortless!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #10B981;">MV</div>
+                        <div>
+                            <div class="author-name">Marcus Vance 🇺🇸</div>
+                            <div class="author-location">New York, USA</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 3 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star" style="color: #CBD5E1;"></i></div>
+                    <p class="review-quote">"Absolument fantastique! Spotlessly clean apartment, premium linens, and direct walkway to Dubai Mall. We will definitely book with TrueHaven again."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #3B82F6;">JB</div>
+                        <div>
+                            <div class="author-name">Jean-Pierre Blanc 🇫🇷</div>
+                            <div class="author-location">Paris, France</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 4 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Immaculate 5-star experience in Business Bay. The rooftop infinity pool at Paramount Midtown is incredible. Host response time on WhatsApp was instant!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #8B5CF6;">ER</div>
+                        <div>
+                            <div class="author-name">Elena Rostova 🇨🇭</div>
+                            <div class="author-location">Zurich, Switzerland</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 5 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"We stayed for 8 days at Burj Vista. Seeing the Burj Khalifa lights from bed every night was magical. TrueHaven provides hotel luxury with home comfort."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #EC4899;">DM</div>
+                        <div>
+                            <div class="author-name">David & Sarah Miller 🇦🇺</div>
+                            <div class="author-location">Sydney, Australia</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 6 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"أقامة ممتازة جدًا ونظيفة. موقع القريب من دبي مول والبرج رائع للغاية. التعامل مع TrueHaven كان راقي واحترافي."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #D97706;">TM</div>
+                        <div>
+                            <div class="author-name">Tariq Al-Mansoor 🇸🇦</div>
+                            <div class="author-location">Riyadh, Saudi Arabia</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 7 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star" style="color: #CBD5E1;"></i></div>
+                    <p class="review-quote">"Exceptionally clean, quiet, and modern. Self check-in via smart lock was seamless. Perfect for business travelers in Business Bay."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #059669;">KT</div>
+                        <div>
+                            <div class="author-name">Kenji Takahashi 🇯🇵</div>
+                            <div class="author-location">Tokyo, Japan</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 8 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Top tier apartment! Reserved covered parking spot, great gym, and amazing views. Everything matched the photos 100%."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #2563EB;">OS</div>
+                        <div>
+                            <div class="author-name">Oliver Schmidt 🇩🇪</div>
+                            <div class="author-location">Munich, Germany</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 9 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"TrueHaven exceeded all expectations! The balcony view of Downtown Dubai is world-class. Best Airbnb experience I've had anywhere."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #DC2626;">AO</div>
+                        <div>
+                            <div class="author-name">Amara Okafor 🇨🇦</div>
+                            <div class="author-location">Toronto, Canada</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 10 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Soggiorno perfetto! Modern apartment with great design, Nespresso machine, and direct bridge access to Dubai Mall metro."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #7C3AED;">MR</div>
+                        <div>
+                            <div class="author-name">Matteo Rossi 🇮🇹</div>
+                            <div class="author-location">Milan, Italy</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 11 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Fabulous stay at Paramount Midtown. The rooftop infinity pool skyline photos didn't do it justice — even better in real life!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #0284C7;">LN</div>
+                        <div>
+                            <div class="author-name">Lars & Freja Nilsson 🇸🇪</div>
+                            <div class="author-location">Stockholm, Sweden</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 12 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Hands down the best host in Dubai. Super friendly communication on WhatsApp, easy keyless access, and pristine cleanliness."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #16A34A;">CS</div>
+                        <div>
+                            <div class="author-name">Chloe & Liam Smith 🇮🇪</div>
+                            <div class="author-location">Dublin, Ireland</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 13 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Luxury living at its finest. High-speed WiFi worked flawlessly for my remote work meetings. Highly recommended TrueHaven property!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #0F1E36;">FA</div>
+                        <div>
+                            <div class="author-name">Dr. Farhan Ahmed 🇸🇬</div>
+                            <div class="author-location">Singapore</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 14 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Unbeatable location in Downtown Dubai! Watched the Dubai Fountain show right from the balcony. TrueHaven hospitality is world-class."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #DB2777;">CD</div>
+                        <div>
+                            <div class="author-name">Charlotte Dubois 🇧🇪</div>
+                            <div class="author-location">Brussels, Belgium</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <!-- REVIEW CARD 15 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Super clean, high floor, luxury gym and pool. Loved the instant check-in. TrueHaven is my go-to for all future Dubai trips!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #4F46E5;">DK</div>
+                        <div>
+                            <div class="author-name">Daniel Kim 🇰🇷</div>
+                            <div class="author-location">Seoul, South Korea</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- REVIEW CARD 16 -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Extremely spacious and stylish 1BR. We loved every second of our stay in Business Bay. Can't wait to return!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #EA580C;">HV</div>
+                        <div>
+                            <div class="author-name">Hannah van Dijk 🇳🇱</div>
+                            <div class="author-location">Amsterdam, Netherlands</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <!-- DUPLICATED SET (1-16) FOR INFINITE LOOP EFFECT -->
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"The Burj Vista view of Burj Khalifa from the balcony was absolutely breathtaking! TrueHaven didn't miss a single detail."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #0F1E36;">SC</div>
+                        <div>
+                            <div class="author-name">Sophia Chen 🇬🇧</div>
+                            <div class="author-location">London, United Kingdom</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Staying at Paramount Midtown was the highlight of our Dubai trip. The rooftop infinity pool view is unbeatable."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #10B981;">MV</div>
+                        <div>
+                            <div class="author-name">Marcus Vance 🇺🇸</div>
+                            <div class="author-location">New York, USA</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Absolument fantastique! Spotlessly clean apartment, premium linens, and direct walkway to Dubai Mall."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #3B82F6;">JB</div>
+                        <div>
+                            <div class="author-name">Jean-Pierre Blanc 🇫🇷</div>
+                            <div class="author-location">Paris, France</div>
+                        </div>
+                    </div>
+                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-quote">"Immaculate 5-star experience in Business Bay. The rooftop infinity pool at Paramount Midtown is incredible."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background: #8B5CF6;">ER</div>
+                        <div>
+                            <div class="author-name">Elena Rostova 🇨🇭</div>
+                            <div class="author-location">Zurich, Switzerland</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reserve via WhatsApp CTA Section (Luxury Beige Canvas) -->
+    <section class="whatsapp-cta-section" style="padding: 72px 0; background-color: #FAF8F5; color: #0F1E36; border-top: 1px solid #E5E0D8; border-bottom: 1px solid #E5E0D8;">
+        <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <span class="badge-pill" style="margin-bottom: 16px; background: #0F1E36; color: #FFD166; border-color: #0F1E36;">INSTANT BOOKING & CONCIERGE</span>
+            <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; color: #0F1E36;">Reserve Your Luxury Stay in Dubai</h2>
+            <p style="font-size: 17px; color: #374151; margin-bottom: 32px; line-height: 1.6;">Speak directly with our TrueHaven concierge on WhatsApp to check live availability, request custom dates, and secure your residence with zero booking fees.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;">
+                <a href="https://wa.me/971525821668?text=Hello%20TrueHaven!%20I'd%20like%20to%20reserve%20a%20luxury%20stay%20in%20Dubai." target="_blank" style="background: #25D366; color: #FFFFFF; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,0.25); transition: transform 0.2s;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> Reserve via WhatsApp (052 58 21668)
+                </a>
+                <a href="mailto:hello@truehavenstays.com" style="background: #FFFFFF; color: #0F1E36; border: 1px solid #E5E0D8; padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fa-regular fa-envelope"></i> Email Reservations
+                </a>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 24px; font-size: 13px; color: #6B7280; flex-wrap: wrap;">
+                <span>⚡ Instant Confirmation</span>
+                <span>🔒 Best Rate Guarantee</span>
+                <span>🔑 Smart Lock Self Check-in</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-light">
+        <div class="container">
+            <div class="footer-columns">
+                <!-- Column 1: Brand Info -->
+                <div class="footer-col brand-col">
+                    <div class="brand-logo footer-logo">
+                        <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img">
+                        <div class="brand-text">
+                            <span class="brand-name">TrueHaven</span>
+                            <span class="brand-sub">LUXURY STAYS</span>
+                        </div>
+                    </div>
+                    <p class="footer-brand-desc">Curated boutique short-term holiday homes in Dubai’s most desirable addresses. Designed for elevated living.</p>
+                    <p class="footer-contact-item"><i class="fa-solid fa-location-dot"></i> <strong>Office:</strong> 2204, Iris Bay, Business Bay, Dubai, UAE</p>
+                    <p class="footer-contact-item"><i class="fa-solid fa-phone"></i> <strong>Mobile:</strong> 052 58 21668 (+971 52 582 1668)</p>
+                    <p class="footer-contact-item"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> hello@truehavenstays.com</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Residences</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="openPropertyDetail('paramount'); return false;">Paramount Midtown (Business Bay)</a></li>
+                        <li><a href="#" onclick="openPropertyDetail('burj-vista'); return false;">Burj Vista (Downtown Dubai)</a></li>
+                        <li><a href="#amenities">5-Star Building Amenities</a></li>
+                        <li><a href="#properties">Availability Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Guest Support -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Guest Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/971525821668" target="_blank">WhatsApp Concierge</a></li>
+                        <li><a href="#">Long-Term Stays (28+ Days)</a></li>
+                        <li><a href="#">Self Check-in Guide</a></li>
+                        <li><a href="#">House Rules & Policies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legal Hairline Band -->
+            <div class="legal-band">
+                <div class="legal-left">
+                    <span>© 2026 TrueHaven Stays, Inc. All rights reserved.</span>
+                    <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a>
+                </div>
+                <div class="legal-right">
+                    <span><i class="fa-solid fa-globe"></i> English (US)</span>
+                    <span>AED (د.إ)</span>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div> <!-- End #mainPage -->
+
+    <!-- FULL-PAGE IMMERSIVE PROPERTY DETAIL PAGE VIEW (NO POPUP MODAL) -->
+    <div id="propertyDetailPage" class="property-detail-page-container" style="display: none;">
+        <!-- Content dynamically injected via script.js -->
+    </div>
+    <div class="modal-overlay" id="propertyModal">
+        <div class="modal-card property-detail-modal">
+            <button class="modal-close-btn" id="closePropertyModalBtn">&times;</button>
+            
+            <div class="modal-scroll-body" id="modalPropertyContent">
+                <!-- Content will be injected dynamically via script.js -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FULL AMENITIES LIST OVERLAY MODAL -->
+    <div class="modal-overlay" id="amenitiesModal">
+        <div class="modal-card amenities-modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title">What this place offers</h3>
+                <button class="modal-close-btn" id="closeAmenitiesModalBtn">&times;</button>
+            </div>
+            
+            <div class="modal-scroll-body">
+                <div class="amenities-category-list">
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-bath"></i> Bathroom</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Bath</li>
+                            <li><i class="fa-solid fa-check"></i> Hairdryer</li>
+                            <li><i class="fa-solid fa-check"></i> Cleaning products</li>
+                            <li><i class="fa-solid fa-check"></i> Shampoo & Conditioner</li>
+                            <li><i class="fa-solid fa-check"></i> Body soap & Shower gel</li>
+                            <li><i class="fa-solid fa-check"></i> Bidet</li>
+                            <li><i class="fa-solid fa-check"></i> Outdoor shower</li>
+                            <li><i class="fa-solid fa-check"></i> Hot water</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-bed"></i> Bedroom & Laundry</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Washing machine & Tumble dryer</li>
+                            <li><i class="fa-solid fa-check"></i> Essentials (Towels, bed sheets, soap, toilet paper)</li>
+                            <li><i class="fa-solid fa-check"></i> Hangers & Clothes storage</li>
+                            <li><i class="fa-solid fa-check"></i> Premium bed linen & extra pillows/blankets</li>
+                            <li><i class="fa-solid fa-check"></i> Room-darkening blinds</li>
+                            <li><i class="fa-solid fa-check"></i> Iron & Clothes drying rack</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-tv"></i> Entertainment & Family</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> High-speed Ethernet connection</li>
+                            <li><i class="fa-solid fa-check"></i> Exercise equipment</li>
+                            <li><i class="fa-solid fa-check"></i> Books and reading material</li>
+                            <li><i class="fa-solid fa-check"></i> Window guards for family safety</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-temperature-arrow-down"></i> Heating & Cooling</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Air conditioning (Central Climate)</li>
+                            <li><i class="fa-solid fa-check"></i> Heating</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-shield-halved"></i> Home Safety</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Smoke alarm</li>
+                            <li><i class="fa-solid fa-check"></i> Fire extinguisher</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-laptop"></i> Internet & Office</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Ultra-Fast Wifi</li>
+                            <li><i class="fa-solid fa-check"></i> Dedicated workspace desk & chair</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-utensils"></i> Kitchen & Dining</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Fully equipped kitchen with dining table</li>
+                            <li><i class="fa-solid fa-check"></i> Refrigerator & Freezer</li>
+                            <li><i class="fa-solid fa-check"></i> Microwave, Cooker & Oven</li>
+                            <li><i class="fa-solid fa-check"></i> Dishwasher & Waste compactor</li>
+                            <li><i class="fa-solid fa-check"></i> Pots, pans, oil, salt & pepper</li>
+                            <li><i class="fa-solid fa-check"></i> Crockery, cutlery, bowls, chopsticks, plates, cups</li>
+                            <li><i class="fa-solid fa-check"></i> Nespresso Coffee maker & Coffee</li>
+                            <li><i class="fa-solid fa-check"></i> Wine glasses, Toaster & Kettle</li>
+                            <li><i class="fa-solid fa-check"></i> Baking sheet</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-umbrella-beach"></i> Location & Outdoor</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Waterfront - Right next to body of water</li>
+                            <li><i class="fa-solid fa-check"></i> Private building entrance</li>
+                            <li><i class="fa-solid fa-check"></i> Private Patio or Balcony</li>
+                            <li><i class="fa-solid fa-check"></i> Outdoor furniture & Sun loungers</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-building-user"></i> Parking & Facilities</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Free reserved parking on premises</li>
+                            <li><i class="fa-solid fa-check"></i> Swimming pool access</li>
+                            <li><i class="fa-solid fa-check"></i> State-of-the-art Gym</li>
+                            <li><i class="fa-solid fa-check"></i> Elevator / Lift (52" deep, doorway 32" wide)</li>
+                            <li><i class="fa-solid fa-check"></i> Single-level home (no internal stairs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block">
+                        <h4 class="cat-title"><i class="fa-solid fa-bell-concierge"></i> Services</h4>
+                        <ul class="cat-items">
+                            <li><i class="fa-solid fa-check"></i> Long-term stays allowed (28+ days)</li>
+                            <li><i class="fa-solid fa-check"></i> Self check-in with Smart Lock</li>
+                            <li><i class="fa-solid fa-check"></i> Cleaning available during stay</li>
+                        </ul>
+                    </div>
+
+                    <div class="amenity-cat-block unavailable-block">
+                        <h4 class="cat-title text-muted"><i class="fa-solid fa-ban"></i> Not Included & Safety Notices</h4>
+                        <ul class="cat-items">
+                            <li class="unavailable"><i class="fa-solid fa-xmark"></i> Exterior security cameras on property (Unavailable)</li>
+                            <li class="unavailable"><i class="fa-solid fa-xmark"></i> Carbon monoxide alarm (Unavailable - Note: Residence uses all-electric appliances)</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
