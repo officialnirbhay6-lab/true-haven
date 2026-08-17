@@ -2348,6 +2348,38 @@ img {
         position: static !important;
         top: 0 !important;
     }
+
+    /* Mobile Compact Footer Fix (Tight Padding & Gaps) */
+    .footer-light {
+        padding: 36px 0 24px !important;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .footer-brand-desc {
+        margin: 10px 0 14px !important;
+        font-size: 13px !important;
+    }
+
+    .footer-col-title {
+        margin-bottom: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .footer-links {
+        gap: 8px !important;
+    }
+
+    .legal-band {
+        padding-top: 16px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
 }
 
 @media (max-width: 480px) {
