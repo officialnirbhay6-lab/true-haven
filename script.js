@@ -519,10 +519,28 @@ function openAmenitiesModalDirect() {
 }
 
 // ==========================================================================
-// INTERACTIVE NAVBAR SEARCH PILL (WHERE, WHEN CALENDAR, WHO GUESTS)
+// INTERACTIVE NAVBAR & MOBILE DRAWER SEARCH (WHERE, WHEN CALENDAR, WHO GUESTS)
 // ==========================================================================
 let currentNavGuests = 2;
 let selectedNavLocation = 'all';
+
+function openMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (drawer) {
+        drawer.style.display = 'block';
+        drawer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (drawer) {
+        drawer.style.display = 'none';
+        drawer.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // Set default dates in navbar calendar (today + 3 days to today + 6 days)
@@ -541,7 +559,65 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNavDates();
     }
 
-    // Attach click listeners to WHERE, WHEN, WHO search pill segments
+    // Attach Mobile Drawer Toggle Buttons
+    const openDrawerBtn = document.getElementById('openMobileDrawerBtn');
+    const closeDrawerBtn = document.getElementById('closeMobileDrawerBtn');
+
+    if (openDrawerBtn) {
+        openDrawerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openMobileDrawer();
+        });
+    }
+
+    if (closeDrawerBtn) {
+        closeDrawerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileDrawer();
+        });
+    }
+
+    // Mobile Search Card Buttons
+    const mWhereBtn = document.getElementById('mSearchWhereBtn');
+    const mWhenBtn = document.getElementById('mSearchWhenBtn');
+    const mWhoBtn = document.getElementById('mSearchWhoBtn');
+    const mSubmitBtn = document.getElementById('mSearchSubmitBtn');
+
+    if (mWhereBtn) {
+        mWhereBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSearchPopover('wherePopover');
+        });
+    }
+
+    if (mWhenBtn) {
+        mWhenBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSearchPopover('whenPopover');
+        });
+    }
+
+    if (mWhoBtn) {
+        mWhoBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSearchPopover('whoPopover');
+        });
+    }
+
+    if (mSubmitBtn) {
+        mSubmitBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllSearchPopovers();
+            closeMobileDrawer();
+            const propSection = document.getElementById('properties');
+            if (propSection) {
+                propSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            showToast('🔍 Searching residences for your dates...');
+        });
+    }
+
+    // Attach click listeners to Desktop WHERE, WHEN, WHO search pill segments
     const searchWhereBtn = document.getElementById('searchWhereBtn');
     const searchWhenBtn = document.getElementById('searchWhenBtn');
     const searchWhoBtn = document.getElementById('searchWhoBtn');
@@ -572,7 +648,6 @@ document.addEventListener('DOMContentLoaded', () => {
         searchSubmitBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             closeAllSearchPopovers();
-            // Scroll smoothly to properties section
             const propSection = document.getElementById('properties');
             if (propSection) {
                 propSection.scrollIntoView({ behavior: 'smooth' });
@@ -581,9 +656,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close popovers on click outside
+    // Close popovers & drawer on click outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav-search-pill')) {
+        if (!e.target.closest('.nav-search-pill') && !e.target.closest('.search-popover') && !e.target.closest('.mobile-search-box')) {
             closeAllSearchPopovers();
         }
     });
@@ -609,9 +684,10 @@ function closeAllSearchPopovers() {
 function selectNavLocation(locKey, displayLabel) {
     selectedNavLocation = locKey;
     const whereValEl = document.getElementById('whereValue');
+    const mWhereValEl = document.getElementById('mWhereVal');
     if (whereValEl) whereValEl.innerText = displayLabel;
+    if (mWhereValEl) mWhereValEl.innerText = displayLabel;
 
-    // Filter properties grid if tab active
     filterPropertiesByLocation(locKey);
     closeAllSearchPopovers();
 }
@@ -666,7 +742,9 @@ function applyNavDates() {
         const d2Str = d2.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         
         const whenValEl = document.getElementById('whenValue');
+        const mWhenValEl = document.getElementById('mWhenVal');
         if (whenValEl) whenValEl.innerText = `${d1Str} – ${d2Str}`;
+        if (mWhenValEl) mWhenValEl.innerText = `${d1Str} – ${d2Str}`;
     }
     closeAllSearchPopovers();
 }
@@ -679,8 +757,9 @@ function changeNavGuests(delta) {
 
 function applyNavGuests() {
     const whoValEl = document.getElementById('whoValue');
-    if (whoValEl) {
-        whoValEl.innerText = `${currentNavGuests} ${currentNavGuests === 1 ? 'Guest' : 'Guests'}`;
-    }
+    const mWhoValEl = document.getElementById('mWhoVal');
+    const labelStr = `${currentNavGuests} ${currentNavGuests === 1 ? 'Guest' : 'Guests'}`;
+    if (whoValEl) whoValEl.innerText = labelStr;
+    if (mWhoValEl) mWhoValEl.innerText = labelStr;
     closeAllSearchPopovers();
 }
