@@ -715,7 +715,8 @@ img {
 .hero-sub {
     font-size: 20px;
     color: #FFFFFF;
-    margin-bottom: 36px;
+    margin-top: 14px;
+    margin-bottom: 48px;
     font-weight: 600;
     line-height: 1.4;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
