@@ -2190,16 +2190,45 @@ img {
    MOBILE & TABLET RESPONSIVE FIXES (< 768px and < 480px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Top Navbar Header */
-    .top-nav {
-        padding: 14px 0;
-        height: auto;
+    /* Top Navbar Floating Header on Mobile */
+    .top-nav.glass-nav {
+        width: calc(100% - 32px) !important;
+        margin: 14px auto 0 !important;
+        height: 64px !important;
+        padding: 0 16px !important;
+        border-radius: 999px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
 
     .nav-wrapper {
+        width: 100% !important;
+        display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
+        padding: 0 !important;
+    }
+
+    .brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .brand-logo .logo-img {
+        height: 36px;
+    }
+
+    .brand-text .brand-name {
+        font-size: 17px !important;
+        line-height: 1.1;
+    }
+
+    .brand-text .brand-sub {
+        font-size: 9px !important;
+        letter-spacing: 1px;
     }
 
     /* Hide desktop floating search pill on mobile so hero image & text remain 100% clean */
@@ -2208,22 +2237,24 @@ img {
         display: none !important;
     }
 
-    /* Display mobile hamburger button */
+    /* Display mobile hamburger button on far right with zero overlap */
     .mobile-hamburger-btn {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 50% !important;
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
         background: rgba(255, 255, 255, 0.22) !important;
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.45) !important;
         color: #FFFFFF !important;
-        font-size: 20px;
+        font-size: 18px !important;
         cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     .search-field-segment {
