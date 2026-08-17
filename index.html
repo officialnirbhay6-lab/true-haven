@@ -119,8 +119,66 @@
                         <button class="button-primary" onclick="applyNavGuests()" style="width: 100%; margin-top: 14px; padding: 8px; font-size: 13px; border-radius: 8px;">Confirm Guests</button>
                     </div>
                 </div>
+
+                <!-- Hamburger Menu Button (Mobile View Only) -->
+                <button class="mobile-hamburger-btn" id="openMobileDrawerBtn" title="Open Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </header>
+
+        <!-- Mobile Glassmorphism Navigation & Search Drawer Overlay -->
+        <div class="mobile-drawer-overlay" id="mobileDrawer" style="display: none;">
+            <div class="mobile-drawer-card">
+                <div class="drawer-header-row">
+                    <a href="#" class="brand-logo" onclick="closeMobileDrawer(); return false;">
+                        <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img" style="height: 34px;">
+                        <div class="brand-text">
+                            <span class="brand-name" style="font-size: 16px;">TrueHaven</span>
+                            <span class="brand-sub" style="font-size: 9px; color: #FFD166;">LUXURY STAYS</span>
+                        </div>
+                    </a>
+                    <button class="drawer-close-btn" id="closeMobileDrawerBtn">&times;</button>
+                </div>
+
+                <!-- Embedded WHERE / WHEN / WHO Search Box for Mobile -->
+                <div class="mobile-search-box">
+                    <div class="m-box-title"><i class="fa-solid fa-magnifying-glass"></i> Find Your Residence</div>
+                    
+                    <div class="m-search-row" id="mSearchWhereBtn">
+                        <div class="m-label">WHERE</div>
+                        <div class="m-val" id="mWhereVal">Business Bay & Downtown</div>
+                    </div>
+
+                    <div class="m-search-row" id="mSearchWhenBtn">
+                        <div class="m-label">WHEN</div>
+                        <div class="m-val" id="mWhenVal">Add dates</div>
+                    </div>
+
+                    <div class="m-search-row" id="mSearchWhoBtn">
+                        <div class="m-label">WHO</div>
+                        <div class="m-val" id="mWhoVal">2 Guests</div>
+                    </div>
+
+                    <button class="button-primary m-search-submit" id="mSearchSubmitBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search Available Residences
+                    </button>
+                </div>
+
+                <!-- Quick Navigation Links / Page References -->
+                <div class="drawer-links-group">
+                    <div class="drawer-cat-title">EXPLORE PAGES</div>
+                    <a href="#properties" class="drawer-link-item" onclick="closeMobileDrawer()"><i class="fa-solid fa-building"></i> Premier Residences</a>
+                    <a href="#places" class="drawer-link-item" onclick="closeMobileDrawer()"><i class="fa-solid fa-map-location-dot"></i> Places to Visit in Dubai</a>
+                    <a href="#reviews" class="drawer-link-item" onclick="closeMobileDrawer()"><i class="fa-solid fa-star"></i> Verified Guest Reviews</a>
+                    <a href="#" onclick="openAmenitiesModalDirect(); closeMobileDrawer(); return false;" class="drawer-link-item"><i class="fa-solid fa-water-ladder"></i> 5-Star Building Amenities</a>
+                    
+                    <div class="drawer-cat-title" style="margin-top: 24px;">DIRECT CONTACT & CONCIERGE</div>
+                    <a href="https://wa.me/971525821668" target="_blank" class="drawer-link-item wa-highlight"><i class="fa-brands fa-whatsapp"></i> Reserve via WhatsApp (052 58 21668)</a>
+                    <a href="mailto:hello@truehavenstays.com" class="drawer-link-item"><i class="fa-regular fa-envelope"></i> Email Reservations</a>
+                </div>
+            </div>
+        </div>
 
         <!-- Hero Banner Content (Direct Text on Image) -->
         <section class="hero-banner-section">
