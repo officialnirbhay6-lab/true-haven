@@ -648,17 +648,18 @@ img {
     position: relative;
     z-index: 5;
     width: 100%;
-    min-height: 720px;
+    min-height: 680px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: #FFFFFF;
-    padding: 60px 0 96px;
+    padding: 24px 0 80px;
 }
 
 .hero-banner-container {
     position: relative;
     z-index: 3;
     width: 100%;
+    margin-top: 20px;
 }
 
 .hero-banner-content.centered {
@@ -720,36 +721,34 @@ img {
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
 }
 
-/* 4 Bullet Points (Right Corner Positioned, Zero Emoticons) */
-.hero-bullets-corner {
-    position: absolute;
-    bottom: 28px;
-    right: 28px;
-    width: 310px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 10;
+/* 4 Bullet Points (Centered 2x2 Grid Directly Below Headline) */
+.hero-bullets-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 24px;
+    max-width: 660px;
+    margin: 24px auto 0;
+    width: 100%;
 }
 
-.hero-bullet-card {
-    background: rgba(15, 30, 54, 0.45);
+.hero-bullet-pill {
+    background: rgba(15, 30, 54, 0.48);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: var(--radius-md);
-    padding: 10px 16px;
-    text-align: right;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 12px 18px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     transition: transform 0.2s, background 0.2s;
 }
 
-.hero-bullet-card:hover {
-    background: rgba(15, 30, 54, 0.65);
-    transform: translateX(-4px);
+.hero-bullet-pill:hover {
+    background: rgba(15, 30, 54, 0.68);
+    transform: translateY(-3px);
 }
 
-.hero-bullet-card strong {
+.hero-bullet-pill strong {
     display: block;
     font-size: 13px;
     font-weight: 700;
@@ -758,10 +757,10 @@ img {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-.hero-bullet-card span {
+.hero-bullet-pill span {
     display: block;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
     margin-top: 2px;
 }
 
@@ -2295,15 +2294,11 @@ img {
         line-height: 1.2;
     }
 
-    .hero-bullets-corner {
-        position: static;
-        width: 100%;
-        margin-top: 36px;
-        gap: 8px;
-    }
-
-    .hero-bullet-card {
-        text-align: center;
+    .hero-bullets-2x2 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 24px;
+        max-width: 100%;
     }
 
     /* Places Grid Mobile */
