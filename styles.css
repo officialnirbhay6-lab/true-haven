@@ -648,22 +648,22 @@ img {
     position: relative;
     z-index: 5;
     width: 100%;
-    min-height: 680px;
+    min-height: 540px;
     display: flex;
     align-items: flex-start;
     color: #FFFFFF;
-    padding: 24px 0 80px;
+    padding: 20px 0 40px;
 }
 
 .hero-banner-container {
     position: relative;
     z-index: 3;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .hero-banner-content.centered {
-    max-width: 860px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -715,19 +715,19 @@ img {
 .hero-sub {
     font-size: 20px;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     font-weight: 600;
     line-height: 1.4;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
 }
 
-/* 4 Bullet Points (Centered 2x2 Grid Directly Below Headline) */
-.hero-bullets-2x2 {
+/* 4 Bullet Points in a Single Horizontal Row (Left to Right) */
+.hero-bullets-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px 24px;
-    max-width: 660px;
-    margin: 24px auto 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 12px auto 0;
     width: 100%;
 }
 
@@ -737,7 +737,7 @@ img {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: var(--radius-md);
-    padding: 12px 18px;
+    padding: 12px 14px;
     text-align: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     transition: transform 0.2s, background 0.2s;
@@ -2294,10 +2294,10 @@ img {
         line-height: 1.2;
     }
 
-    .hero-bullets-2x2 {
+    .hero-bullets-row {
         grid-template-columns: 1fr;
         gap: 10px;
-        margin-top: 24px;
+        margin-top: 20px;
         max-width: 100%;
     }
 
