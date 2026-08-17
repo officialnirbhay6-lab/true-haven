@@ -684,7 +684,7 @@ img {
     padding: 6px 14px;
     border-radius: var(--radius-full);
     margin-top: -12px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     text-transform: uppercase;
 }
 
@@ -694,8 +694,8 @@ img {
     line-height: 1.12;
     letter-spacing: -1px;
     color: #FFFFFF;
-    margin-top: 6px;
-    margin-bottom: 16px;
+    margin-top: 18px;
+    margin-bottom: 20px;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
 }
 
@@ -710,27 +710,27 @@ img {
     height: 3px;
     background: #FFFFFF;
     border-radius: 2px;
-    margin: 16px auto;
+    margin: 18px auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero-sub {
     font-size: 20px;
     color: #FFFFFF;
-    margin-top: 14px;
-    margin-bottom: 36px;
+    margin-top: 16px;
+    margin-bottom: 40px;
     font-weight: 600;
     line-height: 1.4;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
 }
 
-/* 4 Bullet Points in a Single Horizontal Row (Left to Right) */
+/* 4 Bullet Points in a Single Horizontal Row (Shifted Slightly Lower) */
 .hero-bullets-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     max-width: 1100px;
-    margin: 48px auto 0;
+    margin: 68px auto 0;
     width: 100%;
 }
 
