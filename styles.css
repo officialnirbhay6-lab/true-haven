@@ -648,18 +648,18 @@ img {
     position: relative;
     z-index: 5;
     width: 100%;
-    min-height: 720px;
+    min-height: auto;
     display: flex;
     align-items: flex-start;
     color: #FFFFFF;
-    padding: 48px 0 96px;
+    padding: 28px 0 48px;
 }
 
 .hero-banner-container {
     position: relative;
     z-index: 3;
     width: 100%;
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 .hero-banner-content.centered {
@@ -684,7 +684,7 @@ img {
     padding: 6px 14px;
     border-radius: var(--radius-full);
     margin-top: -12px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     text-transform: uppercase;
 }
 
@@ -694,7 +694,7 @@ img {
     line-height: 1.12;
     letter-spacing: -1px;
     color: #FFFFFF;
-    margin-top: 10px;
+    margin-top: 6px;
     margin-bottom: 16px;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
 }
@@ -718,7 +718,7 @@ img {
     font-size: 20px;
     color: #FFFFFF;
     margin-top: 14px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
     font-weight: 600;
     line-height: 1.4;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
@@ -730,7 +730,7 @@ img {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     max-width: 1100px;
-    margin: 90px auto 0;
+    margin: 48px auto 0;
     width: 100%;
 }
 
@@ -2192,6 +2192,13 @@ img {
    MOBILE & TABLET RESPONSIVE FIXES (< 768px and < 480px)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Mobile Dedicated Portrait Background Image (Crisp & Symmetrical) */
+    .immersive-bg {
+        background-image: url('assets/hero_bg_mobile.jpg') !important;
+        background-position: center top !important;
+        background-size: cover !important;
+    }
+
     /* Top Navbar Floating Header on Mobile */
     .top-nav.glass-nav {
         width: calc(100% - 32px) !important;
