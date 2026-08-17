@@ -648,11 +648,11 @@ img {
     position: relative;
     z-index: 5;
     width: 100%;
-    min-height: 540px;
+    min-height: 720px;
     display: flex;
     align-items: flex-start;
     color: #FFFFFF;
-    padding: 20px 0 40px;
+    padding: 48px 0 96px;
 }
 
 .hero-banner-container {
