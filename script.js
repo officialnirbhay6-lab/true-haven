@@ -3,6 +3,11 @@
    Handles property detail overlays, photo carousels, pricing calculator & WhatsApp reservation
    ========================================================================== */
 
+const PARAMOUNT_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1761390398461668658?unique_share_id=e3924d43-ff08-4672-af1f-88d210f07cfa&viralityEntryPoint=1&s=76&source_impression_id=p3_1788349185_P3ng4E3hx17yac8B";
+
+// All 73 high-resolution photos downloaded from Airbnb Photo Tour
+const PARAMOUNT_PHOTOS = Array.from({ length: 73 }, (_, i) => `assets/paramount/paramount_${i + 1}.jpg`);
+
 // Property Database
 const PROPERTIES_DATA = {
     'paramount': {
@@ -19,13 +24,8 @@ const PROPERTIES_DATA = {
         reviewsCount: 48,
         badge: 'Guest favorite',
         hostName: 'TrueHaven Stays (Superhost)',
-        photos: [
-            'assets/paramount_infinity_pool.jpg',
-            'assets/paramount_night_view.png',
-            'assets/paramount_living.jpg',
-            'assets/paramount_exterior.png',
-            'assets/paramount_gym.jpg'
-        ],
+        airbnbUrl: PARAMOUNT_AIRBNB_URL,
+        photos: PARAMOUNT_PHOTOS,
         description: 'Experience Hollywood-inspired luxury at Paramount Midtown in Business Bay. Featuring a world-famous rooftop infinity pool on the top floor with breathtaking views of Burj Khalifa and the Dubai skyline. This modern 1BR suite offers floor-to-ceiling windows, high-speed WiFi, plush king bedding, Nespresso coffee station, and access to a state-of-the-art gym.'
     },
     'burj-vista': {
@@ -228,8 +228,8 @@ function openPropertyDetail(propId) {
                 <img src="${data.photos[3]}" alt="${data.name}">
                 <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}">
             </div>
-            <button class="button-secondary" onclick="openAmenitiesModalDirect()" style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 8px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <i class="fa-solid fa-grip-lines-vertical"></i> Show all photos
+            <button class="button-secondary" onclick="openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 8px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <i class="fa-solid fa-grip-lines-vertical"></i> Show all ${data.photos.length} photos
             </button>
         </div>
     `;
@@ -431,9 +431,15 @@ function openPropertyDetail(propId) {
                             </div>
                         </div>
 
-                        <button class="button-primary" style="width: 100%; height: 54px; font-size: 16px; margin-bottom: 14px; border-radius: 12px;" onclick="bookOnWhatsApp('${propId}')">
-                            <i class="fa-brands fa-whatsapp" style="font-size: 22px; margin-right: 8px;"></i> Reserve on WhatsApp
-                        </button>
+                        ${data.airbnbUrl ? `
+                            <a href="${data.airbnbUrl}" target="_blank" class="button-primary" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 54px; font-size: 16px; margin-bottom: 14px; border-radius: 12px; background: #FF385C; color: #FFFFFF; text-decoration: none; font-weight: 700; box-shadow: 0 4px 14px rgba(255,56,92,0.3);">
+                                <i class="fa-solid fa-bolt" style="font-size: 18px; margin-right: 8px;"></i> Reserve on Airbnb
+                            </a>
+                        ` : `
+                            <button class="button-primary" style="width: 100%; height: 54px; font-size: 16px; margin-bottom: 14px; border-radius: 12px;" onclick="bookOnWhatsApp('${propId}')">
+                                <i class="fa-brands fa-whatsapp" style="font-size: 22px; margin-right: 8px;"></i> Reserve on WhatsApp
+                            </button>
+                        `}
                         
                         <p style="text-align: center; font-size: 12px; color: #6B7280;">Instant confirmation • No booking fees charged</p>
                     </div>
@@ -515,6 +521,75 @@ function openAmenitiesModalDirect() {
     const amenitiesModal = document.getElementById('amenitiesModal');
     if (amenitiesModal) {
         amenitiesModal.classList.add('active');
+    }
+}
+
+// Full Screen Interactive Photo Gallery Modal for all 73 Photos
+function openPhotoGalleryModal(propId) {
+    const data = PROPERTIES_DATA[propId];
+    if (!data) return;
+
+    let galleryModal = document.getElementById('photoGalleryModal');
+    if (!galleryModal) {
+        galleryModal = document.createElement('div');
+        galleryModal.id = 'photoGalleryModal';
+        galleryModal.className = 'photo-gallery-modal';
+        document.body.appendChild(galleryModal);
+    }
+
+    const categories = [
+        { name: 'Living Room', start: 1, end: 5 },
+        { name: 'Kitchenette', start: 6, end: 9 },
+        { name: 'Dining Area', start: 10, end: 12 },
+        { name: 'Bedroom', start: 13, end: 16 },
+        { name: 'Full Bathroom', start: 17, end: 19 },
+        { name: 'WC / Guest Washroom', start: 20, end: 21 },
+        { name: 'Balcony & Panoramic Skyline Views', start: 22, end: 25 },
+        { name: 'Rooftop Infinity Pool', start: 26, end: 29 },
+        { name: 'Fitness Gym & Wellness', start: 30, end: 32 },
+        { name: "Children's Playroom", start: 33, end: 35 },
+        { name: 'Full Residence Photo Tour (Complete 73 Photos)', start: 36, end: data.photos.length }
+    ];
+
+    let sectionsHtml = '';
+    categories.forEach(cat => {
+        const catPhotos = data.photos.slice(cat.start - 1, cat.end);
+        if (catPhotos.length === 0) return;
+
+        sectionsHtml += `
+            <div class="photo-tour-section">
+                <h3 class="photo-tour-section-title">${cat.name} (${catPhotos.length} ${catPhotos.length === 1 ? 'photo' : 'photos'})</h3>
+                <div class="photo-tour-grid">
+                    ${catPhotos.map((src, idx) => `
+                        <div class="photo-tour-item">
+                            <img src="${src}" alt="${data.name} - ${cat.name} ${idx + 1}" loading="lazy">
+                            <div class="photo-tour-caption">${cat.name} · Photo ${cat.start + idx}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    });
+
+    galleryModal.innerHTML = `
+        <div class="photo-gallery-header">
+            <h2>Photo Tour · ${data.name} (${data.photos.length} High-Res Photos)</h2>
+            <button onclick="closePhotoGalleryModal()" class="close-gallery-btn" title="Close Gallery">&times;</button>
+        </div>
+        <div class="photo-gallery-body">
+            ${sectionsHtml}
+        </div>
+    `;
+
+    galleryModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePhotoGalleryModal() {
+    const galleryModal = document.getElementById('photoGalleryModal');
+    if (galleryModal) {
+        galleryModal.style.display = 'none';
+        document.body.style.overflow = '';
     }
 }
 

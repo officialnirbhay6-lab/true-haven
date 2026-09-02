@@ -2400,3 +2400,123 @@ img {
         padding: 48px 16px;
     }
 }
+
+/* ==========================================================================
+   FULL SCREEN PHOTO GALLERY MODAL (AIRBNB STYLE PHOTO TOUR)
+   ========================================================================== */
+.photo-gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #FFFFFF;
+    z-index: 9999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-gallery-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    border-bottom: 1px solid #E5E0D8;
+}
+
+.photo-gallery-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F1E36;
+}
+
+.close-gallery-btn {
+    background: #F4F1EA;
+    border: 1px solid #E5E0D8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F1E36;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.close-gallery-btn:hover {
+    background: #0F1E36;
+    color: #FFFFFF;
+}
+
+.photo-gallery-body {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+.photo-tour-section-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F1E36;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F4F1EA;
+}
+
+.photo-tour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.photo-tour-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #F4F1EA;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.photo-tour-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-tour-item:hover img {
+    transform: scale(1.02);
+}
+
+.photo-tour-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(15, 30, 54, 0.75);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+    .photo-tour-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .photo-gallery-header {
+        padding: 14px 16px;
+    }
+}
