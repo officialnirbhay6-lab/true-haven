@@ -5,8 +5,151 @@
 
 const PARAMOUNT_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1761390398461668658?unique_share_id=e3924d43-ff08-4672-af1f-88d210f07cfa&viralityEntryPoint=1&s=76&source_impression_id=p3_1788349185_P3ng4E3hx17yac8B";
 
-// All 73 high-resolution photos downloaded from Airbnb Photo Tour
-const PARAMOUNT_PHOTOS = Array.from({ length: 73 }, (_, i) => `assets/paramount/paramount_${i + 1}.jpg`);
+// Exact Airbnb Photo Tour Categories and Photo Sequences
+const PARAMOUNT_CATEGORIES_MANIFEST = [
+    {
+        id: "living_room",
+        name: "Living room",
+        photos: [
+            "assets/paramount/living_room_1.jpg",
+            "assets/paramount/living_room_2.jpg",
+            "assets/paramount/living_room_3.jpg",
+            "assets/paramount/living_room_4.jpg",
+            "assets/paramount/living_room_5.jpg",
+            "assets/paramount/living_room_6.jpg",
+            "assets/paramount/living_room_7.jpg",
+            "assets/paramount/living_room_8.jpg",
+            "assets/paramount/living_room_9.jpg",
+            "assets/paramount/living_room_10.jpg",
+            "assets/paramount/living_room_11.jpg",
+            "assets/paramount/living_room_12.jpg",
+            "assets/paramount/living_room_13.jpg",
+            "assets/paramount/living_room_14.jpg"
+        ]
+    },
+    {
+        id: "kitchenette",
+        name: "Kitchenette",
+        photos: [
+            "assets/paramount/kitchenette_1.jpg",
+            "assets/paramount/kitchenette_2.jpg",
+            "assets/paramount/kitchenette_3.jpg",
+            "assets/paramount/kitchenette_4.jpg",
+            "assets/paramount/kitchenette_5.jpg"
+        ]
+    },
+    {
+        id: "dining_area",
+        name: "Dining area",
+        photos: [
+            "assets/paramount/dining_area_1.jpg",
+            "assets/paramount/dining_area_2.jpg"
+        ]
+    },
+    {
+        id: "bedroom",
+        name: "Bedroom",
+        subtext: "King bed · Sofa bed",
+        photos: [
+            "assets/paramount/bedroom_1.jpg",
+            "assets/paramount/bedroom_2.jpg",
+            "assets/paramount/bedroom_3.jpg",
+            "assets/paramount/bedroom_4.jpg",
+            "assets/paramount/bedroom_5.jpg",
+            "assets/paramount/bedroom_6.jpg",
+            "assets/paramount/bedroom_7.jpg",
+            "assets/paramount/bedroom_8.jpg",
+            "assets/paramount/bedroom_9.jpg",
+            "assets/paramount/bedroom_10.jpg",
+            "assets/paramount/bedroom_11.jpg",
+            "assets/paramount/bedroom_12.jpg"
+        ]
+    },
+    {
+        id: "full_bathroom",
+        name: "Full bathroom",
+        photos: [
+            "assets/paramount/full_bathroom_1.jpg",
+            "assets/paramount/full_bathroom_2.jpg",
+            "assets/paramount/full_bathroom_3.jpg"
+        ]
+    },
+    {
+        id: "wc",
+        name: "WC",
+        photos: [
+            "assets/paramount/wc_1.jpg",
+            "assets/paramount/wc_2.jpg"
+        ]
+    },
+    {
+        id: "balcony",
+        name: "Balcony",
+        photos: [
+            "assets/paramount/balcony_1.jpg",
+            "assets/paramount/balcony_2.jpg",
+            "assets/paramount/balcony_3.jpg",
+            "assets/paramount/balcony_4.jpg",
+            "assets/paramount/balcony_5.jpg",
+            "assets/paramount/balcony_6.jpg",
+            "assets/paramount/balcony_7.jpg",
+            "assets/paramount/balcony_8.jpg",
+            "assets/paramount/balcony_9.jpg",
+            "assets/paramount/balcony_10.jpg",
+            "assets/paramount/balcony_11.jpg"
+        ]
+    },
+    {
+        id: "gym",
+        name: "Gym",
+        photos: [
+            "assets/paramount/gym_1.jpg",
+            "assets/paramount/gym_2.jpg",
+            "assets/paramount/gym_3.jpg"
+        ]
+    },
+    {
+        id: "pool",
+        name: "Pool",
+        photos: [
+            "assets/paramount/pool_1.jpg",
+            "assets/paramount/pool_2.jpg",
+            "assets/paramount/pool_3.jpg",
+            "assets/paramount/pool_4.jpg",
+            "assets/paramount/pool_5.jpg",
+            "assets/paramount/pool_6.jpg",
+            "assets/paramount/pool_7.jpg",
+            "assets/paramount/pool_8.jpg"
+        ]
+    },
+    {
+        id: "children_s_playroom",
+        name: "Children's playroom",
+        photos: [
+            "assets/paramount/children_s_playroom_1.jpg",
+            "assets/paramount/children_s_playroom_2.jpg",
+            "assets/paramount/children_s_playroom_3.jpg",
+            "assets/paramount/children_s_playroom_4.jpg"
+        ]
+    },
+    {
+        id: "additional_photos",
+        name: "Additional photos",
+        photos: [
+            "assets/paramount/additional_photos_1.jpg",
+            "assets/paramount/additional_photos_2.jpg",
+            "assets/paramount/additional_photos_3.jpg",
+            "assets/paramount/additional_photos_4.jpg",
+            "assets/paramount/additional_photos_5.jpg",
+            "assets/paramount/additional_photos_6.jpg",
+            "assets/paramount/additional_photos_7.jpg",
+            "assets/paramount/additional_photos_8.jpg",
+            "assets/paramount/additional_photos_9.jpg"
+        ]
+    }
+];
+
+const PARAMOUNT_PHOTOS = PARAMOUNT_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
 
 // Property Database
 const PROPERTIES_DATA = {
@@ -537,23 +680,13 @@ function openPhotoGalleryModal(propId) {
         document.body.appendChild(galleryModal);
     }
 
-    const categories = [
-        { id: 'living-room', name: 'Living room', start: 1, end: 5 },
-        { id: 'kitchenette', name: 'Kitchenette', start: 6, end: 9 },
-        { id: 'dining-area', name: 'Dining area', start: 10, end: 12 },
-        { id: 'bedroom', name: 'Bedroom', start: 13, end: 16 },
-        { id: 'full-bathroom', name: 'Full bathroom', start: 17, end: 19 },
-        { id: 'wc', name: 'WC', start: 20, end: 21 },
-        { id: 'balcony', name: 'Balcony', start: 22, end: 25 },
-        { id: 'gym', name: 'Gym', start: 30, end: 32 },
-        { id: 'pool', name: 'Pool', start: 26, end: 29 },
-        { id: 'playroom', name: "Children's playroom", start: 33, end: 35 },
-        { id: 'additional', name: 'Additional photos', start: 36, end: data.photos.length }
+    const categories = (propId === 'paramount' && typeof PARAMOUNT_CATEGORIES_MANIFEST !== 'undefined') ? PARAMOUNT_CATEGORIES_MANIFEST : [
+        { id: 'all_photos', name: 'All Photos', photos: data.photos }
     ];
 
     // Category Cards Top Bar HTML
     const categoryCardsHtml = categories.map(cat => {
-        const firstPhoto = data.photos[cat.start - 1];
+        const firstPhoto = cat.photos[0];
         if (!firstPhoto) return '';
         return `
             <div class="photo-tour-cat-card" onclick="scrollToTourSection('${cat.id}')">
@@ -566,17 +699,17 @@ function openPhotoGalleryModal(propId) {
     // Detailed Category Sections HTML
     let sectionsHtml = '';
     categories.forEach(cat => {
-        const catPhotos = data.photos.slice(cat.start - 1, cat.end);
-        if (catPhotos.length === 0) return;
+        if (!cat.photos || cat.photos.length === 0) return;
 
         sectionsHtml += `
             <div class="photo-tour-section" id="section-${cat.id}">
                 <h3 class="photo-tour-section-title">${cat.name}</h3>
+                ${cat.subtext ? `<p style="font-size: 14px; color: #6B7280; margin: -14px 0 20px 0; font-weight: 500;">${cat.subtext}</p>` : ''}
                 <div class="photo-tour-grid">
-                    ${catPhotos.map((src, idx) => `
+                    ${cat.photos.map((src, idx) => `
                         <div class="photo-tour-item">
                             <img src="${src}" alt="${data.name} - ${cat.name} ${idx + 1}" loading="lazy">
-                            <div class="photo-tour-caption">${cat.name} · Photo ${cat.start + idx}</div>
+                            <div class="photo-tour-caption">${cat.name} · Photo ${idx + 1} of ${cat.photos.length}</div>
                         </div>
                     `).join('')}
                 </div>
