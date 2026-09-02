@@ -148,7 +148,147 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     }
 ];
 
-const PARAMOUNT_PHOTOS = PARAMOUNT_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
+const BURJ_VISTA_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1762128215305557732?unique_share_id=8ee15777-1779-4293-a444-fbe1a8d11359&viralityEntryPoint=1&s=76&source_impression_id=p3_1788350250_P3tWF4FsNSd8rdnM";
+
+const BURJ_VISTA_CATEGORIES_MANIFEST = [
+    {
+        id: "living_room",
+        name: "Living room",
+        photos: [
+            "assets/burj_vista/burj_living_room_1.jpg",
+            "assets/burj_vista/burj_living_room_2.jpg",
+            "assets/burj_vista/burj_living_room_3.jpg",
+            "assets/burj_vista/burj_living_room_4.jpg",
+            "assets/burj_vista/burj_living_room_5.jpg",
+            "assets/burj_vista/burj_living_room_6.jpg",
+            "assets/burj_vista/burj_living_room_7.jpg",
+            "assets/burj_vista/burj_living_room_8.jpg",
+            "assets/burj_vista/burj_living_room_9.jpg",
+            "assets/burj_vista/burj_living_room_10.jpg",
+            "assets/burj_vista/burj_living_room_11.jpg",
+            "assets/burj_vista/burj_living_room_12.jpg",
+            "assets/burj_vista/burj_living_room_13.jpg"
+        ]
+    },
+    {
+        id: "kitchenette",
+        name: "Kitchenette",
+        photos: [
+            "assets/burj_vista/burj_kitchenette_1.jpg",
+            "assets/burj_vista/burj_kitchenette_2.jpg",
+            "assets/burj_vista/burj_kitchenette_3.jpg",
+            "assets/burj_vista/burj_kitchenette_4.jpg"
+        ]
+    },
+    {
+        id: "dining_area",
+        name: "Dining area",
+        photos: [
+            "assets/burj_vista/burj_dining_area_1.jpg",
+            "assets/burj_vista/burj_dining_area_2.jpg",
+            "assets/burj_vista/burj_dining_area_3.jpg",
+            "assets/burj_vista/burj_dining_area_4.jpg",
+            "assets/burj_vista/burj_dining_area_5.jpg",
+            "assets/burj_vista/burj_dining_area_6.jpg",
+            "assets/burj_vista/burj_dining_area_7.jpg"
+        ]
+    },
+    {
+        id: "bedroom",
+        name: "Bedroom",
+        subtext: "King bed · Sofa bed",
+        photos: [
+            "assets/burj_vista/burj_bedroom_1.jpg",
+            "assets/burj_vista/burj_bedroom_2.jpg",
+            "assets/burj_vista/burj_bedroom_3.jpg",
+            "assets/burj_vista/burj_bedroom_4.jpg",
+            "assets/burj_vista/burj_bedroom_5.jpg",
+            "assets/burj_vista/burj_bedroom_6.jpg",
+            "assets/burj_vista/burj_bedroom_7.jpg",
+            "assets/burj_vista/burj_bedroom_8.jpg",
+            "assets/burj_vista/burj_bedroom_9.jpg",
+            "assets/burj_vista/burj_bedroom_10.jpg",
+            "assets/burj_vista/burj_bedroom_11.jpg",
+            "assets/burj_vista/burj_bedroom_12.jpg"
+        ]
+    },
+    {
+        id: "full_bathroom",
+        name: "Full bathroom",
+        photos: [
+            "assets/burj_vista/burj_full_bathroom_1.jpg",
+            "assets/burj_vista/burj_full_bathroom_2.jpg",
+            "assets/burj_vista/burj_full_bathroom_3.jpg",
+            "assets/burj_vista/burj_full_bathroom_4.jpg",
+            "assets/burj_vista/burj_full_bathroom_5.jpg"
+        ]
+    },
+    {
+        id: "wc",
+        name: "WC",
+        photos: [
+            "assets/burj_vista/burj_wc_1.jpg",
+            "assets/burj_vista/burj_wc_2.jpg",
+            "assets/burj_vista/burj_wc_3.jpg"
+        ]
+    },
+    {
+        id: "balcony",
+        name: "Balcony",
+        photos: [
+            "assets/burj_vista/burj_balcony_1.jpg",
+            "assets/burj_vista/burj_balcony_2.jpg",
+            "assets/burj_vista/burj_balcony_3.jpg",
+            "assets/burj_vista/burj_balcony_4.jpg",
+            "assets/burj_vista/burj_balcony_5.jpg",
+            "assets/burj_vista/burj_balcony_6.jpg",
+            "assets/burj_vista/burj_balcony_7.jpg",
+            "assets/burj_vista/burj_balcony_8.jpg",
+            "assets/burj_vista/burj_balcony_9.jpg"
+        ]
+    },
+    {
+        id: "gym",
+        name: "Gym",
+        photos: [
+            "assets/burj_vista/burj_gym_1.jpg",
+            "assets/burj_vista/burj_gym_2.jpg",
+            "assets/burj_vista/burj_gym_3.jpg",
+            "assets/burj_vista/burj_gym_4.jpg"
+        ]
+    },
+    {
+        id: "pool",
+        name: "Pool",
+        photos: [
+            "assets/burj_vista/burj_pool_1.jpg",
+            "assets/burj_vista/burj_pool_2.jpg",
+            "assets/burj_vista/burj_pool_3.jpg",
+            "assets/burj_vista/burj_pool_4.jpg"
+        ]
+    },
+    {
+        id: "children_s_playroom",
+        name: "Children's playroom",
+        photos: [
+            "assets/burj_vista/burj_children_s_playroom_1.jpg",
+            "assets/burj_vista/burj_children_s_playroom_2.jpg"
+        ]
+    },
+    {
+        id: "additional_photos",
+        name: "Additional photos",
+        photos: [
+            "assets/burj_vista/burj_additional_photos_1.jpg",
+            "assets/burj_vista/burj_additional_photos_2.jpg",
+            "assets/burj_vista/burj_additional_photos_3.jpg",
+            "assets/burj_vista/burj_additional_photos_4.jpg",
+            "assets/burj_vista/burj_additional_photos_5.jpg"
+        ]
+    }
+];
+
+const BURJ_VISTA_PHOTOS = BURJ_VISTA_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
 
 // Property Database
 const PROPERTIES_DATA = {
@@ -184,13 +324,8 @@ const PROPERTIES_DATA = {
         reviewsCount: 62,
         badge: 'Guest favorite',
         hostName: 'TrueHaven Stays (Superhost)',
-        photos: [
-            'assets/burj_vista_view.jpg',
-            'assets/burj_vista_pool.png',
-            'assets/burj_vista_loungers.png',
-            'assets/burj_vista_gym.png',
-            'assets/burj_vista_view.jpg'
-        ],
+        airbnbUrl: BURJ_VISTA_AIRBNB_URL,
+        photos: BURJ_VISTA_PHOTOS,
         description: 'Immerse yourself in Downtown Dubai luxury at Burj Vista. Wake up to direct, uninterrupted views of the world-famous Burj Khalifa right from your private balcony. Enjoys direct air-conditioned tunnel linkage to Dubai Mall & Metro station, a resort-style infinity pool with architectural shade, landscaped lounge deck, and fully-equipped fitness center.'
     }
 };
@@ -679,9 +814,14 @@ function openPhotoGalleryModal(propId) {
         document.body.appendChild(galleryModal);
     }
 
-    const categories = (propId === 'paramount' && typeof PARAMOUNT_CATEGORIES_MANIFEST !== 'undefined') ? PARAMOUNT_CATEGORIES_MANIFEST : [
-        { id: 'all_photos', name: 'All Photos', photos: data.photos }
-    ];
+    let categories;
+    if (propId === 'paramount' && typeof PARAMOUNT_CATEGORIES_MANIFEST !== 'undefined') {
+        categories = PARAMOUNT_CATEGORIES_MANIFEST;
+    } else if (propId === 'burj-vista' && typeof BURJ_VISTA_CATEGORIES_MANIFEST !== 'undefined') {
+        categories = BURJ_VISTA_CATEGORIES_MANIFEST;
+    } else {
+        categories = [{ id: 'all_photos', name: 'All Photos', photos: data.photos }];
+    }
 
     // Category Cards Top Bar HTML
     const categoryCardsHtml = categories.map(cat => {
