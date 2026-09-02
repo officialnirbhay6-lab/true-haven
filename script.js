@@ -709,7 +709,6 @@ function openPhotoGalleryModal(propId) {
                     ${cat.photos.map((src, idx) => `
                         <div class="photo-tour-item">
                             <img src="${src}" alt="${data.name} - ${cat.name} ${idx + 1}" loading="lazy">
-                            <div class="photo-tour-caption">${cat.name} · Photo ${idx + 1} of ${cat.photos.length}</div>
                         </div>
                     `).join('')}
                 </div>

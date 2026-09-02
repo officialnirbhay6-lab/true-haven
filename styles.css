@@ -2498,19 +2498,6 @@ img {
     transform: scale(1.02);
 }
 
-.photo-tour-caption {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    background: rgba(15, 30, 54, 0.75);
-    color: #FFFFFF;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-    backdrop-filter: blur(4px);
-}
-
 @media (max-width: 768px) {
     .photo-tour-grid {
         grid-template-columns: 1fr;
