@@ -915,6 +915,17 @@ function closeMobileDrawer() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Global delegation for property card clicks (Photo or Card metadata)
+    document.addEventListener('click', (e) => {
+        const card = e.target.closest('.property-card');
+        if (card && !e.target.closest('.carousel-arrow') && !e.target.closest('.heart-btn')) {
+            const propId = card.getAttribute('data-id');
+            if (propId) {
+                openPropertyDetail(propId);
+            }
+        }
+    });
+
     // Set default dates in navbar calendar (today + 3 days to today + 6 days)
     const today = new Date();
     const inDate = new Date(today);
