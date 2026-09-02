@@ -486,8 +486,14 @@ function showNotification(msg) {
     }, 2500);
 }
 
+let isOpeningDetail = false;
+
 // Open Full-Page Immersive Property Detail View (No Popup Modal)
 function openPropertyDetail(propId) {
+    if (isOpeningDetail) return;
+    isOpeningDetail = true;
+    setTimeout(() => { isOpeningDetail = false; }, 300);
+
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
 
@@ -734,7 +740,7 @@ function openPropertyDetail(propId) {
 
     mainPage.style.display = 'none';
     pageContainer.style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
 }
 
 // Close Full-Page Immersive View & Return to Homepage
@@ -743,7 +749,7 @@ function closePropertyDetailPage() {
     const mainPage = document.getElementById('mainPage');
     if (pageContainer) pageContainer.style.display = 'none';
     if (mainPage) mainPage.style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
 }
 
 // Update Reservation Calculation
