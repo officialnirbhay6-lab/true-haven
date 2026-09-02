@@ -1452,6 +1452,7 @@ img {
    MODALS (PROPERTY DETAIL & AMENITIES)
    ========================================================================== */
 .modal-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -1459,18 +1460,20 @@ img {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.25s, visibility 0.25s;
 }
 
 .modal-overlay.active {
+    display: flex;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .modal-card {

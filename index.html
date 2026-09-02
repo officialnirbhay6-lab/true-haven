@@ -232,8 +232,8 @@
             <div class="properties-grid">
 
                 <!-- Property 1: Paramount Midtown -->
-                <article class="property-card" data-location="business-bay" data-id="paramount" onclick="openPropertyDetail('paramount')" style="cursor: pointer;">
-                    <div class="property-card-photo">
+                <article class="property-card" data-location="business-bay" data-id="paramount">
+                    <div class="property-card-photo" onclick="openPropertyDetail('paramount')" style="cursor: pointer;">
                         <!-- Guest Favorite Badge -->
                         <div class="guest-favorite-badge">
                             <i class="fa-solid fa-crown"></i> Guest favorite
@@ -273,7 +273,7 @@
                         </div>
                     </div>
 
-                    <div class="property-card-meta">
+                    <a href="#paramount" class="property-card-meta" onclick="openPropertyDetail('paramount'); return false;" style="cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
                         <div class="meta-title-row">
                             <h3 class="meta-title">Paramount Midtown Luxury Suite</h3>
                             <div class="meta-rating">
@@ -288,14 +288,14 @@
                                 <span class="price-amount">$240</span> <span class="price-period">/ night</span>
                                 <span class="price-aed">(AED 880)</span>
                             </div>
-                            <button class="button-primary" onclick="event.stopPropagation(); openPropertyDetail('paramount')">View & Reserve</button>
+                            <span class="button-primary">View & Reserve</span>
                         </div>
-                    </div>
+                    </a>
                 </article>
 
                 <!-- Property 2: Burj Vista -->
-                <article class="property-card" data-location="downtown" data-id="burj-vista" onclick="openPropertyDetail('burj-vista')" style="cursor: pointer;">
-                    <div class="property-card-photo">
+                <article class="property-card" data-location="downtown" data-id="burj-vista">
+                    <div class="property-card-photo" onclick="openPropertyDetail('burj-vista')" style="cursor: pointer;">
                         <!-- Guest Favorite Badge -->
                         <div class="guest-favorite-badge">
                             <i class="fa-solid fa-crown"></i> Guest favorite
@@ -335,7 +335,7 @@
                         </div>
                     </div>
 
-                    <div class="property-card-meta">
+                    <a href="#burj-vista" class="property-card-meta" onclick="openPropertyDetail('burj-vista'); return false;" style="cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column; flex: 1;">
                         <div class="meta-title-row">
                             <h3 class="meta-title">Burj Vista Executive Residence</h3>
                             <div class="meta-rating">
@@ -350,9 +350,9 @@
                                 <span class="price-amount">$290</span> <span class="price-period">/ night</span>
                                 <span class="price-aed">(AED 1,065)</span>
                             </div>
-                            <button class="button-primary" onclick="event.stopPropagation(); openPropertyDetail('burj-vista')">View & Reserve</button>
+                            <span class="button-primary">View & Reserve</span>
                         </div>
-                    </div>
+                    </a>
                 </article>
 
             </div>

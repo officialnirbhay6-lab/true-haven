@@ -490,10 +490,6 @@ let isOpeningDetail = false;
 
 // Open Full-Page Immersive Property Detail View (No Popup Modal)
 function openPropertyDetail(propId) {
-    if (isOpeningDetail) return;
-    isOpeningDetail = true;
-    setTimeout(() => { isOpeningDetail = false; }, 300);
-
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
 
