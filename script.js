@@ -52,7 +52,6 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
         subtext: "King bed · Sofa bed",
         photos: [
             "assets/paramount/bedroom_1.jpg",
-            "assets/paramount/bedroom_2.jpg",
             "assets/paramount/bedroom_3.jpg",
             "assets/paramount/bedroom_4.jpg",
             "assets/paramount/bedroom_5.jpg",
