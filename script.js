@@ -501,18 +501,20 @@ function openPropertyDetail(propId) {
     const mainPage = document.getElementById('mainPage');
     if (!pageContainer || !mainPage) return;
 
-    // Photos Grid HTML
+    // Photos Grid HTML matching exact Airbnb reference layout
     const photoGridHtml = `
-        <div style="position: relative; margin-bottom: 32px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
+        <div style="position: relative; margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
             <div class="detail-photo-grid">
                 <img src="${data.photos[0]}" alt="${data.name}" class="photo-large">
-                <img src="${data.photos[1]}" alt="${data.name}">
-                <img src="${data.photos[2]}" alt="${data.name}">
-                <img src="${data.photos[3]}" alt="${data.name}">
-                <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}">
+                <div class="detail-photo-grid-right">
+                    <img src="${data.photos[1]}" alt="${data.name}">
+                    <img src="${data.photos[2]}" alt="${data.name}">
+                    <img src="${data.photos[3]}" alt="${data.name}">
+                    <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}">
+                </div>
             </div>
-            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 8px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <i class="fa-solid fa-grip-lines-vertical"></i> Show all ${data.photos.length} photos
+            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 18px; right: 18px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                <i class="fa-solid fa-border-all"></i> Show all ${data.photos.length} photos
             </button>
         </div>
     `;
@@ -741,6 +743,9 @@ function openPropertyDetail(propId) {
     mainPage.style.display = 'none';
     pageContainer.style.display = 'block';
     window.scrollTo(0, 0);
+    if (window.location.hash !== '#' + propId) {
+        try { history.pushState(null, '', '#' + propId); } catch(e) {}
+    }
 }
 
 // Close Full-Page Immersive View & Return to Homepage
@@ -750,6 +755,9 @@ function closePropertyDetailPage() {
     if (pageContainer) pageContainer.style.display = 'none';
     if (mainPage) mainPage.style.display = 'block';
     window.scrollTo(0, 0);
+    if (window.location.hash) {
+        try { history.pushState(null, '', window.location.pathname + window.location.search); } catch(e) {}
+    }
 }
 
 // Update Reservation Calculation
@@ -921,6 +929,22 @@ function closeMobileDrawer() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // URL Hash & Query Parameter Routing Check
+    function checkUrlRoute() {
+        const hash = window.location.hash.replace('#', '').trim();
+        const urlParams = new URLSearchParams(window.location.search);
+        const propParam = urlParams.get('property') || urlParams.get('p');
+        
+        const targetProp = hash || propParam;
+        if (targetProp && PROPERTIES_DATA[targetProp]) {
+            openPropertyDetail(targetProp);
+        }
+    }
+
+    checkUrlRoute();
+    window.addEventListener('popstate', checkUrlRoute);
+    window.addEventListener('hashchange', checkUrlRoute);
+
     // Global delegation for property card clicks (Photo or Card metadata)
     document.addEventListener('click', (e) => {
         const card = e.target.closest('.property-card');
