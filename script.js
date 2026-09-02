@@ -497,7 +497,7 @@ function openPropertyDetail(propId) {
 
     // Photos Grid HTML
     const photoGridHtml = `
-        <div style="position: relative; margin-bottom: 32px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <div style="position: relative; margin-bottom: 32px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
             <div class="detail-photo-grid">
                 <img src="${data.photos[0]}" alt="${data.name}" class="photo-large">
                 <img src="${data.photos[1]}" alt="${data.name}">
@@ -505,7 +505,7 @@ function openPropertyDetail(propId) {
                 <img src="${data.photos[3]}" alt="${data.name}">
                 <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}">
             </div>
-            <button class="button-secondary" onclick="openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 8px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 8px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <i class="fa-solid fa-grip-lines-vertical"></i> Show all ${data.photos.length} photos
             </button>
         </div>

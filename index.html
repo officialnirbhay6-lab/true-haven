@@ -16,6 +16,10 @@
     
     <!-- Custom CSS Design System -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
 </head>
 <body>
 
@@ -228,21 +232,21 @@
             <div class="properties-grid">
 
                 <!-- Property 1: Paramount Midtown -->
-                <article class="property-card" data-location="business-bay" data-id="paramount">
-                    <div class="property-card-photo">
+                <article class="property-card" data-location="business-bay" data-id="paramount" onclick="openPropertyDetail('paramount')" style="cursor: pointer;">
+                    <div class="property-card-photo" onclick="openPropertyDetail('paramount')">
                         <!-- Guest Favorite Badge -->
                         <div class="guest-favorite-badge">
                             <i class="fa-solid fa-crown"></i> Guest favorite
                         </div>
                         
                         <!-- Wishlist Heart Button -->
-                        <button class="heart-btn" title="Save to Wishlist">
+                        <button class="heart-btn" title="Save to Wishlist" onclick="event.stopPropagation();">
                             <i class="fa-regular fa-heart"></i>
                         </button>
 
                         <!-- Photo Carousel -->
                         <div class="carousel-container">
-                            <div class="carousel-track" id="paramountTrack">
+                            <div class="carousel-track" id="paramountTrack" style="cursor: pointer;">
                                 <img src="assets/paramount/living_room_1.jpg" alt="Paramount Midtown Living Room" class="carousel-img">
                                 <img src="assets/paramount/kitchenette_1.jpg" alt="Paramount Midtown Kitchenette" class="carousel-img">
                                 <img src="assets/paramount/dining_area_1.jpg" alt="Paramount Midtown Dining Area" class="carousel-img">
@@ -253,8 +257,8 @@
                                 <img src="assets/paramount/pool_1.jpg" alt="Paramount Midtown Rooftop Infinity Pool" class="carousel-img">
                                 <img src="assets/paramount/gym_1.jpg" alt="Paramount Midtown Fitness Gym" class="carousel-img">
                             </div>
-                            <button class="carousel-arrow prev" onclick="moveCarousel('paramountTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="carousel-arrow next" onclick="moveCarousel('paramountTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="carousel-arrow prev" onclick="event.stopPropagation(); moveCarousel('paramountTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-arrow next" onclick="event.stopPropagation(); moveCarousel('paramountTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
                             <div class="carousel-dots" id="paramountDots">
                                 <span class="dot active"></span>
                                 <span class="dot"></span>
@@ -269,7 +273,7 @@
                         </div>
                     </div>
 
-                    <div class="property-card-meta" onclick="openPropertyDetail('paramount')" style="cursor: pointer;">
+                    <div class="property-card-meta" style="cursor: pointer;">
                         <div class="meta-title-row">
                             <h3 class="meta-title">Paramount Midtown Luxury Suite</h3>
                             <div class="meta-rating">
@@ -290,21 +294,21 @@
                 </article>
 
                 <!-- Property 2: Burj Vista -->
-                <article class="property-card" data-location="downtown" data-id="burj-vista">
-                    <div class="property-card-photo">
+                <article class="property-card" data-location="downtown" data-id="burj-vista" onclick="openPropertyDetail('burj-vista')" style="cursor: pointer;">
+                    <div class="property-card-photo" onclick="openPropertyDetail('burj-vista')">
                         <!-- Guest Favorite Badge -->
                         <div class="guest-favorite-badge">
                             <i class="fa-solid fa-crown"></i> Guest favorite
                         </div>
                         
                         <!-- Wishlist Heart Button -->
-                        <button class="heart-btn" title="Save to Wishlist">
+                        <button class="heart-btn" title="Save to Wishlist" onclick="event.stopPropagation();">
                             <i class="fa-regular fa-heart"></i>
                         </button>
 
                         <!-- Photo Carousel -->
                         <div class="carousel-container">
-                            <div class="carousel-track" id="burjTrack">
+                            <div class="carousel-track" id="burjTrack" style="cursor: pointer;">
                                 <img src="assets/burj_vista/burj_living_room_1.jpg" alt="Burj Vista Living Room" class="carousel-img">
                                 <img src="assets/burj_vista/burj_kitchenette_1.jpg" alt="Burj Vista Kitchenette" class="carousel-img">
                                 <img src="assets/burj_vista/burj_dining_area_1.jpg" alt="Burj Vista Dining Area" class="carousel-img">
@@ -315,8 +319,8 @@
                                 <img src="assets/burj_vista/burj_pool_1.jpg" alt="Burj Vista Resort Pool" class="carousel-img">
                                 <img src="assets/burj_vista/burj_gym_1.jpg" alt="Burj Vista Gym" class="carousel-img">
                             </div>
-                            <button class="carousel-arrow prev" onclick="moveCarousel('burjTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="carousel-arrow next" onclick="moveCarousel('burjTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="carousel-arrow prev" onclick="event.stopPropagation(); moveCarousel('burjTrack', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-arrow next" onclick="event.stopPropagation(); moveCarousel('burjTrack', 1)"><i class="fa-solid fa-chevron-right"></i></button>
                             <div class="carousel-dots" id="burjDots">
                                 <span class="dot active"></span>
                                 <span class="dot"></span>
@@ -331,7 +335,7 @@
                         </div>
                     </div>
 
-                    <div class="property-card-meta" onclick="openPropertyDetail('burj-vista')" style="cursor: pointer;">
+                    <div class="property-card-meta" style="cursor: pointer;">
                         <div class="meta-title-row">
                             <h3 class="meta-title">Burj Vista Executive Residence</h3>
                             <div class="meta-rating">
