@@ -296,21 +296,21 @@ const BURJ_VISTA_PHOTOS = BURJ_VISTA_CATEGORIES_MANIFEST.flatMap(cat => cat.phot
 const PROPERTIES_DATA = {
     'paramount': {
         id: 'paramount',
-        name: 'Paramount Midtown Luxury Suite',
-        tagline: 'Rooftop Infinity Pool · Panoramic Downtown Skyline Views',
-        location: 'Al Mustaqbal Street, Business Bay, Dubai, United Arab Emirates',
-        specs: '1BR · 2 Beds · 1.5 Baths · Accommodates 4 Guests',
+        name: 'Luxury Stay with Infinity Pool & Burj View',
+        tagline: 'Settle into a bright, comfortable one-bedroom retreat in Downtown Dubai with rooftop infinity pool & Burj view',
+        location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
+        specs: '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms',
         priceNight: 240,
         maxGuests: 4,
         currency: 'USD',
         priceAed: 880,
-        rating: '4.98',
-        reviewsCount: 48,
+        rating: '★ New',
+        reviewsCount: 12,
         badge: 'Guest favorite',
-        hostName: 'TrueHaven Stays (Superhost)',
+        hostName: 'Prince (Superhost)',
         airbnbUrl: PARAMOUNT_AIRBNB_URL,
         photos: PARAMOUNT_PHOTOS,
-        description: 'Experience Hollywood-inspired luxury at Paramount Midtown in Business Bay. Featuring a world-famous rooftop infinity pool on the top floor with breathtaking views of Burj Khalifa and the Dubai skyline. This modern 1BR suite offers floor-to-ceiling windows, high-speed WiFi, plush king bedding, Nespresso coffee station, and access to a state-of-the-art gym.'
+        description: 'Settle into a bright, luxury one-bedroom retreat at Paramount Midtown in Downtown Dubai / Business Bay. Enjoy high-speed WiFi, plush king bedding, designer kitchenette, Nespresso coffee station, and access to the world-famous top-floor rooftop infinity pool with unobstructed views of the Burj Khalifa and Downtown Dubai skyline.'
     },
     'burj-vista': {
         id: 'burj-vista',
