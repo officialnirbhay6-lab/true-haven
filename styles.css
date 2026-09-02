@@ -2520,3 +2520,55 @@ img {
         padding: 14px 16px;
     }
 }
+
+/* Photo Tour Top Categories Strip */
+.photo-tour-top-bar {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E5E0D8;
+}
+
+.photo-tour-main-heading {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F1E36;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.photo-tour-cat-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-tour-cat-card {
+    flex: 0 0 auto;
+    width: 140px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.photo-tour-cat-card:hover {
+    transform: translateY(-4px);
+}
+
+.photo-tour-cat-card img {
+    width: 140px;
+    height: 94px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.photo-tour-cat-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    display: block;
+    line-height: 1.3;
+}

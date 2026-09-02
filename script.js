@@ -524,7 +524,7 @@ function openAmenitiesModalDirect() {
     }
 }
 
-// Full Screen Interactive Photo Gallery Modal for all 73 Photos
+// Full Screen Interactive Photo Gallery Modal for all 73 Photos (Airbnb Photo Tour Format)
 function openPhotoGalleryModal(propId) {
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
@@ -538,27 +538,40 @@ function openPhotoGalleryModal(propId) {
     }
 
     const categories = [
-        { name: 'Living Room', start: 1, end: 5 },
-        { name: 'Kitchenette', start: 6, end: 9 },
-        { name: 'Dining Area', start: 10, end: 12 },
-        { name: 'Bedroom', start: 13, end: 16 },
-        { name: 'Full Bathroom', start: 17, end: 19 },
-        { name: 'WC / Guest Washroom', start: 20, end: 21 },
-        { name: 'Balcony & Panoramic Skyline Views', start: 22, end: 25 },
-        { name: 'Rooftop Infinity Pool', start: 26, end: 29 },
-        { name: 'Fitness Gym & Wellness', start: 30, end: 32 },
-        { name: "Children's Playroom", start: 33, end: 35 },
-        { name: 'Full Residence Photo Tour (Complete 73 Photos)', start: 36, end: data.photos.length }
+        { id: 'living-room', name: 'Living room', start: 1, end: 5 },
+        { id: 'kitchenette', name: 'Kitchenette', start: 6, end: 9 },
+        { id: 'dining-area', name: 'Dining area', start: 10, end: 12 },
+        { id: 'bedroom', name: 'Bedroom', start: 13, end: 16 },
+        { id: 'full-bathroom', name: 'Full bathroom', start: 17, end: 19 },
+        { id: 'wc', name: 'WC', start: 20, end: 21 },
+        { id: 'balcony', name: 'Balcony', start: 22, end: 25 },
+        { id: 'gym', name: 'Gym', start: 30, end: 32 },
+        { id: 'pool', name: 'Pool', start: 26, end: 29 },
+        { id: 'playroom', name: "Children's playroom", start: 33, end: 35 },
+        { id: 'additional', name: 'Additional photos', start: 36, end: data.photos.length }
     ];
 
+    // Category Cards Top Bar HTML
+    const categoryCardsHtml = categories.map(cat => {
+        const firstPhoto = data.photos[cat.start - 1];
+        if (!firstPhoto) return '';
+        return `
+            <div class="photo-tour-cat-card" onclick="scrollToTourSection('${cat.id}')">
+                <img src="${firstPhoto}" alt="${cat.name}">
+                <span>${cat.name}</span>
+            </div>
+        `;
+    }).join('');
+
+    // Detailed Category Sections HTML
     let sectionsHtml = '';
     categories.forEach(cat => {
         const catPhotos = data.photos.slice(cat.start - 1, cat.end);
         if (catPhotos.length === 0) return;
 
         sectionsHtml += `
-            <div class="photo-tour-section">
-                <h3 class="photo-tour-section-title">${cat.name} (${catPhotos.length} ${catPhotos.length === 1 ? 'photo' : 'photos'})</h3>
+            <div class="photo-tour-section" id="section-${cat.id}">
+                <h3 class="photo-tour-section-title">${cat.name}</h3>
                 <div class="photo-tour-grid">
                     ${catPhotos.map((src, idx) => `
                         <div class="photo-tour-item">
@@ -573,16 +586,29 @@ function openPhotoGalleryModal(propId) {
 
     galleryModal.innerHTML = `
         <div class="photo-gallery-header">
-            <h2>Photo Tour · ${data.name} (${data.photos.length} High-Res Photos)</h2>
+            <h2>Photo Tour · ${data.name} (${data.photos.length} Photos)</h2>
             <button onclick="closePhotoGalleryModal()" class="close-gallery-btn" title="Close Gallery">&times;</button>
         </div>
         <div class="photo-gallery-body">
+            <div class="photo-tour-top-bar">
+                <h2 class="photo-tour-main-heading">Photo tour</h2>
+                <div class="photo-tour-cat-list">
+                    ${categoryCardsHtml}
+                </div>
+            </div>
             ${sectionsHtml}
         </div>
     `;
 
     galleryModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+}
+
+function scrollToTourSection(catId) {
+    const el = document.getElementById(`section-${catId}`);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function closePhotoGalleryModal() {
