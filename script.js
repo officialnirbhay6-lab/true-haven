@@ -148,6 +148,8 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     }
 ];
 
+const PARAMOUNT_PHOTOS = PARAMOUNT_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
+
 const BURJ_VISTA_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1762128215305557732?unique_share_id=8ee15777-1779-4293-a444-fbe1a8d11359&viralityEntryPoint=1&s=76&source_impression_id=p3_1788350250_P3tWF4FsNSd8rdnM";
 
 const BURJ_VISTA_CATEGORIES_MANIFEST = [
