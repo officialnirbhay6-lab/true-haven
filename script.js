@@ -306,7 +306,7 @@ const PROPERTIES_DATA = {
         priceAed: 880,
         rating: '★ New',
         reviewsCount: 12,
-        badge: 'Guest favorite',
+        badge: null,
         hostName: 'Prince (Superhost)',
         airbnbUrl: PARAMOUNT_AIRBNB_URL,
         photos: PARAMOUNT_PHOTOS,
