@@ -2572,3 +2572,144 @@ img {
     display: block;
     line-height: 1.3;
 }
+
+/* ==========================================================================
+   MOBILE AIRBNB-STYLE PDP EXPERIENCE (MATCHING REFERENCE SCREENSHOTS)
+   ========================================================================== */
+.mobile-pdp-top-bar { display: none; }
+.mobile-pdp-hero { display: none; }
+.mobile-fixed-bottom-bar { display: none; }
+.mobile-sleep-section { margin: 32px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 32px 0; }
+.mobile-sleep-cards { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
+.mobile-sleep-card { flex: 0 0 170px; width: 170px; border: 1px solid #E5E0D8; border-radius: 16px; padding: 14px; background: #FFF; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.mobile-sleep-card img { width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: 10px; }
+.mobile-sleep-card h5 { font-size: 15px; font-weight: 700; color: #222222; margin-bottom: 2px; }
+.mobile-sleep-card p { font-size: 13px; color: #717171; margin: 0; }
+
+@media (max-width: 768px) {
+    .desktop-pdp-nav { display: none !important; }
+    .desktop-pdp-header { display: none !important; }
+    .desktop-photo-grid-wrap { display: none !important; }
+    .detail-right-col { display: none !important; }
+
+    .detail-body-layout {
+        display: block !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .mobile-pdp-top-bar {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 1001;
+        pointer-events: none;
+    }
+
+    .mobile-circle-btn {
+        pointer-events: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        color: #222222;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .mobile-pdp-hero {
+        display: block !important;
+        position: relative;
+        width: 100vw;
+        height: 320px;
+        margin-left: calc(-50vw + 50%);
+        margin-top: -32px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .mobile-hero-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-hero-img {
+        min-width: 100vw;
+        height: 100%;
+        object-fit: cover;
+        scroll-snap-align: start;
+    }
+
+    .mobile-photo-counter {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        background: rgba(0, 0, 0, 0.75);
+        color: #FFFFFF;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+    }
+
+    .mobile-fixed-bottom-bar {
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        background: #FFFFFF !important;
+        border-top: 1px solid #EBEBEB !important;
+        padding: 14px 20px !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08) !important;
+    }
+
+    .mobile-bottom-price-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-bottom-price {
+        font-size: 17px;
+        font-weight: 800;
+        color: #222222;
+    }
+
+    .mobile-bottom-sub {
+        font-size: 12px;
+        font-weight: 600;
+        color: #222222;
+    }
+
+    .mobile-reserve-btn {
+        background: #E61E4F;
+        color: #FFFFFF !important;
+        padding: 13px 26px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(230,30,79,0.3);
+    }
+
+    .mobile-pdp-container {
+        padding-bottom: 110px !important;
+    }
+}

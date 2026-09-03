@@ -499,9 +499,12 @@ function openPropertyDetail(propId) {
     const mainPage = document.getElementById('mainPage');
     if (!pageContainer || !mainPage) return;
 
-    // Photos Grid HTML matching exact Airbnb reference layout
-    const photoGridHtml = `
-        <div style="position: relative; margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
+    const bedroomImg = propId === 'paramount' ? 'assets/paramount/bedroom_1.jpg' : 'assets/burj_vista/burj_bedroom_1.jpg';
+    const livingImg = propId === 'paramount' ? 'assets/paramount/living_room_1.jpg' : 'assets/burj_vista/burj_living_room_1.jpg';
+
+    // Desktop 5-Photo Grid
+    const desktopPhotoGridHtml = `
+        <div class="desktop-photo-grid-wrap" style="position: relative; margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
             <div class="detail-photo-grid">
                 <img src="${data.photos[0]}" alt="${data.name}" class="photo-large">
                 <div class="detail-photo-grid-right">
@@ -514,6 +517,18 @@ function openPropertyDetail(propId) {
             <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 18px; right: 18px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
                 <i class="fa-solid fa-border-all"></i> Show all ${data.photos.length} photos
             </button>
+        </div>
+    `;
+
+    // Mobile Edge-to-Edge Hero Carousel
+    const mobileHeroHtml = `
+        <div class="mobile-pdp-hero">
+            <div class="mobile-hero-track" id="mobileHeroTrack">
+                ${data.photos.slice(0, 10).map(p => `<img src="${p}" alt="${data.name}" class="mobile-hero-img">`).join('')}
+            </div>
+            <div class="mobile-photo-counter" onclick="openPhotoGalleryModal('${propId}')">
+                <i class="fa-solid fa-border-all" style="font-size: 11px; margin-right: 4px;"></i> 1 / ${data.photos.length}
+            </div>
         </div>
     `;
 
@@ -532,8 +547,23 @@ function openPropertyDetail(propId) {
     const grandTotal = nightlyTotal + cleaningFee;
 
     pageContainer.innerHTML = `
-        <!-- Full Page Sticky Navigation Header -->
-        <header class="top-nav" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E0D8; height: 76px;">
+        <!-- Mobile Floating Header Buttons (Over Hero Photo) -->
+        <div class="mobile-pdp-top-bar">
+            <button onclick="closePropertyDetailPage()" class="mobile-circle-btn" title="Back">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div style="display: flex; gap: 10px;">
+                <button class="mobile-circle-btn" title="Share">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                </button>
+                <button class="mobile-circle-btn" title="Save">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Full Page Sticky Navigation Header (Desktop Only) -->
+        <header class="top-nav desktop-pdp-nav" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E0D8; height: 76px;">
             <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
                 <div style="display: flex; align-items: center; gap: 20px;">
                     <button onclick="closePropertyDetailPage()" style="background: var(--color-surface-soft); border: 1px solid #E5E0D8; padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 14px; cursor: pointer; color: #0F1E36; display: flex; align-items: center; gap: 8px; transition: background 0.2s;">
@@ -552,11 +582,14 @@ function openPropertyDetail(propId) {
             </div>
         </header>
 
+        <!-- Mobile Edge-to-Edge Hero Image Carousel -->
+        ${mobileHeroHtml}
+
         <!-- Main Property Detail Container -->
-        <div class="container" style="max-width: 1280px; margin: 32px auto 80px; padding: 0 24px;">
+        <div class="container mobile-pdp-container" style="max-width: 1280px; margin: 32px auto 80px; padding: 0 24px;">
             
-            <!-- Title Header Row -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <!-- Title Header Row (Desktop Layout) -->
+            <div class="desktop-pdp-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                 <div>
                     <h1 style="font-size: 32px; font-weight: 800; color: #0F1E36; margin-bottom: 6px; letter-spacing: -0.5px;">${data.name}</h1>
                     <div style="font-size: 16px; font-weight: 500; color: #374151;">
@@ -569,86 +602,86 @@ function openPropertyDetail(propId) {
                 </div>
             </div>
 
-            ${photoGridHtml}
+            <!-- Desktop Photo Grid -->
+            ${desktopPhotoGridHtml}
+
+            <!-- Mobile Title Header Section (Ref Image 2) -->
+            <div class="mobile-pdp-title-block" style="margin-bottom: 24px;">
+                <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}!</h1>
+                <p style="font-size: 15px; color: #717171; margin-bottom: 4px;">Entire rental unit in Dubai, United Arab Emirates</p>
+                <p style="font-size: 14px; color: #222222; font-weight: 600; margin-bottom: 8px;">${data.specs}</p>
+                <div style="font-size: 14px; font-weight: 700; color: #222222;">
+                    <i class="fa-solid fa-star" style="color: #FF385C;"></i> ${data.rating}
+                </div>
+            </div>
 
             <div class="detail-body-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: start;">
                 
                 <!-- Left Main Column -->
                 <div class="detail-left-col">
                     
-                    <!-- Guest Favourite Horizontal Card -->
-                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border: 1px solid #E5E0D8; border-radius: 20px; margin-bottom: 36px; background: #FFFFFF; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                        <div style="display: flex; align-items: center; gap: 18px;">
-                            <span style="font-size: 32px;">🌿</span>
+                    <!-- Host Profile Row (Ref Image 2) -->
+                    <div class="host-row" style="padding: 24px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px; display: flex; align-items: center; gap: 16px;">
+                        <div class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: #FF385C; color: #FFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</div>
+                        <div>
+                            <div class="host-name" style="font-size: 16px; font-weight: 700; color: #222222;">Hosted by ${data.hostName}</div>
+                            <div class="host-badge" style="font-size: 13px; color: #717171;">New Host</div>
+                        </div>
+                    </div>
+
+                    <!-- Highlights Row (Ref Image 2) -->
+                    <div style="padding-bottom: 24px; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: flex-start;">
+                            <i class="fa-solid fa-location-dot" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
                             <div>
-                                <div style="font-size: 17px; font-weight: 800; color: #0F1E36;">Guest favourite</div>
-                                <div style="font-size: 14px; color: #6B7280;">One of the most loved homes on Airbnb, according to guests</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 2px;">Beautiful and walkable</h4>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">This area is scenic and easy to get around</p>
                             </div>
                         </div>
-                        <div style="text-align: right;">
-                            <div style="font-size: 22px; font-weight: 800; color: #0F1E36;">${data.rating} <span style="font-size: 15px; color: #0F1E36;">★★★★★</span></div>
-                            <div style="font-size: 13px; font-weight: 600; color: #0F1E36; text-decoration: underline;">${data.reviewsCount} Reviews</div>
+                    </div>
+
+                    <!-- Where you'll sleep Section (Ref Image 3) -->
+                    <div class="mobile-sleep-section">
+                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Where you'll sleep</h3>
+                        <div class="mobile-sleep-cards">
+                            <div class="mobile-sleep-card">
+                                <img src="${bedroomImg}" alt="Bedroom">
+                                <h5>Bedroom</h5>
+                                <p>1 king bed</p>
+                            </div>
+                            <div class="mobile-sleep-card">
+                                <img src="${livingImg}" alt="Living room">
+                                <h5>Living room</h5>
+                                <p>2 sofa beds</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Host Profile Row -->
-                    <div class="host-row" style="padding-bottom: 28px; border-bottom: 1px solid #E5E0D8; margin-bottom: 32px;">
-                        <div class="host-avatar" style="width: 52px; height: 52px; font-size: 18px;">TH</div>
-                        <div>
-                            <div class="host-name" style="font-size: 17px; font-weight: 700; color: #0F1E36;">Hosted by ${data.hostName}</div>
-                            <div class="host-badge" style="font-size: 13px; color: #6B7280;">Professional Host · 100% Response Rate</div>
-                        </div>
+                    <!-- Property Description -->
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 12px;">About this space</h3>
+                        <p style="font-size: 15px; color: #374151; line-height: 1.6;">${data.description}</p>
                     </div>
 
-                    <!-- Property Overview -->
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 20px; font-weight: 700; color: #0F1E36; margin-bottom: 12px;">About this residence</h3>
-                        <p style="font-size: 16px; color: #374151; line-height: 1.7;">${data.description}</p>
-                    </div>
-
-                    <!-- Residence Highlights -->
-                    <div style="margin-bottom: 40px; padding: 24px; background: #F4F1EA; border-radius: 16px;">
-                        <h4 style="font-size: 16px; font-weight: 700; color: #0F1E36; margin-bottom: 14px;">Residence Highlights</h4>
-                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #374151;">
-                            <li><i class="fa-solid fa-check-circle" style="color: #10B981; margin-right: 10px;"></i> ${data.specs}</li>
-                            <li><i class="fa-solid fa-check-circle" style="color: #10B981; margin-right: 10px;"></i> ${data.tagline}</li>
-                            <li><i class="fa-solid fa-check-circle" style="color: #10B981; margin-right: 10px;"></i> Smart Lock Self Check-in</li>
-                            <li><i class="fa-solid fa-check-circle" style="color: #10B981; margin-right: 10px;"></i> Dedicated Covered Parking Spot Included</li>
-                        </ul>
-                    </div>
-
-                    <!-- Location Highlights -->
-                    <div style="margin-bottom: 40px; padding: 28px; background: #0F1E36; color: #FFFFFF; border-radius: 20px; box-shadow: 0 8px 24px rgba(15,30,54,0.15);">
-                        <span class="badge-pill light" style="margin-bottom: 10px;">LOCATION HIGHLIGHTS</span>
-                        <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">At the Heart of Dubai's Golden Triangle</h4>
-                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 14px;">
-                            <li style="display: flex; gap: 12px; align-items: center;"><span style="background: rgba(255,255,255,0.15); color: #FFD166; padding: 6px 12px; border-radius: 999px; font-weight: 700;">2 mins</span> <strong>Burj Khalifa & Dubai Fountains</strong></li>
-                            <li style="display: flex; gap: 12px; align-items: center;"><span style="background: rgba(255,255,255,0.15); color: #FFD166; padding: 6px 12px; border-radius: 999px; font-weight: 700;">Direct Link</span> <strong>The Dubai Mall & Metro Connection</strong></li>
-                            <li style="display: flex; gap: 12px; align-items: center;"><span style="background: rgba(255,255,255,0.15); color: #FFD166; padding: 6px 12px; border-radius: 999px; font-weight: 700;">3 mins</span> <strong>Dubai Opera & Downtown Boulevard</strong></li>
-                        </ul>
-                    </div>
-
-                    <!-- What this place offers (5-Star Building Amenities Section) -->
-                    <div style="margin-bottom: 40px; border-top: 1px solid #E5E0D8; padding-top: 32px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                            <h3 style="font-size: 20px; font-weight: 700; color: #0F1E36;">What this place offers</h3>
-                            <button class="button-secondary" onclick="openAmenitiesModalDirect()" style="padding: 10px 20px; font-size: 14px;">Show All 50+ Amenities</button>
-                        </div>
+                    <!-- What this place offers Section (Ref Image 3) -->
+                    <div style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 20px;">What this place offers</h3>
                         
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; font-size: 16px; color: #374151;">
-                            <div><i class="fa-solid fa-water-ladder" style="color: #0F1E36; width: 28px;"></i> Swimming Pools</div>
-                            <div><i class="fa-solid fa-dumbbell" style="color: #0F1E36; width: 28px;"></i> Fitness Gym</div>
-                            <div><i class="fa-solid fa-square-parking" style="color: #0F1E36; width: 28px;"></i> Free Covered Parking</div>
-                            <div><i class="fa-solid fa-wifi" style="color: #0F1E36; width: 28px;"></i> High-Speed Wifi</div>
-                            <div><i class="fa-solid fa-key" style="color: #0F1E36; width: 28px;"></i> Smart Self Check-in</div>
-                            <div><i class="fa-solid fa-mug-hot" style="color: #0F1E36; width: 28px;"></i> Nespresso Machine</div>
-                            <div><i class="fa-solid fa-snowflake" style="color: #0F1E36; width: 28px;"></i> Central Climate AC</div>
-                            <div><i class="fa-solid fa-shirt" style="color: #0F1E36; width: 28px;"></i> Washer & Dryer</div>
+                        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-utensils" style="width: 24px; font-size: 18px; color: #222;"></i> Kitchen</div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 18px; color: #222;"></i> Wifi</div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 18px; color: #222;"></i> Free parking on premises</div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 18px; color: #222;"></i> Pool</div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 18px; color: #222;"></i> TV</div>
                         </div>
+
+                        <button onclick="openAmenitiesModalDirect()" style="width: 100%; border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px; font-weight: 600; font-size: 15px; margin-top: 24px; cursor: pointer;">
+                            Show all 50+ amenities
+                        </button>
                     </div>
 
-                    <!-- Contact & Office Info -->
-                    <div style="border-top: 1px solid #E5E0D8; padding-top: 28px; font-size: 15px; color: #6B7280; line-height: 1.6;">
+                    <!-- Office & Contact Info -->
+                    <div style="padding-top: 12px; font-size: 14px; color: #717171; line-height: 1.6;">
                         <p><strong>TrueHaven Office:</strong> 2204, Iris Bay, Business Bay, Dubai, UAE</p>
                         <p><strong>Direct Helpline:</strong> 052 58 21668 (+971 52 582 1668)</p>
                         <p><strong>Official Email:</strong> hello@truehavenstays.com</p>
@@ -656,7 +689,7 @@ function openPropertyDetail(propId) {
 
                 </div>
 
-                <!-- Right Column Sticky Reservation Card -->
+                <!-- Right Column Sticky Reservation Card (Desktop Only) -->
                 <div class="detail-right-col">
                     <div class="reservation-card" style="border: 1px solid #E5E0D8; border-radius: 20px; padding: 28px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); position: sticky; top: 100px; background: #FFF;">
                         <div style="background: #FFF0F3; color: #FF385C; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 10px; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px;">
@@ -727,7 +760,19 @@ function openPropertyDetail(propId) {
                         <p style="text-align: center; font-size: 12px; color: #6B7280;">Instant confirmation • No booking fees charged</p>
                     </div>
                 </div>
+
             </div>
+        </div>
+
+        <!-- Fixed Floating Mobile Bottom Bar (Ref Images 2 & 3) -->
+        <div class="mobile-fixed-bottom-bar">
+            <div class="mobile-bottom-price-box">
+                <div class="mobile-bottom-price">Add dates for prices</div>
+                <div class="mobile-bottom-sub"><i class="fa-solid fa-star" style="font-size: 11px; color: #222;"></i> ${data.rating}</div>
+            </div>
+            <a href="${data.airbnbUrl}" target="_blank" class="mobile-reserve-btn">
+                Check availability
+            </a>
         </div>
 
         <!-- Full Footer for Immersive Detail Page -->
