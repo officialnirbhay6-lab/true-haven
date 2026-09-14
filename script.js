@@ -4,6 +4,7 @@
    ========================================================================== */
 
 const PARAMOUNT_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1761390398461668658?unique_share_id=e3924d43-ff08-4672-af1f-88d210f07cfa&viralityEntryPoint=1&s=76&source_impression_id=p3_1788349185_P3ng4E3hx17yac8B";
+const BURJ_VISTA_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1762128215305557732?unique_share_id=8ee15777-1779-4293-a444-fbe1a8d11359&viralityEntryPoint=1&s=76&source_impression_id=p3_1788350250_P3tWF4FsNSd8rdnM";
 
 // Exact Airbnb Photo Tour Categories and Photo Sequences
 
@@ -460,9 +461,12 @@ function openPropertyDetail(propId) {
                     </a>
                 </div>
 
-                <div>
+                <div style="display: flex; align-items: center; gap: 12px;">
                     <a href="https://wa.me/971525821668" target="_blank" class="button-primary" style="padding: 8px 18px; font-size: 13px; border-radius: 999px;">
                         <i class="fa-brands fa-whatsapp"></i> WhatsApp Concierge
+                    </a>
+                    <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" title="Follow us on Instagram (@truehavenstays)" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; text-decoration: none; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
             </div>
