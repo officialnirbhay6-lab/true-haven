@@ -296,8 +296,8 @@ const BURJ_VISTA_PHOTOS = BURJ_VISTA_CATEGORIES_MANIFEST.flatMap(cat => cat.phot
 const PROPERTIES_DATA = {
     'paramount': {
         id: 'paramount',
-        name: 'Luxury Stay with Infinity Pool & Burj View',
-        tagline: 'Settle into a bright, comfortable one-bedroom retreat in Downtown Dubai with rooftop infinity pool & Burj view',
+        name: 'Burj View & Infinity Pool | 7 min to Dubai Mall',
+        tagline: 'Rooftop Infinity Pool · Unobstructed Burj Khalifa View · 7 min to Dubai Mall',
         location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
         specs: '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms',
         priceNight: 240,
@@ -314,10 +314,10 @@ const PROPERTIES_DATA = {
     },
     'burj-vista': {
         id: 'burj-vista',
-        name: 'Burj Vista Executive Residence',
-        tagline: 'Direct Unobstructed Views of Burj Khalifa & Dubai Fountain',
+        name: 'Burj Khalifa & Fountain view | Direct mall access',
+        tagline: 'Direct Unobstructed Views of Burj Khalifa & Dubai Fountain · Direct Metro & Mall Access',
         location: 'Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, UAE',
-        specs: '1BR · 3 Beds · 1.5 Baths · Accommodates 6 Guests',
+        specs: '6 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
         priceNight: 290,
         maxGuests: 6,
         currency: 'USD',
@@ -325,7 +325,7 @@ const PROPERTIES_DATA = {
         rating: '4.99',
         reviewsCount: 62,
         badge: 'Guest favorite',
-        hostName: 'TrueHaven Stays (Superhost)',
+        hostName: 'Prince (Superhost)',
         airbnbUrl: BURJ_VISTA_AIRBNB_URL,
         photos: BURJ_VISTA_PHOTOS,
         description: 'Immerse yourself in Downtown Dubai luxury at Burj Vista. Wake up to direct, uninterrupted views of the world-famous Burj Khalifa right from your private balcony. Enjoys direct air-conditioned tunnel linkage to Dubai Mall & Metro station, a resort-style infinity pool with architectural shade, landscaped lounge deck, and fully-equipped fitness center.'
