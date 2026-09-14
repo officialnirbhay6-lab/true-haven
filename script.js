@@ -6,291 +6,177 @@
 const PARAMOUNT_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1761390398461668658?unique_share_id=e3924d43-ff08-4672-af1f-88d210f07cfa&viralityEntryPoint=1&s=76&source_impression_id=p3_1788349185_P3ng4E3hx17yac8B";
 
 // Exact Airbnb Photo Tour Categories and Photo Sequences
-const PARAMOUNT_CATEGORIES_MANIFEST = [
-    {
-        id: "living_room",
-        name: "Living room",
-        photos: [
-            "assets/paramount/living_room_1.jpg",
-            "assets/paramount/living_room_2.jpg",
-            "assets/paramount/living_room_3.jpg",
-            "assets/paramount/living_room_4.jpg",
-            "assets/paramount/living_room_5.jpg",
-            "assets/paramount/living_room_6.jpg",
-            "assets/paramount/living_room_7.jpg",
-            "assets/paramount/living_room_8.jpg",
-            "assets/paramount/living_room_9.jpg",
-            "assets/paramount/living_room_10.jpg",
-            "assets/paramount/living_room_11.jpg",
-            "assets/paramount/living_room_12.jpg",
-            "assets/paramount/living_room_13.jpg",
-            "assets/paramount/living_room_14.jpg"
-        ]
-    },
-    {
-        id: "kitchenette",
-        name: "Kitchenette",
-        photos: [
-            "assets/paramount/kitchenette_1.jpg",
-            "assets/paramount/kitchenette_2.jpg",
-            "assets/paramount/kitchenette_3.jpg",
-            "assets/paramount/kitchenette_4.jpg",
-            "assets/paramount/kitchenette_5.jpg"
-        ]
-    },
-    {
-        id: "dining_area",
-        name: "Dining area",
-        photos: [
-            "assets/paramount/dining_area_1.jpg",
-            "assets/paramount/dining_area_2.jpg"
-        ]
-    },
-    {
-        id: "bedroom",
-        name: "Bedroom",
-        subtext: "King bed · Sofa bed",
-        photos: [
-            "assets/paramount/bedroom_1.jpg",
-            "assets/paramount/bedroom_3.jpg",
-            "assets/paramount/bedroom_4.jpg",
-            "assets/paramount/bedroom_5.jpg",
-            "assets/paramount/bedroom_6.jpg",
-            "assets/paramount/bedroom_7.jpg",
-            "assets/paramount/bedroom_8.jpg",
-            "assets/paramount/bedroom_9.jpg",
-            "assets/paramount/bedroom_10.jpg",
-            "assets/paramount/bedroom_11.jpg",
-            "assets/paramount/bedroom_12.jpg"
-        ]
-    },
-    {
-        id: "full_bathroom",
-        name: "Full bathroom",
-        photos: [
-            "assets/paramount/full_bathroom_1.jpg",
-            "assets/paramount/full_bathroom_2.jpg",
-            "assets/paramount/full_bathroom_3.jpg"
-        ]
-    },
-    {
-        id: "wc",
-        name: "WC",
-        photos: [
-            "assets/paramount/wc_1.jpg",
-            "assets/paramount/wc_2.jpg"
-        ]
-    },
-    {
-        id: "balcony",
-        name: "Balcony",
-        photos: [
-            "assets/paramount/balcony_1.jpg",
-            "assets/paramount/balcony_2.jpg",
-            "assets/paramount/balcony_3.jpg",
-            "assets/paramount/balcony_4.jpg",
-            "assets/paramount/balcony_5.jpg",
-            "assets/paramount/balcony_6.jpg",
-            "assets/paramount/balcony_7.jpg",
-            "assets/paramount/balcony_8.jpg",
-            "assets/paramount/balcony_9.jpg",
-            "assets/paramount/balcony_10.jpg",
-            "assets/paramount/balcony_11.jpg"
-        ]
-    },
-    {
-        id: "gym",
-        name: "Gym",
-        photos: [
-            "assets/paramount/gym_1.jpg",
-            "assets/paramount/gym_2.jpg",
-            "assets/paramount/gym_3.jpg"
-        ]
-    },
-    {
-        id: "pool",
-        name: "Pool",
-        photos: [
-            "assets/paramount/pool_1.jpg",
-            "assets/paramount/pool_2.jpg",
-            "assets/paramount/pool_3.jpg",
-            "assets/paramount/pool_4.jpg",
-            "assets/paramount/pool_5.jpg",
-            "assets/paramount/pool_6.jpg",
-            "assets/paramount/pool_7.jpg",
-            "assets/paramount/pool_8.jpg"
-        ]
-    },
-    {
-        id: "children_s_playroom",
-        name: "Children's playroom",
-        photos: [
-            "assets/paramount/children_s_playroom_1.jpg",
-            "assets/paramount/children_s_playroom_2.jpg",
-            "assets/paramount/children_s_playroom_3.jpg",
-            "assets/paramount/children_s_playroom_4.jpg"
-        ]
-    },
-    {
-        id: "additional_photos",
-        name: "Additional photos",
-        photos: [
-            "assets/paramount/additional_photos_1.jpg",
-            "assets/paramount/additional_photos_2.jpg",
-            "assets/paramount/additional_photos_3.jpg",
-            "assets/paramount/additional_photos_4.jpg",
-            "assets/paramount/additional_photos_5.jpg",
-            "assets/paramount/additional_photos_6.jpg",
-            "assets/paramount/additional_photos_7.jpg",
-            "assets/paramount/additional_photos_8.jpg",
-            "assets/paramount/additional_photos_9.jpg"
-        ]
-    }
+
+const PARAMOUNT_PHOTOS = [
+    "assets/paramount/paramount_seq_1.png",
+    "assets/paramount/paramount_seq_2.png",
+    "assets/paramount/paramount_seq_3.jpg",
+    "assets/paramount/paramount_seq_4.jpg",
+    "assets/paramount/paramount_seq_5.png",
+    "assets/paramount/paramount_seq_6.png",
+    "assets/paramount/paramount_seq_7.png",
+    "assets/paramount/paramount_seq_8.png",
+    "assets/paramount/paramount_seq_9.jpg",
+    "assets/paramount/paramount_seq_10.png",
+    "assets/paramount/paramount_seq_11.png",
+    "assets/paramount/paramount_seq_12.jpg",
+    "assets/paramount/paramount_seq_13.jpg",
+    "assets/paramount/paramount_seq_14.png",
+    "assets/paramount/paramount_seq_15.jpg",
+    "assets/paramount/paramount_seq_16.jpg",
+    "assets/paramount/paramount_seq_17.jpg",
+    "assets/paramount/paramount_seq_18.jpg",
+    "assets/paramount/paramount_seq_19.jpg",
+    "assets/paramount/paramount_seq_20.jpg",
+    "assets/paramount/paramount_seq_21.png",
+    "assets/paramount/paramount_seq_22.png",
+    "assets/paramount/paramount_seq_23.png",
+    "assets/paramount/paramount_seq_24.jpg",
+    "assets/paramount/paramount_seq_25.jpg",
+    "assets/paramount/paramount_seq_26.jpg",
+    "assets/paramount/paramount_seq_27.jpg",
+    "assets/paramount/paramount_seq_28.jpg",
+    "assets/paramount/paramount_seq_29.jpg",
+    "assets/paramount/paramount_seq_30.jpg",
+    "assets/paramount/paramount_seq_31.jpg",
+    "assets/paramount/paramount_seq_32.jpg",
+    "assets/paramount/paramount_seq_33.jpg",
+    "assets/paramount/paramount_seq_34.jpg",
+    "assets/paramount/paramount_seq_35.jpg",
+    "assets/paramount/paramount_seq_36.jpg",
+    "assets/paramount/paramount_seq_37.jpg",
+    "assets/paramount/paramount_seq_38.jpg",
+    "assets/paramount/paramount_seq_39.jpg",
+    "assets/paramount/paramount_seq_40.jpg",
+    "assets/paramount/paramount_seq_41.jpg",
+    "assets/paramount/paramount_seq_42.jpg",
+    "assets/paramount/paramount_seq_43.jpg",
+    "assets/paramount/paramount_seq_44.jpg",
+    "assets/paramount/paramount_seq_45.jpg",
+    "assets/paramount/paramount_seq_46.jpg",
+    "assets/paramount/paramount_seq_47.jpg",
+    "assets/paramount/paramount_seq_48.jpg",
+    "assets/paramount/paramount_seq_49.jpg",
+    "assets/paramount/paramount_seq_50.jpg",
+    "assets/paramount/paramount_seq_51.jpg",
+    "assets/paramount/paramount_seq_52.jpg",
+    "assets/paramount/paramount_seq_53.jpg",
+    "assets/paramount/paramount_seq_54.jpg",
+    "assets/paramount/paramount_seq_55.jpg",
+    "assets/paramount/paramount_seq_56.jpg",
+    "assets/paramount/paramount_seq_57.jpg",
+    "assets/paramount/paramount_seq_58.jpg",
+    "assets/paramount/paramount_seq_59.jpg",
+    "assets/paramount/paramount_seq_60.jpg",
+    "assets/paramount/paramount_seq_61.jpg",
+    "assets/paramount/paramount_seq_62.jpg",
+    "assets/paramount/paramount_seq_63.jpg",
+    "assets/paramount/paramount_seq_64.png",
+    "assets/paramount/paramount_seq_65.png",
+    "assets/paramount/paramount_seq_66.png",
+    "assets/paramount/paramount_seq_67.png",
+    "assets/paramount/paramount_seq_68.png",
+    "assets/paramount/paramount_seq_69.png",
+    "assets/paramount/paramount_seq_70.jpg",
+    "assets/paramount/paramount_seq_71.jpg",
+    "assets/paramount/paramount_seq_72.jpg",
+    "assets/paramount/paramount_seq_73.jpg",
+    "assets/paramount/paramount_seq_74.jpg",
+    "assets/paramount/paramount_seq_75.jpg",
+    "assets/paramount/paramount_seq_76.jpg",
+    "assets/paramount/paramount_seq_77.jpg",
+    "assets/paramount/paramount_seq_78.jpg",
+    "assets/paramount/paramount_seq_79.jpg",
+    "assets/paramount/paramount_seq_80.jpg",
+    "assets/paramount/paramount_seq_81.jpg",
+    "assets/paramount/paramount_seq_82.png",
+    "assets/paramount/paramount_seq_83.png",
+    "assets/paramount/paramount_seq_84.png"
 ];
 
-const PARAMOUNT_PHOTOS = PARAMOUNT_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
+const BURJ_VISTA_PHOTOS = [
+    "assets/burj_vista/burj_seq_1.jpg",
+    "assets/burj_vista/burj_seq_2.jpg",
+    "assets/burj_vista/burj_seq_3.jpg",
+    "assets/burj_vista/burj_seq_4.jpg",
+    "assets/burj_vista/burj_seq_5.jpg",
+    "assets/burj_vista/burj_seq_6.jpg",
+    "assets/burj_vista/burj_seq_7.jpg",
+    "assets/burj_vista/burj_seq_8.jpg",
+    "assets/burj_vista/burj_seq_9.jpg",
+    "assets/burj_vista/burj_seq_10.jpg",
+    "assets/burj_vista/burj_seq_11.jpg",
+    "assets/burj_vista/burj_seq_12.jpg",
+    "assets/burj_vista/burj_seq_13.jpg",
+    "assets/burj_vista/burj_seq_14.jpg",
+    "assets/burj_vista/burj_seq_15.jpg",
+    "assets/burj_vista/burj_seq_16.png",
+    "assets/burj_vista/burj_seq_17.jpg",
+    "assets/burj_vista/burj_seq_18.jpg",
+    "assets/burj_vista/burj_seq_19.jpg",
+    "assets/burj_vista/burj_seq_20.jpg",
+    "assets/burj_vista/burj_seq_21.jpg",
+    "assets/burj_vista/burj_seq_22.jpg",
+    "assets/burj_vista/burj_seq_23.jpg",
+    "assets/burj_vista/burj_seq_24.jpg",
+    "assets/burj_vista/burj_seq_25.jpg",
+    "assets/burj_vista/burj_seq_26.jpg",
+    "assets/burj_vista/burj_seq_27.jpg",
+    "assets/burj_vista/burj_seq_28.jpg",
+    "assets/burj_vista/burj_seq_29.jpg",
+    "assets/burj_vista/burj_seq_30.jpg",
+    "assets/burj_vista/burj_seq_31.jpg",
+    "assets/burj_vista/burj_seq_32.jpg",
+    "assets/burj_vista/burj_seq_33.jpg",
+    "assets/burj_vista/burj_seq_34.jpg",
+    "assets/burj_vista/burj_seq_35.jpg",
+    "assets/burj_vista/burj_seq_36.jpg",
+    "assets/burj_vista/burj_seq_37.jpg",
+    "assets/burj_vista/burj_seq_38.jpg",
+    "assets/burj_vista/burj_seq_39.jpg",
+    "assets/burj_vista/burj_seq_40.jpg",
+    "assets/burj_vista/burj_seq_41.jpg",
+    "assets/burj_vista/burj_seq_42.jpg",
+    "assets/burj_vista/burj_seq_43.jpg",
+    "assets/burj_vista/burj_seq_44.jpg",
+    "assets/burj_vista/burj_seq_45.jpg",
+    "assets/burj_vista/burj_seq_46.jpg",
+    "assets/burj_vista/burj_seq_47.jpg",
+    "assets/burj_vista/burj_seq_48.jpg",
+    "assets/burj_vista/burj_seq_49.jpg",
+    "assets/burj_vista/burj_seq_50.jpg",
+    "assets/burj_vista/burj_seq_51.jpg",
+    "assets/burj_vista/burj_seq_52.jpg",
+    "assets/burj_vista/burj_seq_53.jpg",
+    "assets/burj_vista/burj_seq_54.png",
+    "assets/burj_vista/burj_seq_55.png",
+    "assets/burj_vista/burj_seq_56.png",
+    "assets/burj_vista/burj_seq_57.png",
+    "assets/burj_vista/burj_seq_58.png",
+    "assets/burj_vista/burj_seq_59.png",
+    "assets/burj_vista/burj_seq_60.png",
+    "assets/burj_vista/burj_seq_61.jpg",
+    "assets/burj_vista/burj_seq_62.png",
+    "assets/burj_vista/burj_seq_63.png",
+    "assets/burj_vista/burj_seq_64.jpg",
+    "assets/burj_vista/burj_seq_65.jpg",
+    "assets/burj_vista/burj_seq_66.jpg",
+    "assets/burj_vista/burj_seq_67.jpg",
+    "assets/burj_vista/burj_seq_68.jpg",
+    "assets/burj_vista/burj_seq_69.png",
+    "assets/burj_vista/burj_seq_70.png",
+    "assets/burj_vista/burj_seq_71.png",
+    "assets/burj_vista/burj_seq_72.png"
+];
 
-const BURJ_VISTA_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/1762128215305557732?unique_share_id=8ee15777-1779-4293-a444-fbe1a8d11359&viralityEntryPoint=1&s=76&source_impression_id=p3_1788350250_P3tWF4FsNSd8rdnM";
+const PARAMOUNT_CATEGORIES_MANIFEST = [
+    { id: "all_photos", name: "Full Photo Tour", photos: PARAMOUNT_PHOTOS }
+];
 
 const BURJ_VISTA_CATEGORIES_MANIFEST = [
-    {
-        id: "living_room",
-        name: "Living room",
-        photos: [
-            "assets/burj_vista/burj_living_room_1.jpg",
-            "assets/burj_vista/burj_living_room_2.jpg",
-            "assets/burj_vista/burj_living_room_3.jpg",
-            "assets/burj_vista/burj_living_room_4.jpg",
-            "assets/burj_vista/burj_living_room_5.jpg",
-            "assets/burj_vista/burj_living_room_6.jpg",
-            "assets/burj_vista/burj_living_room_7.jpg",
-            "assets/burj_vista/burj_living_room_8.jpg",
-            "assets/burj_vista/burj_living_room_9.jpg",
-            "assets/burj_vista/burj_living_room_10.jpg",
-            "assets/burj_vista/burj_living_room_11.jpg",
-            "assets/burj_vista/burj_living_room_12.jpg",
-            "assets/burj_vista/burj_living_room_13.jpg"
-        ]
-    },
-    {
-        id: "kitchenette",
-        name: "Kitchenette",
-        photos: [
-            "assets/burj_vista/burj_kitchenette_1.jpg",
-            "assets/burj_vista/burj_kitchenette_2.jpg",
-            "assets/burj_vista/burj_kitchenette_3.jpg",
-            "assets/burj_vista/burj_kitchenette_4.jpg"
-        ]
-    },
-    {
-        id: "dining_area",
-        name: "Dining area",
-        photos: [
-            "assets/burj_vista/burj_dining_area_1.jpg",
-            "assets/burj_vista/burj_dining_area_2.jpg",
-            "assets/burj_vista/burj_dining_area_3.jpg",
-            "assets/burj_vista/burj_dining_area_4.jpg",
-            "assets/burj_vista/burj_dining_area_5.jpg",
-            "assets/burj_vista/burj_dining_area_6.jpg",
-            "assets/burj_vista/burj_dining_area_7.jpg"
-        ]
-    },
-    {
-        id: "bedroom",
-        name: "Bedroom",
-        subtext: "King bed · Sofa bed",
-        photos: [
-            "assets/burj_vista/burj_bedroom_1.jpg",
-            "assets/burj_vista/burj_bedroom_2.jpg",
-            "assets/burj_vista/burj_bedroom_3.jpg",
-            "assets/burj_vista/burj_bedroom_4.jpg",
-            "assets/burj_vista/burj_bedroom_5.jpg",
-            "assets/burj_vista/burj_bedroom_6.jpg",
-            "assets/burj_vista/burj_bedroom_7.jpg",
-            "assets/burj_vista/burj_bedroom_8.jpg",
-            "assets/burj_vista/burj_bedroom_9.jpg",
-            "assets/burj_vista/burj_bedroom_10.jpg",
-            "assets/burj_vista/burj_bedroom_11.jpg",
-            "assets/burj_vista/burj_bedroom_12.jpg"
-        ]
-    },
-    {
-        id: "full_bathroom",
-        name: "Full bathroom",
-        photos: [
-            "assets/burj_vista/burj_full_bathroom_1.jpg",
-            "assets/burj_vista/burj_full_bathroom_2.jpg",
-            "assets/burj_vista/burj_full_bathroom_3.jpg",
-            "assets/burj_vista/burj_full_bathroom_4.jpg",
-            "assets/burj_vista/burj_full_bathroom_5.jpg"
-        ]
-    },
-    {
-        id: "wc",
-        name: "WC",
-        photos: [
-            "assets/burj_vista/burj_wc_1.jpg",
-            "assets/burj_vista/burj_wc_2.jpg",
-            "assets/burj_vista/burj_wc_3.jpg"
-        ]
-    },
-    {
-        id: "balcony",
-        name: "Balcony",
-        photos: [
-            "assets/burj_vista/burj_balcony_1.jpg",
-            "assets/burj_vista/burj_balcony_2.jpg",
-            "assets/burj_vista/burj_balcony_3.jpg",
-            "assets/burj_vista/burj_balcony_4.jpg",
-            "assets/burj_vista/burj_balcony_5.jpg",
-            "assets/burj_vista/burj_balcony_6.jpg",
-            "assets/burj_vista/burj_balcony_7.jpg",
-            "assets/burj_vista/burj_balcony_8.jpg",
-            "assets/burj_vista/burj_balcony_9.jpg"
-        ]
-    },
-    {
-        id: "gym",
-        name: "Gym",
-        photos: [
-            "assets/burj_vista/burj_gym_1.jpg",
-            "assets/burj_vista/burj_gym_2.jpg",
-            "assets/burj_vista/burj_gym_3.jpg",
-            "assets/burj_vista/burj_gym_4.jpg"
-        ]
-    },
-    {
-        id: "pool",
-        name: "Pool",
-        photos: [
-            "assets/burj_vista/burj_pool_1.jpg",
-            "assets/burj_vista/burj_pool_2.jpg",
-            "assets/burj_vista/burj_pool_3.jpg",
-            "assets/burj_vista/burj_pool_4.jpg"
-        ]
-    },
-    {
-        id: "children_s_playroom",
-        name: "Children's playroom",
-        photos: [
-            "assets/burj_vista/burj_children_s_playroom_1.jpg",
-            "assets/burj_vista/burj_children_s_playroom_2.jpg"
-        ]
-    },
-    {
-        id: "additional_photos",
-        name: "Additional photos",
-        photos: [
-            "assets/burj_vista/burj_additional_photos_1.jpg",
-            "assets/burj_vista/burj_additional_photos_2.jpg",
-            "assets/burj_vista/burj_additional_photos_3.jpg",
-            "assets/burj_vista/burj_additional_photos_4.jpg",
-            "assets/burj_vista/burj_additional_photos_5.jpg"
-        ]
-    }
+    { id: "all_photos", name: "Full Photo Tour", photos: BURJ_VISTA_PHOTOS }
 ];
 
-const BURJ_VISTA_PHOTOS = BURJ_VISTA_CATEGORIES_MANIFEST.flatMap(cat => cat.photos);
 
 // Property Database
 const PROPERTIES_DATA = {
