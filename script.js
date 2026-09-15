@@ -1025,153 +1025,6 @@ function openPropertyDetail(propId) {
                     </div>
                     ` : ''}
 
-                    <!-- Meet Your Host Section (Exact Airbnb Match) -->
-                    <div class="meet-host-section" style="margin-bottom: 40px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
-                        <h2 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 24px;">Meet your host</h2>
-                        
-                        <div class="meet-host-grid">
-                            <!-- Left Side -->
-                            <div>
-                                <!-- Host Profile Card -->
-                                <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 24px;">
-                                    
-                                    <!-- Left Side: Avatar & Name -->
-                                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                                        <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
-                                            <img src="assets/prince_new_avatar.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                                            <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-                                                <i class="fa-solid fa-check"></i>
-                                            </div>
-                                        </div>
-                                        <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
-                                        <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
-                                    </div>
-
-                                    <!-- Right Side: Stats Column -->
-                                    <div style="display: flex; flex-direction: column; gap: 14px; width: 120px;">
-                                        <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
-                                            <div style="font-size: 20px; font-weight: 800; color: #222222;">3</div>
-                                            <div style="font-size: 12px; color: #717171; font-weight: 600;">Reviews</div>
-                                        </div>
-                                        <div>
-                                            <div style="font-size: 20px; font-weight: 800; color: #222222;">5.0 ★</div>
-                                            <div style="font-size: 12px; color: #717171; font-weight: 600;">Rating</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!-- Left Side: About Prince Info -->
-                                <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
-                                    <div style="display: flex; align-items: center; gap: 14px;">
-                                        <i class="fa-solid fa-graduation-cap" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span>Where I went to school: IIT Delhi</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 14px;">
-                                        <i class="fa-solid fa-globe" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span>Speaks English and Hindi</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Right Side: Host details -->
-                            <div>
-                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 16px;">Host details</h3>
-                                <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
-                                <a href="https://wa.me/971525821668" target="_blank" style="display: inline-block; background: #F7F7F7; color: #222222; text-decoration: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</a>
-                                
-                                <div class="shield-notice">
-                                    <i class="fa-brands fa-airbnb" style="font-size: 28px; color: #FF385C;"></i>
-                                    <span>To help protect your payment, always use Airbnb to send money and communicate with hosts.</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Prince's Reviews Section -->
-                        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
-                            <h3 style="font-size: 20px; font-weight: 800; color: #222222; margin-bottom: 20px;">Prince's reviews</h3>
-                            
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 24px;">
-                                
-                                <!-- Review 1 -->
-                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                                    <div style="margin-bottom: 16px;">
-                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #0F1E36; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">A</div>
-                                            <div>
-                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Aditya</div>
-                                                <div style="font-size: 13px; color: #717171;">Sammamish, WA</div>
-                                            </div>
-                                        </div>
-                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <span style="color: #717171; margin-left: 6px;">· Today</span>
-                                        </div>
-                                        <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0;">"Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Prince also was great with check in and check out accommodation. Highly recommended him and this stay!"</p>
-                                    </div>
-                                </div>
-
-                                <!-- Review 2 -->
-                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                                    <div style="margin-bottom: 16px;">
-                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #10B981; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">F</div>
-                                            <div>
-                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Felipe</div>
-                                                <div style="font-size: 13px; color: #717171;">Cali, Colombia</div>
-                                            </div>
-                                        </div>
-                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <span style="color: #717171; margin-left: 6px;">· 4 days ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Review 3 -->
-                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                                    <div style="margin-bottom: 16px;">
-                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #7C3AED; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">N</div>
-                                            <div>
-                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Nawaf</div>
-                                                <div style="font-size: 13px; color: #717171;">Riyadh, Saudi Arabia</div>
-                                            </div>
-                                        </div>
-                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <i class="fa-solid fa-star" style="color: #222;"></i>
-                                            <span style="color: #717171; margin-left: 6px;">· 1 week ago</span>
-                                        </div>
-                                        <p style="font-size: 15px; color: #374151; line-height: 1.5; margin: 0; font-family: sans-serif;">"رائع جداً"</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <button onclick="document.getElementById('reviews').scrollIntoView({behavior: 'smooth'})" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 11px 24px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s;">
-                                Show all reviews
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- What this place offers Section (Ref Image 3) -->
-                    <div style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 20px;">What this place offers</h3>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; font-size: 15px; color: #222222; margin-bottom: 20px;">
                             <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 18px; color: #FF385C;"></i> 64th Floor Infinity Pool</div>
                             <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 18px; color: #222;"></i> Free High-Speed Wifi</div>
                             <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 18px; color: #222;"></i> Free Parking on premises</div>
@@ -1268,6 +1121,58 @@ function openPropertyDetail(propId) {
 
             </div>
         </div>
+
+            <!-- Meet Your Host Section (Full-Width) -->
+            <div class="meet-host-section" style="margin-bottom: 40px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
+                <h2 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 24px;">Meet your host</h2>
+                <div class="meet-host-grid">
+                    <!-- Left: Profile card + info -->
+                    <div>
+                        <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 24px;">
+                            <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
+                                    <img src="assets/prince_new_avatar.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
+                                <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 14px; width: 120px;">
+                                <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
+                                    <div style="font-size: 20px; font-weight: 800; color: #222222;">3</div>
+                                    <div style="font-size: 12px; color: #717171; font-weight: 600;">Reviews</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 20px; font-weight: 800; color: #222222;">5.0 ★</div>
+                                    <div style="font-size: 12px; color: #717171; font-weight: 600;">Rating</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <i class="fa-solid fa-graduation-cap" style="font-size: 20px; width: 24px; color: #222;"></i>
+                                <span>Where I went to school: IIT Delhi</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <i class="fa-solid fa-globe" style="font-size: 20px; width: 24px; color: #222;"></i>
+                                <span>Speaks English and Hindi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right: Host details -->
+                    <div>
+                        <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 16px;">Host details</h3>
+                        <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
+                        <a href="https://wa.me/971525821668" target="_blank" style="display: inline-block; background: #F7F7F7; color: #222222; text-decoration: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</a>
+                        <div class="shield-notice">
+                            <i class="fa-brands fa-airbnb" style="font-size: 28px; color: #FF385C;"></i>
+                            <span>To help protect your payment, always use Airbnb to send money and communicate with hosts.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <!-- Fixed Floating Mobile Bottom Bar (Ref Images 2 & 3) -->
         <div class="mobile-fixed-bottom-bar">
