@@ -2774,6 +2774,7 @@ img {
 .mobile-pdp-top-bar { display: none; }
 .mobile-pdp-hero { display: none; }
 .mobile-fixed-bottom-bar { display: none; }
+.mobile-pdp-title-block { display: none; }
 .mobile-sleep-section { margin: 32px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 32px 0; }
 .mobile-sleep-cards { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
 .mobile-sleep-card { flex: 0 0 170px; width: 170px; border: 1px solid #E5E0D8; border-radius: 16px; padding: 14px; background: #FFF; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
@@ -2786,6 +2787,7 @@ img {
     .desktop-pdp-header { display: none !important; }
     .desktop-photo-grid-wrap { display: none !important; }
     .detail-right-col { display: none !important; }
+    .mobile-pdp-title-block { display: block !important; }
 
     .detail-body-layout {
         display: block !important;

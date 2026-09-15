@@ -668,7 +668,7 @@ function openPropertyDetail(propId) {
 
     // Desktop 5-Photo Grid
     const desktopPhotoGridHtml = `
-        <div class="desktop-photo-grid-wrap" style="position: relative; margin-bottom: 28px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
+        <div class="desktop-photo-grid-wrap" style="position: relative; margin-bottom: 24px; border-radius: 16px; overflow: hidden; cursor: pointer;" onclick="openPhotoGalleryModal('${propId}')">
             <div class="detail-photo-grid">
                 <img src="${data.photos[0]}" alt="${data.name}" class="photo-large">
                 <div class="detail-photo-grid-right">
@@ -678,8 +678,8 @@ function openPropertyDetail(propId) {
                     <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}">
                 </div>
             </div>
-            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 18px; right: 18px; background: rgba(255,255,255,0.95); border: 1px solid #222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-                <i class="fa-solid fa-border-all"></i> Show all ${data.photos.length} photos
+            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 18px; right: 18px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); cursor: pointer;">
+                <i class="fa-solid fa-border-all" style="font-size: 13px;"></i> Show all photos
             </button>
         </div>
     `;
@@ -756,16 +756,13 @@ function openPropertyDetail(propId) {
         <div class="container mobile-pdp-container" style="max-width: 1280px; margin: 32px auto 80px; padding: 0 24px;">
             
             <!-- Title Header Row (Desktop Layout) -->
-            <div class="desktop-pdp-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div class="desktop-pdp-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px;">
                 <div>
-                    <h1 style="font-size: 32px; font-weight: 800; color: #0F1E36; margin-bottom: 6px; letter-spacing: -0.5px;">${data.name}</h1>
-                    <div style="font-size: 16px; font-weight: 500; color: #374151;">
-                        <i class="fa-solid fa-star" style="color: #FF385C;"></i> <strong>${data.rating}</strong> (${data.reviewsCount} reviews) · Entire rental unit in Dubai, UAE · <strong>${data.specs}</strong>
-                    </div>
+                    <h1 style="font-size: 26px; font-weight: 700; color: #222222; margin: 0; letter-spacing: -0.2px;">${data.name}</h1>
                 </div>
-                <div style="display: flex; gap: 20px; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; color: #0F1E36;">
-                    <span><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</span>
-                    <span><i class="fa-regular fa-heart"></i> Save</span>
+                <div style="display: flex; gap: 20px; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; color: #222222; flex-shrink: 0;">
+                    <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-arrow-up-from-bracket" style="font-size: 13px;"></i> Share</span>
+                    <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-regular fa-heart" style="font-size: 14px;"></i> Save</span>
                 </div>
             </div>
 
@@ -774,7 +771,7 @@ function openPropertyDetail(propId) {
 
             <!-- Mobile Title Header Section (Ref Image 2) -->
             <div class="mobile-pdp-title-block" style="margin-bottom: 24px;">
-                <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}!</h1>
+                <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}</h1>
                 <p style="font-size: 15px; color: #717171; margin-bottom: 4px;">Entire rental unit in Dubai, United Arab Emirates</p>
                 <p style="font-size: 14px; color: #222222; font-weight: 600; margin-bottom: 8px;">${data.specs}</p>
                 <div style="font-size: 14px; font-weight: 700; color: #222222;">
