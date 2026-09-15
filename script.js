@@ -179,48 +179,6 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
 ];
 
 
-// Property Database
-const PROPERTIES_DATA = {
-    'paramount': {
-        id: 'paramount',
-        name: 'Burj View & Infinity Pool | 7 min to Dubai Mall',
-        tagline: 'Rooftop Infinity Pool · Unobstructed Burj Khalifa View · 7 min to Dubai Mall',
-        location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
-        specs: '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms',
-        priceNight: 240,
-        maxGuests: 4,
-        currency: 'USD',
-        priceAed: 880,
-        rating: '★ New',
-        reviewsCount: 12,
-        badge: null,
-        hostName: 'Prince (Superhost)',
-        airbnbUrl: PARAMOUNT_AIRBNB_URL,
-        photos: PARAMOUNT_PHOTOS,
-        description: 'Settle into a bright, luxury one-bedroom retreat at Paramount Midtown in Downtown Dubai / Business Bay. Enjoy high-speed WiFi, plush king bedding, designer kitchenette, Nespresso coffee station, and access to the world-famous top-floor rooftop infinity pool with unobstructed views of the Burj Khalifa and Downtown Dubai skyline.'
-    },
-    'burj-vista': {
-        id: 'burj-vista',
-        name: 'Burj Khalifa & Fountain view | Direct mall access',
-        tagline: 'Direct Unobstructed Views of Burj Khalifa & Dubai Fountain · Direct Metro & Mall Access',
-        location: 'Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, UAE',
-        specs: '6 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
-        priceNight: 290,
-        maxGuests: 6,
-        currency: 'USD',
-        priceAed: 1065,
-        rating: '4.99',
-        reviewsCount: 62,
-        badge: 'Guest favorite',
-        hostName: 'Prince (Superhost)',
-        airbnbUrl: BURJ_VISTA_AIRBNB_URL,
-        photos: BURJ_VISTA_PHOTOS,
-        description: 'Immerse yourself in Downtown Dubai luxury at Burj Vista. Wake up to direct, uninterrupted views of the world-famous Burj Khalifa right from your private balcony. Enjoys direct air-conditioned tunnel linkage to Dubai Mall & Metro station, a resort-style infinity pool with architectural shade, landscaped lounge deck, and fully-equipped fitness center.'
-    }
-};
-
-// Global Carousel Movement
-function moveCarousel(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
     
@@ -497,11 +455,14 @@ function openPropertyDetail(propId) {
 
             <!-- Mobile Title Header Section (Ref Image 2) -->
             <div class="mobile-pdp-title-block" style="margin-bottom: 24px;">
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: #E6F4EA; color: #008A05; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">
+                    ${data.tagline}
+                </div>
                 <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}!</h1>
                 <p style="font-size: 15px; color: #717171; margin-bottom: 4px;">Entire rental unit in Dubai, United Arab Emirates</p>
                 <p style="font-size: 14px; color: #222222; font-weight: 600; margin-bottom: 8px;">${data.specs}</p>
                 <div style="font-size: 14px; font-weight: 700; color: #222222;">
-                    <i class="fa-solid fa-star" style="color: #FF385C;"></i> ${data.rating}
+                    <i class="fa-solid fa-star" style="color: #FF385C;"></i> ${data.rating} (${data.reviewsCount} reviews)
                 </div>
             </div>
 
@@ -515,58 +476,237 @@ function openPropertyDetail(propId) {
                         <div class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: #FF385C; color: #FFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</div>
                         <div>
                             <div class="host-name" style="font-size: 16px; font-weight: 700; color: #222222;">Hosted by ${data.hostName}</div>
-                            <div class="host-badge" style="font-size: 13px; color: #717171;">New Host</div>
+                            <div class="host-badge" style="font-size: 13px; color: #717171;">Superhost · 5-Star Luxury Stays</div>
                         </div>
                     </div>
 
                     <!-- Highlights Row (Ref Image 2) -->
                     <div style="padding-bottom: 24px; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px;">
+                            <i class="fa-solid fa-water-ladder" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
+                            <div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 2px;">Rooftop Infinity Pool & Balcony View</h4>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">Access to the 64th-floor rooftop pool with sweeping Burj Khalifa & Downtown skyline views</p>
+                            </div>
+                        </div>
                         <div style="display: flex; gap: 16px; align-items: flex-start;">
                             <i class="fa-solid fa-location-dot" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
                             <div>
                                 <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 2px;">Beautiful and walkable</h4>
-                                <p style="font-size: 14px; color: #717171; margin: 0;">This area is scenic and easy to get around</p>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">12-minute walk to Burj Khalifa & 15-minute walk to Dubai Mall</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Where you'll sleep Section (Ref Image 3) -->
-                    <div class="mobile-sleep-section">
+                    <!-- Where you'll sleep Section (Matches Airbnb exact card) -->
+                    <div class="mobile-sleep-section" style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Where you'll sleep</h3>
-                        <div class="mobile-sleep-cards">
-                            <div class="mobile-sleep-card">
-                                <img src="${bedroomImg}" alt="Bedroom">
-                                <h5>Bedroom</h5>
-                                <p>1 king bed</p>
-                            </div>
-                            <div class="mobile-sleep-card">
-                                <img src="${livingImg}" alt="Living room">
-                                <h5>Living room</h5>
-                                <p>2 sofa beds</p>
+                        <div class="mobile-sleep-cards" style="display: flex; gap: 16px;">
+                            <div class="mobile-sleep-card" style="max-width: 320px; width: 100%; border: 1px solid #EBEBEB; border-radius: 16px; padding: 16px; background: #FFF; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                <img src="${bedroomImg}" alt="Bedroom" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 12px;">
+                                <h5 style="font-size: 16px; font-weight: 700; color: #222; margin-bottom: 4px;">Bedroom</h5>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">${propId === 'paramount' ? '1 king bed, 1 sofa bed' : '1 king bed, 2 sofa beds'}</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Property Description -->
+                    <!-- About this space & The space -->
                     <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 12px;">About this space</h3>
-                        <p style="font-size: 15px; color: #374151; line-height: 1.6;">${data.description}</p>
+                        <p style="font-size: 15px; color: #374151; line-height: 1.65; white-space: pre-line; margin-bottom: 16px;">${data.aboutThisSpace || data.description}</p>
+                        ${data.theSpace ? `
+                            <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 8px;">The space</h4>
+                            <p style="font-size: 15px; color: #374151; line-height: 1.6; white-space: pre-line;">${data.theSpace}</p>
+                        ` : ''}
                     </div>
+
+                    <!-- Property Highlights Section -->
+                    ${data.propertyHighlights ? `
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Property Highlights</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            ${data.propertyHighlights.map(item => `
+                                <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #222;">
+                                    <i class="fa-solid fa-circle-check" style="color: #10B981; font-size: 17px; margin-top: 2px;"></i>
+                                    <span>${item}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- Living Room & Kitchen and Dining -->
+                    ${data.livingRoom || data.kitchenDining ? `
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        ${data.livingRoom ? `
+                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 8px;">Living Room</h3>
+                            <p style="font-size: 14px; color: #717171; margin-bottom: 12px;">A bright, modern space made for relaxing and spending time together.</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                                ${data.livingRoom.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${data.kitchenDining ? `
+                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 8px;">Kitchen and Dining</h3>
+                            <p style="font-size: 14px; color: #717171; margin-bottom: 12px;">Fully stocked for home-cooked meals.</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                ${data.kitchenDining.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- Sleeping Arrangements & Bathrooms -->
+                    ${data.sleepingArrangements || data.bathrooms ? `
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        ${data.sleepingArrangements ? `
+                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 12px;">Sleeping Arrangements</h3>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                                ${data.sleepingArrangements.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${data.bathrooms ? `
+                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 12px;">Bathrooms — 1.5 Total</h3>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                ${data.bathrooms.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- Nearby Attractions & Getting Around -->
+                    ${data.nearbyAttractions || data.gettingAround ? `
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        ${data.nearbyAttractions ? `
+                            <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Nearby Attractions</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 24px;">
+                                ${data.nearbyAttractions.map(item => `
+                                    <div style="background: #F9FAFB; border: 1px solid #E5E7EB; padding: 12px 16px; border-radius: 12px; font-size: 14px; color: #222; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fa-solid fa-person-walking" style="color: #FF385C; font-size: 16px;"></i>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${data.gettingAround ? `
+                            <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Getting Around</h3>
+                            
+                            <h4 style="font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 8px;">Locally</h4>
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                ${data.gettingAround.locally.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <h4 style="font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 8px;">From Dubai International Airport (DXB)</h4>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                ${data.gettingAround.airport.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- Guest Access & Shared Building Amenities -->
+                    ${data.guestAccess || data.sharedBuildingAmenities ? `
+                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                        ${data.guestAccess ? `
+                            <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 12px;">Guest access</h3>
+                            <p style="font-size: 15px; color: #374151; line-height: 1.6; margin-bottom: 24px;">${data.guestAccess}</p>
+                        ` : ''}
+
+                        ${data.sharedBuildingAmenities ? `
+                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 16px;">Shared Building Amenities</h3>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                ${data.sharedBuildingAmenities.map(item => `
+                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
+                                        <span style="color: #10B981; font-weight: 800;">✔</span>
+                                        <span>${item}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- House Rules & Other Information -->
+                    ${data.houseRules ? `
+                    <div style="margin-bottom: 32px; padding: 24px; border-radius: 16px; background: #FAF9F6; border: 1px solid #E5E0D8;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: #0F1E36; margin-bottom: 4px;">Other things to note</h3>
+                        <p style="font-size: 14px; font-weight: 600; color: #6B7280; margin-bottom: 20px;">House Rules and Other Information</p>
+
+                        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px; color: #222;">
+                            <div>
+                                <strong style="display: block; font-size: 15px; color: #0F1E36; margin-bottom: 4px;">Guest ID requirements</strong>
+                                <p style="margin: 0; color: #374151;">✔ ${data.houseRules.idReq}</p>
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 15px; color: #0F1E36; margin-bottom: 4px;">Check-in and check-out</strong>
+                                <p style="margin: 0; color: #374151;">✔ ${data.houseRules.checkInOut}</p>
+                                ${data.houseRules.lateCheckout ? `<p style="margin: 4px 0 0; color: #374151;">✔ Late checkout: ${data.houseRules.lateCheckout}</p>` : ''}
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 15px; color: #0F1E36; margin-bottom: 4px;">Property use & Access cards</strong>
+                                <p style="margin: 0; color: #374151;">✔ ${data.houseRules.propertyUse}</p>
+                                ${data.houseRules.accessCards ? `<p style="margin: 4px 0 0; color: #374151;">✔ ${data.houseRules.accessCards}</p>` : ''}
+                            </div>
+                            <div>
+                                <strong style="display: block; font-size: 15px; color: #0F1E36; margin-bottom: 4px;">Policies & Services</strong>
+                                ${data.houseRules.smokingPolicy ? `<p style="margin: 0; color: #374151;">✔ ${data.houseRules.smokingPolicy}</p>` : ''}
+                                ${data.houseRules.noisePolicy ? `<p style="margin: 4px 0 0; color: #374151;">✔ ${data.houseRules.noisePolicy}</p>` : ''}
+                                ${data.houseRules.cleaningServices ? `<p style="margin: 4px 0 0; color: #374151;">✔ ${data.houseRules.cleaningServices}</p>` : ''}
+                            </div>
+                            <div style="margin-top: 8px; padding-top: 12px; border-top: 1px dashed #D1D5DB; font-size: 13px; color: #6B7280;">
+                                <strong>DTCM Registration details:</strong> ${data.houseRules.registrationDetails}
+                            </div>
+                        </div>
+                    </div>
+                    ` : ''}
 
                     <!-- What this place offers Section (Ref Image 3) -->
                     <div style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 20px;">What this place offers</h3>
                         
-                        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-utensils" style="width: 24px; font-size: 18px; color: #222;"></i> Kitchen</div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 18px; color: #222;"></i> Wifi</div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 18px; color: #222;"></i> Free parking on premises</div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 18px; color: #222;"></i> Pool</div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 18px; color: #222;"></i> TV</div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; font-size: 15px; color: #222222; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 18px; color: #FF385C;"></i> 64th Floor Infinity Pool</div>
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 18px; color: #222;"></i> Free High-Speed Wifi</div>
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 18px; color: #222;"></i> Free Parking on premises</div>
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-utensils" style="width: 24px; font-size: 18px; color: #222;"></i> Fully Stocked Kitchen</div>
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-dumbbell" style="width: 24px; font-size: 18px; color: #222;"></i> State-of-the-Art Gym</div>
+                            <div style="display: flex; align-items: center; gap: 14px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 18px; color: #222;"></i> 65" & 55" Smart TVs</div>
                         </div>
 
-                        <button onclick="openAmenitiesModalDirect()" style="width: 100%; border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px; font-weight: 600; font-size: 15px; margin-top: 24px; cursor: pointer;">
-                            Show all 50+ amenities
+                        <button onclick="openAmenitiesModalDirect('${propId}')" style="width: 100%; border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px; font-weight: 600; font-size: 15px; cursor: pointer; transition: background 0.2s;">
+                            Show all ${data.categorizedAmenities ? '35+' : '50+'} amenities
                         </button>
                     </div>
 
@@ -741,11 +881,39 @@ function bookOnWhatsApp(propId) {
     window.open(`https://wa.me/971525821668?text=${encodedMsg}`, '_blank');
 }
 
-function openAmenitiesModalDirect() {
+function openAmenitiesModalDirect(propId) {
+    const targetId = propId || 'paramount';
+    const data = PROPERTIES_DATA[targetId];
     const amenitiesModal = document.getElementById('amenitiesModal');
-    if (amenitiesModal) {
-        amenitiesModal.classList.add('active');
+    if (!amenitiesModal) return;
+
+    if (data && data.categorizedAmenities) {
+        const modalContainer = amenitiesModal.querySelector('.modal-scroll-body');
+        if (modalContainer) {
+            modalContainer.innerHTML = `
+                <div class="amenities-category-list">
+                    ${data.categorizedAmenities.map(cat => `
+                        <div class="amenity-cat-block" style="margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #F3F4F6;">
+                            <h4 class="cat-title" style="font-size: 17px; font-weight: 700; color: #0F1E36; margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
+                                <i class="fa-solid ${cat.icon}" style="color: #FF385C; font-size: 18px;"></i> ${cat.category}
+                            </h4>
+                            <ul class="cat-items" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                                ${cat.items.map(item => `
+                                    <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: ${item.available !== false ? '#374151' : '#9CA3AF'};">
+                                        ${item.available !== false ? 
+                                            `<i class="fa-solid fa-check" style="color: #10B981; font-size: 16px; margin-top: 2px;"></i> <span>${item.text}</span>` : 
+                                            `<i class="fa-solid fa-xmark" style="color: #9CA3AF; font-size: 16px; margin-top: 2px;"></i> <span style="text-decoration: line-through;">${item.text}</span>`
+                                        }
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
     }
+    amenitiesModal.classList.add('active');
 }
 
 // Full Screen Interactive Photo Gallery Modal for all 73 Photos (Airbnb Photo Tour Format)
