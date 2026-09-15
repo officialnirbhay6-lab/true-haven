@@ -1030,56 +1030,59 @@ function openPropertyDetail(propId) {
                         <h2 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 24px;">Meet your host</h2>
                         
                         <div class="meet-host-grid">
-                            
-                            <!-- Host Profile Card -->
-                            <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 340px;">
-                                
-                                <!-- Left Side: Avatar & Name -->
-                                <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                                    <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
-                                        <img src="assets/prince_new_avatar.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                                        <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-                                            <i class="fa-solid fa-check"></i>
+                            <!-- Left Side -->
+                            <div>
+                                <!-- Host Profile Card -->
+                                <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 340px; margin-bottom: 24px;">
+                                    
+                                    <!-- Left Side: Avatar & Name -->
+                                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                                        <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
+                                            <img src="assets/prince_new_avatar.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                            <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                                                <i class="fa-solid fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
+                                        <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
+                                    </div>
+
+                                    <!-- Right Side: Stats Column -->
+                                    <div style="display: flex; flex-direction: column; gap: 14px; width: 120px;">
+                                        <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
+                                            <div style="font-size: 20px; font-weight: 800; color: #222222;">3</div>
+                                            <div style="font-size: 12px; color: #717171; font-weight: 600;">Reviews</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 20px; font-weight: 800; color: #222222;">5.0 ★</div>
+                                            <div style="font-size: 12px; color: #717171; font-weight: 600;">Rating</div>
                                         </div>
                                     </div>
-                                    <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
-                                    <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
+
                                 </div>
 
-                                <!-- Right Side: Stats Column -->
-                                <div style="display: flex; flex-direction: column; gap: 14px; width: 120px;">
-                                    <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
-                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">3</div>
-                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Reviews</div>
-                                    </div>
-                                    <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
-                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">5.0 ★</div>
-                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Rating</div>
-                                    </div>
-                                    <div>
-                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">1</div>
-                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Month hosting</div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Right Side: About Prince Info -->
-                            <div>
-                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 20px;">About Prince</h3>
+                                <!-- Left Side: About Prince Info -->
                                 <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
                                     <div style="display: flex; align-items: center; gap: 14px;">
                                         <i class="fa-solid fa-graduation-cap" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span>Where I went to school: <strong>IIT Delhi</strong></span>
+                                        <span>Where I went to school: IIT Delhi</span>
                                     </div>
                                     <div style="display: flex; align-items: center; gap: 14px;">
                                         <i class="fa-solid fa-globe" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span>Speaks <strong>English and Hindi</strong></span>
+                                        <span>Speaks English and Hindi</span>
                                     </div>
-                                    <div style="display: flex; align-items: center; gap: 14px;">
-                                        <i class="fa-solid fa-shield-halved" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span><strong>Identity verified</strong></span>
-                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Side: Host details -->
+                            <div>
+                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 16px;">Host details</h3>
+                                <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
+                                <button style="background: #F7F7F7; color: #222222; border: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</button>
+                                
+                                <div style="border-top: 1px solid #EBEBEB; padding-top: 24px; display: flex; align-items: center; gap: 12px; font-size: 12px; color: #717171; line-height: 1.4;">
+                                    <i class="fa-brands fa-airbnb" style="font-size: 28px; color: #FF385C;"></i>
+                                    <span>To help protect your payment, always use Airbnb to send money and communicate with hosts.</span>
                                 </div>
                             </div>
 
