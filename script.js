@@ -1013,7 +1013,7 @@ function openPropertyDetail(propId) {
                     <div class="meet-host-section" style="margin-bottom: 40px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
                         <h2 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 24px;">Meet your host</h2>
                         
-                        <div style="display: grid; grid-template-columns: minmax(280px, 340px) 1fr; gap: 40px; align-items: start; margin-bottom: 40px;">
+                        <div class="meet-host-grid">
                             
                             <!-- Host Profile Card -->
                             <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px;">

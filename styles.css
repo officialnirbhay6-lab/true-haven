@@ -2939,3 +2939,17 @@ img {
         gap: 12px !important;
     }
 }
+ 
+ .meet-host-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+    .meet-host-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
