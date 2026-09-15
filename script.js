@@ -174,11 +174,305 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     { id: "all_photos", name: "Full Photo Tour", photos: PARAMOUNT_PHOTOS }
 ];
 
-const BURJ_VISTA_CATEGORIES_MANIFEST = [
-    { id: "all_photos", name: "Full Photo Tour", photos: BURJ_VISTA_PHOTOS }
-];
+// Property Database
+const PROPERTIES_DATA = {
+    'paramount': {
+        id: 'paramount',
+        name: 'Burj View & Infinity Pool | 7 min to Dubai Mall',
+        tagline: '🏊‍♂️ Rooftop Infinity Pool · Unobstructed Burj Khalifa View',
+        location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
+        specs: '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms',
+        priceNight: 240,
+        maxGuests: 4,
+        currency: 'USD',
+        priceAed: 880,
+        rating: '★ New',
+        reviewsCount: 12,
+        badge: null,
+        hostName: 'Prince (Superhost)',
+        airbnbUrl: PARAMOUNT_AIRBNB_URL,
+        photos: PARAMOUNT_PHOTOS,
+        
+        // Exact Airbnb Detailed Content Sections
+        aboutThisSpace: `Start your day with a dip in the luxurious infinity pool on the rooftop at 64th floor, taking in the sweeping Burj Khalifa and Downtown skyline view, then enjoy that same iconic view right from your own private balcony.
 
+This one-bedroom apartment in Business Bay near Downtown offers five-star amenities and a stylish, comfortable interior. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most sought-after neighbourhoods.`,
+        
+        theSpace: `A one-bedroom home with the highest infinity pool in Downtown Dubai and a balcony view of the Burj Khalifa & Downtown skyline. Comfortable and well-equipped for couples, families, or business travellers alike.`,
+        
+        propertyHighlights: [
+            "Layout: 1 bedroom, 1.5 bathrooms, 2 beds, sleeps up to 4",
+            "View: Private balcony with Burj Khalifa and Downtown skyline view",
+            "Amenities: 5-star, hotel-style building facilities",
+            "Building extras: Residents' lounge, grocery store on-site, spa, gym",
+            "Wi-Fi: Free high-speed internet throughout"
+        ],
+        
+        livingRoom: [
+            "Comfortable sofa with cushions",
+            "65-inch Smart TV in the living room; 55-inch Smart TV in the bedroom",
+            "Stylish coffee table",
+            "1 sofa bed, sleeping up to 2 additional guests",
+            "Balcony access with panoramic views"
+        ],
+        
+        kitchenDining: [
+            "Dishwasher, electric oven, and stove",
+            "Fridge, freezer and microwave",
+            "Coffee machine, kettle, and toaster",
+            "Full set of pots and pans (non-stick, frying pans, saucepans)",
+            "Baking trays, cutting boards, knives, and cooking utensils",
+            "Plates, bowls, glasses, mugs, and cutlery for all guests"
+        ],
+        
+        sleepingArrangements: [
+            "Master Bedroom: king-size bed with ensuite bathroom",
+            "Living Room: comfortable sofa bed",
+            "Premium mattresses, hotel-quality bedding, and full blackout shades"
+        ],
+        
+        bathrooms: [
+            "One ensuite bathroom",
+            "One powder room",
+            "Fresh towels and essential toiletries provided"
+        ],
+        
+        nearbyAttractions: [
+            "Burj Khalifa: 12-minute walk",
+            "Dubai Mall: 15-minute walk",
+            "Dubai Fountain: 15-minute walk to the famous water shows",
+            "Dubai Aquarium: 17-minute walk, inside Dubai Mall",
+            "Burj Park: 14-minute walk for lake and skyline views",
+            "Sky Views Observatory: 18-minute walk for glass floors and thrills"
+        ],
+        
+        gettingAround: {
+            locally: [
+                "Walking: Burj Khalifa and Downtown Dubai attractions are 12–18 minutes away on foot",
+                "Metro: Business Bay Metro Station, about a 10-minute walk",
+                "Taxi / Uber / Careem: Easy pickup right from the building entrance",
+                "Bus: Nearby stops connect Business Bay to the rest of Dubai"
+            ],
+            airport: [
+                "Taxi / Uber: Approximately 15 minutes direct to the apartment",
+                "Metro: Red Line from DXB to Business Bay Station (about 25 minutes), then a short walk",
+                "Car rental: Easy drive via Sheikh Zayed Road, with parking available"
+            ]
+        },
+        
+        guestAccess: `Guests have full, private access to the entire one-bedroom apartment, the living area, modern kitchen, and the wonderful Burj Khalifa and Downtown skyline view from the balcony, plus everything the building's residential amenities have to offer.`,
+        
+        sharedBuildingAmenities: [
+            "Rooftop pool: Guests have access to a 64th-floor infinity pool, open daily from 7 AM to 7 PM.",
+            "Sky lounge: The Malibu Sky Lounge & Bar is available for drinks and relaxation, with happy hour running from 4 to 7 PM.",
+            "Wellness spa: A sauna and jacuzzi are available for guests looking to unwind further, for an extra fee.",
+            "Gym: A state-of-the-art fitness area is open for all guests.",
+            "Kids' playroom: Families traveling with children can make use of the indoor playroom, available for an extra fee.",
+            "Dining: The building offers top-tier restaurants on-site for dining.",
+            "Groceries: An on-site grocery store is available for everyday essentials.",
+            "Security: 24/7 on-site security is provided for peace of mind.",
+            "Check-in: Check-in is fully self-service and available 24 hours a day, starting from 3 PM on your check-in date."
+        ],
+        
+        houseRules: {
+            idReq: "All guests must submit soft copies of their passports before check-in for building and security registration, in line with Dubai authorities (DTCM) rules.",
+            checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM sharp (housekeeping arrives promptly at this time)",
+            lateCheckout: "AED 100 for extension to 12:00 PM (subject to host approval); after 12:00 PM, a full day's rate applies (subject to availability)",
+            propertyUse: "This home is for residential stays only. Commercial use, business operations, and events are strictly prohibited.",
+            accessCards: "Please return all access cards in good condition at checkout. Lost or damaged cards incur a fee of AED 350 per card.",
+            smokingPolicy: "Smoking inside the apartment is not permitted. Any evidence of smoking results in a fee of AED 2,000 for professional odour removal, duct cleaning, and furniture deep cleaning.",
+            noisePolicy: "No parties or loud music.",
+            cleaningServices: "The apartment is deep-cleaned before every check-in. Extra cleaning during your stay can be arranged for an additional cost.",
+            registrationDetails: "BUS-PAR-KJYVF"
+        },
 
+        categorizedAmenities: [
+            {
+                category: "Bathroom",
+                icon: "fa-bath",
+                items: [
+                    { text: "Bath", available: true },
+                    { text: "Hairdryer", available: true },
+                    { text: "Shampoo", available: true },
+                    { text: "Body soap", available: true },
+                    { text: "Hot water", available: true },
+                    { text: "Shower gel", available: true }
+                ]
+            },
+            {
+                category: "Bedroom and laundry",
+                icon: "fa-bed",
+                items: [
+                    { text: "Washing machine", available: true },
+                    { text: "Essentials (Towels, bed sheets, soap and toilet paper)", available: true },
+                    { text: "Hangers", available: true },
+                    { text: "Room-darkening blinds", available: true },
+                    { text: "Iron", available: true },
+                    { text: "Clothes storage: wardrobe", available: true }
+                ]
+            },
+            {
+                category: "Entertainment",
+                icon: "fa-tv",
+                items: [
+                    { text: "TV (65-inch Smart TV in living room; 55-inch Smart TV in bedroom)", available: true }
+                ]
+            },
+            {
+                category: "Heating and cooling",
+                icon: "fa-snowflake",
+                items: [
+                    { text: "Air conditioning", available: true }
+                ]
+            },
+            {
+                category: "Home safety",
+                icon: "fa-shield-halved",
+                items: [
+                    { text: "Smoke alarm", available: true },
+                    { text: "Carbon monoxide alarm", available: true },
+                    { text: "Fire extinguisher", available: true },
+                    { text: "First aid kit", available: true }
+                ]
+            },
+            {
+                category: "Internet and office",
+                icon: "fa-wifi",
+                items: [
+                    { text: "Wifi (Free high-speed internet throughout)", available: true }
+                ]
+            },
+            {
+                category: "Kitchen and dining",
+                icon: "fa-utensils",
+                items: [
+                    { text: "Kitchen (Space where guests can cook their own meals)", available: true },
+                    { text: "Fridge", available: true },
+                    { text: "Microwave", available: true },
+                    { text: "Cooking basics (Pots and pans, oil, salt and pepper)", available: true },
+                    { text: "Crockery and cutlery (Bowls, chopsticks, plates, cups, etc.)", available: true },
+                    { text: "Freezer", available: true },
+                    { text: "Dishwasher", available: true },
+                    { text: "Oven", available: true },
+                    { text: "Kettle", available: true },
+                    { text: "Coffee maker", available: true },
+                    { text: "Wine glasses", available: true },
+                    { text: "Toaster", available: true },
+                    { text: "Dining table", available: true }
+                ]
+            },
+            {
+                category: "Outdoor",
+                icon: "fa-chair",
+                items: [
+                    { text: "Outdoor furniture", available: true }
+                ]
+            },
+            {
+                category: "Parking and facilities",
+                icon: "fa-square-parking",
+                items: [
+                    { text: "Free parking on premises", available: true },
+                    { text: "Pool (64th Floor Rooftop Infinity Pool)", available: true },
+                    { text: "Lift (Lift doorway 32\" / 81cm wide, depth 52\" / 132cm)", available: true },
+                    { text: "Gym (State-of-the-art fitness center)", available: true }
+                ]
+            },
+            {
+                category: "Not included",
+                icon: "fa-circle-xmark",
+                items: [
+                    { text: "Exterior security cameras on property", available: false },
+                    { text: "Tumble dryer", available: false },
+                    { text: "Heating", available: false }
+                ]
+            }
+        ]
+    },
+    'burj-vista': {
+        id: 'burj-vista',
+        name: 'Burj Khalifa & Fountain view | Direct mall access',
+        tagline: '🗼 Direct Unobstructed Views of Burj Khalifa & Dubai Fountain · Direct Metro & Mall Access',
+        location: 'Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, UAE',
+        specs: '6 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
+        priceNight: 290,
+        maxGuests: 6,
+        currency: 'USD',
+        priceAed: 1065,
+        rating: '4.99',
+        reviewsCount: 62,
+        badge: 'Guest favorite',
+        hostName: 'Prince (Superhost)',
+        airbnbUrl: BURJ_VISTA_AIRBNB_URL,
+        photos: BURJ_VISTA_PHOTOS,
+        
+        aboutThisSpace: `Immerse yourself in Downtown Dubai luxury at Burj Vista. Wake up to direct, uninterrupted views of the world-famous Burj Khalifa right from your private balcony. Enjoys direct air-conditioned tunnel linkage to Dubai Mall & Metro station, a resort-style infinity pool with architectural shade, landscaped lounge deck, and fully-equipped fitness center.`,
+        
+        theSpace: `A premium luxury one-bedroom residence directly on Sheikh Mohammed Bin Rashid Boulevard. Features floor-to-ceiling windows with front-row seats to the Burj Khalifa LED light shows and Dubai Fountain performances. Perfect for families, couples, and business travellers looking for unbeatable location and 5-star comfort.`,
+        
+        propertyHighlights: [
+            "Layout: 1 bedroom, 1.5 bathrooms, 3 beds, sleeps up to 6",
+            "View: Direct, full unobstructed views of Burj Khalifa & Dubai Fountain",
+            "Direct Access: Air-conditioned bridge directly connected to Dubai Mall & Metro",
+            "Amenities: Resort-style infinity pool deck, gym, tennis court & children's play area",
+            "Wi-Fi: Ultra-fast fiber internet throughout"
+        ],
+        
+        sleepingArrangements: [
+            "Master Bedroom: 1 King Bed with ensuite bathroom",
+            "Living Room: 2 Comfortable Sofa Beds",
+            "Premium mattresses, luxury linens, and full blackout drapes"
+        ],
+        
+        bathrooms: [
+            "Ensuite Master Bathroom with soaking tub and walk-in shower",
+            "Guest Powder Room",
+            "Fresh luxury towels, bathrobes, and premium toiletries"
+        ],
+        
+        nearbyAttractions: [
+            "Dubai Mall: Direct walkway (2-minute walk)",
+            "Burj Khalifa: 3-minute walk across the plaza",
+            "Dubai Opera: 5-minute walk along the Boulevard",
+            "Souk Al Bahar: 7-minute walk across the bridge",
+            "Dubai Fountain: Front row balcony view & 5-minute walk"
+        ],
+        
+        gettingAround: {
+            locally: [
+                "Direct Metro Connection: AC bridge to Burj Khalifa / Dubai Mall Metro Station",
+                "Walking: Step directly onto Sheikh Mohammed Bin Rashid Boulevard",
+                "Taxi / Uber / Careem: 24/7 dedicated concierge pick-up zone"
+            ],
+            airport: [
+                "Taxi / Uber: 15 minutes direct from DXB Airport",
+                "Metro: Red Line direct to Dubai Mall/Burj Khalifa station"
+            ]
+        },
+        
+        guestAccess: `Guests enjoy full, exclusive access to the residence, private balcony with direct Burj Khalifa views, reserved covered parking space, and all resort amenities in Burj Vista Tower.`,
+        
+        sharedBuildingAmenities: [
+            "Resort Pool: Infinity pool with Burj Khalifa view and sun deck",
+            "Fitness & Sports: State-of-the-art gym and outdoor tennis court",
+            "Children's Zone: Dedicated indoor & outdoor kids' play areas",
+            "Direct Mall Bridge: Climate-controlled walkway to Dubai Mall"
+        ],
+        
+        houseRules: {
+            idReq: "All guests must submit passport copies prior to check-in for DTCM and security authorization.",
+            checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM",
+            lateCheckout: "Available upon request (subject to availability & fee)",
+            propertyUse: "Residential stay only. Strictly no parties, events, or commercial filming.",
+            smokingPolicy: "Strictly non-smoking inside. Penalty applies for violations.",
+            noisePolicy: "Quiet hours from 10:00 PM to 8:00 AM.",
+            registrationDetails: "DOW-BUR-VIS01"
+        }
+    }
+};
+
+// Global Carousel Movement
+function moveCarousel(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
     
@@ -208,7 +502,6 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     }
 }
 
-// DOM Loaded Initialization
 document.addEventListener('DOMContentLoaded', () => {
     
     // Filter Pills Logic
