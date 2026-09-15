@@ -406,67 +406,94 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         airbnbUrl: BURJ_VISTA_AIRBNB_URL,
         photos: BURJ_VISTA_PHOTOS,
         
-        aboutThisSpace: `Immerse yourself in Downtown Dubai luxury at Burj Vista. Wake up to direct, uninterrupted views of the world-famous Burj Khalifa right from your private balcony. Enjoys direct air-conditioned tunnel linkage to Dubai Mall & Metro station, a resort-style infinity pool with architectural shade, landscaped lounge deck, and fully-equipped fitness center.`,
+        aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.\n\nEnjoy five-star building amenities and a stylish, comfortable interior, directly connected to Dubai Mall and Dubai Metro through an internal AC skybridge. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most iconic addresses.`,
         
-        theSpace: `A premium luxury one-bedroom residence directly on Sheikh Mohammed Bin Rashid Boulevard. Features floor-to-ceiling windows with front-row seats to the Burj Khalifa LED light shows and Dubai Fountain performances. Perfect for families, couples, and business travellers looking for unbeatable location and 5-star comfort.`,
+        theSpace: `A one-bedroom home built around its view, with Dubai Mall and Dubai Metro directly connected through an internal AC skybridge. Comfortable and well-equipped for couples, families, or business travellers alike.`,
         
         propertyHighlights: [
-            "Layout: 1 bedroom, 1.5 bathrooms, 3 beds, sleeps up to 6",
-            "View: Direct, full unobstructed views of Burj Khalifa & Dubai Fountain",
-            "Direct Access: Air-conditioned bridge directly connected to Dubai Mall & Metro",
-            "Amenities: Resort-style infinity pool deck, gym, tennis court & children's play area",
-            "Wi-Fi: Ultra-fast fiber internet throughout"
+            "Location: Burj Vista",
+            "Layout: 1 bedroom, 1.5 bathrooms, 3 beds, sleeps up to 4",
+            "View: Private balcony with full Burj Khalifa and Fountain view",
+            "Amenities: 5-star, hotel-style building facilities",
+            "Building extras: Residents' lounge, grocery store on-site",
+            "Access: Internal sky bridge to Dubai Mall and Metro, 1 minute away",
+            "Wi-Fi: Free high-speed internet throughout"
+        ],
+
+        livingRoom: [
+            "Comfortable sofas with cushions",
+            "65-inch Smart TV in the living room; 55-inch Smart TV in the bedroom",
+            "Stylish coffee table",
+            "2 sofa bed, sleeping up to 4 additional guests",
+            "Balcony access with uninterrupted Burj Khalifa views"
+        ],
+
+        kitchenDining: [
+            "Dishwasher, electric oven, and stove",
+            "Fridge, freezer and microwave",
+            "Coffee machine, kettle, and toaster",
+            "Full set of pots and pans (non-stick, frying pans, saucepans)",
+            "Baking trays, cutting boards, knives, and cooking utensils",
+            "Plates, bowls, glasses, mugs, and cutlery for all guests"
         ],
         
         sleepingArrangements: [
-            "Master Bedroom: 1 King Bed with ensuite bathroom",
-            "Living Room: 2 Comfortable Sofa Beds",
-            "Premium mattresses, luxury linens, and full blackout drapes"
+            "Master Bedroom: king-size bed with ensuite bathroom",
+            "Living Room: 2 comfortable sofa beds",
+            "Premium mattresses, hotel-quality bedding, and full blackout shades"
         ],
         
         bathrooms: [
-            "Ensuite Master Bathroom with soaking tub and walk-in shower",
-            "Guest Powder Room",
-            "Fresh luxury towels, bathrobes, and premium toiletries"
+            "One ensuite bathroom",
+            "One powder room",
+            "Fresh towels and essential toiletries provided"
         ],
         
         nearbyAttractions: [
-            "Dubai Mall: Direct walkway (2-minute walk)",
-            "Burj Khalifa: 3-minute walk across the plaza",
-            "Dubai Opera: 5-minute walk along the Boulevard",
-            "Souk Al Bahar: 7-minute walk across the bridge",
-            "Dubai Fountain: Front row balcony view & 5-minute walk"
+            "Burj Khalifa: 2-minute walk via direct walkway",
+            "Dubai Mall: 5-minute walk through an internal sky bridge",
+            "Dubai Fountain: 5-minute walk to the famous water shows",
+            "Dubai Aquarium: 7-minute walk, inside Dubai Mall",
+            "Burj Park: 6-minute walk for lake and skyline views",
+            "Sky Views Observatory: 8-minute walk for glass floors and thrills"
         ],
         
         gettingAround: {
             locally: [
-                "Direct Metro Connection: AC bridge to Burj Khalifa / Dubai Mall Metro Station",
-                "Walking: Step directly onto Sheikh Mohammed Bin Rashid Boulevard",
-                "Taxi / Uber / Careem: 24/7 dedicated concierge pick-up zone"
+                "Walking: Most Downtown attractions are 5–10 minutes away on foot",
+                "Metro: Burj Khalifa / Dubai Mall Station (Red Line), about 5-minute walk through an internal sky bridge",
+                "Taxi / Uber / Careem: Easy pickup right from the tower entrance",
+                "Bus: Nearby stops connect Downtown to the rest of Dubai"
             ],
             airport: [
-                "Taxi / Uber: 15 minutes direct from DXB Airport",
-                "Metro: Red Line direct to Dubai Mall/Burj Khalifa station"
+                "Taxi / Uber: Approximately 15 minutes direct to Burj Vista",
+                "Metro: Red Line from DXB to Burj Khalifa / Dubai Mall Station (about 25 minutes), then a short walk",
+                "Car rental: Easy drive via Sheikh Zayed Road, with parking available"
             ]
         },
         
-        guestAccess: `Guests enjoy full, exclusive access to the residence, private balcony with direct Burj Khalifa views, reserved covered parking space, and all resort amenities in Burj Vista Tower.`,
+        guestAccess: `Guests have full, private access to the entire one-bedroom apartment, the living area, modern kitchen, and the Burj Khalifa view, plus everything the building's residential amenities have to offer.`,
         
         sharedBuildingAmenities: [
-            "Resort Pool: Infinity pool with Burj Khalifa view and sun deck",
-            "Fitness & Sports: State-of-the-art gym and outdoor tennis court",
-            "Children's Zone: Dedicated indoor & outdoor kids' play areas",
-            "Direct Mall Bridge: Climate-controlled walkway to Dubai Mall"
+            "Swimming pool: Large pool with Burj Khalifa views",
+            "Gym: Fully equipped fitness area",
+            "Lounges: Residents' lounge and elegant lobby lounge",
+            "Security: 24/7 on-site security",
+            "Check-in: 24-hour check-in, in the presence of the host. Starting from 3 PM on your check-in date",
+            "Climate: Air conditioning throughout the building",
+            "Access: Elevator access to all floors"
         ],
         
         houseRules: {
-            idReq: "All guests must submit passport copies prior to check-in for DTCM and security authorization.",
-            checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM",
-            lateCheckout: "Available upon request (subject to availability & fee)",
-            propertyUse: "Residential stay only. Strictly no parties, events, or commercial filming.",
-            smokingPolicy: "Strictly non-smoking inside. Penalty applies for violations.",
-            noisePolicy: "Quiet hours from 10:00 PM to 8:00 AM.",
-            registrationDetails: "DOW-BUR-VIS01"
+            idReq: "All guests must submit soft copies of their passports before check-in for building and security registration, in line with the Dubai authority (DTCM) rules.",
+            checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM sharp (housekeeping arrives promptly at this time)",
+            lateCheckout: "AED 100 for extension to 12:00 PM (subject to host approval); after 12:00 PM, a full day's rate applies (subject to availability)",
+            propertyUse: "This home is for residential stays only. Commercial use, business operations, and events are strictly prohibited.",
+            accessCards: "Please return all access cards in good condition at checkout. Lost or damaged cards incur a fee of AED 350 per card.",
+            smokingPolicy: "Smoking inside the apartment is strictly not permitted. Any evidence of smoking results in a fee of AED 2,000 for professional odour removal, duct cleaning, and furniture deep cleaning.",
+            noisePolicy: "No parties or loud music inside the apartment. Be respectful to our neighbours.",
+            cleaningServices: "The apartment is deep-cleaned before every check-in. Extra cleaning during your stay can be arranged for an additional fee.",
+            registrationDetails: "BUR-BUR-0XCRY"
         }
     }
 };
@@ -981,6 +1008,146 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
                     ` : ''}
+
+                    <!-- Meet Your Host Section (Exact Airbnb Match) -->
+                    <div class="meet-host-section" style="margin-bottom: 40px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
+                        <h2 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 24px;">Meet your host</h2>
+                        
+                        <div style="display: grid; grid-template-columns: minmax(280px, 340px) 1fr; gap: 40px; align-items: start; margin-bottom: 40px;">
+                            
+                            <!-- Host Profile Card -->
+                            <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                                
+                                <!-- Left Side: Avatar & Name -->
+                                <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                                    <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
+                                        <img src="assets/prince_host.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                        <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
+                                    <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
+                                </div>
+
+                                <!-- Right Side: Stats Column -->
+                                <div style="display: flex; flex-direction: column; gap: 14px; width: 120px;">
+                                    <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
+                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">3</div>
+                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Reviews</div>
+                                    </div>
+                                    <div style="padding-bottom: 10px; border-bottom: 1px solid #EBEBEB;">
+                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">5.0 ★</div>
+                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Rating</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 20px; font-weight: 800; color: #222222;">1</div>
+                                        <div style="font-size: 12px; color: #717171; font-weight: 600;">Month hosting</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Right Side: About Prince Info -->
+                            <div>
+                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 20px;">About Prince</h3>
+                                <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
+                                    <div style="display: flex; align-items: center; gap: 14px;">
+                                        <i class="fa-solid fa-graduation-cap" style="font-size: 20px; width: 24px; color: #222;"></i>
+                                        <span>Where I went to school: <strong>IIT Delhi</strong></span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 14px;">
+                                        <i class="fa-solid fa-globe" style="font-size: 20px; width: 24px; color: #222;"></i>
+                                        <span>Speaks <strong>English and Hindi</strong></span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 14px;">
+                                        <i class="fa-solid fa-shield-halved" style="font-size: 20px; width: 24px; color: #222;"></i>
+                                        <span><strong>Identity verified</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Prince's Reviews Section -->
+                        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #222222; margin-bottom: 20px;">Prince's reviews</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 24px;">
+                                
+                                <!-- Review 1 -->
+                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #0F1E36; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">A</div>
+                                            <div>
+                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Aditya</div>
+                                                <div style="font-size: 13px; color: #717171;">Sammamish, WA</div>
+                                            </div>
+                                        </div>
+                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <span style="color: #717171; margin-left: 6px;">· Today</span>
+                                        </div>
+                                        <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0;">"Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Prince also was great with check in and check out accommodation. Highly recommended him and this stay!"</p>
+                                    </div>
+                                </div>
+
+                                <!-- Review 2 -->
+                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #10B981; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">F</div>
+                                            <div>
+                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Felipe</div>
+                                                <div style="font-size: 13px; color: #717171;">Cali, Colombia</div>
+                                            </div>
+                                        </div>
+                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <span style="color: #717171; margin-left: 6px;">· 4 days ago</span>
+                                        </div>
+                                        <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0;">"Exceptional experience! High quality residence, prompt WhatsApp support, and pristine views."</p>
+                                    </div>
+                                </div>
+
+                                <!-- Review 3 -->
+                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                            <div style="width: 42px; height: 42px; border-radius: 50%; background: #7C3AED; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">N</div>
+                                            <div>
+                                                <div style="font-size: 15px; font-weight: 700; color: #222;">Nawaf</div>
+                                                <div style="font-size: 13px; color: #717171;">Riyadh, Saudi Arabia</div>
+                                            </div>
+                                        </div>
+                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <i class="fa-solid fa-star" style="color: #222;"></i>
+                                            <span style="color: #717171; margin-left: 6px;">· 1 week ago</span>
+                                        </div>
+                                        <p style="font-size: 15px; color: #374151; line-height: 1.5; margin: 0; font-family: sans-serif;">"رائع جداً"</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button onclick="document.getElementById('reviews').scrollIntoView({behavior: 'smooth'})" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 11px 24px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s;">
+                                Show all reviews
+                            </button>
+                        </div>
+                    </div>
 
                     <!-- What this place offers Section (Ref Image 3) -->
                     <div style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
