@@ -394,9 +394,9 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         name: 'Burj Khalifa & Fountain view | Direct mall access',
         tagline: '🗼 Direct Unobstructed Views of Burj Khalifa & Dubai Fountain · Direct Metro & Mall Access',
         location: 'Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, UAE',
-        specs: '6 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
+        specs: '4 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
         priceNight: 290,
-        maxGuests: 6,
+        maxGuests: 4,
         currency: 'USD',
         priceAed: 1065,
         rating: '4.99',
@@ -411,7 +411,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         theSpace: `A one-bedroom home built around its view, with Dubai Mall and Dubai Metro directly connected through an internal AC skybridge. Comfortable and well-equipped for couples, families, or business travellers alike.`,
         
         propertyHighlights: [
-            "Location: Burj Vista",
             "Layout: 1 bedroom, 1.5 bathrooms, 3 beds, sleeps up to 4",
             "View: Private balcony with full Burj Khalifa and Fountain view",
             "Amenities: 5-star, hotel-style building facilities",
@@ -799,6 +798,7 @@ function openPropertyDetail(propId) {
 
                     <!-- Highlights Row (Ref Image 2) -->
                     <div style="padding-bottom: 24px; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px;">
+                        ${propId === 'paramount' ? `
                         <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px;">
                             <i class="fa-solid fa-water-ladder" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
                             <div>
@@ -813,6 +813,22 @@ function openPropertyDetail(propId) {
                                 <p style="font-size: 14px; color: #717171; margin: 0;">12-minute walk to Burj Khalifa & 15-minute walk to Dubai Mall</p>
                             </div>
                         </div>
+                        ` : `
+                        <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px;">
+                            <i class="fa-solid fa-location-dot" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
+                            <div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 2px;">Beautiful and walkable</h4>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">This area is scenic and easy to get around.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px; align-items: flex-start;">
+                            <i class="fa-solid fa-water-ladder" style="font-size: 20px; color: #222222; margin-top: 2px;"></i>
+                            <div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 2px;">Dive right in</h4>
+                                <p style="font-size: 14px; color: #717171; margin: 0;">This is one of the few places in the area with a pool.</p>
+                            </div>
+                        </div>
+                        `}
                     </div>
 
                     <!-- Where you'll sleep Section (Matches Airbnb exact card) -->
