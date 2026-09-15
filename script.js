@@ -790,7 +790,7 @@ function openPropertyDetail(propId) {
                     
                     <!-- Host Profile Row (Ref Image 2) -->
                     <div class="host-row" style="padding: 24px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px; display: flex; align-items: center; gap: 16px;">
-                        <div class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: #FF385C; color: #FFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</div>
+                        <img src="assets/prince_new_avatar.jpg" alt="Prince" class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <div class="host-name" style="font-size: 16px; font-weight: 700; color: #222222;">Hosted by ${data.hostName}</div>
                             <div class="host-badge" style="font-size: 13px; color: #717171;">5-Star Luxury Stays</div>
@@ -1021,7 +1021,7 @@ function openPropertyDetail(propId) {
                                 <!-- Left Side: Avatar & Name -->
                                 <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
                                     <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
-                                        <img src="assets/prince_host.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                        <img src="assets/prince_new_avatar.jpg" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                         <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
                                             <i class="fa-solid fa-check"></i>
                                         </div>
