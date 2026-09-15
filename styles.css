@@ -2907,6 +2907,21 @@ img {
     .mobile-pdp-container {
         padding-bottom: 110px !important;
     }
+
+    /* ── Meet your host: stack to single column on mobile ── */
+    .meet-host-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .host-profile-card {
+        max-width: 100% !important;
+    }
+
+    .shield-notice {
+        border-top: none !important;
+        padding-top: 0 !important;
+    }
 }
 
 /* ==========================================================================
@@ -2961,22 +2976,4 @@ img {
     font-size: 12px;
     color: #717171;
     line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-    .meet-host-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    
-    .host-profile-card {
-        max-width: 100% !important;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .shield-notice {
-        border-top: none;
-        padding-top: 0;
-    }
 }
