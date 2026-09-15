@@ -1032,7 +1032,7 @@ function openPropertyDetail(propId) {
                         <div class="meet-host-grid">
                             
                             <!-- Host Profile Card -->
-                            <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 340px;">
                                 
                                 <!-- Left Side: Avatar & Name -->
                                 <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
