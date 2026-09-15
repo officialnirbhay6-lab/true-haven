@@ -189,7 +189,7 @@ const PROPERTIES_DATA = {
         rating: '★ New',
         reviewsCount: 12,
         badge: null,
-        hostName: 'Prince (Superhost)',
+        hostName: 'Prince',
         airbnbUrl: PARAMOUNT_AIRBNB_URL,
         photos: PARAMOUNT_PHOTOS,
         
@@ -402,7 +402,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         rating: '4.99',
         reviewsCount: 62,
         badge: 'Guest favorite',
-        hostName: 'Prince (Superhost)',
+        hostName: 'Prince',
         airbnbUrl: BURJ_VISTA_AIRBNB_URL,
         photos: BURJ_VISTA_PHOTOS,
         
@@ -793,7 +793,7 @@ function openPropertyDetail(propId) {
                         <div class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: #FF385C; color: #FFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</div>
                         <div>
                             <div class="host-name" style="font-size: 16px; font-weight: 700; color: #222222;">Hosted by ${data.hostName}</div>
-                            <div class="host-badge" style="font-size: 13px; color: #717171;">Superhost · 5-Star Luxury Stays</div>
+                            <div class="host-badge" style="font-size: 13px; color: #717171;">5-Star Luxury Stays</div>
                         </div>
                     </div>
 
