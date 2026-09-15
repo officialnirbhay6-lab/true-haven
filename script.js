@@ -1033,7 +1033,7 @@ function openPropertyDetail(propId) {
                             <!-- Left Side -->
                             <div>
                                 <!-- Host Profile Card -->
-                                <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 340px; margin-bottom: 24px;">
+                                <div class="host-profile-card" style="background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 24px;">
                                     
                                     <!-- Left Side: Avatar & Name -->
                                     <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
@@ -1080,7 +1080,7 @@ function openPropertyDetail(propId) {
                                 <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
                                 <a href="https://wa.me/971525821668" target="_blank" style="display: inline-block; background: #F7F7F7; color: #222222; text-decoration: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</a>
                                 
-                                <div style="border-top: 1px solid #EBEBEB; padding-top: 24px; display: flex; align-items: center; gap: 12px; font-size: 12px; color: #717171; line-height: 1.4;">
+                                <div class="shield-notice">
                                     <i class="fa-brands fa-airbnb" style="font-size: 28px; color: #FF385C;"></i>
                                     <span>To help protect your payment, always use Airbnb to send money and communicate with hosts.</span>
                                 </div>
