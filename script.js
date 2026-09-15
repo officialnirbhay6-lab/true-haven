@@ -455,9 +455,6 @@ function openPropertyDetail(propId) {
 
             <!-- Mobile Title Header Section (Ref Image 2) -->
             <div class="mobile-pdp-title-block" style="margin-bottom: 24px;">
-                <div style="display: inline-flex; align-items: center; gap: 6px; background: #E6F4EA; color: #008A05; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">
-                    ${data.tagline}
-                </div>
                 <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}!</h1>
                 <p style="font-size: 15px; color: #717171; margin-bottom: 4px;">Entire rental unit in Dubai, United Arab Emirates</p>
                 <p style="font-size: 14px; color: #222222; font-weight: 600; margin-bottom: 8px;">${data.specs}</p>
