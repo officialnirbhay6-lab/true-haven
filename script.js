@@ -782,7 +782,7 @@ function openPropertyDetail(propId) {
                 </div>
             </div>
 
-            <div class="detail-body-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: start;">
+            <div class="detail-body-layout">
                 
                 <!-- Left Main Column -->
                 <div class="detail-left-col">
