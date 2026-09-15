@@ -1078,7 +1078,7 @@ function openPropertyDetail(propId) {
                             <div>
                                 <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 16px;">Host details</h3>
                                 <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
-                                <button style="background: #F7F7F7; color: #222222; border: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</button>
+                                <a href="https://wa.me/971525821668" target="_blank" style="display: inline-block; background: #F7F7F7; color: #222222; text-decoration: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</a>
                                 
                                 <div style="border-top: 1px solid #EBEBEB; padding-top: 24px; display: flex; align-items: center; gap: 12px; font-size: 12px; color: #717171; line-height: 1.4;">
                                     <i class="fa-brands fa-airbnb" style="font-size: 28px; color: #FF385C;"></i>
