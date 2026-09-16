@@ -189,7 +189,7 @@ const PROPERTIES_DATA = {
         rating: '★ New',
         reviewsCount: 12,
         badge: null,
-        hostName: 'Prince',
+        hostName: 'Ruchi',
         airbnbUrl: PARAMOUNT_AIRBNB_URL,
         photos: PARAMOUNT_PHOTOS,
         
@@ -402,7 +402,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         rating: '5.0',
         reviewsCount: 6,
         badge: 'Guest favorite',
-        hostName: 'Prince',
+        hostName: 'Ruchi',
         airbnbUrl: BURJ_VISTA_AIRBNB_URL,
         photos: BURJ_VISTA_PHOTOS,
         
@@ -786,7 +786,7 @@ function openPropertyDetail(propId) {
                     
                     <!-- Host Profile Row (Ref Image 2) -->
                     <div class="host-row" style="padding: 24px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px; display: flex; align-items: center; gap: 16px;">
-                        <img src="assets/prince_new_avatar.png" alt="Prince" class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <img src="assets/ruchi_cropped.jpg" alt="Ruchi" class="host-avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <div class="host-name" style="font-size: 16px; font-weight: 700; color: #222222;">Hosted by ${data.hostName}</div>
                             <div class="host-badge" style="font-size: 13px; color: #717171;">5-Star Luxury Stays</div>
@@ -1035,12 +1035,12 @@ function openPropertyDetail(propId) {
                                     <!-- Left Side: Avatar & Name -->
                                     <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
                                         <div style="position: relative; width: 104px; height: 104px; margin-bottom: 12px;">
-                                            <img src="assets/prince_new_avatar.png" alt="Prince - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                            <img src="assets/ruchi_cropped.jpg" alt="Ruchi - Host" style="width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                             <div style="position: absolute; bottom: 2px; right: 2px; background: #FF385C; color: #FFFFFF; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
                                                 <i class="fa-solid fa-check"></i>
                                             </div>
                                         </div>
-                                        <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Prince</h3>
+                                        <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0 0 2px 0;">Ruchi</h3>
                                         <span style="font-size: 14px; font-weight: 600; color: #717171;">Host</span>
                                     </div>
 
@@ -1058,11 +1058,11 @@ function openPropertyDetail(propId) {
 
                                 </div>
 
-                                <!-- Left Side: About Prince Info -->
+                                <!-- Left Side: About Ruchi Info -->
                                 <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; color: #222222;">
                                     <div style="display: flex; align-items: center; gap: 14px;">
                                         <i class="fa-solid fa-graduation-cap" style="font-size: 20px; width: 24px; color: #222;"></i>
-                                        <span>Where I went to school: IIT Delhi</span>
+                                        <span>Where I went to school: Amity Noida</span>
                                     </div>
                                     <div style="display: flex; align-items: center; gap: 14px;">
                                         <i class="fa-solid fa-globe" style="font-size: 20px; width: 24px; color: #222;"></i>
@@ -1085,9 +1085,9 @@ function openPropertyDetail(propId) {
 
                         </div>
 
-                        <!-- Prince's Reviews Section -->
+                        <!-- Ruchi's Reviews Section -->
                         <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #EBEBEB;">
-                            <h3 style="font-size: 20px; font-weight: 800; color: #222222; margin-bottom: 20px;">Prince's reviews</h3>
+                            <h3 style="font-size: 20px; font-weight: 800; color: #222222; margin-bottom: 20px;">Ruchi's reviews</h3>
                             
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 24px;">
                                 
@@ -1109,7 +1109,7 @@ function openPropertyDetail(propId) {
                                             <i class="fa-solid fa-star" style="color: #222;"></i>
                                             <span style="color: #717171; margin-left: 6px;">· Today</span>
                                         </div>
-                                        <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0;">"Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Prince also was great with check in and check out accommodation. Highly recommended him and this stay!"</p>
+                                        <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0;">"Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Ruchi also was great with check in and check out accommodation. Highly recommended her and this stay!"</p>
                                     </div>
                                 </div>
 
