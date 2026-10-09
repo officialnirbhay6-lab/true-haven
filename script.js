@@ -774,7 +774,7 @@ function openPropertyDetail(propId) {
     const checkOutStr = checkOutDate.toISOString().split('T')[0];
     const nights = 3;
     const nightlyTotal = data.priceNight * nights;
-    const cleaningFee = 50;
+    const cleaningFee = Math.round(185 * window.exchangeRate);
     const grandTotal = nightlyTotal + cleaningFee;
 
     pageContainer.innerHTML = `
@@ -1304,15 +1304,15 @@ function openPropertyDetail(propId) {
                             </div>
                             <div class="calc-row">
                                 <span>Cleaning fee</span>
-                                <span>$${cleaningFee}</span>
+                                <span>${window.formatPrice(cleaningFee)}</span>
                             </div>
                             <div class="calc-row">
                                 <span>TrueHaven direct service fee</span>
-                                <span style="color: #10B981; font-weight: 700;">FREE ($0)</span>
+                                <span style="color: #10B981; font-weight: 700;">FREE</span>
                             </div>
                             <div class="calc-row total">
-                                <span>Total (USD)</span>
-                                <span id="grandTotalPrice">$${grandTotal}</span>
+                                <span>Total (${window.userCurrency || "USD"})</span>
+                                <span id="grandTotalPrice">${window.formatPrice(grandTotal)}</span>
                             </div>
                         </div>
 
@@ -1389,7 +1389,7 @@ function updateCalc(propId) {
     }
 
     const subtotal = data.priceNight * diffDays;
-    const cleaningFee = 50;
+    const cleaningFee = Math.round(185 * window.exchangeRate);
     const total = subtotal + cleaningFee;
 
     document.getElementById('numNights').innerText = diffDays;
