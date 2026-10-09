@@ -1128,7 +1128,7 @@ function openPropertyDetail(propId) {
 
                             <!-- Right Side: Host details -->
                             <div>
-                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-bottom: 16px;">Host details</h3>
+                                <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin-top: 32px; margin-bottom: 16px;">Host details</h3>
                                 <p style="font-size: 16px; color: #222222; margin-bottom: 24px; line-height: 1.5;">Response rate: 100%<br>Responds within an hour</p>
                                 <a href="https://wa.me/971525821668" target="_blank" style="display: inline-block; background: #F7F7F7; color: #222222; text-decoration: none; border-radius: 8px; padding: 13px 23px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 32px;">Message host</a>
                                 
