@@ -1,3 +1,63 @@
+
+window.userCurrency = 'USD';
+window.exchangeRate = 0.272; // Default AED to USD
+
+window.formatPrice = function(amount) {
+    try {
+        return new Intl.NumberFormat(undefined, {
+            style: 'currency',
+            currency: window.userCurrency,
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    } catch(e) {
+        return '$' + amount;
+    }
+};
+
+async function initDynamicCurrency() {
+    try {
+        const ipRes = await fetch('https://ipapi.co/json/');
+        const ipData = await ipRes.json();
+        if (ipData.currency) {
+            window.userCurrency = ipData.currency;
+        }
+
+        const rateRes = await fetch('https://open.er-api.com/v6/latest/AED');
+        const rateData = await rateRes.json();
+        if (rateData.rates && rateData.rates[window.userCurrency]) {
+            window.exchangeRate = rateData.rates[window.userCurrency];
+        }
+
+        if (PROPERTIES_DATA) {
+            for (let key in PROPERTIES_DATA) {
+                const prop = PROPERTIES_DATA[key];
+                if (prop.priceAed) {
+                    prop.priceNight = Math.round(prop.priceAed * window.exchangeRate);
+                }
+            }
+        }
+
+        document.querySelectorAll('.price-box').forEach(box => {
+            const aedVal = box.getAttribute('data-aed');
+            if (aedVal) {
+                const converted = Math.round(parseInt(aedVal) * window.exchangeRate);
+                const amountEl = box.querySelector('.price-amount');
+                if (amountEl) {
+                    amountEl.textContent = window.formatPrice(converted);
+                }
+            }
+        });
+
+        if (window.currentPropertyId && typeof window.renderPropertyDetail === 'function') {
+            window.renderPropertyDetail(window.currentPropertyId);
+        }
+    } catch (error) {
+        console.error('Currency conversion failed', error);
+    }
+}
+document.addEventListener("DOMContentLoaded", initDynamicCurrency);
+
 /* ==========================================================================
    TRUEHAVEN STAYS - INTERACTIVE JAVASCRIPT
    Handles property detail overlays, photo carousels, pricing calculator & WhatsApp reservation
@@ -1200,7 +1260,7 @@ function openPropertyDetail(propId) {
 
                         <div class="res-price-header" style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px;">
                             <div>
-                                <span class="res-price" style="font-size: 28px; font-weight: 800; color: #0F1E36;">$${data.priceNight}</span>
+                                <span class="res-price" style="font-size: 28px; font-weight: 800; color: #0F1E36;">${window.formatPrice(data.priceNight)}</span>
                                 <span style="font-size: 15px; color: #6B7280;">/ night</span>
                                 <span style="font-size: 13px; color: #6B7280; display: block;">(AED ${data.priceAed})</span>
                             </div>
@@ -1232,8 +1292,8 @@ function openPropertyDetail(propId) {
                         <!-- Price Stack -->
                         <div class="res-calc-stack" id="resCalcStack">
                             <div class="calc-row">
-                                <span>$${data.priceNight} x <span id="numNights">${nights}</span> nights</span>
-                                <span id="subtotalPrice">$${nightlyTotal}</span>
+                                <span>${window.formatPrice(data.priceNight)} x <span id="numNights">${nights}</span> nights</span>
+                                <span id="subtotalPrice">${window.formatPrice(nightlyTotal)}</span>
                             </div>
                             <div class="calc-row">
                                 <span>Cleaning fee</span>
@@ -1326,8 +1386,8 @@ function updateCalc(propId) {
     const total = subtotal + cleaningFee;
 
     document.getElementById('numNights').innerText = diffDays;
-    document.getElementById('subtotalPrice').innerText = `$${subtotal}`;
-    document.getElementById('grandTotalPrice').innerText = `$${total}`;
+    document.getElementById('subtotalPrice').innerText = window.formatPrice(subtotal);
+    document.getElementById('grandTotalPrice').innerText = window.formatPrice(total);
 }
 
 // WhatsApp Booking Redirect
@@ -1346,7 +1406,7 @@ function bookOnWhatsApp(propId) {
                 `📅 Check-in: ${checkIn}\n` +
                 `📅 Check-out: ${checkOut}\n` +
                 `👥 Guests: ${guests}\n` +
-                `💰 Estimated Total: ${total}\n\n` +
+                `💰 Estimated Total: ${window.formatPrice(total)}\n\n` +
                 `Please confirm availability and booking details. Thank you!`;
 
     const encodedMsg = encodeURIComponent(msg);
