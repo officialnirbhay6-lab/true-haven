@@ -238,6 +238,13 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
 const PROPERTIES_DATA = {
     'paramount': {
         id: 'paramount',
+
+        reviews: [
+            { name: '奕翔', location: '5 years on Airbnb', initial: '奕', color: '#3B82F6', text: 'The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located. It was a great stay!', time: '4 days ago' },
+            { name: 'Matteo', location: '5 years on Airbnb', initial: 'M', color: '#F97316', text: 'The property was very clean, with a balcony and a very nice view of the Burj Khalifa. The swimming pool is worth a visit, and the price is very ...', time: '1 week ago' },
+            { name: 'Solomon', location: '5 years on Airbnb', initial: 'S', color: '#4B5563', text: 'Beautiful Property with stunning views of Burj Khalifa', time: '1 week ago' },
+            { name: 'Orhan', location: '4 years on Airbnb', initial: 'O', color: '#6B7280', text: 'The host was very friendly and helpful. Immediate help in a few minutes. The flat is highly recommended. Nothing is missing....', time: '2 weeks ago' }
+        ],
         name: 'Burj View & Infinity Pool | 7 min to Dubai Mall',
         tagline: '🏊‍♂️ Rooftop Infinity Pool · Unobstructed Burj Khalifa View',
         location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
