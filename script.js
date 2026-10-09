@@ -69,6 +69,11 @@ const BURJ_VISTA_AIRBNB_URL = "https://www.airbnb.co.uk/rooms/176212821530555773
 // Exact Airbnb Photo Tour Categories and Photo Sequences
 
 const PARAMOUNT_PHOTOS = [
+    "assets/paramount/airbnb_exact/photo_1.jpg",
+    "assets/paramount/airbnb_exact/photo_2.jpg",
+    "assets/paramount/airbnb_exact/photo_3.jpg",
+    "assets/paramount/airbnb_exact/photo_4.jpg",
+    "assets/paramount/airbnb_exact/photo_5.jpg",
     "assets/paramount/paramount_seq_1.png",
     "assets/paramount/paramount_seq_2.png",
     "assets/paramount/paramount_seq_3.jpg",
@@ -156,11 +161,11 @@ const PARAMOUNT_PHOTOS = [
 ];
 
 const BURJ_VISTA_PHOTOS = [
-    "assets/burj_vista/burj_living_room_1.jpg",
-    "assets/burj_vista/burj_living_room_2.jpg",
-    "assets/burj_vista/burj_balcony_1.jpg",
-    "assets/burj_vista/burj_seq_3.jpg",
-    "assets/burj_vista/burj_seq_4.jpg",
+    "assets/burj_vista/airbnb_exact/photo_1.jpg",
+    "assets/burj_vista/airbnb_exact/photo_2.jpg",
+    "assets/burj_vista/airbnb_exact/photo_3.jpg",
+    "assets/burj_vista/airbnb_exact/photo_4.jpg",
+    "assets/burj_vista/airbnb_exact/photo_5.jpg",
     "assets/burj_vista/burj_seq_2.jpg",
     "assets/burj_vista/burj_seq_1.jpg",
     "assets/burj_vista/burj_seq_5.jpg",
