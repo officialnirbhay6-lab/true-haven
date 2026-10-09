@@ -895,18 +895,6 @@ function openPropertyDetail(propId) {
                         `}
                     </div>
 
-                    <!-- Where you'll sleep Section (Matches Airbnb exact card) -->
-                    <div class="mobile-sleep-section" style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 16px;">Where you'll sleep</h3>
-                        <div class="mobile-sleep-cards" style="display: flex; gap: 16px;">
-                            <div class="mobile-sleep-card" style="max-width: 320px; width: 100%; border: 1px solid #EBEBEB; border-radius: 16px; padding: 16px; background: #FFF; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                                <img src="${bedroomImg}" alt="Bedroom" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 12px;">
-                                <h5 style="font-size: 16px; font-weight: 700; color: #222; margin-bottom: 4px;">Bedroom</h5>
-                                <p style="font-size: 14px; color: #717171; margin: 0;">${propId === 'paramount' ? '1 king bed, 1 sofa bed' : '1 king bed, 2 sofa beds'}</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- About this space & The space -->
                     <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 12px;">About this space</h3>
