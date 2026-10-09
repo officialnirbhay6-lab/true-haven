@@ -156,10 +156,13 @@ const PARAMOUNT_PHOTOS = [
 ];
 
 const BURJ_VISTA_PHOTOS = [
-    "assets/burj_vista/burj_seq_2.jpg",
-    "assets/burj_vista/burj_seq_1.jpg",
+    "assets/burj_vista/burj_living_room_1.jpg",
+    "assets/burj_vista/burj_living_room_2.jpg",
+    "assets/burj_vista/burj_balcony_1.jpg",
     "assets/burj_vista/burj_seq_3.jpg",
     "assets/burj_vista/burj_seq_4.jpg",
+    "assets/burj_vista/burj_seq_2.jpg",
+    "assets/burj_vista/burj_seq_1.jpg",
     "assets/burj_vista/burj_seq_5.jpg",
     "assets/burj_vista/burj_seq_6.jpg",
     "assets/burj_vista/burj_seq_7.jpg",
@@ -736,16 +739,12 @@ function openPropertyDetail(propId) {
     // Desktop 5-Photo Grid
     const desktopPhotoGridHtml = `
         <div class="desktop-photo-grid-wrap desktop-only-grid" style="display: none; position: relative; margin-bottom: 24px; border-radius: 16px; overflow: hidden; cursor: pointer; height: 440px;" onclick="openPhotoGalleryModal('${propId}')">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: 100%;">
-                <div style="height: 100%;">
-                    <img src="${data.photos[0]}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 100%;">
-                    <img src="${data.photos[1]}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                    <img src="${data.photos[2]}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                    <img src="${data.photos[3]}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                    <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                </div>
+            <div style="display: grid; grid-template-areas: 'main top-mid top-right' 'main bot-mid bot-right'; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 100%;">
+                <img src="${data.photos[0]}" alt="${data.name}" style="grid-area: main; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[1]}" alt="${data.name}" style="grid-area: top-mid; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[2]}" alt="${data.name}" style="grid-area: top-right; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[3]}" alt="${data.name}" style="grid-area: bot-mid; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="grid-area: bot-right; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
             </div>
             <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 18px; right: 18px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); cursor: pointer;">
                 <i class="fa-solid fa-border-all" style="font-size: 13px;"></i> Show all photos
