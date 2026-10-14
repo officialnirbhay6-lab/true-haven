@@ -1256,23 +1256,18 @@ function openPropertyDetail(propId) {
                 <!-- Right Column Sticky Reservation Card (Desktop Only) -->
                 <div class="detail-right-col">
                     <div class="reservation-card" style="border: 1px solid #E5E0D8; border-radius: 20px; padding: 28px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); position: sticky; top: 100px; background: #FFF;">
-                        <div style="background: #FFF0F3; color: #FF385C; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 10px; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px;">
-                            🏷️ Direct Booking: Prices include all fees
-                        </div>
 
-                        <div class="res-price-header" style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px;">
-                            <div>
-                                <span class="res-price" style="font-size: 28px; font-weight: 800; color: #0F1E36;">${window.formatPrice(data.priceNight)}</span>
-                                <span style="font-size: 15px; color: #6B7280;">/ night</span>
-                                <span style="font-size: 13px; color: #6B7280; display: block;">(AED ${data.priceAed})</span>
+                        <div class="res-price-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="font-size: 20px; font-weight: 700; color: #222222;">
+                                Select dates
                             </div>
-                            <div style="font-size: 14px; font-weight: 600; color: #0F1E36;">
+                            <div style="font-size: 14px; font-weight: 600; color: #222222;">
                                 <i class="fa-solid fa-star" style="color: #FF385C;"></i> ${data.rating} (${data.reviewsCount})
                             </div>
                         </div>
 
                         <!-- Date & Guest Inputs -->
-                        <div class="res-form-box">
+                        <div class="res-form-box" style="margin-bottom: 20px;">
                             <div class="res-date-row">
                                 <div class="res-date-field">
                                     <label class="res-label">CHECK-IN</label>
@@ -1285,34 +1280,14 @@ function openPropertyDetail(propId) {
                             </div>
                             <div class="res-guest-field">
                                 <label class="res-label">GUESTS</label>
-                                <select class="res-select" id="modalGuests">
+                                <select class="res-select" id="modalGuests" onchange="updateCalc('${propId}')">
                                     ${Array.from({length: data.maxGuests || 4}, (_, i) => i + 1).map(g => `<option value="${g}" ${g === 2 ? 'selected' : ''}>${g} ${g === 1 ? 'Guest' : 'Guests'} ${g === (data.maxGuests || 4) ? '(Max capacity)' : ''}</option>`).join('')}
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Price Stack -->
-                        <div class="res-calc-stack" id="resCalcStack">
-                            <div class="calc-row">
-                                <span>${window.formatPrice(data.priceNight)} x <span id="numNights">${nights}</span> nights</span>
-                                <span id="subtotalPrice">${window.formatPrice(nightlyTotal)}</span>
-                            </div>
-                            <div class="calc-row">
-                                <span>Cleaning fee</span>
-                                <span>${window.formatPrice(cleaningFee)}</span>
-                            </div>
-                            <div class="calc-row">
-                                <span>TrueHaven direct service fee</span>
-                                <span style="color: #10B981; font-weight: 700;">FREE</span>
-                            </div>
-                            <div class="calc-row total">
-                                <span>Total (${window.userCurrency || "USD"})</span>
-                                <span id="grandTotalPrice">${window.formatPrice(grandTotal)}</span>
-                            </div>
-                        </div>
-
                         ${data.airbnbUrl ? `
-                            <a href="${data.airbnbUrl}" target="_blank" class="button-primary" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 54px; font-size: 16px; margin-bottom: 14px; border-radius: 12px; background: #FF385C; color: #FFFFFF; text-decoration: none; font-weight: 700; box-shadow: 0 4px 14px rgba(255,56,92,0.3);">
+                            <a href="${data.airbnbUrl}" id="airbnbReserveBtn" target="_blank" class="button-primary" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 54px; font-size: 16px; margin-bottom: 14px; border-radius: 12px; background: #FF385C; color: #FFFFFF; text-decoration: none; font-weight: 700; box-shadow: 0 4px 14px rgba(255,56,92,0.3); transition: transform 0.1s, background-color 0.2s;">
                                 <i class="fa-solid fa-bolt" style="font-size: 18px; margin-right: 8px;"></i> Reserve on Airbnb
                             </a>
                         ` : `
@@ -1321,7 +1296,7 @@ function openPropertyDetail(propId) {
                             </button>
                         `}
                         
-                        <p style="text-align: center; font-size: 12px; color: #6B7280;">Instant confirmation • No booking fees charged</p>
+                        <p style="text-align: center; font-size: 12px; color: #6B7280; margin: 0;">You won't be charged yet</p>
                     </div>
                 </div>
 
@@ -1331,11 +1306,11 @@ function openPropertyDetail(propId) {
         <!-- Fixed Floating Mobile Bottom Bar (Ref Images 2 & 3) -->
         <div class="mobile-fixed-bottom-bar">
             <div class="mobile-bottom-price-box">
-                <div class="mobile-bottom-price">Add dates for prices</div>
-                <div class="mobile-bottom-sub"><i class="fa-solid fa-star" style="font-size: 11px; color: #222;"></i> ${data.rating}</div>
+                <div class="mobile-bottom-price" style="font-size: 16px; font-weight: 700; color: #222;">Reserve Residence</div>
+                <div class="mobile-bottom-sub"><i class="fa-solid fa-star" style="font-size: 11px; color: #FF385C;"></i> ${data.rating} (${data.reviewsCount})</div>
             </div>
-            <a href="${data.airbnbUrl}" target="_blank" class="mobile-reserve-btn">
-                Check availability
+            <a href="${data.airbnbUrl}" id="mobileAirbnbReserveBtn" target="_blank" class="mobile-reserve-btn">
+                Reserve on Airbnb
             </a>
         </div>
 
@@ -1372,24 +1347,20 @@ function updateCalc(propId) {
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
 
-    const checkInVal = document.getElementById('modalCheckIn').value;
-    const checkOutVal = document.getElementById('modalCheckOut').value;
+    const checkInVal = document.getElementById('modalCheckIn') ? document.getElementById('modalCheckIn').value : '';
+    const checkOutVal = document.getElementById('modalCheckOut') ? document.getElementById('modalCheckOut').value : '';
+    const guestsVal = document.getElementById('modalGuests') ? document.getElementById('modalGuests').value : '2';
 
-    const d1 = new Date(checkInVal);
-    const d2 = new Date(checkOutVal);
-
-    let diffDays = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
-    if (isNaN(diffDays) || diffDays <= 0) {
-        diffDays = 1;
+    if (data.airbnbUrl) {
+        let url = data.airbnbUrl;
+        if (checkInVal && checkOutVal) {
+            url += `&check_in=${checkInVal}&check_out=${checkOutVal}&adults=${guestsVal}`;
+        }
+        const desktopBtn = document.getElementById('airbnbReserveBtn');
+        if (desktopBtn) desktopBtn.href = url;
+        const mobileBtn = document.getElementById('mobileAirbnbReserveBtn');
+        if (mobileBtn) mobileBtn.href = url;
     }
-
-    const subtotal = data.priceNight * diffDays;
-    const cleaningFee = Math.round(185 * window.exchangeRate);
-    const total = subtotal + cleaningFee;
-
-    document.getElementById('numNights').innerText = diffDays;
-    document.getElementById('subtotalPrice').innerText = window.formatPrice(subtotal);
-    document.getElementById('grandTotalPrice').innerText = window.formatPrice(total);
 }
 
 // WhatsApp Booking Redirect
@@ -1397,18 +1368,16 @@ function bookOnWhatsApp(propId) {
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
 
-    const checkIn = document.getElementById('modalCheckIn').value;
-    const checkOut = document.getElementById('modalCheckOut').value;
-    const guests = document.getElementById('modalGuests').value;
-    const total = document.getElementById('grandTotalPrice').innerText;
+    const checkIn = document.getElementById('modalCheckIn') ? document.getElementById('modalCheckIn').value : '';
+    const checkOut = document.getElementById('modalCheckOut') ? document.getElementById('modalCheckOut').value : '';
+    const guests = document.getElementById('modalGuests') ? document.getElementById('modalGuests').value : '2';
 
     const msg = `Hello TrueHaven Stays! I would like to reserve the following residence:\n\n` +
                 `🏡 Residence: ${data.name}\n` +
                 `📍 Location: ${data.location}\n` +
                 `📅 Check-in: ${checkIn}\n` +
                 `📅 Check-out: ${checkOut}\n` +
-                `👥 Guests: ${guests}\n` +
-                `💰 Estimated Total: ${window.formatPrice(total)}\n\n` +
+                `👥 Guests: ${guests}\n\n` +
                 `Please confirm availability and booking details. Thank you!`;
 
     const encodedMsg = encodeURIComponent(msg);
