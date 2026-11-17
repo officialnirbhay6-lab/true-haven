@@ -583,8 +583,10 @@ const PROPERTIES_DATA = {
         highlight4Title: 'Spotless with views guests love',
         highlight4Desc: 'Guests highlight the cleanliness, the Burj Khalifa views from the balcony, and a responsive host',
         reviews: PARAMOUNT_REVIEWS_LIST,
-        lat: 25.1908,
-        lng: 55.2662,
+        lat: 25.1932111,
+        lng: 55.2654858,
+        googleMapsUrl: 'https://www.google.com/maps/search/paramount+building+dubai/@25.1932111,55.2654858,14z?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D',
+        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Paramount+Hotel+Midtown,+Business+Bay,+Dubai&ll=25.1932111,55.2654858&z=14&t=&ie=UTF8&iwloc=&output=embed',
         neighborhoodTitle: 'Business Bay & Downtown Dubai',
         neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
         aboutThisSpace: `Start your day with a dip in the luxurious infinity pool on the rooftop at 64th floor, taking in the sweeping Burj Khalifa and Downtown skyline view, then enjoy that same iconic view right from your own private balcony.
@@ -800,6 +802,8 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         reviews: BURJ_VISTA_REVIEWS_LIST,
         lat: 25.1972,
         lng: 55.2744,
+        googleMapsUrl: 'https://www.google.com/maps/search/Burj+Vista+Downtown+Dubai/@25.1972,55.2744,15z',
+        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Burj+Vista,+Downtown+Dubai,+UAE&ll=25.1972,55.2744&z=15&t=&ie=UTF8&iwloc=&output=embed',
         neighborhoodTitle: 'Downtown Dubai',
         neighborhoodDesc: 'Located along Sheikh Mohammed Bin Rashid Boulevard, Burj Vista is directly connected to Dubai Mall and the Burj Khalifa / Dubai Metro station via an internal air-conditioned sky bridge. You are mere steps away from the Dubai Fountain, Dubai Opera, and Downtown’s world-renowned dining and shopping destinations.',
         aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.
@@ -1700,19 +1704,39 @@ function openPropertyDetail(propId) {
                         </button>
                     </div>
 
-                    <!-- Location Map ("Where you'll be" - Exact Images 5 & 6 Match) -->
+                    <!-- Location Map ("Where you'll be" - Interactive Google Maps Embed) -->
                     <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 6px;">Where you'll be</h3>
-                        <p style="font-size: 15px; color: #717171; margin-bottom: 20px;">Dubai, United Arab Emirates</p>
+                        <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                            <div>
+                                <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
+                                <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
+                            </div>
+                            <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #222222; text-decoration: none; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; background: #FFFFFF; transition: background 0.2s;">
+                                <i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>
+                                <span>Open in Google Maps</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
+                            </a>
+                        </div>
                         
-                        <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 440px; border: 1px solid #DDDDDD;">
-                            <!-- Floating Search Pill (Exact Image 5 & 6 Match) -->
-                            <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 16px; left: 16px; z-index: 500; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 22px; font-size: 14px; font-weight: 500; color: #222222; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); cursor: pointer;">
+                        <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 440px; border: 1px solid #DDDDDD; background: #E5E7EB;">
+                            <!-- Floating Search Pill (Airbnb Match, positioned top-right so it never blocks Google Maps info box) -->
+                            <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); cursor: pointer;">
                                 <i class="fa-solid fa-magnifying-glass" style="font-size: 13px; color: #222222;"></i>
                                 <span>Find things to do</span>
                             </div>
 
-                            <div id="propertyMap" style="width: 100%; height: 100%;"></div>
+                            <!-- Interactive Google Maps Embed -->
+                            <iframe
+                                id="propertyMapIframe"
+                                src="${data.googleMapsEmbedUrl}"
+                                width="100%"
+                                height="100%"
+                                style="border: 0; width: 100%; height: 100%; display: block;"
+                                allowfullscreen=""
+                                loading="eager"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="${data.name} Location Map">
+                            </iframe>
                         </div>
 
                         <div style="margin-top: 24px;">
@@ -1970,6 +1994,15 @@ function closePropertyDetailPage() {
 function renderPropertyMap(propId) {
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
+
+    // Google Maps iframe auto-updates cleanly
+    const iframeEl = document.getElementById('propertyMapIframe');
+    if (iframeEl && data.googleMapsEmbedUrl) {
+        if (!iframeEl.src || iframeEl.src !== data.googleMapsEmbedUrl) {
+            iframeEl.src = data.googleMapsEmbedUrl;
+        }
+    }
+
     const mapEl = document.getElementById('propertyMap');
     if (!mapEl) return;
 
@@ -1979,7 +2012,6 @@ function renderPropertyMap(propId) {
     }
 
     if (typeof L === 'undefined') {
-        console.warn('Leaflet not loaded');
         return;
     }
 
