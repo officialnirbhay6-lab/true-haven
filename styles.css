@@ -3543,3 +3543,176 @@ img {
     }
 }
 
+
+
+/* ==========================================================================
+   EXACT AIRBNB LISTING PAGE MATCH ADDITIONS
+   ========================================================================== */
+
+/* Sticky Secondary Navigation Header */
+.sticky-pdp-sub-nav {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #EBEBEB;
+    z-index: 95;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sticky-pdp-sub-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+@media (max-width: 820px) {
+    .sticky-pdp-sub-nav {
+        display: none !important;
+    }
+}
+
+/* Below Average Price Pill */
+.price-below-average-badge {
+    transition: box-shadow 0.2s ease;
+}
+
+.price-below-average-badge:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 7-Column Rating Breakdown Grid (Image 3) */
+.rating-breakdown-7cols {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(6, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: 1px solid #EBEBEB;
+    padding-top: 24px;
+}
+
+.rating-col-item {
+    padding: 0 16px;
+    border-right: 1px solid #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rating-col-item:first-child {
+    padding-left: 0;
+}
+
+.rating-col-item:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+@media (max-width: 900px) {
+    .rating-breakdown-7cols {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .rating-col-item {
+        border-right: none;
+        padding: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .rating-breakdown-7cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Guests Mention Pills Row (Image 3) */
+.guests-mention-pills-wrap {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.guests-mention-pills-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.guest-mention-pill {
+    background: #F7F7F7;
+    border: 1px solid #DDDDDD;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    user-select: none;
+}
+
+.guest-mention-pill:hover {
+    background: #EEEEEE;
+    border-color: #222222;
+}
+
+.guest-mention-pill.active {
+    background: #222222;
+    color: #FFFFFF;
+    border-color: #222222;
+}
+
+/* Floating Search Pill over Leaflet Map (Images 5 & 6) */
+.map-floating-search-pill {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.map-floating-search-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Things to know 5 columns (Image 4) */
+.ttk-grid-5cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+    margin-top: 24px;
+}
+
+/* Generic Airbnb Modal Overlay */
+.generic-airbnb-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeInOverlay 0.2s ease;
+}
+
+.generic-airbnb-modal-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUpModal 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}

@@ -243,73 +243,324 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
 ];
 
 // Property Database
+const PARAMOUNT_REVIEWS_LIST = [
+    {
+        "name": "Matteo",
+        "location": "Milan, Italy · 5 years on Airbnb",
+        "initial": "M",
+        "color": "#F97316",
+        "rating": 5,
+        "time": "1 week ago",
+        "text": "The property was very clean, with a balcony and a very nice view of the Burj Khalifa. The swimming pool on the 64th floor is worth a visit—hands down the best skyline view in Dubai, and the stay was absolutely superb."
+    },
+    {
+        "name": "奕翔 (Yi Xiang)",
+        "location": "Singapore · 5 years on Airbnb",
+        "initial": "奕",
+        "color": "#3B82F6",
+        "rating": 5,
+        "time": "2 weeks ago",
+        "text": "The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located in Business Bay, just minutes to Downtown. Fast wifi and great host communication. It was a great stay!"
+    },
+    {
+        "name": "Solomon",
+        "location": "Sydney, Australia · 5 years on Airbnb",
+        "initial": "S",
+        "color": "#4B5563",
+        "rating": 5,
+        "time": "3 weeks ago",
+        "text": "Beautiful property with stunning views of Burj Khalifa. Modern interior, super comfortable bed, and the amenities in Paramount Midtown tower are 5-star hotel grade."
+    },
+    {
+        "name": "Orhan",
+        "location": "Frankfurt, Germany · 4 years on Airbnb",
+        "initial": "O",
+        "color": "#6B7280",
+        "rating": 5,
+        "time": "1 month ago",
+        "text": "The host was very friendly and helpful. Immediate help in a few minutes. The flat is highly recommended. Nothing is missing—fully stocked kitchen, fast wifi, and great balcony."
+    },
+    {
+        "name": "Elena",
+        "location": "Paris, France · 3 years on Airbnb",
+        "initial": "E",
+        "color": "#EC4899",
+        "rating": 5,
+        "time": "1 month ago",
+        "text": "Magnifique séjour! The apartment is stylishly decorated, very spacious, and the infinity pool on the 64th floor is magical. Everything was flawless from check-in to check-out."
+    },
+    {
+        "name": "David",
+        "location": "Manchester, UK · 6 years on Airbnb",
+        "initial": "D",
+        "color": "#059669",
+        "rating": 5,
+        "time": "2 months ago",
+        "text": "Exceptional stay. Paramount Midtown is a top-tier luxury building. The apartment is brand new, spotless, and furnished with great taste. Will definitely book True Haven again on our next trip to Dubai."
+    },
+    {
+        "name": "Sarah",
+        "location": "Toronto, Canada · 4 years on Airbnb",
+        "initial": "S",
+        "color": "#8B5CF6",
+        "rating": 5,
+        "time": "2 months ago",
+        "text": "Ruchi was the most attentive host! Check-in instructions were crystal clear, the views from the 64th floor pool took our breath away, and the bed felt like a 5-star hotel. Highly recommend!"
+    },
+    {
+        "name": "Ahmed",
+        "location": "Riyadh, Saudi Arabia · 7 years on Airbnb",
+        "initial": "A",
+        "color": "#10B981",
+        "rating": 5,
+        "time": "2 months ago",
+        "text": "إقامة ممتازة جداً. الموقع قريب من برج خليفة ودبي مول، الشقة نظيفة جداً ومرتبة وفيها كل شيء تحتاجه. المسبح في الدور 64 خيالي."
+    },
+    {
+        "name": "Chloe",
+        "location": "Melbourne, Australia · 3 years on Airbnb",
+        "initial": "C",
+        "color": "#F43F5E",
+        "rating": 5,
+        "time": "3 months ago",
+        "text": "Everything matched the photos 100%. The views of Burj Khalifa from the living room and balcony are mesmerizing, especially during evening illuminations. 10/10 stay."
+    },
+    {
+        "name": "Markus",
+        "location": "Zurich, Switzerland · 6 years on Airbnb",
+        "initial": "M",
+        "color": "#3B82F6",
+        "rating": 5,
+        "time": "3 months ago",
+        "text": "Superb standard of cleanliness and comfort. Ruchi responded within minutes to any question. High-speed wifi made remote working seamless. Will return for sure."
+    },
+    {
+        "name": "Priyanka",
+        "location": "Mumbai, India · 4 years on Airbnb",
+        "initial": "P",
+        "color": "#D97706",
+        "rating": 5,
+        "time": "4 months ago",
+        "text": "Staying at True Haven’s Paramount Midtown residence was the highlight of our vacation. Gorgeous decor, fully stocked kitchen, and walking distance to Business Bay restaurants."
+    },
+    {
+        "name": "Julien",
+        "location": "Geneva, Switzerland · 5 years on Airbnb",
+        "initial": "J",
+        "color": "#0284C7",
+        "rating": 5,
+        "time": "4 months ago",
+        "text": "Spectacular rooftop pool and immaculate apartment. Ruchi ensured we had everything we needed. Seamless self check-in."
+    },
+    {
+        "name": "Laura",
+        "location": "Austin, Texas · 3 years on Airbnb",
+        "initial": "L",
+        "color": "#9333EA",
+        "rating": 5,
+        "time": "5 months ago",
+        "text": "The photos do not do this place justice—it is even better in person! The views are surreal, building staff are friendly, and the apartment is quiet and peaceful at night."
+    },
+    {
+        "name": "Tariq",
+        "location": "Kuwait City, Kuwait · 8 years on Airbnb",
+        "initial": "T",
+        "color": "#059669",
+        "rating": 5,
+        "time": "5 months ago",
+        "text": "شقة فاخرة بكل المقاييس، موقع مميز وتعامل راقي من المضيفة روتشي. أنصح بها بشدة للعائلات والأفراد."
+    },
+    {
+        "name": "Jessica",
+        "location": "London, UK · 5 years on Airbnb",
+        "initial": "J",
+        "color": "#E11D48",
+        "rating": 5,
+        "time": "6 months ago",
+        "text": "First time visiting Dubai and this apartment made it unforgettable. Super comfy bed, luxury bathroom amenities, and that rooftop pool view is unbeatable."
+    },
+    {
+        "name": "Alexander",
+        "location": "Berlin, Germany · 4 years on Airbnb",
+        "initial": "A",
+        "color": "#475569",
+        "rating": 5,
+        "time": "6 months ago",
+        "text": "Very modern building with fast elevators, great fitness center, and grocery store right downstairs. The apartment was spotless. Five stars all around!"
+    },
+    {
+        "name": "Fatima",
+        "location": "Doha, Qatar · 4 years on Airbnb",
+        "initial": "F",
+        "color": "#7C3AED",
+        "rating": 5,
+        "time": "7 months ago",
+        "text": "Wonderfully curated space with elevated touches throughout. Ruchi went above and beyond to make our stay comfortable. True Haven lives up to its name."
+    },
+    {
+        "name": "Oliver",
+        "location": "Stockholm, Sweden · 6 years on Airbnb",
+        "initial": "O",
+        "color": "#2563EB",
+        "rating": 5,
+        "time": "7 months ago",
+        "text": "Flawless experience. Clean, quiet, stylish, and an unforgettable Burj Khalifa skyline view. Thank you Ruchi for being a superhost!"
+    }
+];
+const BURJ_VISTA_REVIEWS_LIST = [
+    {
+        "name": "Stefan Sebastian",
+        "location": "Madrid, Spain · 2 years on Airbnb",
+        "initial": "SS",
+        "color": "#F97316",
+        "rating": 5,
+        "time": "3 weeks ago",
+        "text": "The flat is spectacular. Very nice, tidy and with stunning views. The terrace is fantastic, and the building and its facilities, such as the swimming pool and the gym, are very good. Being connected directly to Dubai Mall through the air-conditioned bridge was unbeatable during our stay."
+    },
+    {
+        "name": "Shivani",
+        "location": "London, UK · 3 years on Airbnb",
+        "initial": "S",
+        "color": "#EC4899",
+        "rating": 5,
+        "time": "1 month ago",
+        "text": "It’s amazing and I love to come again! The views of the Burj Khalifa and the Dubai Fountain from the balcony are breathtaking, day and night. The apartment is beautifully furnished and sparkling clean."
+    },
+    {
+        "name": "Pedram",
+        "location": "Amsterdam, Netherlands · 5 years on Airbnb",
+        "initial": "P",
+        "color": "#EF4444",
+        "rating": 5,
+        "time": "1 month ago",
+        "text": "Very kind host, can make things happen just like that! Check-in was seamless, the building has world-class amenities, and having a direct indoor walkway to Dubai Mall and the metro made getting around effortless."
+    },
+    {
+        "name": "Aditya",
+        "location": "Sammamish, Washington · 4 years on Airbnb",
+        "initial": "A",
+        "color": "#8B5CF6",
+        "rating": 5,
+        "time": "2 months ago",
+        "text": "Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Ruchi also was great with check in and check out accommodation. Highly recommend her and this stay!"
+    },
+    {
+        "name": "Felipe",
+        "location": "Cali, Colombia · 4 years on Airbnb",
+        "initial": "F",
+        "color": "#10B981",
+        "rating": 5,
+        "time": "2 months ago",
+        "text": "Incredible location and views. The apartment was spotless, well-decorated and had everything we needed. Waking up to the Burj Khalifa view from the living room is an unforgettable experience. 10/10."
+    },
+    {
+        "name": "Nawaf",
+        "location": "Riyadh, Saudi Arabia · 6 years on Airbnb",
+        "initial": "N",
+        "color": "#7C3AED",
+        "rating": 5,
+        "time": "3 months ago",
+        "text": "رائع جداً - An outstanding residence. Luxury furniture, full privacy, and fast communication with the host. Direct mall bridge access was super convenient for shopping and dining."
+    },
+    {
+        "name": "Maya",
+        "location": "Paris, France · 3 years on Airbnb",
+        "initial": "M",
+        "color": "#EC4899",
+        "rating": 5,
+        "time": "3 months ago",
+        "text": "The view from this balcony is something you will never forget. You have front row seats to the Dubai Fountain shows every evening without the crowds! Truly magical."
+    },
+    {
+        "name": "Kenneth",
+        "location": "New York, USA · 5 years on Airbnb",
+        "initial": "K",
+        "color": "#0284C7",
+        "rating": 5,
+        "time": "4 months ago",
+        "text": "Ruchi is a true Superhost. Check-in was effortless, the apartment was pristine, and the skybridge connection to Dubai Mall was a lifesaver in the afternoon heat."
+    },
+    {
+        "name": "Ananya",
+        "location": "New Delhi, India · 4 years on Airbnb",
+        "initial": "A",
+        "color": "#D97706",
+        "rating": 5,
+        "time": "4 months ago",
+        "text": "Best location in Downtown Dubai by far! Stepping onto the balcony and looking straight at the Burj Khalifa is breathtaking. Beds were exceptionally comfortable."
+    },
+    {
+        "name": "Lucas",
+        "location": "São Paulo, Brazil · 3 years on Airbnb",
+        "initial": "L",
+        "color": "#10B981",
+        "rating": 5,
+        "time": "5 months ago",
+        "text": "Everything was top notch. High speed wifi, smart TVs, luxury linens, and the building pool has a wonderful view of the city. Will definitely stay here again."
+    },
+    {
+        "name": "Hanna",
+        "location": "Oslo, Norway · 6 years on Airbnb",
+        "initial": "H",
+        "color": "#3B82F6",
+        "rating": 5,
+        "time": "5 months ago",
+        "text": "Spotless, spacious and flooded with natural light. The kitchen is fully equipped with high quality cookware. Ruchi answered our queries immediately."
+    },
+    {
+        "name": "Omar",
+        "location": "Dubai, UAE · 4 years on Airbnb",
+        "initial": "O",
+        "color": "#6366F1",
+        "rating": 5,
+        "time": "6 months ago",
+        "text": "Booked this for visiting family and they were blown away. The location cannot be beaten—literally connected to Dubai Mall and Metro. Five stars!"
+    },
+    {
+        "name": "Rachel",
+        "location": "Edinburgh, UK · 5 years on Airbnb",
+        "initial": "R",
+        "color": "#F43F5E",
+        "rating": 5,
+        "time": "6 months ago",
+        "text": "Staying at Burj Vista was the highlight of our trip. Watching the Burj Khalifa light up at night from the private balcony with a cup of tea is pure luxury."
+    },
+    {
+        "name": "Daniel",
+        "location": "Vancouver, Canada · 4 years on Airbnb",
+        "initial": "D",
+        "color": "#475569",
+        "rating": 5,
+        "time": "7 months ago",
+        "text": "Outstanding communication, immaculate cleanliness, and unbeatable convenience. Having direct access to Dubai Mall without ever having to step outside into traffic is unmatched."
+    },
+    {
+        "name": "Zaid",
+        "location": "Amman, Jordan · 5 years on Airbnb",
+        "initial": "Z",
+        "color": "#059669",
+        "rating": 5,
+        "time": "7 months ago",
+        "text": "شقة ممتازة وموقع خيالي أمام برج خليفة مباشرة. التعامل مع روتشي كان ممتاز وسريع. تجربة فاخرة تستحق التكرار."
+    },
+    {
+        "name": "Emily",
+        "location": "Melbourne, Australia · 4 years on Airbnb",
+        "initial": "E",
+        "color": "#8B5CF6",
+        "rating": 5,
+        "time": "8 months ago",
+        "text": "Can’t recommend this place enough! Clean, quiet, stylish, and in the heart of Downtown. Thank you Ruchi for being such a wonderful and accommodating host!"
+    }
+];
+
 const PROPERTIES_DATA = {
     'paramount': {
         id: 'paramount',
-
-                reviews: [
-            {
-                name: 'Matteo',
-                location: 'Milan, Italy · 5 years on Airbnb',
-                initial: 'M',
-                color: '#F97316',
-                rating: 5,
-                time: '1 week ago',
-                text: 'The property was very clean, with a balcony and a very nice view of the Burj Khalifa. The swimming pool on the 64th floor is worth a visit—hands down the best skyline view in Dubai, and the stay was absolutely superb.'
-            },
-            {
-                name: '奕翔 (Yi Xiang)',
-                location: 'Singapore · 5 years on Airbnb',
-                initial: '奕',
-                color: '#3B82F6',
-                rating: 5,
-                time: '2 weeks ago',
-                text: 'The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located in Business Bay, just minutes to Downtown. Fast wifi and great host communication. It was a great stay!'
-            },
-            {
-                name: 'Solomon',
-                location: 'Sydney, Australia · 5 years on Airbnb',
-                initial: 'S',
-                color: '#4B5563',
-                rating: 5,
-                time: '3 weeks ago',
-                text: 'Beautiful property with stunning views of Burj Khalifa. Modern interior, super comfortable bed, and the amenities in Paramount Midtown tower are 5-star hotel grade.'
-            },
-            {
-                name: 'Orhan',
-                location: 'Frankfurt, Germany · 4 years on Airbnb',
-                initial: 'O',
-                color: '#6B7280',
-                rating: 5,
-                time: '1 month ago',
-                text: 'The host was very friendly and helpful. Immediate help in a few minutes. The flat is highly recommended. Nothing is missing—fully stocked kitchen, fast wifi, and great balcony.'
-            },
-            {
-                name: 'Elena',
-                location: 'Paris, France · 3 years on Airbnb',
-                initial: 'E',
-                color: '#EC4899',
-                rating: 5,
-                time: '1 month ago',
-                text: 'Magnifique séjour! The apartment is stylishly decorated, very spacious, and the infinity pool on the 64th floor is magical. Everything was flawless from check-in to check-out.'
-            },
-            {
-                name: 'David',
-                location: 'Manchester, UK · 6 years on Airbnb',
-                initial: 'D',
-                color: '#059669',
-                rating: 5,
-                time: '2 months ago',
-                text: 'Exceptional stay. Paramount Midtown is a top-tier luxury building. The apartment is brand new, spotless, and furnished with great taste. Will definitely book True Haven again on our next trip to Dubai.'
-            }
-        ],
-        lat: 25.1908,
-        lng: 55.2662,
-        neighborhoodTitle: 'Business Bay & Downtown Dubai',
-        neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
         name: 'Burj View & Infinity Pool | 7 min to Dubai Mall',
         tagline: '🏊‍♂️ Rooftop Infinity Pool · Unobstructed Burj Khalifa View',
         location: 'Al Mustaqbal Street, Business Bay / Downtown Dubai, UAE',
+        propertyType: 'Entire rental unit in Dubai, United Arab Emirates',
         specs: '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms',
         priceNight: 240,
         maxGuests: 4,
@@ -319,16 +570,27 @@ const PROPERTIES_DATA = {
         reviewsCount: 18,
         badge: 'Guest favourite',
         hostName: 'Ruchi',
+        hostSubtitle: 'Superhost · 2 months hosting',
         airbnbUrl: PARAMOUNT_AIRBNB_URL,
         photos: PARAMOUNT_PHOTOS,
-        
-        // Exact Airbnb Detailed Content Sections
+        rareFind: true,
+        highlight1Title: 'Top 10% of homes',
+        highlight1Desc: 'This home is highly ranked based on ratings, reviews and reliability.',
+        highlight2Title: 'In Business Bay, near the Burj Khalifa',
+        highlight2Desc: "About a 15-min walk to the Burj Khalifa, in Business Bay's canal-side district near Downtown Dubai",
+        highlight3Title: '64th-floor rooftop infinity pool',
+        highlight3Desc: 'A rooftop infinity pool on the 64th floor with views of the Downtown skyline, open daily',
+        highlight4Title: 'Spotless with views guests love',
+        highlight4Desc: 'Guests highlight the cleanliness, the Burj Khalifa views from the balcony, and a responsive host',
+        reviews: PARAMOUNT_REVIEWS_LIST,
+        lat: 25.1908,
+        lng: 55.2662,
+        neighborhoodTitle: 'Business Bay & Downtown Dubai',
+        neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
         aboutThisSpace: `Start your day with a dip in the luxurious infinity pool on the rooftop at 64th floor, taking in the sweeping Burj Khalifa and Downtown skyline view, then enjoy that same iconic view right from your own private balcony.
 
 This one-bedroom apartment in Business Bay near Downtown offers five-star amenities and a stylish, comfortable interior. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most sought-after neighbourhoods.`,
-        
         theSpace: `A one-bedroom home with the highest infinity pool in Downtown Dubai and a balcony view of the Burj Khalifa & Downtown skyline. Comfortable and well-equipped for couples, families, or business travellers alike.`,
-        
         propertyHighlights: [
             "Layout: 1 bedroom, 1.5 bathrooms, 2 beds, sleeps up to 4",
             "View: Private balcony with Burj Khalifa and Downtown skyline view",
@@ -336,7 +598,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Building extras: Residents' lounge, grocery store on-site, spa, gym",
             "Wi-Fi: Free high-speed internet throughout"
         ],
-        
         livingRoom: [
             "Comfortable sofa with cushions",
             "65-inch Smart TV in the living room; 55-inch Smart TV in the bedroom",
@@ -344,7 +605,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "1 sofa bed, sleeping up to 2 additional guests",
             "Balcony access with panoramic views"
         ],
-        
         kitchenDining: [
             "Dishwasher, electric oven, and stove",
             "Fridge, freezer and microwave",
@@ -353,19 +613,16 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Baking trays, cutting boards, knives, and cooking utensils",
             "Plates, bowls, glasses, mugs, and cutlery for all guests"
         ],
-        
         sleepingArrangements: [
             "Master Bedroom: king-size bed with ensuite bathroom",
             "Living Room: comfortable sofa bed",
             "Premium mattresses, hotel-quality bedding, and full blackout shades"
         ],
-        
         bathrooms: [
             "One ensuite bathroom",
             "One powder room",
             "Fresh towels and essential toiletries provided"
         ],
-        
         nearbyAttractions: [
             "Burj Khalifa: 12-minute walk",
             "Dubai Mall: 15-minute walk",
@@ -374,7 +631,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Burj Park: 14-minute walk for lake and skyline views",
             "Sky Views Observatory: 18-minute walk for glass floors and thrills"
         ],
-        
         gettingAround: {
             locally: [
                 "Walking: Burj Khalifa and Downtown Dubai attractions are 12–18 minutes away on foot",
@@ -388,9 +644,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
                 "Car rental: Easy drive via Sheikh Zayed Road, with parking available"
             ]
         },
-        
         guestAccess: `Guests have full, private access to the entire one-bedroom apartment, the living area, modern kitchen, and the wonderful Burj Khalifa and Downtown skyline view from the balcony, plus everything the building's residential amenities have to offer.`,
-        
         sharedBuildingAmenities: [
             "Rooftop pool: Guests have access to a 64th-floor infinity pool, open daily from 7 AM to 7 PM.",
             "Sky lounge: The Malibu Sky Lounge & Bar is available for drinks and relaxation, with happy hour running from 4 to 7 PM.",
@@ -402,7 +656,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Security: 24/7 on-site security is provided for peace of mind.",
             "Check-in: Check-in is fully self-service and available 24 hours a day, starting from 3 PM on your check-in date."
         ],
-        
         houseRules: {
             idReq: "All guests must submit soft copies of their passports before check-in for building and security registration, in line with Dubai authorities (DTCM) rules.",
             checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM sharp (housekeeping arrives promptly at this time)",
@@ -414,7 +667,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             cleaningServices: "The apartment is deep-cleaned before every check-in. Extra cleaning during your stay can be arranged for an additional cost.",
             registrationDetails: "BUS-PAR-KJYVF"
         },
-
         categorizedAmenities: [
             {
                 category: "Bathroom",
@@ -523,82 +775,37 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         name: 'Burj Khalifa & Fountain view | Direct mall access',
         tagline: '🗼 Direct Unobstructed Views of Burj Khalifa & Dubai Fountain · Direct Metro & Mall Access',
         location: 'Sheikh Mohammed Bin Rashid Boulevard, Downtown Dubai, UAE',
+        propertyType: 'Entire rental unit in Dubai, United Arab Emirates',
         specs: '4 guests · 1 bedroom · 3 beds · 1.5 bathrooms',
-        priceNight: 290,
+        priceNight: 265,
         maxGuests: 4,
         currency: 'USD',
-        priceAed: 1065,
+        priceAed: 975,
         rating: '5.0',
-        reviewsCount: 6,
-        badge: 'Guest favorite',
-        reviews: [
-            {
-                name: 'Stefan Sebastian',
-                location: 'Madrid, Spain · 2 years on Airbnb',
-                initial: 'SS',
-                color: '#F97316',
-                rating: 5,
-                time: '3 weeks ago',
-                text: 'The flat is spectacular. Very nice, tidy and with stunning views. The terrace is fantastic, and the building and its facilities, such as the swimming pool and the gym, are very good. Being connected directly to Dubai Mall through the air-conditioned bridge was unbeatable during our stay.'
-            },
-            {
-                name: 'Shivani',
-                location: 'London, UK · 3 years on Airbnb',
-                initial: 'S',
-                color: '#EC4899',
-                rating: 5,
-                time: '1 month ago',
-                text: 'It’s amazing and I love to come again! The views of the Burj Khalifa and the Dubai Fountain from the balcony are breathtaking, day and night. The apartment is beautifully furnished and sparkling clean.'
-            },
-            {
-                name: 'Pedram',
-                location: 'Amsterdam, Netherlands · 5 years on Airbnb',
-                initial: 'P',
-                color: '#EF4444',
-                rating: 5,
-                time: '1 month ago',
-                text: 'Very kind host, can make things happen just like that! Check-in was seamless, the building has world-class amenities, and having a direct indoor walkway to Dubai Mall and the metro made getting around effortless.'
-            },
-            {
-                name: 'Aditya',
-                location: 'Sammamish, Washington · 4 years on Airbnb',
-                initial: 'A',
-                color: '#8B5CF6',
-                rating: 5,
-                time: '2 months ago',
-                text: 'Was a very good location in the heart of downtown Dubai, a view literally in front of Burj Khalifa. Super clean, modern, and high class building. Ruchi also was great with check in and check out accommodation. Highly recommend her and this stay!'
-            },
-            {
-                name: 'Felipe',
-                location: 'Cali, Colombia · 4 years on Airbnb',
-                initial: 'F',
-                color: '#10B981',
-                rating: 5,
-                time: '2 months ago',
-                text: 'Incredible location and views. The apartment was spotless, well-decorated and had everything we needed. Waking up to the Burj Khalifa view from the living room is an unforgettable experience. 10/10.'
-            },
-            {
-                name: 'Nawaf',
-                location: 'Riyadh, Saudi Arabia · 6 years on Airbnb',
-                initial: 'N',
-                color: '#7C3AED',
-                rating: 5,
-                time: '3 months ago',
-                text: 'رائع جداً - An outstanding residence. Luxury furniture, full privacy, and fast communication with the host. Direct mall bridge access was super convenient for shopping and dining.'
-            }
-        ],
+        reviewsCount: 16,
+        badge: 'Guest favourite',
+        hostName: 'Ruchi',
+        hostSubtitle: 'Superhost · 2 months hosting',
+        airbnbUrl: BURJ_VISTA_AIRBNB_URL,
+        photos: BURJ_VISTA_PHOTOS,
+        priceBelowAverage: true,
+        highlight1Title: 'Top 10% of homes',
+        highlight1Desc: 'This home is highly ranked based on ratings, reviews and reliability.',
+        highlight2Title: 'In Downtown Dubai',
+        highlight2Desc: 'About a 5-min walk to Burj Khalifa, with Dubai Mall connected by an internal AC skybridge.',
+        highlight3Title: 'Private balcony with Burj Khalifa view',
+        highlight3Desc: 'A private balcony faces the Burj Khalifa, with a full kitchen, pool, and gym in the building.',
+        highlight4Title: 'Loved for the view and the hosts',
+        highlight4Desc: 'Guests highlight the Burj Khalifa view and praise Ruchi as a responsive, flexible host.',
+        reviews: BURJ_VISTA_REVIEWS_LIST,
         lat: 25.1972,
         lng: 55.2744,
         neighborhoodTitle: 'Downtown Dubai',
         neighborhoodDesc: 'Located along Sheikh Mohammed Bin Rashid Boulevard, Burj Vista is directly connected to Dubai Mall and the Burj Khalifa / Dubai Metro station via an internal air-conditioned sky bridge. You are mere steps away from the Dubai Fountain, Dubai Opera, and Downtown’s world-renowned dining and shopping destinations.',
-        hostName: 'Ruchi',
-        airbnbUrl: BURJ_VISTA_AIRBNB_URL,
-        photos: BURJ_VISTA_PHOTOS,
-        
-        aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.\n\nEnjoy five-star building amenities and a stylish, comfortable interior, directly connected to Dubai Mall and Dubai Metro through an internal AC skybridge. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most iconic addresses.`,
-        
+        aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.
+
+Enjoy five-star building amenities and a stylish, comfortable interior, directly connected to Dubai Mall and Dubai Metro through an internal AC skybridge. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most iconic addresses.`,
         theSpace: `A one-bedroom home built around its view, with Dubai Mall and Dubai Metro directly connected through an internal AC skybridge. Comfortable and well-equipped for couples, families, or business travellers alike.`,
-        
         propertyHighlights: [
             "Layout: 1 bedroom, 1.5 bathrooms, 3 beds, sleeps up to 4",
             "View: Private balcony with full Burj Khalifa and Fountain view",
@@ -607,15 +814,13 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Access: Internal sky bridge to Dubai Mall and Metro, 1 minute away",
             "Wi-Fi: Free high-speed internet throughout"
         ],
-
         livingRoom: [
             "Comfortable sofas with cushions",
             "65-inch Smart TV in the living room; 55-inch Smart TV in the bedroom",
             "Stylish coffee table",
-            "2 sofa bed, sleeping up to 4 additional guests",
+            "2 sofa beds, sleeping up to 4 additional guests",
             "Balcony access with uninterrupted Burj Khalifa views"
         ],
-
         kitchenDining: [
             "Dishwasher, electric oven, and stove",
             "Fridge, freezer and microwave",
@@ -624,19 +829,16 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Baking trays, cutting boards, knives, and cooking utensils",
             "Plates, bowls, glasses, mugs, and cutlery for all guests"
         ],
-        
         sleepingArrangements: [
             "Master Bedroom: king-size bed with ensuite bathroom",
             "Living Room: 2 comfortable sofa beds",
             "Premium mattresses, hotel-quality bedding, and full blackout shades"
         ],
-        
         bathrooms: [
             "One ensuite bathroom",
             "One powder room",
             "Fresh towels and essential toiletries provided"
         ],
-        
         nearbyAttractions: [
             "Burj Khalifa: 2-minute walk via direct walkway",
             "Dubai Mall: 5-minute walk through an internal sky bridge",
@@ -645,7 +847,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Burj Park: 6-minute walk for lake and skyline views",
             "Sky Views Observatory: 8-minute walk for glass floors and thrills"
         ],
-        
         gettingAround: {
             locally: [
                 "Walking: Most Downtown attractions are 5–10 minutes away on foot",
@@ -659,9 +860,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
                 "Car rental: Easy drive via Sheikh Zayed Road, with parking available"
             ]
         },
-        
         guestAccess: `Guests have full, private access to the entire one-bedroom apartment, the living area, modern kitchen, and the Burj Khalifa view, plus everything the building's residential amenities have to offer.`,
-        
         sharedBuildingAmenities: [
             "Swimming pool: Large pool with Burj Khalifa views",
             "Gym: Fully equipped fitness area",
@@ -671,7 +870,6 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             "Climate: Air conditioning throughout the building",
             "Access: Elevator access to all floors"
         ],
-        
         houseRules: {
             idReq: "All guests must submit soft copies of their passports before check-in for building and security registration, in line with the Dubai authority (DTCM) rules.",
             checkInOut: "Check-in: 3:00 PM · Check-out: 11:00 AM sharp (housekeeping arrives promptly at this time)",
@@ -682,7 +880,109 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             noisePolicy: "No parties or loud music inside the apartment. Be respectful to our neighbours.",
             cleaningServices: "The apartment is deep-cleaned before every check-in. Extra cleaning during your stay can be arranged for an additional fee.",
             registrationDetails: "BUR-BUR-0XCRY"
-        }
+        },
+        categorizedAmenities: [
+            {
+                category: "Bathroom",
+                icon: "fa-bath",
+                items: [
+                    { text: "Bath", available: true },
+                    { text: "Hairdryer", available: true },
+                    { text: "Shampoo", available: true },
+                    { text: "Body soap", available: true },
+                    { text: "Hot water", available: true },
+                    { text: "Shower gel", available: true }
+                ]
+            },
+            {
+                category: "Bedroom and laundry",
+                icon: "fa-bed",
+                items: [
+                    { text: "Washing machine", available: true },
+                    { text: "Essentials (Towels, bed sheets, soap and toilet paper)", available: true },
+                    { text: "Hangers", available: true },
+                    { text: "Room-darkening blinds", available: true },
+                    { text: "Iron", available: true },
+                    { text: "Clothes storage: wardrobe", available: true }
+                ]
+            },
+            {
+                category: "Entertainment",
+                icon: "fa-tv",
+                items: [
+                    { text: "TV (65-inch Smart TV in living room; 55-inch Smart TV in bedroom)", available: true }
+                ]
+            },
+            {
+                category: "Heating and cooling",
+                icon: "fa-snowflake",
+                items: [
+                    { text: "Air conditioning", available: true }
+                ]
+            },
+            {
+                category: "Home safety",
+                icon: "fa-shield-halved",
+                items: [
+                    { text: "Smoke alarm", available: true },
+                    { text: "Carbon monoxide alarm", available: true },
+                    { text: "Fire extinguisher", available: true },
+                    { text: "First aid kit", available: true }
+                ]
+            },
+            {
+                category: "Internet and office",
+                icon: "fa-wifi",
+                items: [
+                    { text: "Wifi (Free high-speed internet throughout)", available: true }
+                ]
+            },
+            {
+                category: "Kitchen and dining",
+                icon: "fa-utensils",
+                items: [
+                    { text: "Kitchen (Space where guests can cook their own meals)", available: true },
+                    { text: "Fridge", available: true },
+                    { text: "Microwave", available: true },
+                    { text: "Cooking basics (Pots and pans, oil, salt and pepper)", available: true },
+                    { text: "Crockery and cutlery (Bowls, chopsticks, plates, cups, etc.)", available: true },
+                    { text: "Freezer", available: true },
+                    { text: "Dishwasher", available: true },
+                    { text: "Oven", available: true },
+                    { text: "Kettle", available: true },
+                    { text: "Coffee maker", available: true },
+                    { text: "Wine glasses", available: true },
+                    { text: "Toaster", available: true },
+                    { text: "Dining table", available: true }
+                ]
+            },
+            {
+                category: "Outdoor",
+                icon: "fa-chair",
+                items: [
+                    { text: "Outdoor furniture", available: true }
+                ]
+            },
+            {
+                category: "Parking and facilities",
+                icon: "fa-square-parking",
+                items: [
+                    { text: "Free parking on premises", available: true },
+                    { text: "Pool (64th Floor Rooftop Infinity Pool)", available: true },
+                    { text: "Lift (Lift doorway 32\" / 81cm wide, depth 52\" / 132cm)", available: true },
+                    { text: "Gym (State-of-the-art fitness center)", available: true }
+                ]
+            },
+            {
+                category: "Not included",
+                icon: "fa-circle-xmark",
+                items: [
+                    { text: "Exterior security cameras on property", available: false },
+                    { text: "Tumble dryer", available: false },
+                    { text: "Heating", available: false }
+                ]
+            }
+        ]
     }
 };
 
@@ -905,9 +1205,9 @@ function openPropertyDetail(propId) {
     const mainPage = document.getElementById('mainPage');
     if (!pageContainer || !mainPage) return;
 
-    // Desktop 5-Photo Hero Grid Matching Image 2
+    // Desktop 5-Photo Hero Grid Matching Image 2 & Image 4
     const desktopPhotoGridHtml = `
-        <div class="desktop-photo-grid-wrap desktop-only-grid" style="display: none; position: relative; margin-bottom: 24px; border-radius: 14px; overflow: hidden; cursor: pointer; height: 420px;" onclick="openPhotoGalleryModal('${propId}')">
+        <div id="pdpPhotos" class="desktop-photo-grid-wrap desktop-only-grid" style="display: none; position: relative; margin-bottom: 24px; border-radius: 14px; overflow: hidden; cursor: pointer; height: 440px;" onclick="openPhotoGalleryModal('${propId}')">
             <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 100%;">
                 <img src="${data.photos[0]}" alt="${data.name}" style="grid-column: 1 / 2; grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
                 <img src="${data.photos[1]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 1 / 2; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
@@ -915,7 +1215,7 @@ function openPropertyDetail(propId) {
                 <img src="${data.photos[3]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 2 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
                 <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 2 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
             </div>
-            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.18); cursor: pointer;">
+            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); cursor: pointer;">
                 <i class="fa-solid fa-grip" style="font-size: 13px;"></i> Show all photos
             </button>
         </div>
@@ -945,11 +1245,38 @@ function openPropertyDetail(propId) {
     const checkOutStr = '2026-12-16';
     const nights = 2;
     const nightlyTotal = data.priceNight * nights;
+    const strikethroughTotal = Math.round(nightlyTotal * 1.13);
     const cancellationDateStr = '30 November';
 
     const reviews = data.reviews || [];
 
     pageContainer.innerHTML = `
+        <!-- Sticky Secondary Navigation Bar (Exact Image 4 Match) -->
+        <div id="stickyPdpSubNav" class="sticky-pdp-sub-nav">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
+                <div style="display: flex; gap: 28px; font-size: 14px; font-weight: 600; color: #222222;">
+                    <a href="#pdpPhotos" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Photos</a>
+                    <a href="#pdpAmenities" onclick="document.getElementById('pdpAmenitiesSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Amenities</a>
+                    <a href="#pdpReviews" onclick="document.getElementById('pdpReviewsSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Reviews</a>
+                    <a href="#pdpLocation" onclick="document.getElementById('pdpLocationSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Location</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 700; color: #222222;">
+                            ${propId === 'burj-vista' ? `<span style="font-size: 13px; color: #717171; text-decoration: line-through; margin-right: 6px;">${window.formatPrice(strikethroughTotal)}</span>` : ''}
+                            ${window.formatPrice(nightlyTotal)} <span style="font-size: 13px; font-weight: 400; color: #717171;">for 2 nights</span>
+                        </div>
+                        <div style="font-size: 12px; font-weight: 600; color: #222222; margin-top: 1px;" onclick="openReviewsModal('${propId}')" style="cursor: pointer;">
+                            <i class="fa-solid fa-star" style="color: #FF385C; font-size: 11px;"></i> ${data.rating} · <span style="text-decoration: underline;">${data.reviewsCount} reviews</span>
+                        </div>
+                    </div>
+                    <a href="${data.airbnbUrl}" target="_blank" style="background: #E51D56; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;">
+                        Reserve
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Mobile Floating Header Buttons (Over Hero Photo) -->
         <div class="mobile-pdp-top-bar">
             <button onclick="closePropertyDetailPage()" class="mobile-circle-btn" title="Back">
@@ -965,7 +1292,7 @@ function openPropertyDetail(propId) {
             </div>
         </div>
 
-        <!-- Full Page Sticky Navigation Header (Desktop Only) -->
+        <!-- Full Page Top Header (Desktop Only) -->
         <header class="top-nav desktop-pdp-nav" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E0D8; height: 76px;">
             <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
                 <div style="display: flex; align-items: center; gap: 20px;">
@@ -1004,10 +1331,10 @@ function openPropertyDetail(propId) {
         <!-- Main Property Detail Container (Max width 1120px to exact match Airbnb standards) -->
         <div class="container mobile-pdp-container" style="max-width: 1120px; margin: 24px auto 80px; padding: 0 24px;">
             
-            <!-- 1. Title Header Row (Exact Image 2 Match) -->
+            <!-- 1. Title Header Row (Exact Image 2 & 4 Match) -->
             <div class="desktop-pdp-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
                 <div>
-                    <h1 style="font-size: 26px; font-weight: 600; color: #222222; margin: 0; line-height: 1.2;">${data.name}</h1>
+                    <h1 style="font-size: 26px; font-weight: 600; color: #222222; margin: 0; line-height: 1.25;">${data.name}</h1>
                 </div>
                 <div style="display: flex; gap: 20px; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; color: #222222; flex-shrink: 0;">
                     <span onclick="shareProperty('${propId}')" style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-arrow-up-from-bracket" style="font-size: 13px;"></i> Share</span>
@@ -1028,13 +1355,13 @@ function openPropertyDetail(propId) {
                 </div>
             </div>
 
-            <!-- Two-Column Body Layout (Exact Airbnb Alignment from Images 1 & 2) -->
+            <!-- Two-Column Body Layout (Exact Airbnb Alignment from Images 1, 2, 3, 4) -->
             <div class="detail-body-layout" style="display: grid; grid-template-columns: 1fr 370px; gap: 80px; align-items: start; margin-top: 32px;">
                 
-                <!-- Left Main Column (Specs -> Guest Favourite -> Highlights -> Hosted by Ruchi -> Content) -->
+                <!-- Left Main Column -->
                 <div class="detail-left-col">
 
-                    <!-- Property Type & Specs (Exact Image 1 Match) -->
+                    <!-- Property Type & Specs (Exact Image 1 & 3 Match) -->
                     <div style="margin-bottom: 24px;">
                         <h2 style="font-size: 22px; font-weight: 600; color: #222222; margin: 0 0 4px; line-height: 1.25;">
                             ${data.propertyType || 'Entire rental unit in Dubai, United Arab Emirates'}
@@ -1044,7 +1371,7 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
 
-                    <!-- Guest Favourite Card (Exact Image 1 Match) -->
+                    <!-- Guest Favourite Card (Exact Image 1 & 3 Match) -->
                     <div class="guest-favourite-card" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #DDDDDD; border-radius: 12px; padding: 18px 24px; margin-bottom: 32px; background: #FFFFFF; gap: 16px;">
                         <!-- Left: Laurel Wreath + Title -->
                         <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
@@ -1078,7 +1405,7 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
 
-                    <!-- 4 Highlights List with Icons (Exact Image 1 Match) -->
+                    <!-- 4 Highlights List with Exact Icons (Exact Image 1 & 3 Match) -->
                     <div class="highlights-list-airbnb" style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px;">
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
                             <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
@@ -1100,7 +1427,7 @@ function openPropertyDetail(propId) {
                         </div>
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
                             <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
-                                🏊‍♂️
+                                ${propId === 'burj-vista' ? '🚪' : '🏊‍♂️'}
                             </div>
                             <div>
                                 <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight3Title}</div>
@@ -1109,7 +1436,7 @@ function openPropertyDetail(propId) {
                         </div>
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
                             <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
-                                ⭐
+                                ${propId === 'burj-vista' ? '⭐' : '🌟'}
                             </div>
                             <div>
                                 <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight4Title}</div>
@@ -1118,7 +1445,7 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
 
-                    <!-- Host Line: Hosted by Ruchi with Superhost Badge (Exact Image 1 Match) -->
+                    <!-- Host Line: Hosted by Ruchi with Superhost Badge (Exact Image 1 & 3 Match - Never Prince) -->
                     <div class="host-line-airbnb" style="display: flex; align-items: center; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid #EBEBEB; margin-bottom: 32px;">
                         <div style="position: relative; width: 44px; height: 44px; flex-shrink: 0;">
                             <img src="assets/ruchi_cropped.jpg" alt="Ruchi" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
@@ -1127,8 +1454,8 @@ function openPropertyDetail(propId) {
                             </div>
                         </div>
                         <div>
-                            <h3 style="font-size: 16px; font-weight: 600; color: #222222; margin: 0; line-height: 1.2;">Hosted by ${data.hostName || 'Ruchi'}</h3>
-                            <div style="font-size: 14px; color: #717171; margin-top: 3px;">${data.hostSubtitle || 'Superhost · 5 years hosting'}</div>
+                            <h3 style="font-size: 16px; font-weight: 600; color: #222222; margin: 0; line-height: 1.2;">Hosted by Ruchi</h3>
+                            <div style="font-size: 14px; color: #717171; margin-top: 3px;">Superhost · 2 months hosting</div>
                         </div>
                     </div>
 
@@ -1218,11 +1545,11 @@ function openPropertyDetail(propId) {
                     ` : ''}
 
                     <!-- Amenities Section ("What this place offers" matching Airbnb) -->
-                    <div style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                    <div id="pdpAmenitiesSection" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">What this place offers</h3>
                         
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; font-size: 16px; color: #222222; margin-bottom: 24px;">
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 20px; color: #222;"></i> <span>${propId === 'paramount' ? '64th Floor Rooftop Infinity Pool' : 'Residences Swimming Pool'}</span></div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 20px; color: #222;"></i> <span>${propId === 'paramount' ? '64th Floor Rooftop Infinity Pool' : 'Residences Swimming Pool with Burj View'}</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-eye" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Burj Khalifa & Skyline view</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Fast wifi (Free high-speed)</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Free parking on premises</span></div>
@@ -1239,39 +1566,146 @@ function openPropertyDetail(propId) {
                         </button>
                     </div>
 
-                    <!-- Reviews Section (Dynamic & Clickable Airbnb Style) -->
-                    <div id="pdpReviewsSection" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        <div onclick="openReviewsModal('${propId}')" style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-                            <h3 style="font-size: 22px; font-weight: 800; color: #222222; margin: 0;">
-                                ★ ${data.rating} · <span style="text-decoration: underline;">${data.reviewsCount} reviews</span>
-                            </h3>
-                            <i class="fa-solid fa-chevron-right" style="font-size: 14px; color: #222; margin-left: 4px;"></i>
+                    <!-- Reviews Section (Grand Reviews Hero & Breakdown - Exact Image 3 Match) -->
+                    <div id="pdpReviewsSection" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB;">
+                        
+                        <!-- Laurel Wreath Hero Centered (Image 3) -->
+                        <div style="text-align: center; margin-bottom: 28px;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px;">
+                                <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0;">
+                                    <defs>
+                                        <linearGradient id="laurelGoldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#E2B148" />
+                                            <stop offset="50%" stop-color="#F9D976" />
+                                            <stop offset="100%" stop-color="#B8860B" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldLeft)" stroke-width="2.5" stroke-linecap="round" />
+                                    <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldLeft)" />
+                                    <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldLeft)" />
+                                    <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldLeft)" />
+                                    <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldLeft)" />
+                                    <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldLeft)" />
+                                    <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldLeft)" />
+                                </svg>
+                                <div style="font-size: 72px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${data.rating}</div>
+                                <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0; transform: scaleX(-1);">
+                                    <defs>
+                                        <linearGradient id="laurelGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#E2B148" />
+                                            <stop offset="50%" stop-color="#F9D976" />
+                                            <stop offset="100%" stop-color="#B8860B" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldRight)" stroke-width="2.5" stroke-linecap="round" />
+                                    <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldRight)" />
+                                    <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldRight)" />
+                                    <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldRight)" />
+                                    <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldRight)" />
+                                    <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldRight)" />
+                                    <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldRight)" />
+                                </svg>
+                            </div>
+                            <div style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 6px;">Guest favourite</div>
+                            <div style="font-size: 15px; color: #717171; max-width: 480px; margin: 0 auto 6px; line-height: 1.45;">
+                                This home is in the <strong style="color: #222222; font-weight: 700;">top 10%</strong> of eligible listings based on ratings, reviews and reliability
+                            </div>
+                            <a href="#" onclick="openReviewsModal('${propId}'); return false;" style="font-size: 13px; color: #717171; text-decoration: underline;">How reviews work</a>
                         </div>
 
-                        <!-- Category Breakdown Bars -->
-                        <div class="rating-categories-grid">
-                            ${[
-                                { label: 'Cleanliness', score: '5.0' },
-                                { label: 'Accuracy', score: '5.0' },
-                                { label: 'Check-in', score: '5.0' },
-                                { label: 'Communication', score: '5.0' },
-                                { label: 'Location', score: '5.0' },
-                                { label: 'Value', score: '5.0' }
-                            ].map(cat => `
-                                <div class="rating-category-item">
-                                    <span>${cat.label}</span>
-                                    <div class="rating-bar-wrap">
-                                        <div class="rating-bar-track">
-                                            <div class="rating-bar-fill"></div>
+                        <!-- 7-Column Rating Breakdown Grid (Exact Image 3 Match) -->
+                        <div class="rating-breakdown-7cols">
+                            <!-- Overall rating -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 10px;">Overall rating</div>
+                                <div style="display: flex; flex-direction: column; gap: 4px;">
+                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                        <span style="width: 8px;">5</span>
+                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px; overflow: hidden;">
+                                            <div style="width: 100%; height: 100%; background: #222222;"></div>
                                         </div>
-                                        <span class="rating-category-score">${cat.score}</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                        <span style="width: 8px;">4</span>
+                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                        <span style="width: 8px;">3</span>
+                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                        <span style="width: 8px;">2</span>
+                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                        <span style="width: 8px;">1</span>
+                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
                                     </div>
                                 </div>
-                            `).join('')}
+                            </div>
+
+                            <!-- Cleanliness -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">${propId === 'paramount' ? '4.9' : '5.0'}</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                            </div>
+
+                            <!-- Accuracy -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Accuracy</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-circle-check"></i></div>
+                            </div>
+
+                            <!-- Check-in -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Check-in</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-key"></i></div>
+                            </div>
+
+                            <!-- Communication -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Communication</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-message"></i></div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Location</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-map-location-dot"></i></div>
+                            </div>
+
+                            <!-- Value -->
+                            <div class="rating-col-item">
+                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Value</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-tag"></i></div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div style="height: 1px; background: #EBEBEB; margin: 32px 0 24px;"></div>
+
+                        <!-- Guests mention Pills Row (Exact Image 3 Match) -->
+                        <h3 style="font-size: 18px; font-weight: 700; color: #222222; margin-bottom: 16px;">Guests mention</h3>
+
+                        <div class="guests-mention-pills-wrap">
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'view')">🖼️ View 11</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'hospitality')">🎁 Hospitality 11</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'location')">📍 Location 7</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'clean')">🧽 Cleanliness 5</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'check-in')">🔢 Check-in 3</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'downtown')">🗺️ Nearby 3</button>
+                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'walk')">👟 Walkability 2</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🚆 Getting around &gt;</button>
                         </div>
 
                         <!-- Property Specific Reviews Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; margin-bottom: 24px;">
+                        <div id="pdpInlineReviewsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; margin-bottom: 24px;">
                             ${reviews.slice(0, 4).map(rev => `
                                 <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                                     <div>
@@ -1297,12 +1731,20 @@ function openPropertyDetail(propId) {
                         </button>
                     </div>
 
-                    <!-- Location Map ("Where you'll be" with Interactive Map) -->
-                    <div class="property-map-wrapper">
+                    <!-- Location Map ("Where you'll be" - Exact Images 5 & 6 Match) -->
+                    <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 6px;">Where you'll be</h3>
-                        <p style="font-size: 15px; color: #717171; margin-bottom: 16px;">${data.location}</p>
+                        <p style="font-size: 15px; color: #717171; margin-bottom: 20px;">Dubai, United Arab Emirates</p>
                         
-                        <div id="propertyMap"></div>
+                        <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 440px; border: 1px solid #DDDDDD;">
+                            <!-- Floating Search Pill (Exact Image 5 & 6 Match) -->
+                            <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 16px; left: 16px; z-index: 500; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 22px; font-size: 14px; font-weight: 500; color: #222222; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); cursor: pointer;">
+                                <i class="fa-solid fa-magnifying-glass" style="font-size: 13px; color: #222222;"></i>
+                                <span>Find things to do</span>
+                            </div>
+
+                            <div id="propertyMap" style="width: 100%; height: 100%;"></div>
+                        </div>
 
                         <div style="margin-top: 24px;">
                             <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 8px;">${data.neighborhoodTitle || 'Dubai Prime Neighborhood'}</h4>
@@ -1310,57 +1752,88 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
 
-                    <!-- Things to Know (3-Column Airbnb Grid) -->
-                    <div class="things-to-know-section">
-                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 8px;">Things to know</h3>
+                    <!-- Payment Protection Banner (Exact Image 4 Match) -->
+                    <div style="border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 22px 0; margin: 36px 0 28px; display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" style="flex-shrink: 0;">
+                            <path d="M16 3L5 7V15C5 21.8 9.7 28.1 16 29.8C22.3 28.1 27 21.8 27 15V7L16 3Z" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 16L15 19L20 13" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div style="font-size: 14px; color: #717171; max-width: 650px; line-height: 1.45;">
+                            To help protect your payment, always use Airbnb to send money and communicate with hosts.
+                        </div>
+                    </div>
+
+                    <!-- Things to Know (5-Item Grid - Exact Image 4 Match) -->
+                    <div class="things-to-know-section" style="margin-bottom: 48px;">
+                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">Things to know</h3>
                         
-                        <div class="things-to-know-grid">
+                        <div class="ttk-grid-5cols" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px;">
+                            <!-- Instant Book -->
                             <div>
-                                <h4 class="ttk-col-title">House rules</h4>
-                                <ul class="ttk-list">
-                                    <li><i class="fa-regular fa-clock"></i> <span>Check-in: 3:00 PM – 11:00 PM</span></li>
-                                    <li><i class="fa-regular fa-clock"></i> <span>Checkout before 11:00 AM</span></li>
-                                    <li><i class="fa-solid fa-users"></i> <span>4 guests maximum</span></li>
-                                    <li><i class="fa-solid fa-ban-smoking"></i> <span>No smoking inside</span></li>
-                                    <li><i class="fa-solid fa-champagne-glasses"></i> <span>No parties or events</span></li>
-                                </ul>
+                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">⚡</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Instant Book</h4>
+                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">You can book this stay without waiting for host approval.</p>
                             </div>
+
+                            <!-- Check in -->
                             <div>
-                                <h4 class="ttk-col-title">Safety & property</h4>
-                                <ul class="ttk-list">
-                                    <li><i class="fa-solid fa-shield-halved"></i> <span>Carbon monoxide alarm installed</span></li>
-                                    <li><i class="fa-solid fa-bell"></i> <span>Smoke alarm installed</span></li>
-                                    <li><i class="fa-solid fa-fire-extinguisher"></i> <span>Fire extinguisher on premises</span></li>
-                                    <li><i class="fa-solid fa-kit-medical"></i> <span>First aid kit available</span></li>
-                                    <li><i class="fa-solid fa-video-slash"></i> <span>No interior security cameras</span></li>
-                                </ul>
+                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🚪</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Check in after 3:00 pm</h4>
+                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">Check out before 11:00 am, self check-in with smart lock</p>
                             </div>
+
+                            <!-- House rules -->
                             <div>
-                                <h4 class="ttk-col-title">Cancellation policy</h4>
-                                <ul class="ttk-list">
-                                    <li><i class="fa-regular fa-calendar-check"></i> <span>Free cancellation up to 48 hours before check-in</span></li>
-                                    <li><i class="fa-solid fa-circle-info"></i> <span>Review full policy on Airbnb before reserving</span></li>
-                                </ul>
+                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📋</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">House rules</h4>
+                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Review these details for a smooth stay.</p>
+                                <a href="#" onclick="openHouseRulesModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
+                            </div>
+
+                            <!-- Safety & property -->
+                            <div>
+                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🛡️</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Safety & property</h4>
+                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Carbon monoxide alarm, smoke alarm</p>
+                                <a href="#" onclick="openSafetyModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
+                            </div>
+
+                            <!-- Free cancellation -->
+                            <div>
+                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📅</div>
+                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Free cancellation before 30 November. Cancel before 7 December for a partial refund.</h4>
+                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Review this host's full policy for details.</p>
+                                <a href="#" onclick="openCancellationModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- Right Column Sticky Reservation Booking Engine (Exact Images 1 & 2 Match) -->
+                <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 & 3 Match) -->
                 <div class="detail-right-col" style="position: sticky; top: 100px;">
                     
-                    <!-- Rare find badge pill (Exact Image 1 Match) -->
-                    <div class="rare-find-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-                        <span style="font-size: 18px; line-height: 1;">💎</span>
-                        <span style="font-size: 14px; color: #222222;"><strong style="font-weight: 700;">Rare find!</strong> This place is usually booked</span>
-                    </div>
+                    <!-- Top Pill: Below average for Burj Vista, Rare find for Paramount -->
+                    ${propId === 'burj-vista' ? `
+                        <div class="price-below-average-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                            <span style="font-size: 18px; line-height: 1;">🏷️</span>
+                            <span style="font-size: 14px; color: #222222;">Your price is below the 60-day average</span>
+                        </div>
+                    ` : `
+                        <div class="rare-find-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                            <span style="font-size: 18px; line-height: 1;">💎</span>
+                            <span style="font-size: 14px; color: #222222;"><strong style="font-weight: 700;">Rare find!</strong> This place is usually booked</span>
+                        </div>
+                    `}
 
-                    <!-- Main Booking Card Box (Exact Image 1 Match) -->
+                    <!-- Main Booking Card Box (Exact Image 1 & 3 Match) -->
                     <div class="booking-card-airbnb" style="border: 1px solid #DDDDDD; border-radius: 12px; padding: 24px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); background: #FFFFFF;">
                         
                         <!-- Price Header Line -->
-                        <div style="margin-bottom: 22px;">
+                        <div style="margin-bottom: 22px; display: flex; align-items: baseline; flex-wrap: wrap;">
+                            ${propId === 'burj-vista' ? `
+                                <span id="bookingCardStrikethrough" style="font-size: 18px; color: #717171; text-decoration: line-through; margin-right: 8px;">${window.formatPrice(strikethroughTotal)}</span>
+                            ` : ''}
                             <span id="bookingCardPrice" style="font-size: 22px; font-weight: 700; color: #222222; text-decoration: underline;">${window.formatPrice(nightlyTotal)}</span>
                             <span id="bookingCardPeriod" style="font-size: 15px; color: #222222; font-weight: 500; margin-left: 6px;">for <span id="numNightsText">${nights}</span> nights</span>
                         </div>
@@ -1413,7 +1886,7 @@ function openPropertyDetail(propId) {
                         </div>
                     </div>
 
-                    <!-- Report Listing Link (Exact Image 1 Match) -->
+                    <!-- Report Listing Link (Exact Image 1 & 3 Match) -->
                     <div style="text-align: center; margin-top: 20px;">
                         <a href="#" onclick="alert('This listing is verified by True Haven.'); return false;" style="font-size: 14px; color: #717171; text-decoration: underline; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fa-solid fa-flag" style="font-size: 13px;"></i> Report this listing
@@ -1427,7 +1900,9 @@ function openPropertyDetail(propId) {
         <!-- Fixed Floating Mobile Bottom Bar Matching Airbnb UX -->
         <div class="mobile-fixed-bottom-bar">
             <div class="mobile-bottom-price-box">
-                <div class="mobile-bottom-price" id="mobileBottomPrice" style="font-size: 16px; font-weight: 800; color: #222;">${window.formatPrice(data.priceNight)} <span style="font-size: 13px; font-weight: normal; color: #717171;">night</span></div>
+                <div class="mobile-bottom-price" id="mobileBottomPrice" style="font-size: 16px; font-weight: 800; color: #222;">
+                    ${window.formatPrice(data.priceNight)} <span style="font-size: 13px; font-weight: normal; color: #717171;">night</span>
+                </div>
                 <div class="mobile-bottom-sub" onclick="openReviewsModal('${propId}')" style="cursor: pointer;"><i class="fa-solid fa-star" style="font-size: 11px; color: #FF385C;"></i> ${data.rating} (${data.reviewsCount})</div>
             </div>
             <a href="${data.airbnbUrl}" id="mobileAirbnbReserveBtn" target="_blank" class="mobile-reserve-btn">
@@ -1478,19 +1953,14 @@ function openPropertyDetail(propId) {
                 </div>
 
                 <!-- Legal Hairline Band -->
-                <div class="legal-band">
-                    <div class="legal-left">
-                        <span>© 2026 True Haven Stays, Inc. All rights reserved.</span>
-                        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a>
+                <div class="footer-bottom-bar" style="border-top: 1px solid #E5E0D8; padding-top: 24px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                    <div class="footer-copyright" style="font-size: 13px; color: #717171;">
+                        © 2026 True Haven Luxury Stays LLC. All rights reserved. DTCM Registered Holiday Homes Operator.
                     </div>
-                    <div class="legal-right">
-                        <span><i class="fa-solid fa-globe"></i> English (US)</span>
-                        <span>AED (د.إ)</span>
-                        <div class="social-icons">
-                            <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" title="Follow us on Instagram (@truehavenstays)"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/truehavenstays" target="_blank" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
+                    <div class="footer-legal-links" style="display: flex; gap: 20px; font-size: 13px; color: #717171;">
+                        <a href="#" onclick="alert('Privacy Policy: True Haven protects guest information and complies with Dubai DTCM holiday homes data standards.'); return false;" style="color: inherit; text-decoration: none;">Privacy</a>
+                        <a href="#" onclick="alert('Terms of Service: All bookings subject to Dubai Tourism (DTCM) regulations and house rules.'); return false;" style="color: inherit; text-decoration: none;">Terms</a>
+                        <a href="#" onclick="alert('Direct WhatsApp: +971 52 582 1668'); return false;" style="color: inherit; text-decoration: none;">Sitemap</a>
                     </div>
                 </div>
             </div>
@@ -1504,13 +1974,27 @@ function openPropertyDetail(propId) {
         try { history.pushState(null, '', '#' + propId); } catch(e) {}
     }
 
+    // Sticky Sub-Nav Scroll Listener
+    const handlePdpSubNavScroll = () => {
+        const subNav = document.getElementById('stickyPdpSubNav');
+        if (!subNav) return;
+        if (window.scrollY > 440) {
+            subNav.classList.add('visible');
+        } else {
+            subNav.classList.remove('visible');
+        }
+    };
+    window.removeEventListener('scroll', window._pdpSubNavScrollHandler);
+    window._pdpSubNavScrollHandler = handlePdpSubNavScroll;
+    window.addEventListener('scroll', handlePdpSubNavScroll);
+
     // Render interactive Leaflet map
     setTimeout(() => {
         renderPropertyMap(propId);
     }, 150);
 }
 
-// Close Full-Page Immersive View & Return to Homepage
+
 function closePropertyDetailPage() {
     const pageContainer = document.getElementById('propertyDetailPage');
     const mainPage = document.getElementById('mainPage');
@@ -1564,10 +2048,10 @@ function renderPropertyMap(propId) {
             weight: 1
         }).addTo(currentLeafletMap);
 
-        // Custom True Haven Pin Icon
+        // Exact Airbnb Black Circle Home Pin (Images 5 & 6)
         const customPin = L.divIcon({
-            className: 'truehaven-map-pin-custom',
-            html: '<div style="background: #0F1E36; color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.35); border: 3px solid #FFFFFF; font-size: 18px;"><i class="fa-solid fa-hotel"></i></div>',
+            className: 'airbnb-map-pin-custom',
+            html: '<div style="background: #000000; color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.35); border: 2.5px solid #FFFFFF; font-size: 18px;"><i class="fa-solid fa-house"></i></div>',
             iconSize: [44, 44],
             iconAnchor: [22, 22]
         });
@@ -2218,4 +2702,186 @@ function resetGuests() {
 function applyNavGuests() {
     refreshGuestStepperUI();
     closeAllSearchPopovers();
+}
+
+// ==========================================
+// AIRBNB EXACT PDP HELPER MODALS & ACTIONS
+// ==========================================
+
+function openHouseRulesModal(propId) {
+    const data = PROPERTIES_DATA[propId] || PROPERTIES_DATA['paramount'];
+    const modal = document.createElement('div');
+    modal.className = 'generic-airbnb-modal-overlay';
+    modal.id = 'genericAirbnbModal';
+    modal.innerHTML = `
+        <div class="generic-airbnb-modal-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid #EBEBEB;">
+                <h3 style="font-size: 19px; font-weight: 800; margin: 0; color: #222222;">House rules</h3>
+                <button onclick="closeGenericModal()" style="font-size: 26px; cursor: pointer; background: none; border: none; color: #222;">&times;</button>
+            </div>
+            <div style="padding: 28px; overflow-y: auto; flex: 1; font-size: 15px; color: #374151; line-height: 1.6;">
+                <p style="margin-top: 0; color: #717171;">You'll be staying in someone's home, so please treat it with care and respect.</p>
+                
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 10px;">Checking in and out</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-regular fa-clock" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Check-in after 3:00 PM</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-regular fa-clock" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Checkout before 11:00 AM</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-key" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Self check-in with smart lock & 24/7 building reception</span></div>
+                </div>
+
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 10px;">During your stay</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-users" style="font-size: 18px; width: 24px; color: #222;"></i> <span>4 guests maximum</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-ban" style="font-size: 18px; width: 24px; color: #222;"></i> <span>No pets allowed</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-volume-xmark" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Quiet hours 10:00 PM – 8:00 AM</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-champagne-glasses" style="font-size: 18px; width: 24px; color: #222;"></i> <span>No parties or events</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-ban-smoking" style="font-size: 18px; width: 24px; color: #222;"></i> <span>No smoking inside the apartment</span></div>
+                </div>
+
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 10px;">Dubai Tourism (DTCM) & Building Rules</h4>
+                <p style="margin: 0; font-size: 14px; color: #717171;">All guests are required by Dubai Tourism (DTCM) regulations to submit passport soft copies prior to check-in for building registration. Commercial use and subleasing are strictly prohibited.</p>
+            </div>
+        </div>
+    `;
+    modal.onclick = (e) => { if (e.target === modal) closeGenericModal(); };
+    document.body.appendChild(modal);
+}
+
+function openSafetyModal(propId) {
+    const data = PROPERTIES_DATA[propId] || PROPERTIES_DATA['paramount'];
+    const modal = document.createElement('div');
+    modal.className = 'generic-airbnb-modal-overlay';
+    modal.id = 'genericAirbnbModal';
+    modal.innerHTML = `
+        <div class="generic-airbnb-modal-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid #EBEBEB;">
+                <h3 style="font-size: 19px; font-weight: 800; margin: 0; color: #222222;">Safety & property</h3>
+                <button onclick="closeGenericModal()" style="font-size: 26px; cursor: pointer; background: none; border: none; color: #222;">&times;</button>
+            </div>
+            <div style="padding: 28px; overflow-y: auto; flex: 1; font-size: 15px; color: #374151; line-height: 1.6;">
+                <p style="margin-top: 0; color: #717171;">Avoid surprises by looking over these important safety and property details.</p>
+                
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 10px;">Safety devices</h4>
+                <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-shield-halved" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Carbon monoxide alarm installed</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-bell" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Smoke alarm installed</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-fire-extinguisher" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Fire extinguisher on premises</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-kit-medical" style="font-size: 18px; width: 24px; color: #222;"></i> <span>First aid kit available</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-video-slash" style="font-size: 18px; width: 24px; color: #222;"></i> <span>No interior security cameras</span></div>
+                </div>
+
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 20px 0 10px;">Property information</h4>
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-shield" style="font-size: 18px; width: 24px; color: #222;"></i> <span>24/7 dedicated lobby reception & security staff</span></div>
+                    <div style="display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-elevator" style="font-size: 18px; width: 24px; color: #222;"></i> <span>Elevator access to residence and all building amenities</span></div>
+                </div>
+            </div>
+        </div>
+    `;
+    modal.onclick = (e) => { if (e.target === modal) closeGenericModal(); };
+    document.body.appendChild(modal);
+}
+
+function openCancellationModal(propId) {
+    const data = PROPERTIES_DATA[propId] || PROPERTIES_DATA['paramount'];
+    const modal = document.createElement('div');
+    modal.className = 'generic-airbnb-modal-overlay';
+    modal.id = 'genericAirbnbModal';
+    modal.innerHTML = `
+        <div class="generic-airbnb-modal-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid #EBEBEB;">
+                <h3 style="font-size: 19px; font-weight: 800; margin: 0; color: #222222;">Cancellation policy</h3>
+                <button onclick="closeGenericModal()" style="font-size: 26px; cursor: pointer; background: none; border: none; color: #222;">&times;</button>
+            </div>
+            <div style="padding: 28px; overflow-y: auto; flex: 1; font-size: 15px; color: #374151; line-height: 1.6;">
+                <h4 style="font-size: 16px; font-weight: 700; color: #222; margin: 0 0 10px;">Free cancellation before 30 November</h4>
+                <p style="color: #717171; margin-bottom: 20px;">Cancel before 30 November for a full refund. Cancel before 7 December for a partial refund. After that, this reservation is non-refundable.</p>
+
+                <div style="border-top: 1px solid #EBEBEB; padding-top: 20px;">
+                    <h5 style="font-size: 14px; font-weight: 700; color: #222; margin: 0 0 6px;">Protection Guarantee</h5>
+                    <p style="font-size: 13px; color: #717171; margin: 0;">Make sure you are comfortable with this host's policy before booking. Booking via Airbnb provides official Guest Refund Policy protection.</p>
+                </div>
+            </div>
+        </div>
+    `;
+    modal.onclick = (e) => { if (e.target === modal) closeGenericModal(); };
+    document.body.appendChild(modal);
+}
+
+function openMapActivitiesModal(propId) {
+    const data = PROPERTIES_DATA[propId] || PROPERTIES_DATA['paramount'];
+    const modal = document.createElement('div');
+    modal.className = 'generic-airbnb-modal-overlay';
+    modal.id = 'genericAirbnbModal';
+    modal.innerHTML = `
+        <div class="generic-airbnb-modal-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid #EBEBEB;">
+                <h3 style="font-size: 19px; font-weight: 800; margin: 0; color: #222222;">Things to do around ${data.name}</h3>
+                <button onclick="closeGenericModal()" style="font-size: 26px; cursor: pointer; background: none; border: none; color: #222;">&times;</button>
+            </div>
+            <div style="padding: 28px; overflow-y: auto; flex: 1; font-size: 15px; color: #374151; line-height: 1.6;">
+                <p style="color: #717171; margin-top: 0;">Curated attractions within 5–15 minutes of your residence:</p>
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    ${(data.nearbyAttractions || [
+                        "Burj Khalifa: World's tallest tower with observation decks",
+                        "The Dubai Mall: 1,200+ luxury boutiques and world-class dining",
+                        "The Dubai Fountain: World famous choreographed water and music show",
+                        "Dubai Opera: Performing arts and musical theater",
+                        "Sky Views Observatory: Glass walkway and glass slide"
+                    ]).map(item => `
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fa-solid fa-location-dot" style="color: #FF385C; font-size: 18px; width: 20px;"></i>
+                            <span>${item}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+    modal.onclick = (e) => { if (e.target === modal) closeGenericModal(); };
+    document.body.appendChild(modal);
+}
+
+function closeGenericModal() {
+    const modal = document.getElementById('genericAirbnbModal');
+    if (modal) modal.remove();
+}
+
+function filterReviewsByKeyword(propId, keyword) {
+    const data = PROPERTIES_DATA[propId];
+    if (!data || !data.reviews) return;
+    
+    // Toggle active on clicked pill
+    document.querySelectorAll('.guest-mention-pill').forEach(btn => {
+        if (btn.textContent.toLowerCase().includes(keyword.toLowerCase())) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    const filtered = data.reviews.filter(r => r.text.toLowerCase().includes(keyword.toLowerCase()));
+    const reviewsToDisplay = filtered.length > 0 ? filtered : data.reviews;
+    
+    const grid = document.getElementById('pdpInlineReviewsGrid');
+    if (grid) {
+        grid.innerHTML = reviewsToDisplay.slice(0, 4).map(rev => `
+            <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                        <div style="width: 44px; height: 44px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">${rev.initial || rev.name.charAt(0)}</div>
+                        <div>
+                            <div style="font-size: 15px; font-weight: 700; color: #222;">${rev.name}</div>
+                            <div style="font-size: 13px; color: #717171;">${rev.location || 'Verified Guest'}</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
+                        ${'★'.repeat(rev.rating || 5)}
+                        <span style="color: #717171; margin-left: 6px;">· ${rev.time}</span>
+                    </div>
+                    <p style="font-size: 14px; color: #374151; line-height: 1.55; margin: 0;">"${rev.text}"</p>
+                </div>
+            </div>
+        `).join('');
+    }
 }
