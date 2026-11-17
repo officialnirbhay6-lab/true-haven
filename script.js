@@ -1,5 +1,5 @@
 
-window.userCurrency = 'USD';
+window.userCurrency = 'INR';
 window.exchangeRate = 0.272; // Default AED to USD
 
 window.formatPrice = function(amount) {
@@ -1240,13 +1240,29 @@ function openPropertyDetail(propId) {
         </div>
     `;
 
-    // Default dates matching Reference Image (12/14/2026 to 12/16/2026 - 2 nights)
-    const checkInStr = '2026-12-14';
-    const checkOutStr = '2026-12-16';
-    const nights = 2;
-    const nightlyTotal = data.priceNight * nights;
-    const strikethroughTotal = Math.round(nightlyTotal * 1.13);
-    const cancellationDateStr = '30 November';
+    // Exact data matching reference images
+    const isParamount = (propId === 'paramount');
+    
+    // Price display matching exact Airbnb reference images
+    const priceDisplay = isParamount ? '₹51,314' : '₹56,379';
+    const strikethroughPrice = isParamount ? '' : '₹63,772';
+    const reviewsCount = isParamount ? 18 : 16;
+    const ratingDisplay = '5.0';
+
+    // 4 Highlights Data (Directly defined so never undefined)
+    const h1Title = 'Top 10% of homes';
+    const h1Desc = 'This home is highly ranked based on ratings, reviews and reliability.';
+
+    const h2Title = isParamount ? 'In Business Bay, near the Burj Khalifa' : 'In Downtown Dubai';
+    const h2Desc = isParamount ? "About a 15-min walk to the Burj Khalifa, in Business Bay's canal-side district near Downtown Dubai" : 'About a 5-min walk to Burj Khalifa, with Dubai Mall connected by an internal AC skybridge.';
+
+    const h3Title = isParamount ? '64th-floor rooftop infinity pool' : 'Private balcony with Burj Khalifa view';
+    const h3Desc = isParamount ? 'A rooftop infinity pool on the 64th floor with views of the Downtown skyline, open daily' : 'A private balcony faces the Burj Khalifa, with a full kitchen, pool, and gym in the building.';
+
+    const h4Title = isParamount ? 'Spotless with views guests love' : 'Loved for the view and the hosts';
+    const h4Desc = isParamount ? 'Guests highlight the cleanliness, the Burj Khalifa views from the balcony, and a responsive host' : 'Guests highlight the Burj Khalifa view and praise Ruchi as a responsive, flexible host.';
+
+    const specsText = isParamount ? '4 guests · 1 bedroom · 2 beds · 1.5 bathrooms' : '4 guests · 1 bedroom · 3 beds · 1.5 bathrooms';
 
     const reviews = data.reviews || [];
 
@@ -1263,11 +1279,11 @@ function openPropertyDetail(propId) {
                 <div style="display: flex; align-items: center; gap: 18px;">
                     <div style="text-align: right;">
                         <div style="font-size: 15px; font-weight: 700; color: #222222;">
-                            ${propId === 'burj-vista' ? `<span style="font-size: 13px; color: #717171; text-decoration: line-through; margin-right: 6px;">${window.formatPrice(strikethroughTotal)}</span>` : ''}
-                            ${window.formatPrice(nightlyTotal)} <span style="font-size: 13px; font-weight: 400; color: #717171;">for 2 nights</span>
+                            ${strikethroughPrice ? `<span style="font-size: 13px; color: #717171; text-decoration: line-through; margin-right: 6px;">${strikethroughPrice}</span>` : ''}
+                            ${priceDisplay} <span style="font-size: 13px; font-weight: 400; color: #717171;">for 2 nights</span>
                         </div>
                         <div style="font-size: 12px; font-weight: 600; color: #222222; margin-top: 1px;" onclick="openReviewsModal('${propId}')" style="cursor: pointer;">
-                            <i class="fa-solid fa-star" style="color: #FF385C; font-size: 11px;"></i> ${data.rating} · <span style="text-decoration: underline;">${data.reviewsCount} reviews</span>
+                            <i class="fa-solid fa-star" style="color: #FF385C; font-size: 11px;"></i> ${ratingDisplay} · <span style="text-decoration: underline;">${reviewsCount} reviews</span>
                         </div>
                     </div>
                     <a href="${data.airbnbUrl}" target="_blank" style="background: #E51D56; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;">
@@ -1345,44 +1361,48 @@ function openPropertyDetail(propId) {
             <!-- 2. Photo Grid & Count -->
             ${desktopPhotoGridHtml}
 
-            <!-- Mobile Title Header Section -->
-            <div class="mobile-pdp-title-block" style="margin-bottom: 24px;">
-                <h1 style="font-size: 24px; font-weight: 800; color: #222222; margin-bottom: 8px; line-height: 1.25;">${data.name}</h1>
-                <p style="font-size: 15px; color: #717171; margin-bottom: 4px;">${data.propertyType || 'Entire rental unit in Dubai, United Arab Emirates'}</p>
-                <p style="font-size: 14px; color: #222222; font-weight: 600; margin-bottom: 8px;">${data.specs}</p>
-                <div onclick="openReviewsModal('${propId}')" style="cursor: pointer; font-size: 14px; font-weight: 700; color: #222222;">
-                    <i class="fa-solid fa-star" style="color: #FF385C;"></i> ${data.rating} · <span style="text-decoration: underline;">${data.reviewsCount} reviews</span>
-                </div>
-            </div>
-
-            <!-- Two-Column Body Layout (Exact Airbnb Alignment from Images 1, 2, 3, 4) -->
+            <!-- Two-Column Body Layout (Exact Airbnb Alignment - Starts DIRECTLY with Entire rental unit...) -->
             <div class="detail-body-layout" style="display: grid; grid-template-columns: 1fr 370px; gap: 80px; align-items: start; margin-top: 32px;">
                 
-                <!-- Left Main Column -->
+                <!-- Left Main Column (From Entire rental unit down to Spotless with views...) -->
                 <div class="detail-left-col">
 
-                    <!-- Property Type & Specs (Exact Image 1 & 3 Match) -->
+                    <!-- Line 1 & Line 2: Entire rental unit & Specs (Exact Image 1 Match) -->
                     <div style="margin-bottom: 24px;">
                         <h2 style="font-size: 22px; font-weight: 600; color: #222222; margin: 0 0 4px; line-height: 1.25;">
-                            ${data.propertyType || 'Entire rental unit in Dubai, United Arab Emirates'}
+                            Entire rental unit in Dubai, United Arab Emirates
                         </h2>
                         <div style="font-size: 16px; color: #222222; font-weight: 400;">
-                            ${data.specs}
+                            ${specsText}
                         </div>
                     </div>
 
-                    <!-- Guest Favourite Card (Exact Image 1 & 3 Match) -->
-                    <div class="guest-favourite-card" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #DDDDDD; border-radius: 12px; padding: 18px 24px; margin-bottom: 32px; background: #FFFFFF; gap: 16px;">
-                        <!-- Left: Laurel Wreath + Title -->
-                        <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
-                            <svg viewBox="0 0 27 48" width="24" height="42" fill="#C49746" style="display: block;">
-                                <path d="M21.56 41.52c-1.39-1.02-3.04-2.61-4.28-4.14-1.92-2.37-3.41-5.18-4.32-8.15-.9-2.97-1.28-6.1-.97-9.2.3-3.1 1.25-6.07 2.76-8.72 1.51-2.65 3.56-4.91 6.01-6.61.54-.38.83-.98.74-1.63-.09-.64-.52-1.18-1.15-1.39-.62-.21-1.31-.05-1.78.4-2.73 2.02-5.01 4.67-6.68 7.74-1.68 3.08-2.67 6.51-2.9 10.05-.23 3.54.34 7.08 1.66 10.38 1.32 3.3 3.31 6.27 5.82 8.7 1.63 1.58 3.54 2.92 5.6 3.94.38.19.82.23 1.23.11.41-.12.75-.41.93-.8.18-.39.18-.84.01-1.23-.17-.39-.5-.69-.87-.85z"/>
+                    <!-- Line 3: Guest Favourite Card (Exact Image 1 Match) -->
+                    <div class="guest-favourite-card" style="display: flex; align-items: center; justify-content: space-between; border: 1px solid #DDDDDD; border-radius: 12px; padding: 16px 24px; margin-bottom: 32px; background: #FFFFFF; gap: 16px;">
+                        <!-- Left: Golden Laurel Wreath + Title -->
+                        <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                            <!-- Left Laurel Branch -->
+                            <svg viewBox="0 0 28 48" width="24" height="42" style="display: block;">
+                                <path d="M22.5 42C20.5 40.5 18 38 16 35C13.5 31.5 11.5 27 11 22C10.5 17 11.5 12 14 7.5C16.5 3.5 20.5 1 21.5 0.5C21.8 0.3 22.2 0.5 22.4 0.8C22.6 1.1 22.5 1.5 22.2 1.7C20.5 3.2 18 6 16.5 9.5C15 13 14.5 17 15 21C15.5 25 17 28.5 19.5 31.5C21.5 34 24 36 25.5 37.5C25.8 37.8 25.8 38.2 25.5 38.5C25.2 38.8 24.8 38.8 24.5 38.5L22.5 42Z" fill="#C49746"/>
+                                <ellipse cx="22" cy="7" rx="3.5" ry="6" transform="rotate(-30 22 7)" fill="#C49746"/>
+                                <ellipse cx="17" cy="15" rx="3.5" ry="6.5" transform="rotate(-35 17 15)" fill="#C49746"/>
+                                <ellipse cx="15" cy="24" rx="3.5" ry="6.5" transform="rotate(-25 15 24)" fill="#C49746"/>
+                                <ellipse cx="18" cy="33" rx="3.5" ry="6" transform="rotate(-15 18 33)" fill="#C49746"/>
+                                <ellipse cx="23" cy="40" rx="3" ry="5.5" transform="rotate(5 23 40)" fill="#C49746"/>
                             </svg>
+                            
                             <div style="font-size: 16px; font-weight: 700; color: #222222; text-align: center; line-height: 1.15;">
                                 Guest<br>favourite
                             </div>
-                            <svg viewBox="0 0 27 48" width="24" height="42" fill="#C49746" style="display: block; transform: scaleX(-1);">
-                                <path d="M21.56 41.52c-1.39-1.02-3.04-2.61-4.28-4.14-1.92-2.37-3.41-5.18-4.32-8.15-.9-2.97-1.28-6.1-.97-9.2.3-3.1 1.25-6.07 2.76-8.72 1.51-2.65 3.56-4.91 6.01-6.61.54-.38.83-.98.74-1.63-.09-.64-.52-1.18-1.15-1.39-.62-.21-1.31-.05-1.78.4-2.73 2.02-5.01 4.67-6.68 7.74-1.68 3.08-2.67 6.51-2.9 10.05-.23 3.54.34 7.08 1.66 10.38 1.32 3.3 3.31 6.27 5.82 8.7 1.63 1.58 3.54 2.92 5.6 3.94.38.19.82.23 1.23.11.41-.12.75-.41.93-.8.18-.39.18-.84.01-1.23-.17-.39-.5-.69-.87-.85z"/>
+                            
+                            <!-- Right Laurel Branch (Mirrored) -->
+                            <svg viewBox="0 0 28 48" width="24" height="42" style="display: block; transform: scaleX(-1);">
+                                <path d="M22.5 42C20.5 40.5 18 38 16 35C13.5 31.5 11.5 27 11 22C10.5 17 11.5 12 14 7.5C16.5 3.5 20.5 1 21.5 0.5C21.8 0.3 22.2 0.5 22.4 0.8C22.6 1.1 22.5 1.5 22.2 1.7C20.5 3.2 18 6 16.5 9.5C15 13 14.5 17 15 21C15.5 25 17 28.5 19.5 31.5C21.5 34 24 36 25.5 37.5C25.8 37.8 25.8 38.2 25.5 38.5C25.2 38.8 24.8 38.8 24.5 38.5L22.5 42Z" fill="#C49746"/>
+                                <ellipse cx="22" cy="7" rx="3.5" ry="6" transform="rotate(-30 22 7)" fill="#C49746"/>
+                                <ellipse cx="17" cy="15" rx="3.5" ry="6.5" transform="rotate(-35 17 15)" fill="#C49746"/>
+                                <ellipse cx="15" cy="24" rx="3.5" ry="6.5" transform="rotate(-25 15 24)" fill="#C49746"/>
+                                <ellipse cx="18" cy="33" rx="3.5" ry="6" transform="rotate(-15 18 33)" fill="#C49746"/>
+                                <ellipse cx="23" cy="40" rx="3" ry="5.5" transform="rotate(5 23 40)" fill="#C49746"/>
                             </svg>
                         </div>
 
@@ -1392,60 +1412,69 @@ function openPropertyDetail(propId) {
                         </div>
 
                         <!-- Right: Rating & Review Count -->
-                        <div style="display: flex; align-items: center; gap: 18px; flex-shrink: 0; cursor: pointer;" onclick="openReviewsModal('${propId}')">
+                        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0; cursor: pointer;" onclick="openReviewsModal('${propId}')">
                             <div style="text-align: center;">
-                                <div style="font-size: 22px; font-weight: 800; color: #222222; line-height: 1;">${data.rating}</div>
+                                <div style="font-size: 22px; font-weight: 800; color: #222222; line-height: 1;">${ratingDisplay}</div>
                                 <div style="font-size: 9px; color: #222222; letter-spacing: 2px; margin-top: 4px;">★★★★★</div>
                             </div>
                             <div style="width: 1px; height: 38px; background: #DDDDDD;"></div>
                             <div style="text-align: center;">
-                                <div style="font-size: 22px; font-weight: 800; color: #222222; line-height: 1; text-decoration: underline;">${data.reviewsCount}</div>
+                                <div style="font-size: 22px; font-weight: 800; color: #222222; line-height: 1; text-decoration: underline;">${reviewsCount}</div>
                                 <div style="font-size: 12px; font-weight: 600; color: #717171; margin-top: 4px;">Reviews</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 4 Highlights List with Exact Icons (Exact Image 1 & 3 Match) -->
+                    <!-- The 4 Highlights List (Exact Image 1 Match) -->
                     <div class="highlights-list-airbnb" style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid #EBEBEB; margin-bottom: 24px;">
+                        <!-- Highlight 1: Top 10% of homes -->
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
                             <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
                                 🏆
                             </div>
                             <div>
-                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight1Title}</div>
-                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${data.highlight1Desc}</div>
+                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${h1Title}</div>
+                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${h1Desc}</div>
                             </div>
                         </div>
+
+                        <!-- Highlight 2: In Business Bay, near Burj Khalifa -->
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
-                            <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
-                                📍
+                            <div style="width: 32px; height: 32px; border-radius: 8px; background: #F3F4F6; border: 1px solid #E5E7EB; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#222222"/>
+                                </svg>
                             </div>
                             <div>
-                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight2Title}</div>
-                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${data.highlight2Desc}</div>
+                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${h2Title}</div>
+                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${h2Desc}</div>
                             </div>
                         </div>
+
+                        <!-- Highlight 3: 64th-floor rooftop pool -->
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
-                            <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
-                                ${propId === 'burj-vista' ? '🚪' : '🏊‍♂️'}
+                            <div style="width: 32px; height: 32px; border-radius: 8px; background: ${isParamount ? '#E0F2FE' : '#F3F4F6'}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px;">
+                                ${isParamount ? '🏊‍♂️' : '🚪'}
                             </div>
                             <div>
-                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight3Title}</div>
-                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${data.highlight3Desc}</div>
+                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${h3Title}</div>
+                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${h3Desc}</div>
                             </div>
                         </div>
+
+                        <!-- Highlight 4: Spotless with views guests love -->
                         <div style="display: flex; gap: 20px; align-items: flex-start;">
-                            <div style="width: 32px; font-size: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">
-                                ${propId === 'burj-vista' ? '⭐' : '🌟'}
+                            <div style="width: 32px; height: 32px; border-radius: 8px; background: #FEF3C7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px;">
+                                ⭐
                             </div>
                             <div>
-                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${data.highlight4Title}</div>
-                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${data.highlight4Desc}</div>
+                                <div style="font-size: 16px; font-weight: 600; color: #222222;">${h4Title}</div>
+                                <div style="font-size: 14px; color: #717171; margin-top: 2px; line-height: 1.4;">${h4Desc}</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Host Line: Hosted by Ruchi with Superhost Badge (Exact Image 1 & 3 Match - Never Prince) -->
+                    <!-- Host Line: Hosted by Ruchi with Superhost Badge -->
                     <div class="host-line-airbnb" style="display: flex; align-items: center; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid #EBEBEB; margin-bottom: 32px;">
                         <div style="position: relative; width: 44px; height: 44px; flex-shrink: 0;">
                             <img src="assets/ruchi_cropped.jpg" alt="Ruchi" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
@@ -1484,72 +1513,12 @@ function openPropertyDetail(propId) {
                     </div>
                     ` : ''}
 
-                    <!-- Living Room & Kitchen and Dining -->
-                    ${data.livingRoom || data.kitchenDining ? `
-                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        ${data.livingRoom ? `
-                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 8px;">Living Room</h3>
-                            <p style="font-size: 14px; color: #717171; margin-bottom: 12px;">A bright, modern space made for relaxing and spending time together.</p>
-                            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-                                ${data.livingRoom.map(item => `
-                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
-                                        <span style="color: #10B981; font-weight: 800;">✔</span>
-                                        <span>${item}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-
-                        ${data.kitchenDining ? `
-                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 8px;">Kitchen and Dining</h3>
-                            <p style="font-size: 14px; color: #717171; margin-bottom: 12px;">Fully stocked for home-cooked meals.</p>
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                ${data.kitchenDining.map(item => `
-                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
-                                        <span style="color: #10B981; font-weight: 800;">✔</span>
-                                        <span>${item}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                    ` : ''}
-
-                    <!-- Sleeping Arrangements & Bathrooms -->
-                    ${data.sleepingArrangements || data.bathrooms ? `
-                    <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        ${data.sleepingArrangements ? `
-                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 12px;">Sleeping Arrangements</h3>
-                            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
-                                ${data.sleepingArrangements.map(item => `
-                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
-                                        <span style="color: #10B981; font-weight: 800;">✔</span>
-                                        <span>${item}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-
-                        ${data.bathrooms ? `
-                            <h3 style="font-size: 18px; font-weight: 700; color: #222; margin-bottom: 12px;">Bathrooms — 1.5 Total</h3>
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                ${data.bathrooms.map(item => `
-                                    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #222;">
-                                        <span style="color: #10B981; font-weight: 800;">✔</span>
-                                        <span>${item}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                    ` : ''}
-
                     <!-- Amenities Section ("What this place offers" matching Airbnb) -->
                     <div id="pdpAmenitiesSection" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">What this place offers</h3>
                         
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; font-size: 16px; color: #222222; margin-bottom: 24px;">
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 20px; color: #222;"></i> <span>${propId === 'paramount' ? '64th Floor Rooftop Infinity Pool' : 'Residences Swimming Pool with Burj View'}</span></div>
+                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 20px; color: #222;"></i> <span>${isParamount ? '64th Floor Rooftop Infinity Pool' : 'Residences Swimming Pool with Burj View'}</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-eye" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Burj Khalifa & Skyline view</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Fast wifi (Free high-speed)</span></div>
                             <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Free parking on premises</span></div>
@@ -1588,7 +1557,7 @@ function openPropertyDetail(propId) {
                                     <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldLeft)" />
                                     <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldLeft)" />
                                 </svg>
-                                <div style="font-size: 72px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${data.rating}</div>
+                                <div style="font-size: 72px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${ratingDisplay}</div>
                                 <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0; transform: scaleX(-1);">
                                     <defs>
                                         <linearGradient id="laurelGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1647,7 +1616,7 @@ function openPropertyDetail(propId) {
                             <!-- Cleanliness -->
                             <div class="rating-col-item">
                                 <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">${propId === 'paramount' ? '4.9' : '5.0'}</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">${isParamount ? '4.9' : '5.0'}</div>
                                 <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
                             </div>
 
@@ -1727,7 +1696,7 @@ function openPropertyDetail(propId) {
                         </div>
 
                         <button onclick="openReviewsModal('${propId}')" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s;">
-                            Show all ${data.reviewsCount} reviews
+                            Show all ${reviewsCount} reviews
                         </button>
                     </div>
 
@@ -1810,84 +1779,74 @@ function openPropertyDetail(propId) {
 
                 </div>
 
-                <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 & 3 Match) -->
+                <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 Match) -->
                 <div class="detail-right-col" style="position: sticky; top: 100px;">
                     
-                    <!-- Top Pill: Below average for Burj Vista, Rare find for Paramount -->
-                    ${propId === 'burj-vista' ? `
-                        <div class="price-below-average-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-                            <span style="font-size: 18px; line-height: 1;">🏷️</span>
-                            <span style="font-size: 14px; color: #222222;">Your price is below the 60-day average</span>
-                        </div>
-                    ` : `
+                    <!-- Top Pill Card (Exact Image 1 Match) -->
+                    ${isParamount ? `
                         <div class="rare-find-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
                             <span style="font-size: 18px; line-height: 1;">💎</span>
                             <span style="font-size: 14px; color: #222222;"><strong style="font-weight: 700;">Rare find!</strong> This place is usually booked</span>
                         </div>
+                    ` : `
+                        <div class="price-below-average-badge" style="background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                            <span style="font-size: 18px; line-height: 1;">🏷️</span>
+                            <span style="font-size: 14px; color: #222222;">Your price is below the 60-day average</span>
+                        </div>
                     `}
 
-                    <!-- Main Booking Card Box (Exact Image 1 & 3 Match) -->
+                    <!-- Main Booking Box (Exact Image 1 Match) -->
                     <div class="booking-card-airbnb" style="border: 1px solid #DDDDDD; border-radius: 12px; padding: 24px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); background: #FFFFFF;">
                         
                         <!-- Price Header Line -->
                         <div style="margin-bottom: 22px; display: flex; align-items: baseline; flex-wrap: wrap;">
-                            ${propId === 'burj-vista' ? `
-                                <span id="bookingCardStrikethrough" style="font-size: 18px; color: #717171; text-decoration: line-through; margin-right: 8px;">${window.formatPrice(strikethroughTotal)}</span>
+                            ${strikethroughPrice ? `
+                                <span id="bookingCardStrikethrough" style="font-size: 18px; color: #717171; text-decoration: line-through; margin-right: 8px;">${strikethroughPrice}</span>
                             ` : ''}
-                            <span id="bookingCardPrice" style="font-size: 22px; font-weight: 700; color: #222222; text-decoration: underline;">${window.formatPrice(nightlyTotal)}</span>
-                            <span id="bookingCardPeriod" style="font-size: 15px; color: #222222; font-weight: 500; margin-left: 6px;">for <span id="numNightsText">${nights}</span> nights</span>
+                            <span id="bookingCardPrice" style="font-size: 22px; font-weight: 700; color: #222222; text-decoration: underline;">${priceDisplay}</span>
+                            <span id="bookingCardPeriod" style="font-size: 15px; color: #222222; font-weight: 400; margin-left: 4px;">for 2 nights</span>
                         </div>
 
-                        <!-- 2x2 Date and Guest inputs Box -->
-                        <div style="border: 1px solid #B0B0B0; border-radius: 8px; overflow: hidden; margin-bottom: 14px;">
+                        <!-- Exact Airbnb Date & Guest Box (Exact Image 1 Match) -->
+                        <div style="border: 1px solid #B0B0B0; border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
+                            <!-- Top Row: Check-in / Checkout -->
                             <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #B0B0B0;">
-                                <div style="padding: 10px 12px; border-right: 1px solid #B0B0B0;">
-                                    <label style="display: block; font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; margin-bottom: 2px;">CHECK-IN</label>
-                                    <input type="date" value="${checkInStr}" id="modalCheckIn" onchange="updateCalc('${propId}')" style="border: none; width: 100%; font-size: 14px; font-weight: 500; color: #222222; outline: none; background: transparent;">
+                                <div style="padding: 10px 14px; border-right: 1px solid #B0B0B0; background: #FFFFFF;">
+                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">CHECK-IN</div>
+                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">12/14/2026</div>
                                 </div>
-                                <div style="padding: 10px 12px;">
-                                    <label style="display: block; font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; margin-bottom: 2px;">CHECKOUT</label>
-                                    <input type="date" value="${checkOutStr}" id="modalCheckOut" onchange="updateCalc('${propId}')" style="border: none; width: 100%; font-size: 14px; font-weight: 500; color: #222222; outline: none; background: transparent;">
+                                <div style="padding: 10px 14px; background: #FFFFFF;">
+                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">CHECKOUT</div>
+                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">12/16/2026</div>
                                 </div>
                             </div>
-                            <div style="padding: 10px 12px; position: relative;">
-                                <label style="display: block; font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; margin-bottom: 2px;">GUESTS</label>
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <select id="modalGuests" onchange="updateCalc('${propId}')" style="border: none; width: 100%; font-size: 14px; font-weight: 500; color: #222222; outline: none; background: transparent; cursor: pointer; -webkit-appearance: none; appearance: none;">
-                                        <option value="1">1 guest</option>
-                                        <option value="2" selected>2 guests</option>
-                                        <option value="3">3 guests</option>
-                                        <option value="4">4 guests (Max)</option>
-                                    </select>
-                                    <i class="fa-solid fa-chevron-down" style="font-size: 12px; color: #222222; pointer-events: none;"></i>
+                            <!-- Bottom Row: Guests -->
+                            <div style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; background: #FFFFFF;">
+                                <div>
+                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">GUESTS</div>
+                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">1 guest</div>
                                 </div>
+                                <i class="fa-solid fa-chevron-down" style="font-size: 13px; color: #222222;"></i>
                             </div>
                         </div>
 
                         <!-- Free Cancellation Notice Pill -->
-                        <div style="background: #F7F7F7; border-radius: 8px; padding: 10px 14px; text-align: center; font-size: 13px; font-weight: 500; color: #222222; margin-bottom: 16px;">
-                            Free cancellation before <span id="cancellationDeadlineText">${cancellationDateStr}</span>
+                        <div style="background: #F7F7F7; border-radius: 8px; padding: 12px 14px; text-align: center; font-size: 13px; font-weight: 500; color: #222222; margin-bottom: 16px;">
+                            Free cancellation before 30 November
                         </div>
 
                         <!-- Primary Reserve Button (Hot Pink Airbnb Style) -->
-                        <a href="${data.airbnbUrl}" id="airbnbReserveBtn" target="_blank" style="display: block; width: 100%; padding: 14px 24px; text-align: center; border-radius: 8px; background: #E51D56; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;">
+                        <a href="${data.airbnbUrl}" id="airbnbReserveBtn" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 48px; border-radius: 8px; background: #E51D56; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;">
                             Reserve
                         </a>
 
-                        <div style="text-align: center; font-size: 14px; color: #717171; margin-top: 12px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 14px; color: #717171; margin-top: 14px; margin-bottom: 4px;">
                             You won't be charged yet
-                        </div>
-
-                        <!-- Secondary WhatsApp Concierge Option -->
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20reserve%20${encodeURIComponent(data.name)}." target="_blank" style="font-size: 13px; font-weight: 600; color: #25D366; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-brands fa-whatsapp" style="font-size: 15px;"></i> Or reserve via WhatsApp Concierge
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Report Listing Link (Exact Image 1 & 3 Match) -->
-                    <div style="text-align: center; margin-top: 20px;">
+                    <!-- Report Listing Link (Exact Image 1 Match) -->
+                    <div style="text-align: center; margin-top: 24px;">
                         <a href="#" onclick="alert('This listing is verified by True Haven.'); return false;" style="font-size: 14px; color: #717171; text-decoration: underline; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fa-solid fa-flag" style="font-size: 13px;"></i> Report this listing
                         </a>
@@ -1901,9 +1860,9 @@ function openPropertyDetail(propId) {
         <div class="mobile-fixed-bottom-bar">
             <div class="mobile-bottom-price-box">
                 <div class="mobile-bottom-price" id="mobileBottomPrice" style="font-size: 16px; font-weight: 800; color: #222;">
-                    ${window.formatPrice(data.priceNight)} <span style="font-size: 13px; font-weight: normal; color: #717171;">night</span>
+                    ${priceDisplay} <span style="font-size: 13px; font-weight: normal; color: #717171;">for 2 nights</span>
                 </div>
-                <div class="mobile-bottom-sub" onclick="openReviewsModal('${propId}')" style="cursor: pointer;"><i class="fa-solid fa-star" style="font-size: 11px; color: #FF385C;"></i> ${data.rating} (${data.reviewsCount})</div>
+                <div class="mobile-bottom-sub" onclick="openReviewsModal('${propId}')" style="cursor: pointer;"><i class="fa-solid fa-star" style="font-size: 11px; color: #FF385C;"></i> ${ratingDisplay} (${reviewsCount})</div>
             </div>
             <a href="${data.airbnbUrl}" id="mobileAirbnbReserveBtn" target="_blank" class="mobile-reserve-btn">
                 Reserve
