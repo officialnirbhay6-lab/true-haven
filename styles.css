@@ -3503,3 +3503,43 @@ img {
 .truehaven-toast.show {
     transform: translateX(-50%) translateY(0);
 }
+
+/* Airbnb Exact Layout Match Additions */
+.guest-favourite-card {
+    transition: box-shadow 0.2s ease;
+}
+
+.guest-favourite-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 640px) {
+    .guest-favourite-card {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 16px !important;
+        gap: 16px !important;
+    }
+}
+
+.booking-card-airbnb {
+    transition: box-shadow 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    .detail-body-layout {
+        grid-template-columns: 1fr 340px !important;
+        gap: 36px !important;
+    }
+}
+
+@media (max-width: 820px) {
+    .detail-body-layout {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .detail-right-col {
+        display: none !important;
+    }
+}
+
