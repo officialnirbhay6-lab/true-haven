@@ -2991,3 +2991,515 @@ img {
     color: #717171;
     line-height: 1.4;
 }
+
+
+/* ==========================================================================
+   TRUE HAVEN GLOBAL & AIRBNB-MATCH REFINEMENTS
+   ========================================================================== */
+
+/* Top Navigation Actions */
+.nav-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-call-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.nav-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.2s ease;
+}
+
+.nav-wa-btn:hover {
+    background: #20BA5A;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.nav-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.nav-social-btn.ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.nav-social-btn.fb {
+    background: #1877F2;
+}
+
+.nav-social-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .nav-right-actions {
+        display: none !important;
+    }
+}
+
+/* Airbnb Guest Selector Popover UI */
+.guest-popover {
+    width: 360px !important;
+    padding: 24px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16) !important;
+}
+
+.airbnb-guest-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.airbnb-guest-row:last-of-type {
+    border-bottom: none;
+}
+
+.guest-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.guest-type {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.guest-desc {
+    font-size: 13px;
+    color: #717171;
+    margin-top: 2px;
+}
+
+.airbnb-stepper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.airbnb-step-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #B0B0B0;
+    background: #FFFFFF;
+    color: #717171;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.airbnb-step-btn:hover:not(:disabled) {
+    border-color: #222222;
+    color: #222222;
+}
+
+.airbnb-step-btn:disabled {
+    border-color: #EBEBEB;
+    color: #CCCCCC;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.airbnb-step-count {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+    width: 20px;
+    text-align: center;
+}
+
+/* Editorial Hero Banner Refinements */
+.hero-editorial-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 30, 54, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-luxury-bullets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1120px;
+    width: 100%;
+    margin: 54px auto 0;
+}
+
+.hero-luxury-pill {
+    background: rgba(15, 30, 54, 0.58);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-luxury-pill:hover {
+    background: rgba(15, 30, 54, 0.78);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: translateY(-3px);
+}
+
+.hero-luxury-pill i {
+    font-size: 18px;
+    color: #FFD166;
+    flex-shrink: 0;
+}
+
+.hero-luxury-pill strong {
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.2px;
+}
+
+@media (max-width: 900px) {
+    .hero-luxury-bullets {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-luxury-bullets {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Guest Favourite PDP Banner */
+.guest-favourite-pdp-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    border: 1px solid #EBEBEB;
+    border-radius: 20px;
+    background: #FFFFFF;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.gf-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gf-laurel-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    color: #FF385C;
+}
+
+.gf-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1.2;
+}
+
+.gf-sub {
+    font-size: 14px;
+    color: #717171;
+    margin-top: 4px;
+}
+
+.gf-rating-box {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.gf-score {
+    font-size: 32px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1;
+}
+
+.gf-stars {
+    color: #222222;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .guest-favourite-pdp-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+    .gf-rating-box {
+        text-align: left;
+    }
+}
+
+/* Host Line with Superhost Tag */
+.host-line-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+    margin-bottom: 28px;
+}
+
+.host-line-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.host-line-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.superhost-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #FF385C;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Category Rating Bars */
+.rating-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 40px;
+    margin: 28px 0;
+}
+
+.rating-category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #222222;
+}
+
+.rating-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 140px;
+}
+
+.rating-bar-track {
+    flex: 1;
+    height: 4px;
+    background: #EBEBEB;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.rating-bar-fill {
+    height: 100%;
+    background: #222222;
+    width: 100%;
+}
+
+.rating-category-score {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222222;
+    width: 22px;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .rating-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+/* Things to know 3-column layout */
+.things-to-know-section {
+    padding: 40px 0;
+    border-top: 1px solid #EBEBEB;
+    margin-top: 40px;
+}
+
+.things-to-know-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    margin-top: 24px;
+}
+
+.ttk-col-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 14px;
+}
+
+.ttk-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ttk-list li {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ttk-list li i {
+    font-size: 14px;
+    color: #717171;
+    margin-top: 3px;
+    width: 16px;
+}
+
+@media (max-width: 768px) {
+    .things-to-know-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* Reviews Modal Overlay */
+.reviews-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Interactive Leaflet Map Styling */
+.property-map-wrapper {
+    margin: 40px 0;
+    padding-top: 32px;
+    border-top: 1px solid #EBEBEB;
+}
+
+#propertyMap {
+    width: 100%;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E5E0D8;
+    z-index: 1;
+}
+
+/* Toast Notification for Link Copy */
+.truehaven-toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #0F1E36;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    z-index: 100000;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.truehaven-toast.show {
+    transform: translateX(-50%) translateY(0);
+}

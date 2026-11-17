@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrueHaven Stays | Curated Luxury Airbnb Rentals in Dubai</title>
+    <title>True Haven Stays | Curated Luxury Airbnb Rentals in Dubai</title>
+    <!-- Leaflet CSS & JS for Interactive Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <meta name="description" content="Book 5-star luxury 1BHK vacation rentals in Downtown Dubai & Business Bay. Featuring rooftop infinity pool at Paramount Midtown & direct Burj Khalifa views at Burj Vista.">
     
     <!-- Fonts: Plus Jakarta Sans & Inter for Airbnb Cereal aesthetic -->
@@ -34,9 +37,9 @@
             <div class="container nav-wrapper">
                 <!-- Brand Logo -->
                 <a href="#" class="brand-logo">
-                    <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img">
+                    <img src="assets/logo.png" alt="True Haven Logo" class="logo-img">
                     <div class="brand-text">
-                        <span class="brand-name">TrueHaven</span>
+                        <span class="brand-name">True Haven</span>
                         <span class="brand-sub">LUXURY STAYS</span>
                     </div>
                 </a>
@@ -106,22 +109,74 @@
                         </div>
                     </div>
 
-                    <!-- WHO POPOVER GUEST SELECTOR -->
-                    <div class="search-popover" id="whoPopover" style="display: none;">
-                        <div class="popover-title"><i class="fa-solid fa-users"></i> Select Guests</div>
-                        <div class="guest-stepper-row">
-                            <div>
-                                <strong>Guests</strong>
-                                <span>Up to 4 guests max</span>
+                    <!-- WHO POPOVER GUEST SELECTOR (Airbnb Style, Max 4 Guests) -->
+                    <div class="search-popover guest-popover" id="whoPopover" style="display: none;">
+                        <div class="popover-title" style="margin-bottom: 8px;"><i class="fa-solid fa-users"></i> Guests</div>
+                        
+                        <!-- Adults -->
+                        <div class="airbnb-guest-row">
+                            <div class="guest-info">
+                                <span class="guest-type">Adults</span>
+                                <span class="guest-desc">Age 13+</span>
                             </div>
-                            <div class="stepper-controls">
-                                <button type="button" class="stepper-btn" onclick="changeNavGuests(-1)">-</button>
-                                <span id="navGuestCount" style="font-weight: 800; font-size: 15px; width: 24px; text-align: center; color: #0F1E36;">2</span>
-                                <button type="button" class="stepper-btn" onclick="changeNavGuests(1)">+</button>
+                            <div class="airbnb-stepper">
+                                <button type="button" class="airbnb-step-btn" id="adultsMinusBtn" onclick="updateGuestStepper('adults', -1)" aria-label="Decrease adults">-</button>
+                                <span id="navAdultsCount" style="font-weight: 700; font-size: 16px; min-width: 20px; text-align: center; color: #222222;">2</span>
+                                <button type="button" class="airbnb-step-btn" id="adultsPlusBtn" onclick="updateGuestStepper('adults', 1)" aria-label="Increase adults">+</button>
                             </div>
                         </div>
-                        <button class="button-primary" onclick="applyNavGuests()" style="width: 100%; margin-top: 14px; padding: 8px; font-size: 13px; border-radius: 8px;">Confirm Guests</button>
+
+                        <!-- Children -->
+                        <div class="airbnb-guest-row">
+                            <div class="guest-info">
+                                <span class="guest-type">Children</span>
+                                <span class="guest-desc">Ages 2–12</span>
+                            </div>
+                            <div class="airbnb-stepper">
+                                <button type="button" class="airbnb-step-btn" id="childrenMinusBtn" onclick="updateGuestStepper('children', -1)" aria-label="Decrease children" disabled>-</button>
+                                <span id="navChildrenCount" style="font-weight: 700; font-size: 16px; min-width: 20px; text-align: center; color: #222222;">0</span>
+                                <button type="button" class="airbnb-step-btn" id="childrenPlusBtn" onclick="updateGuestStepper('children', 1)" aria-label="Increase children">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Infants -->
+                        <div class="airbnb-guest-row">
+                            <div class="guest-info">
+                                <span class="guest-type">Infants</span>
+                                <span class="guest-desc">Under 2</span>
+                            </div>
+                            <div class="airbnb-stepper">
+                                <button type="button" class="airbnb-step-btn" id="infantsMinusBtn" onclick="updateGuestStepper('infants', -1)" aria-label="Decrease infants" disabled>-</button>
+                                <span id="navInfantsCount" style="font-weight: 700; font-size: 16px; min-width: 20px; text-align: center; color: #222222;">0</span>
+                                <button type="button" class="airbnb-step-btn" id="infantsPlusBtn" onclick="updateGuestStepper('infants', 1)" aria-label="Increase infants">+</button>
+                            </div>
+                        </div>
+
+                        <div id="guestCapAlert" style="display: none; margin-top: 12px; font-size: 12px; color: #C2410C; background: #FFF7ED; padding: 8px 12px; border-radius: 8px; border: 1px solid #FFEDD5; line-height: 1.4;">
+                            <i class="fa-solid fa-circle-info"></i> Maximum 4 guests allowed per residence for optimal luxury and comfort.
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid #EBEBEB;">
+                            <button type="button" onclick="resetGuests()" style="background: none; border: none; font-size: 13px; font-weight: 600; text-decoration: underline; cursor: pointer; color: #717171;">Clear</button>
+                            <button type="button" class="button-primary" onclick="applyNavGuests()" style="padding: 8px 18px; font-size: 13px; border-radius: 8px;">Done</button>
+                        </div>
                     </div>
+                </div>
+
+<!-- Desktop Navigation Action Buttons -->
+                <div class="nav-right-actions">
+                    <a href="tel:+971525821668" class="nav-call-btn" title="Call True Haven Concierge">
+                        <i class="fa-solid fa-phone"></i> Call
+                    </a>
+                    <a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20inquire%20about%20a%20luxury%20stay%20in%20Dubai." target="_blank" class="nav-wa-btn" title="Contact Us on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i> Contact Us
+                    </a>
+                    <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="nav-social-btn ig" title="Follow us on Instagram (@truehavenstays)">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/truehavenstays" target="_blank" class="nav-social-btn fb" title="Follow us on Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
                 </div>
 
                 <!-- Hamburger Menu Button (Mobile View Only) -->
@@ -136,9 +191,9 @@
             <div class="mobile-drawer-card">
                 <div class="drawer-header-row">
                     <a href="#" class="brand-logo" onclick="closeMobileDrawer(); return false;">
-                        <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img" style="height: 34px;">
+                        <img src="assets/logo.png" alt="True Haven Logo" class="logo-img" style="height: 34px;">
                         <div class="brand-text">
-                            <span class="brand-name" style="font-size: 16px;">TrueHaven</span>
+                            <span class="brand-name" style="font-size: 16px;">True Haven</span>
                             <span class="brand-sub" style="font-size: 9px; color: #FFD166;">LUXURY STAYS</span>
                         </div>
                     </a>
@@ -177,10 +232,12 @@
                     <a href="#reviews" class="drawer-link-item" onclick="closeMobileDrawer()"><i class="fa-solid fa-star"></i> Verified Guest Reviews</a>
                     <a href="#" onclick="openAmenitiesModalDirect(); closeMobileDrawer(); return false;" class="drawer-link-item"><i class="fa-solid fa-water-ladder"></i> 5-Star Building Amenities</a>
                     
-                    <div class="drawer-cat-title" style="margin-top: 24px;">DIRECT CONTACT & CONCIERGE</div>
-                    <a href="https://wa.me/971525821668" target="_blank" class="drawer-link-item wa-highlight"><i class="fa-brands fa-whatsapp"></i> Reserve via WhatsApp (052 58 21668)</a>
-                    <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="drawer-link-item ig-highlight" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; font-weight: 700; border-radius: 12px; margin-top: 10px; display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none;"><i class="fa-brands fa-instagram" style="font-size: 20px;"></i> Follow us on Instagram (@truehavenstays)</a>
-                    <a href="mailto:hello@truehavenstays.com" class="drawer-link-item"><i class="fa-regular fa-envelope"></i> Email Reservations</a>
+                    <div class="drawer-cat-title" style="margin-top: 24px;">CONTACT US & CONCIERGE</div>
+                    <a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20inquire%20about%20a%20luxury%20stay%20in%20Dubai." target="_blank" class="drawer-link-item wa-highlight" style="background: #25D366; color: #FFFFFF; font-weight: 700; border-radius: 12px; display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none;"><i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Contact Us on WhatsApp (052 58 21668)</a>
+                    <a href="tel:+971525821668" class="drawer-link-item" style="border: 1px solid #E5E0D8; border-radius: 12px; margin-top: 8px; display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none; color: #0F1E36; font-weight: 700;"><i class="fa-solid fa-phone"></i> Call Reservations (+971 52 582 1668)</a>
+                    <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="drawer-link-item ig-highlight" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; font-weight: 700; border-radius: 12px; margin-top: 8px; display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none;"><i class="fa-brands fa-instagram" style="font-size: 20px;"></i> Follow on Instagram (@truehavenstays)</a>
+                    <a href="https://www.facebook.com/truehavenstays" target="_blank" class="drawer-link-item" style="background: #1877F2; color: #FFFFFF; font-weight: 700; border-radius: 12px; margin-top: 8px; display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="font-size: 18px;"></i> Follow on Facebook</a>
+                    <a href="mailto:hello@truehavenstays.com" class="drawer-link-item" style="margin-top: 8px;"><i class="fa-regular fa-envelope"></i> Email Reservations</a>
                 </div>
             </div>
         </div>
@@ -423,8 +480,7 @@
                             <div class="author-name">奕翔</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 2 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -435,8 +491,7 @@
                             <div class="author-name">Matteo</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 3 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -447,8 +502,7 @@
                             <div class="author-name">Solomon</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 4 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -459,8 +513,7 @@
                             <div class="author-name">Orhan</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 5 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -471,8 +524,7 @@
                             <div class="author-name">Stefan Sebastian</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 6 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -483,8 +535,7 @@
                             <div class="author-name">Shivani</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 7 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -496,8 +547,7 @@
                             <div class="author-location">Amsterdam, Netherlands</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 8 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -509,8 +559,7 @@
                             <div class="author-location">Sammamish, Washington</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
 
                 <!-- DUPLICATED SET FOR INFINITE LOOP EFFECT -->
 
@@ -524,8 +573,7 @@
                             <div class="author-name">奕翔</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 10 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -536,8 +584,7 @@
                             <div class="author-name">Matteo</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 11 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -548,8 +595,7 @@
                             <div class="author-name">Solomon</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 12 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -560,8 +606,7 @@
                             <div class="author-name">Orhan</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Paramount Midtown Luxury Suite</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 13 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -572,8 +617,7 @@
                             <div class="author-name">Stefan Sebastian</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 14 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -584,8 +628,7 @@
                             <div class="author-name">Shivani</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 15 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -597,8 +640,7 @@
                             <div class="author-location">Amsterdam, Netherlands</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
                 <!-- REVIEW CARD 16 -->
                 <div class="review-card">
                     <div class="card-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -610,52 +652,51 @@
                             <div class="author-location">Sammamish, Washington</div>
                         </div>
                     </div>
-                    <div class="property-tag">📍 Burj Vista Executive Residence</div>
-                </div>
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- Reserve via WhatsApp CTA Section (Luxury Beige Canvas) -->
+    <!-- Reserve via WhatsApp & Direct Concierge CTA Section -->
     <section class="whatsapp-cta-section" style="padding: 64px 0; background-color: #FAF8F5; color: #0F1E36; border-top: 1px solid #E5E0D8; border-bottom: 1px solid #E5E0D8;">
         <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <span style="display: inline-block; margin-bottom: 14px; color: #0F1E36; font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">INSTANT BOOKING & CONCIERGE</span>
+            <span style="display: inline-block; margin-bottom: 14px; color: #0F1E36; font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">DIRECT BOOKING & CONCIERGE</span>
             <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; color: #0F1E36;">Reserve Your Luxury Stay in Dubai</h2>
-            <p style="font-size: 17px; color: #374151; margin-bottom: 32px; line-height: 1.6;">Speak directly with our TrueHaven concierge on WhatsApp to check live availability, request custom dates, and secure your residence with zero booking fees.</p>
+            <p style="font-size: 17px; color: #374151; margin-bottom: 32px; line-height: 1.6;">Speak directly with our True Haven concierge on WhatsApp or call our private reservations line to check live availability and request custom dates.</p>
             
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;">
-                <a href="https://wa.me/971525821668?text=Hello%20TrueHaven!%20I'd%20like%20to%20reserve%20a%20luxury%20stay%20in%20Dubai." target="_blank" style="background: #25D366; color: #FFFFFF; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,0.25); transition: transform 0.2s;">
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+                <a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20reserve%20a%20luxury%20stay%20in%20Dubai." target="_blank" style="background: #25D366; color: #FFFFFF; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,0.25); transition: transform 0.2s;">
                     <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> Reserve via WhatsApp (052 58 21668)
+                </a>
+                <a href="tel:+971525821668" style="background: #0F1E36; color: #FFFFFF; padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 16px rgba(15,30,54,0.15);">
+                    <i class="fa-solid fa-phone"></i> Call Us (+971 52 582 1668)
                 </a>
                 <a href="mailto:hello@truehavenstays.com" style="background: #FFFFFF; color: #0F1E36; border: 1px solid #E5E0D8; padding: 14px 28px; border-radius: 999px; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                     <i class="fa-regular fa-envelope"></i> Email Reservations
                 </a>
             </div>
-
-            <div style="display: flex; justify-content: center; gap: 24px; font-size: 13px; color: #6B7280; flex-wrap: wrap;">
-                <span>⚡ Instant Confirmation</span>
-                <span>🔒 Best Rate Guarantee</span>
-                
-            </div>
         </div>
     </section>
 
-    <!-- Dedicated Instagram Journey Panel -->
+    <!-- Dedicated Instagram & Facebook Journey Panel -->
     <section class="instagram-section" style="padding: 64px 0; background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F7 100%); border-bottom: 1px solid #E5E0D8;">
         <div class="container text-center" style="max-width: 1000px; margin: 0 auto; text-align: center;">
             <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(220,39,67,0.08); color: #DC2743; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">
-                <i class="fa-brands fa-instagram"></i> INSTAGRAM COMMUNITY
+                <i class="fa-brands fa-instagram"></i> LUXURY LIVING IN DUBAI
             </div>
             
-            <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; color: #0F1E36;">Follow Our Journey on Instagram</h2>
+            <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; color: #0F1E36;">Step Inside True Haven on Instagram</h2>
             <p style="font-size: 17px; color: #374151; margin-bottom: 32px; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                 Get an insider view of our luxury residences in Business Bay & Downtown Dubai, guest stories, rooftop infinity pool sunsets, and daily Dubai living.
             </p>
 
-            <!-- Instagram Primary CTA Button -->
-            <div style="margin-bottom: 40px;">
-                <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="instagram-brand-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; padding: 16px 38px; border-radius: 999px; font-size: 17px; font-weight: 800; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; box-shadow: 0 10px 28px rgba(220,39,67,0.3); transition: transform 0.25s, box-shadow 0.25s;">
-                    <i class="fa-brands fa-instagram" style="font-size: 26px;"></i> Follow @truehavenstays on Instagram
+            <!-- Social CTAs -->
+            <div style="margin-bottom: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="instagram-brand-btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 10px 28px rgba(220,39,67,0.3); transition: transform 0.25s, box-shadow 0.25s;">
+                    <i class="fa-brands fa-instagram" style="font-size: 22px;"></i> Follow @truehavenstays
+                </a>
+                <a href="https://www.facebook.com/truehavenstays" target="_blank" style="background: #1877F2; color: #FFFFFF; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 10px 28px rgba(24,119,242,0.25); transition: transform 0.25s;">
+                    <i class="fa-brands fa-facebook-f" style="font-size: 20px;"></i> Follow on Facebook
                 </a>
             </div>
 
@@ -689,23 +730,23 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer-light">
+    <!-- Unified Global Footer -->
+    <footer class="footer-light" style="border-top: 1px solid #E5E0D8;">
         <div class="container">
             <div class="footer-columns">
                 <!-- Column 1: Brand Info -->
                 <div class="footer-col brand-col">
                     <div class="brand-logo footer-logo">
-                        <img src="assets/logo.png" alt="TrueHaven Logo" class="logo-img">
+                        <img src="assets/logo.png" alt="True Haven Logo" class="logo-img">
                         <div class="brand-text">
-                            <span class="brand-name">TrueHaven</span>
+                            <span class="brand-name">True Haven</span>
                             <span class="brand-sub">LUXURY STAYS</span>
                         </div>
                     </div>
                     <p class="footer-brand-desc">Curated boutique short-term holiday homes in Dubai’s most desirable addresses. Designed for elevated living.</p>
                     <p class="footer-contact-item"><i class="fa-solid fa-location-dot"></i> <strong>Office:</strong> 2204, Iris Bay, Business Bay, Dubai, UAE</p>
-                    <p class="footer-contact-item"><i class="fa-solid fa-phone"></i> <strong>Mobile:</strong> 052 58 21668 (+971 52 582 1668)</p>
-                    <p class="footer-contact-item"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> hello@truehavenstays.com</p>
+                    <p class="footer-contact-item"><i class="fa-solid fa-phone"></i> <strong>Contact Us:</strong> <a href="tel:+971525821668" style="color: inherit; text-decoration: none;">+971 52 582 1668 (052 58 21668)</a></p>
+                    <p class="footer-contact-item"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:hello@truehavenstays.com" style="color: inherit; text-decoration: none;">hello@truehavenstays.com</a></p>
                 </div>
 
                 <!-- Column 2: Quick Links -->
@@ -714,8 +755,8 @@
                     <ul class="footer-links">
                         <li><a href="#" onclick="openPropertyDetail('paramount'); return false;">Paramount Midtown (Business Bay)</a></li>
                         <li><a href="#" onclick="openPropertyDetail('burj-vista'); return false;">Burj Vista (Downtown Dubai)</a></li>
-                        <li><a href="#amenities">5-Star Building Amenities</a></li>
-                        <li><a href="#properties">Availability Calendar</a></li>
+                        <li><a href="#properties">Premier Residences</a></li>
+                        <li><a href="#places">Places to Visit in Dubai</a></li>
                     </ul>
                 </div>
 
@@ -723,10 +764,10 @@
                 <div class="footer-col">
                     <h4 class="footer-col-title">Guest Services</h4>
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/971525821668" target="_blank">WhatsApp Concierge</a></li>
-                        <li><a href="#">Long-Term Stays (28+ Days)</a></li>
-                        <li><a href="#">Self Check-in Guide</a></li>
-                        <li><a href="#">House Rules & Policies</a></li>
+                        <li><a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20inquire%20about%20a%20luxury%20stay%20in%20Dubai." target="_blank" style="color: #25D366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Concierge</a></li>
+                        <li><a href="tel:+971525821668"><i class="fa-solid fa-phone"></i> Direct Reservations Call</a></li>
+                        <li><a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram Community</a></li>
+                        <li><a href="https://www.facebook.com/truehavenstays" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook Page</a></li>
                     </ul>
                 </div>
             </div>
@@ -734,7 +775,7 @@
             <!-- Legal Hairline Band -->
             <div class="legal-band">
                 <div class="legal-left">
-                    <span>© 2026 TrueHaven Stays, Inc. All rights reserved.</span>
+                    <span>© 2026 True Haven Stays, Inc. All rights reserved.</span>
                     <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a>
                 </div>
                 <div class="legal-right">
@@ -742,7 +783,7 @@
                     <span>AED (د.إ)</span>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" title="Follow us on Instagram (@truehavenstays)"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/truehavenstays" target="_blank" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
@@ -897,5 +938,6 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+<div id="truehavenToast" class="truehaven-toast"><i class="fa-solid fa-check"></i> <span id="toastMsg">Link copied to clipboard</span></div>
 </body>
 </html>
