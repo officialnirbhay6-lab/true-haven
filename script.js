@@ -2095,18 +2095,23 @@ function openPropertyDetail(propId) {
     const mainPage = document.getElementById('mainPage');
     if (!pageContainer || !mainPage) return;
 
-    // Desktop 5-Photo Hero Grid Matching Image 2 & Image 4
+    // Desktop 5-Photo Hero Grid Matching Image 1 Exactly
     const desktopPhotoGridHtml = `
-        <div id="pdpPhotos" class="desktop-photo-grid-wrap desktop-only-grid" style="display: none; position: relative; margin-bottom: 24px; border-radius: 14px; overflow: hidden; cursor: pointer; height: 440px;" onclick="openPhotoGalleryModal('${propId}')">
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 100%;">
-                <img src="${data.photos[0]}" alt="${data.name}" style="grid-column: 1 / 2; grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                <img src="${data.photos[1]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 1 / 2; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                <img src="${data.photos[2]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 1 / 2; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                <img src="${data.photos[3]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 2 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
-                <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 2 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
+        <div id="pdpPhotos" class="desktop-photo-grid-wrap desktop-only-grid" style="display: none; position: relative; margin-bottom: 24px; border-radius: 12px; overflow: hidden; cursor: pointer; height: 440px;" onclick="openPhotoGalleryModal('${propId}')">
+            <div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; height: 100%; width: 100%;">
+                <img src="${data.photos[0]}" alt="${data.name}" style="grid-column: 1 / 2; grid-row: 1 / 3; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[1]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 1 / 2; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[2]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 1 / 2; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[3]}" alt="${data.name}" style="grid-column: 2 / 3; grid-row: 2 / 3; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
+                <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 2 / 3; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
             </div>
-            <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); cursor: pointer;">
-                <i class="fa-solid fa-grip" style="font-size: 13px;"></i> Show all ${isParamount ? '73' : '68'} photos
+            <button onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 16px; right: 16px; z-index: 5; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 16px; font-weight: 600; font-size: 14px; color: #222222; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.18); cursor: pointer; transition: background 0.15s, transform 0.15s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='#FFFFFF'">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" style="flex-shrink: 0;">
+                    <circle cx="2.5" cy="2.5" r="1.5"/><circle cx="8" cy="2.5" r="1.5"/><circle cx="13.5" cy="2.5" r="1.5"/>
+                    <circle cx="2.5" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="13.5" cy="8" r="1.5"/>
+                    <circle cx="2.5" cy="13.5" r="1.5"/><circle cx="8" cy="13.5" r="1.5"/><circle cx="13.5" cy="13.5" r="1.5"/>
+                </svg>
+                <span>Show all photos</span>
             </button>
         </div>
         <style>
@@ -2242,7 +2247,7 @@ function openPropertyDetail(propId) {
                 </div>
                 <div style="display: flex; gap: 20px; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; color: #222222; flex-shrink: 0;">
                     <span onclick="shareProperty('${propId}')" style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-arrow-up-from-bracket" style="font-size: 13px;"></i> Share</span>
-                    <span onclick="toggleSaveProperty(this)" style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-heart" style="font-size: 14px; color: #FF385C;"></i> Saved</span>
+                    <span onclick="toggleSaveProperty(this)" style="display: flex; align-items: center; gap: 8px;"><i class="fa-regular fa-heart" style="font-size: 14px;"></i> Save</span>
                 </div>
             </div>
 
