@@ -1354,12 +1354,12 @@ function openPropertyDetail(propId) {
     pageContainer.innerHTML = `
         <!-- Sticky Secondary Navigation Bar (Exact Image 4 Match) -->
         <div id="stickyPdpSubNav" class="sticky-pdp-sub-nav">
-            <div class="container" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
-                <div style="display: flex; gap: 28px; font-size: 14px; font-weight: 600; color: #222222;">
-                    <a href="#pdpPhotos" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Photos</a>
-                    <a href="#pdpAmenities" onclick="document.getElementById('pdpAmenitiesSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Amenities</a>
-                    <a href="#pdpReviews" onclick="document.getElementById('pdpReviewsSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Reviews</a>
-                    <a href="#pdpLocation" onclick="document.getElementById('pdpLocationSection').scrollIntoView({behavior: 'smooth'}); return false;" style="color: inherit; text-decoration: none; padding: 4px 0;">Location</a>
+            <div class="container" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 64px;">
+                <div style="display: flex; gap: 28px; font-size: 14px; font-weight: 600;">
+                    <a href="#pdpPhotos" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="sub-nav-link active" id="subNavPhotos">Photos</a>
+                    <a href="#pdpAmenities" onclick="document.getElementById('pdpAmenitiesSection').scrollIntoView({behavior: 'smooth'}); return false;" class="sub-nav-link" id="subNavAmenities">Amenities</a>
+                    <a href="#pdpReviews" onclick="document.getElementById('pdpReviewsSection').scrollIntoView({behavior: 'smooth'}); return false;" class="sub-nav-link" id="subNavReviews">Reviews</a>
+                    <a href="#pdpLocation" onclick="document.getElementById('pdpLocationSection').scrollIntoView({behavior: 'smooth'}); return false;" class="sub-nav-link" id="subNavLocation">Location</a>
                 </div>
                 <div style="display: flex; align-items: center; gap: 18px;">
                     <div style="text-align: right;">
@@ -1394,7 +1394,7 @@ function openPropertyDetail(propId) {
         </div>
 
         <!-- Full Page Top Header (Desktop Only) -->
-        <header class="top-nav desktop-pdp-nav" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E0D8; height: 76px;">
+        <header class="top-nav desktop-pdp-nav" style="position: relative; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #E5E0D8; height: 76px;">
             <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
                 <div style="display: flex; align-items: center; gap: 20px;">
                     <button onclick="closePropertyDetailPage()" style="background: var(--color-surface-soft); border: 1px solid #E5E0D8; padding: 8px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; cursor: pointer; color: #0F1E36; display: flex; align-items: center; gap: 8px; transition: background 0.2s;">
@@ -2128,10 +2128,36 @@ function openPropertyDetail(propId) {
     const handlePdpSubNavScroll = () => {
         const subNav = document.getElementById('stickyPdpSubNav');
         if (!subNav) return;
-        if (window.scrollY > 440) {
+        
+        // When scrolled past hero photo grid (~480px), stick sub-nav cleanly at the very top (top: 0)
+        if (window.scrollY > 480) {
             subNav.classList.add('visible');
         } else {
             subNav.classList.remove('visible');
+        }
+
+        // Active tab tracking based on scroll position
+        const amenitiesEl = document.getElementById('pdpAmenitiesSection');
+        const reviewsEl = document.getElementById('pdpReviewsSection');
+        const locationEl = document.getElementById('pdpLocationSection');
+
+        const navPhotos = document.getElementById('subNavPhotos');
+        const navAmenities = document.getElementById('subNavAmenities');
+        const navReviews = document.getElementById('subNavReviews');
+        const navLocation = document.getElementById('subNavLocation');
+
+        const links = [navPhotos, navAmenities, navReviews, navLocation];
+        links.forEach(l => { if (l) l.classList.remove('active'); });
+
+        const scrollPos = window.scrollY + 140;
+        if (locationEl && scrollPos >= locationEl.offsetTop) {
+            if (navLocation) navLocation.classList.add('active');
+        } else if (reviewsEl && scrollPos >= reviewsEl.offsetTop) {
+            if (navReviews) navReviews.classList.add('active');
+        } else if (amenitiesEl && scrollPos >= amenitiesEl.offsetTop) {
+            if (navAmenities) navAmenities.classList.add('active');
+        } else {
+            if (navPhotos) navPhotos.classList.add('active');
         }
     };
     window.removeEventListener('scroll', window._pdpSubNavScrollHandler);
