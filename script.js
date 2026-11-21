@@ -245,166 +245,268 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
 // Property Database
 const PARAMOUNT_REVIEWS_LIST = [
     {
-        "name": "Matteo",
-        "location": "Milan, Italy · 5 years on Airbnb",
-        "initial": "M",
-        "color": "#F97316",
+        "name": "Christiane",
+        "location": "10 years on Airbnb",
+        "avatarUrl": "https://a0.muscache.com/im/pictures/user/93fb791c-e4d9-46b2-9f76-16cdaad22fa6.jpg?im_w=120",
+        "initial": "C",
+        "color": "#E11D48",
+        "rating": 5,
+        "time": "3 days ago",
+        "stay": "Stayed a few nights",
+        "text": "Very nice Apartment. Well equiped. Great view. Bar, Restaurant, Pool on top was perfect. We come again.",
+        "hostResponse": null
+    },
+    {
+        "name": "Weronika",
+        "location": "7 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "W",
+        "color": "#D97706",
         "rating": 5,
         "time": "1 week ago",
-        "text": "The property was very clean, with a balcony and a very nice view of the Burj Khalifa. The swimming pool on the 64th floor is worth a visit—hands down the best skyline view in Dubai, and the stay was absolutely superb."
+        "stay": "Stayed a few nights",
+        "text": "Clean, spacious and elegant with special view on on Burj Khalifa from 58 th floor !! We would love to come back ! It was a perfect first impression of Dubai for my mum stay. Thank you Prince for quick responses and clear instructions ☺️ Perfect stay ❤️ The building has beautiful 180* pool on the 64th floor (something like aura sky pool but for business bay) sometimes very busy",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "4 days ago",
+            "text": "Thank you, Weronika! We're thrilled you and your mum enjoyed your stay and the stunning views of Burj Khalifa. Your kind words mean so much to us. We can't wait to welcome you back for another perfect visit! ❤️"
+        }
+    },
+    {
+        "name": "Merlinda",
+        "location": "1 month on Airbnb",
+        "avatarUrl": null,
+        "initial": "M",
+        "color": "#2563EB",
+        "rating": 5,
+        "time": "3 weeks ago",
+        "stay": "Stayed a few nights",
+        "text": "We rented the apartment for three nights and were absolutely delighted! Everything was simply great: The apartment was very clean, cozy and very well equipped. We felt comfortable from the very first moment. The stay was really great, and we would come back anytime. Thank you so much for the wonderful time! Highly recommended! ⭐⭐⭐⭐⭐",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "2 weeks ago",
+            "text": "Thank you, Merlinda! We’re thrilled to hear you enjoyed your stay and felt at home. Your kind words mean a lot to us. We can’t wait to welcome you back for another wonderful visit!"
+        }
+    },
+    {
+        "name": "Harish",
+        "location": "8 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "H",
+        "color": "#059669",
+        "rating": 5,
+        "time": "October 2026",
+        "stay": "Stayed one night",
+        "text": "This 1BHK was absolute perfection! The view of the Burj Khalifa is breathtaking, especially at night. Swimming in the rooftop pool with the skyline right in front of you was an amazing highlight. The kitchen is fully equipped with everything you need, and the place was spotless and modern. On top of that, the host was super approachable, helpful, and easy to communicate with throughout our stay. I am sad that I booked it for only 1 night. Would 100% stay here again and highly recommend it!",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "2 weeks ago",
+            "text": "Thank you, Harish! We're thrilled you enjoyed your stay and the breathtaking views. Your kind words about our hospitality mean so much to us. We can't wait to welcome you back for a longer visit!"
+        }
+    },
+    {
+        "name": "Goda",
+        "location": "2 months on Airbnb",
+        "avatarUrl": null,
+        "initial": "G",
+        "color": "#7C3AED",
+        "rating": 5,
+        "time": "3 weeks ago",
+        "stay": "Stayed a few nights",
+        "text": "The view is absolutely beautiful, everything is so well-maintained, and the location is wonderful. Everything is very clean, and every little detail has been thoughtfully considered. I will definitely come back! ❤️",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "2 weeks ago",
+            "text": "Thank you, Goda! We're thrilled to hear you enjoyed the beautiful view and our well-maintained property. Your kind words about the details mean a lot to us. We can't wait to welcome you back for another wonderful stay! ❤️"
+        }
+    },
+    {
+        "name": "Ahmed Enad",
+        "location": "1 month on Airbnb",
+        "avatarUrl": null,
+        "initial": "A",
+        "color": "#DC2626",
+        "rating": 5,
+        "time": "October 2026",
+        "stay": "Stayed a few nights",
+        "text": "The stay was wonderful, and the hosts Prince & Ruchi were helpful and responsive. The place is worth the price. Thank you very much.",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "4 weeks ago",
+            "text": "Thank you, Ahmed! We’re thrilled to hear you had a wonderful stay and found our team helpful. Your kind words mean a lot to us. We can't wait to welcome you back for another great experience!"
+        }
+    },
+    {
+        "name": "Shana",
+        "location": "Houston, Texas",
+        "avatarUrl": null,
+        "initial": "S",
+        "color": "#0284C7",
+        "rating": 5,
+        "time": "October 2026",
+        "stay": "Stayed a few nights",
+        "text": "Great location! The property was clean, modern, and well-maintained. The host was extremely responsive and quick to answer any questions. Overall, a wonderful experience, and I would definitely recommend staying here!",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "4 weeks ago",
+            "text": "Thank you, Shana, for your kind words! We're thrilled you enjoyed your stay and appreciated our location and service. Your recommendation means a lot to us. We look forward to welcoming you back soon!"
+        }
+    },
+    {
+        "name": "Berkay",
+        "location": "2 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "B",
+        "color": "#4F46E5",
+        "rating": 5,
+        "time": "October 2026",
+        "stay": "Stayed about a week",
+        "text": "The stay was excellent. Great location. Everything was clean in the accommodation and once again exceeded our expectations. We'd love to come back.",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "4 weeks ago",
+            "text": "Thank you, Berkay! We're thrilled to hear you had a top-notch stay and that our location and cleanliness exceeded your expectations. We can’t wait to welcome you back for another wonderful visit!"
+        }
+    },
+    {
+        "name": "Blake",
+        "location": "4 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "B",
+        "color": "#0D9488",
+        "rating": 5,
+        "time": "October 2026",
+        "stay": "Stayed one night",
+        "text": "10/10 clean and spacious! Great view",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "4 weeks ago",
+            "text": "Thank you, Blake! We’re thrilled you enjoyed your stay and found everything clean and spacious. Your kind words mean a lot to us. We look forward to welcoming you back for another great experience!"
+        }
     },
     {
         "name": "奕翔 (Yi Xiang)",
-        "location": "Singapore · 5 years on Airbnb",
+        "location": "5 years on Airbnb",
+        "avatarUrl": null,
         "initial": "奕",
         "color": "#3B82F6",
         "rating": 5,
-        "time": "2 weeks ago",
-        "text": "The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located in Business Bay, just minutes to Downtown. Fast wifi and great host communication. It was a great stay!"
+        "time": "October 2026",
+        "stay": "Stayed a few nights",
+        "text": "The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located. It was a great stay!",
+        "hostResponse": null
+    },
+    {
+        "name": "Matteo",
+        "location": "Milan, Italy · 5 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "M",
+        "color": "#F97316",
+        "rating": 5,
+        "time": "September 2026",
+        "stay": "Stayed one night",
+        "text": "The place was very clean, with a balcony and a very nice view of the Burj Khalifa. The pool is worth a visit, and the price is very reasonable. I recommend it!",
+        "hostResponse": {
+            "responder": "Ruchi",
+            "date": "September 2026",
+            "text": "We are glad that you had a great time staying with us. We are also very delighted to host you. Hope you will visit us soon. Thank you! 😊"
+        }
     },
     {
         "name": "Solomon",
         "location": "Sydney, Australia · 5 years on Airbnb",
+        "avatarUrl": null,
         "initial": "S",
-        "color": "#4B5563",
+        "color": "#475569",
         "rating": 5,
-        "time": "3 weeks ago",
-        "text": "Beautiful property with stunning views of Burj Khalifa. Modern interior, super comfortable bed, and the amenities in Paramount Midtown tower are 5-star hotel grade."
+        "time": "September 2026",
+        "stay": "Stayed a few nights",
+        "text": "Beautiful Property with stunning views of Burj Khalifa",
+        "hostResponse": null
     },
     {
         "name": "Orhan",
         "location": "Frankfurt, Germany · 4 years on Airbnb",
+        "avatarUrl": null,
         "initial": "O",
-        "color": "#6B7280",
+        "color": "#64748B",
         "rating": 5,
-        "time": "1 month ago",
-        "text": "The host was very friendly and helpful. Immediate help in a few minutes. The flat is highly recommended. Nothing is missing—fully stocked kitchen, fast wifi, and great balcony."
+        "time": "September 2026",
+        "stay": "Stayed a few nights",
+        "text": "The host was very friendly and helpful. Immediate help in a few minutes. The apartment is highly recommended. Nothing is lacking. The view from the balcony is simply fantastic. We were very satisfied.👌😀",
+        "hostResponse": null
     },
     {
-        "name": "Elena",
-        "location": "Paris, France · 3 years on Airbnb",
+        "name": "Krishnil",
+        "location": "6 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "K",
+        "color": "#6D28D9",
+        "rating": 5,
+        "time": "September 2026",
+        "stay": "Stayed a few nights",
+        "text": "Nice and clean place. Really enjoyed it.",
+        "hostResponse": null
+    },
+    {
+        "name": "Erwan",
+        "location": "3 years on Airbnb",
+        "avatarUrl": null,
         "initial": "E",
-        "color": "#EC4899",
-        "rating": 5,
-        "time": "1 month ago",
-        "text": "Magnifique séjour! The apartment is stylishly decorated, very spacious, and the infinity pool on the 64th floor is magical. Everything was flawless from check-in to check-out."
-    },
-    {
-        "name": "David",
-        "location": "Manchester, UK · 6 years on Airbnb",
-        "initial": "D",
-        "color": "#059669",
-        "rating": 5,
-        "time": "2 months ago",
-        "text": "Exceptional stay. Paramount Midtown is a top-tier luxury building. The apartment is brand new, spotless, and furnished with great taste. Will definitely book True Haven again on our next trip to Dubai."
-    },
-    {
-        "name": "Sarah",
-        "location": "Toronto, Canada · 4 years on Airbnb",
-        "initial": "S",
-        "color": "#8B5CF6",
-        "rating": 5,
-        "time": "2 months ago",
-        "text": "Ruchi was the most attentive host! Check-in instructions were crystal clear, the views from the 64th floor pool took our breath away, and the bed felt like a 5-star hotel. Highly recommend!"
-    },
-    {
-        "name": "Ahmed",
-        "location": "Riyadh, Saudi Arabia · 7 years on Airbnb",
-        "initial": "A",
-        "color": "#10B981",
-        "rating": 5,
-        "time": "2 months ago",
-        "text": "إقامة ممتازة جداً. الموقع قريب من برج خليفة ودبي مول، الشقة نظيفة جداً ومرتبة وفيها كل شيء تحتاجه. المسبح في الدور 64 خيالي."
-    },
-    {
-        "name": "Chloe",
-        "location": "Melbourne, Australia · 3 years on Airbnb",
-        "initial": "C",
-        "color": "#F43F5E",
-        "rating": 5,
-        "time": "3 months ago",
-        "text": "Everything matched the photos 100%. The views of Burj Khalifa from the living room and balcony are mesmerizing, especially during evening illuminations. 10/10 stay."
-    },
-    {
-        "name": "Markus",
-        "location": "Zurich, Switzerland · 6 years on Airbnb",
-        "initial": "M",
-        "color": "#3B82F6",
-        "rating": 5,
-        "time": "3 months ago",
-        "text": "Superb standard of cleanliness and comfort. Ruchi responded within minutes to any question. High-speed wifi made remote working seamless. Will return for sure."
-    },
-    {
-        "name": "Priyanka",
-        "location": "Mumbai, India · 4 years on Airbnb",
-        "initial": "P",
-        "color": "#D97706",
-        "rating": 5,
-        "time": "4 months ago",
-        "text": "Staying at True Haven’s Paramount Midtown residence was the highlight of our vacation. Gorgeous decor, fully stocked kitchen, and walking distance to Business Bay restaurants."
-    },
-    {
-        "name": "Julien",
-        "location": "Geneva, Switzerland · 5 years on Airbnb",
-        "initial": "J",
         "color": "#0284C7",
         "rating": 5,
-        "time": "4 months ago",
-        "text": "Spectacular rooftop pool and immaculate apartment. Ruchi ensured we had everything we needed. Seamless self check-in."
+        "time": "2 weeks ago",
+        "stay": "Stayed a few nights",
+        "text": "👌🏼👌🏼👌🏼",
+        "hostResponse": null
     },
     {
-        "name": "Laura",
-        "location": "Austin, Texas · 3 years on Airbnb",
-        "initial": "L",
+        "name": "Romain",
+        "location": "5 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "R",
+        "color": "#16A34A",
+        "rating": 5,
+        "time": "1 week ago",
+        "stay": "Stayed one night",
+        "text": "Top",
+        "hostResponse": null
+    },
+    {
+        "name": "Valeria",
+        "location": "Cartagena, Colombia",
+        "avatarUrl": null,
+        "initial": "V",
+        "color": "#CA8A04",
+        "rating": 5,
+        "time": "September 2026",
+        "stay": "Stayed a few nights",
+        "text": "Alright",
+        "hostResponse": null
+    },
+    {
+        "name": "兴俊 (Xingjun)",
+        "location": "5 years on Airbnb",
+        "avatarUrl": null,
+        "initial": "兴",
+        "color": "#0891B2",
+        "rating": 5,
+        "time": "September 2026",
+        "stay": "Stayed a few nights",
+        "text": "The view from the pool is beautiful.",
+        "hostResponse": null
+    },
+    {
+        "name": "Nawaf",
+        "location": "2 months on Airbnb",
+        "avatarUrl": null,
+        "initial": "N",
         "color": "#9333EA",
         "rating": 5,
-        "time": "5 months ago",
-        "text": "The photos do not do this place justice—it is even better in person! The views are surreal, building staff are friendly, and the apartment is quiet and peaceful at night."
-    },
-    {
-        "name": "Tariq",
-        "location": "Kuwait City, Kuwait · 8 years on Airbnb",
-        "initial": "T",
-        "color": "#059669",
-        "rating": 5,
-        "time": "5 months ago",
-        "text": "شقة فاخرة بكل المقاييس، موقع مميز وتعامل راقي من المضيفة روتشي. أنصح بها بشدة للعائلات والأفراد."
-    },
-    {
-        "name": "Jessica",
-        "location": "London, UK · 5 years on Airbnb",
-        "initial": "J",
-        "color": "#E11D48",
-        "rating": 5,
-        "time": "6 months ago",
-        "text": "First time visiting Dubai and this apartment made it unforgettable. Super comfy bed, luxury bathroom amenities, and that rooftop pool view is unbeatable."
-    },
-    {
-        "name": "Alexander",
-        "location": "Berlin, Germany · 4 years on Airbnb",
-        "initial": "A",
-        "color": "#475569",
-        "rating": 5,
-        "time": "6 months ago",
-        "text": "Very modern building with fast elevators, great fitness center, and grocery store right downstairs. The apartment was spotless. Five stars all around!"
-    },
-    {
-        "name": "Fatima",
-        "location": "Doha, Qatar · 4 years on Airbnb",
-        "initial": "F",
-        "color": "#7C3AED",
-        "rating": 5,
-        "time": "7 months ago",
-        "text": "Wonderfully curated space with elevated touches throughout. Ruchi went above and beyond to make our stay comfortable. True Haven lives up to its name."
-    },
-    {
-        "name": "Oliver",
-        "location": "Stockholm, Sweden · 6 years on Airbnb",
-        "initial": "O",
-        "color": "#2563EB",
-        "rating": 5,
-        "time": "7 months ago",
-        "text": "Flawless experience. Clean, quiet, stylish, and an unforgettable Burj Khalifa skyline view. Thank you Ruchi for being a superhost!"
+        "time": "September 2026",
+        "stay": "Stayed one night",
+        "text": "Very nice",
+        "hostResponse": null
     }
 ];
 const BURJ_VISTA_REVIEWS_LIST = [
@@ -567,7 +669,7 @@ const PROPERTIES_DATA = {
         currency: 'USD',
         priceAed: 880,
         rating: '5.0',
-        reviewsCount: 18,
+        reviewsCount: 19,
         badge: 'Guest favourite',
         hostName: 'Ruchi',
         hostSubtitle: 'Superhost · 2 months hosting',
@@ -1255,7 +1357,7 @@ function openPropertyDetail(propId) {
     // Price display matching exact Airbnb reference images
     const priceDisplay = isParamount ? '₹51,314' : '₹56,379';
     const strikethroughPrice = isParamount ? '' : '₹63,772';
-    const reviewsCount = isParamount ? 18 : 16;
+    const reviewsCount = isParamount ? 19 : 16;
     const ratingDisplay = '5.0';
 
     // 4 Highlights Data (Directly defined so never undefined)
@@ -1625,7 +1727,7 @@ function openPropertyDetail(propId) {
                             <!-- Cleanliness -->
                             <div class="rating-col-item">
                                 <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">${isParamount ? '4.9' : '5.0'}</div>
+                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
                                 <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
                             </div>
 
@@ -1671,32 +1773,49 @@ function openPropertyDetail(propId) {
                         <!-- Guests mention Pills Row (Exact Image 3 Match) -->
                         <h3 style="font-size: 18px; font-weight: 700; color: #222222; margin-bottom: 16px;">Guests mention</h3>
 
-                        <div class="guests-mention-pills-wrap">
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'view')">🖼️ View 11</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'hospitality')">🎁 Hospitality 11</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'location')">📍 Location 7</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'clean')">🧽 Cleanliness 5</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'check-in')">🔢 Check-in 3</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'downtown')">🗺️ Nearby 3</button>
-                            <button class="guest-mention-pill" onclick="filterReviewsByKeyword('${propId}', 'walk')">👟 Walkability 2</button>
-                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🚆 Getting around &gt;</button>
+                        <div class="guests-mention-pills-wrap" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px;">
+                            ${isParamount ? `
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏊 Pool 4</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 9</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 10</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 5</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏷️ Amenities 3</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 3</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏢 Condition 2</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📦 Value 2</button>
+                            ` : `
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 11</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 11</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 7</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 5</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🔢 Check-in 3</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🗺️ Nearby 3</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">👟 Walkability 2</button>
+                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🚆 Getting around &gt;</button>
+                            `}
                         </div>
 
                         <!-- Property Specific Reviews Grid -->
-                        <div id="pdpInlineReviewsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; margin-bottom: 24px;">
-                            ${reviews.slice(0, 4).map(rev => `
+                        <div id="pdpInlineReviewsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 28px; margin-bottom: 28px;">
+                            ${reviews.slice(0, 6).map(rev => `
                                 <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                                     <div>
                                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                                            <div style="width: 44px; height: 44px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px;">${rev.initial || rev.name.charAt(0)}</div>
+                                            ${rev.avatarUrl ? `
+                                                <img src="${rev.avatarUrl}" alt="${rev.name}" style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                            ` : `
+                                                <div style="width: 46px; height: 46px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">
+                                                    ${rev.initial || rev.name.charAt(0)}
+                                                </div>
+                                            `}
                                             <div>
-                                                <div style="font-size: 15px; font-weight: 700; color: #222;">${rev.name}</div>
+                                                <div style="font-size: 16px; font-weight: 700; color: #222;">${rev.name}</div>
                                                 <div style="font-size: 13px; color: #717171;">${rev.location || 'Verified Guest'}</div>
                                             </div>
                                         </div>
-                                        <div style="font-size: 12px; color: #222; margin-bottom: 8px;">
-                                            ${'★'.repeat(rev.rating || 5)}
-                                            <span style="color: #717171; margin-left: 6px;">· ${rev.time}</span>
+                                        <div style="font-size: 12px; font-weight: 600; color: #222; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                                            <span>${'★'.repeat(rev.rating || 5)}</span>
+                                            <span style="color: #717171; font-weight: 400;">· ${rev.time}${rev.stay ? ' · ' + rev.stay : ''}</span>
                                         </div>
                                         <p style="font-size: 14px; color: #374151; line-height: 1.55; margin: 0;">"${rev.text}"</p>
                                     </div>
@@ -2137,9 +2256,12 @@ function bookOnWhatsApp(propId) {
 
 // -------------------------------------------------------------
 // AIRBNB REVIEWS MODAL IMPLEMENTATION
+
+// -------------------------------------------------------------
+// AIRBNB EXACT REVIEWS MODAL (Exact Image 2 Match)
 // -------------------------------------------------------------
 function openReviewsModal(propId) {
-    const targetId = propId || window.currentPropertyId || 'burj-vista';
+    const targetId = propId || window.currentPropertyId || 'paramount';
     const data = PROPERTIES_DATA[targetId];
     if (!data) return;
 
@@ -2151,64 +2273,194 @@ function openReviewsModal(propId) {
         document.body.appendChild(modal);
     }
 
+    const isParamount = (targetId === 'paramount');
     const reviews = data.reviews || [];
+    const reviewsCount = reviews.length || data.reviewsCount || 19;
+    const ratingDisplay = data.rating || '5.0';
+
+    // Store active filtered reviews list on window for sorting & searching
+    window._activeModalReviews = [...reviews];
+    window._currentModalPropertyId = targetId;
+
+    const guestsMentionList = isParamount ? [
+        { key: 'pool', label: 'Pool 4', icon: '🏊' },
+        { key: 'view', label: 'View 9', icon: '🖼️' },
+        { key: 'clean', label: 'Cleanliness 10', icon: '🧽' },
+        { key: 'hospitality', label: 'Hospitality 5', icon: '🎁' },
+        { key: 'amenities', label: 'Amenities 3', icon: '🏷️' },
+        { key: 'location', label: 'Location 3', icon: '📍' },
+        { key: 'condition', label: 'Condition 2', icon: '🏢' },
+        { key: 'value', label: 'Value 2', icon: '📦' }
+    ] : [
+        { key: 'view', label: 'View 11', icon: '🖼️' },
+        { key: 'hospitality', label: 'Hospitality 11', icon: '🎁' },
+        { key: 'location', label: 'Location 7', icon: '📍' },
+        { key: 'clean', label: 'Cleanliness 5', icon: '🧽' },
+        { key: 'check-in', label: 'Check-in 3', icon: '🔢' },
+        { key: 'downtown', label: 'Nearby 3', icon: '🗺️' },
+        { key: 'walk', label: 'Walkability 2', icon: '👟' }
+    ];
 
     modal.innerHTML = `
-        <div class="modal-card reviews-modal-card" style="max-width: 1040px; width: 95%; max-height: 88vh; border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; background: #FFFFFF; box-shadow: 0 25px 60px rgba(0,0,0,0.25);">
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid #EBEBEB;">
-                <h3 style="font-size: 19px; font-weight: 800; margin: 0; color: #222222;">
-                    ★ ${data.rating} · ${data.reviewsCount} reviews
-                </h3>
-                <button onclick="closeReviewsModal()" class="modal-close-btn" style="position: static; font-size: 26px; cursor: pointer; background: none; border: none; color: #222;">&times;</button>
-            </div>
+        <div class="modal-card reviews-modal-card" style="max-width: 820px; width: 94%; max-height: 88vh; border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; background: #FFFFFF; box-shadow: 0 25px 60px rgba(0,0,0,0.3); position: relative;">
             
-            <div class="reviews-modal-body" style="display: grid; grid-template-columns: 320px 1fr; gap: 36px; padding: 28px; overflow-y: auto; flex: 1;">
-                <!-- Left Column: Scores and Category Bars -->
-                <div class="reviews-modal-left" style="border-right: 1px solid #EBEBEB; padding-right: 28px;">
-                    <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px;">
-                        <span style="font-size: 48px; font-weight: 800; color: #222222; line-height: 1;">${data.rating}</span>
-                        <div style="color: #FF385C; font-size: 18px;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <!-- Close Button Header (Exact Image 2 Match: Top Right Corner) -->
+            <div style="position: sticky; top: 0; background: #FFFFFF; z-index: 20; display: flex; justify-content: flex-end; padding: 18px 22px 0;">
+                <button onclick="closeReviewsModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #222222; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='none'">&times;</button>
+            </div>
+
+            <!-- Scrollable Modal Body -->
+            <div class="reviews-modal-scroll" style="overflow-y: auto; padding: 0 32px 32px; flex: 1;">
+                
+                <!-- 1. Golden Laurel Wreath Hero (Exact Image 2 Match) -->
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px;">
+                        <svg viewBox="0 0 40 60" width="34" height="52" style="flex-shrink: 0;">
+                            <defs>
+                                <linearGradient id="modalHeroGoldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E2B148" />
+                                    <stop offset="50%" stop-color="#F9D976" />
+                                    <stop offset="100%" stop-color="#B8860B" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#modalHeroGoldLeft)" stroke-width="2.5" stroke-linecap="round" />
+                            <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#modalHeroGoldLeft)" />
+                            <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#modalHeroGoldLeft)" />
+                            <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#modalHeroGoldLeft)" />
+                            <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#modalHeroGoldLeft)" />
+                            <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#modalHeroGoldLeft)" />
+                            <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#modalHeroGoldLeft)" />
+                        </svg>
+                        <div style="font-size: 64px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${ratingDisplay}</div>
+                        <svg viewBox="0 0 40 60" width="34" height="52" style="flex-shrink: 0; transform: scaleX(-1);">
+                            <defs>
+                                <linearGradient id="modalHeroGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E2B148" />
+                                    <stop offset="50%" stop-color="#F9D976" />
+                                    <stop offset="100%" stop-color="#B8860B" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#modalHeroGoldRight)" stroke-width="2.5" stroke-linecap="round" />
+                            <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#modalHeroGoldRight)" />
+                            <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#modalHeroGoldRight)" />
+                            <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#modalHeroGoldRight)" />
+                            <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#modalHeroGoldRight)" />
+                            <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#modalHeroGoldRight)" />
+                            <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#modalHeroGoldRight)" />
+                        </svg>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 700; color: #222222; margin-bottom: 4px;">Guest favourite</div>
+                    <div style="font-size: 14px; color: #717171; max-width: 440px; margin: 0 auto; line-height: 1.45;">
+                        This home is in the <strong style="color: #222222; font-weight: 700;">top 10%</strong> of eligible listings based on ratings, reviews and reliability
+                    </div>
+                </div>
+
+                <!-- 2. Horizontal Rating Breakdown Strip with Scroll (Exact Image 2 Match) -->
+                <div style="position: relative; margin-bottom: 24px;">
+                    <div id="modalRatingsScroll" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; -ms-overflow-style: none;">
+                        <!-- Overall rating -->
+                        <div style="min-width: 140px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 8px;">Overall rating</div>
+                            <div style="display: flex; flex-direction: column; gap: 3px;">
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                    <span style="width: 8px;">5</span>
+                                    <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px; overflow: hidden;"><div style="width: 100%; height: 100%; background: #222222;"></div></div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;"><span style="width: 8px;">4</span><div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div></div>
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;"><span style="width: 8px;">3</span><div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div></div>
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;"><span style="width: 8px;">2</span><div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div></div>
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;"><span style="width: 8px;">1</span><div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Cleanliness -->
+                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                        </div>
+
+                        <!-- Accuracy -->
+                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Accuracy</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-regular fa-circle-check"></i></div>
+                        </div>
+
+                        <!-- Check-in -->
+                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Check-in</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-key"></i></div>
+                        </div>
+
+                        <!-- Communication -->
+                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Communication</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-regular fa-message"></i></div>
+                        </div>
+
+                        <!-- Location -->
+                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Location</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-map-location-dot"></i></div>
+                        </div>
+
+                        <!-- Value -->
+                        <div style="min-width: 90px; flex-shrink: 0;">
+                            <div style="font-size: 13px; font-weight: 600; color: #222222;">Value</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
+                            <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-tag"></i></div>
                         </div>
                     </div>
-                    <div style="font-size: 14px; font-weight: 700; color: #222222; margin-bottom: 24px; display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-crown" style="color: #FF385C;"></i> Guest favourite
-                    </div>
+                </div>
 
-                    <!-- Category Breakdown Bars -->
-                    <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
-                        ${[
-                            { label: 'Cleanliness', score: '5.0' },
-                            { label: 'Accuracy', score: '5.0' },
-                            { label: 'Check-in', score: '5.0' },
-                            { label: 'Communication', score: '5.0' },
-                            { label: 'Location', score: '5.0' },
-                            { label: 'Value', score: '5.0' }
-                        ].map(cat => `
-                            <div>
-                                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 4px;">
-                                    <span>${cat.label}</span>
-                                    <span>${cat.score}</span>
-                                </div>
-                                <div style="background: #EBEBEB; height: 4px; border-radius: 999px; overflow: hidden;">
-                                    <div style="background: #222222; width: 100%; height: 100%;"></div>
-                                </div>
-                            </div>
+                <!-- 3. Guests Mention Horizontal Strip with Scroll (Exact Image 2 Match) -->
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 12px;">Guests mention</div>
+                    <div id="modalMentionPillsWrap" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; -ms-overflow-style: none;">
+                        ${guestsMentionList.map(item => `
+                            <button class="guest-mention-pill" onclick="filterModalByMentionKey('${targetId}', '${item.key}', this)" style="flex-shrink: 0; background: #F7F7F7; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: #222222; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                                <span>${item.icon}</span> <span>${item.label}</span>
+                            </button>
                         `).join('')}
                     </div>
+                </div>
 
-                    <div style="position: relative;">
-                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 14px; top: 13px; color: #717171; font-size: 14px;"></i>
-                        <input type="text" id="reviewsSearchInput" placeholder="Search reviews..." oninput="filterReviewsList('${targetId}', this.value)" style="width: 100%; box-sizing: border-box; padding: 10px 14px 10px 38px; border-radius: 999px; border: 1px solid #B0B0B0; font-size: 13px; outline: none;">
+                <!-- Divider -->
+                <hr style="border: none; border-top: 1px solid #EBEBEB; margin: 20px 0 24px;">
+
+                <!-- 4. Review Header Row: Count on Left, Sort & Search on Right (Exact Image 2 Match) -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+                    <div id="modalReviewsCountText" style="font-size: 20px; font-weight: 700; color: #222222;">
+                        ${reviewsCount} reviews
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <!-- Most Relevant Dropdown (Exact Image 2 Match) -->
+                        <div style="position: relative;">
+                            <select id="modalSortDropdown" onchange="sortModalReviewsList(this.value)" style="border: 1px solid #B0B0B0; border-radius: 999px; padding: 8px 34px 8px 16px; font-size: 14px; font-weight: 600; color: #222222; background: #FFFFFF; cursor: pointer; outline: none; appearance: none; -webkit-appearance: none;">
+                                <option value="relevant">Most relevant</option>
+                                <option value="recent">Most recent</option>
+                                <option value="highest">Highest rated</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 11px; pointer-events: none; color: #717171;"></i>
+                        </div>
+
+                        <!-- Search Button / Input (Exact Image 2 Match) -->
+                        <div style="position: relative;">
+                            <input type="text" id="modalSearchInput" placeholder="Search reviews..." oninput="searchModalReviewsList(this.value)" style="border: 1px solid #B0B0B0; border-radius: 999px; padding: 8px 14px 8px 34px; font-size: 13px; width: 150px; outline: none; transition: width 0.2s;" onfocus="this.style.width='220px'" onblur="if(!this.value) this.style.width='150px'">
+                            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #717171;"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Scrollable List of Reviews -->
-                <div class="reviews-modal-right">
-                    <div id="reviewsListContainer" style="display: flex; flex-direction: column; gap: 24px;">
-                        ${renderReviewsHtml(reviews)}
-                    </div>
+                <!-- 5. Vertical List of All 19 Reviews (Exact Image 2 Match) -->
+                <div id="modalReviewsList" style="display: flex; flex-direction: column; gap: 24px;">
+                    ${renderFullReviewsListHtml(reviews)}
                 </div>
+
             </div>
         </div>
     `;
@@ -2221,47 +2473,119 @@ function openReviewsModal(propId) {
     };
 }
 
-function renderReviewsHtml(reviews) {
+function renderFullReviewsListHtml(reviews) {
     if (!reviews || reviews.length === 0) {
-        return '<p style="color: #717171; font-size: 14px;">No reviews found matching your search.</p>';
+        return '<p style="color: #717171; font-size: 14px; text-align: center; padding: 24px;">No reviews found matching your search.</p>';
     }
     return reviews.map(rev => `
-        <div style="border-bottom: 1px solid #EBEBEB; padding-bottom: 20px;">
+        <div style="border-bottom: 1px solid #EBEBEB; padding-bottom: 24px;">
+            <!-- Reviewer Header -->
             <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
-                <div style="width: 46px; height: 46px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 16px;">${rev.initial || rev.name.charAt(0)}</div>
+                ${rev.avatarUrl ? `
+                    <img src="${rev.avatarUrl}" alt="${rev.name}" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                ` : `
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFFFFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0;">
+                        ${rev.initial || rev.name.charAt(0)}
+                    </div>
+                `}
                 <div>
-                    <div style="font-size: 16px; font-weight: 700; color: #222;">${rev.name}</div>
-                    <div style="font-size: 13px; color: #717171;">${rev.location || 'Verified Guest'}</div>
+                    <h3 style="font-size: 16px; font-weight: 700; color: #222222; margin: 0; line-height: 1.2;">${rev.name}</h3>
+                    <div style="font-size: 14px; color: #717171; margin-top: 2px;">${rev.location || 'Verified Guest'}</div>
                 </div>
             </div>
-            <div style="font-size: 12px; color: #222; margin-bottom: 10px;">
-                ${'★'.repeat(rev.rating || 5)}
-                <span style="color: #717171; margin-left: 6px;">· ${rev.time}</span>
+
+            <!-- Rating Stars + Stay Details (Exact Image 2 Match) -->
+            <div style="font-size: 12px; font-weight: 600; color: #222222; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                <span>${'★'.repeat(rev.rating || 5)}</span>
+                <span style="color: #717171; font-weight: 400;">· ${rev.time}${rev.stay ? ' · ' + rev.stay : ''}</span>
             </div>
-            <p style="font-size: 14px; color: #374151; line-height: 1.6; margin: 0;">"${rev.text}"</p>
+
+            <!-- Review Text -->
+            <p style="font-size: 15px; color: #374151; line-height: 1.6; margin: 0;">
+                ${rev.text}
+            </p>
+
+            <!-- Host Response If Any (Formatted cleanly matching Airbnb) -->
+            ${rev.hostResponse ? `
+                <div style="margin-top: 14px; padding: 14px 18px; background: #F7F7F7; border-radius: 12px; margin-left: 20px; border-left: 3px solid #222222;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                        <strong style="font-size: 13px; color: #222222;">Response from Ruchi</strong>
+                        <span style="font-size: 12px; color: #717171;">· ${rev.hostResponse.date}</span>
+                    </div>
+                    <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">${rev.hostResponse.text}</div>
+                </div>
+            ` : ''}
         </div>
     `).join('');
 }
 
-function filterReviewsList(propId, query) {
+function filterModalByMentionKey(propId, key, btn) {
     const data = PROPERTIES_DATA[propId];
-    if (!data) return;
-    const container = document.getElementById('reviewsListContainer');
-    if (!container) return;
+    if (!data || !data.reviews) return;
+    
+    // Toggle active state on clicked pill
+    const pills = document.querySelectorAll('#modalMentionPillsWrap .guest-mention-pill');
+    pills.forEach(p => {
+        if (p !== btn) {
+            p.style.background = '#F7F7F7';
+            p.style.borderColor = '#DDDDDD';
+            p.style.color = '#222222';
+        }
+    });
 
-    const q = (query || '').toLowerCase().trim();
-    const filtered = (data.reviews || []).filter(r => 
-        r.name.toLowerCase().includes(q) || 
-        r.text.toLowerCase().includes(q) || 
-        (r.location && r.location.toLowerCase().includes(q))
-    );
+    const isAlreadyActive = (btn.style.background === 'rgb(34, 34, 34)' || btn.style.background === '#222222');
+    if (isAlreadyActive) {
+        btn.style.background = '#F7F7F7';
+        btn.style.borderColor = '#DDDDDD';
+        btn.style.color = '#222222';
+        window._activeModalReviews = [...data.reviews];
+    } else {
+        btn.style.background = '#222222';
+        btn.style.borderColor = '#222222';
+        btn.style.color = '#FFFFFF';
+        const q = key.toLowerCase();
+        window._activeModalReviews = data.reviews.filter(r => 
+            r.text.toLowerCase().includes(q) ||
+            r.name.toLowerCase().includes(q) ||
+            (r.location && r.location.toLowerCase().includes(q))
+        );
+    }
 
-    container.innerHTML = renderReviewsHtml(filtered);
+    const listEl = document.getElementById('modalReviewsList');
+    if (listEl) listEl.innerHTML = renderFullReviewsListHtml(window._activeModalReviews);
+    const countEl = document.getElementById('modalReviewsCountText');
+    if (countEl) countEl.innerText = window._activeModalReviews.length + ' reviews';
 }
 
-function closeReviewsModal() {
-    const modal = document.getElementById('reviewsModal');
-    if (modal) modal.style.display = 'none';
+function sortModalReviewsList(sortType) {
+    if (!window._activeModalReviews) return;
+    let list = [...window._activeModalReviews];
+    if (sortType === 'recent') {
+        // preserve natural recent order
+    } else if (sortType === 'highest') {
+        list.sort((a, b) => (b.rating || 5) - (a.rating || 5));
+    }
+    const listEl = document.getElementById('modalReviewsList');
+    if (listEl) listEl.innerHTML = renderFullReviewsListHtml(list);
+}
+
+function searchModalReviewsList(query) {
+    const data = PROPERTIES_DATA[window._currentModalPropertyId || 'paramount'];
+    if (!data || !data.reviews) return;
+    const q = (query || '').toLowerCase().trim();
+    if (!q) {
+        window._activeModalReviews = [...data.reviews];
+    } else {
+        window._activeModalReviews = data.reviews.filter(r =>
+            r.text.toLowerCase().includes(q) ||
+            r.name.toLowerCase().includes(q) ||
+            (r.location && r.location.toLowerCase().includes(q))
+        );
+    }
+    const listEl = document.getElementById('modalReviewsList');
+    if (listEl) listEl.innerHTML = renderFullReviewsListHtml(window._activeModalReviews);
+    const countEl = document.getElementById('modalReviewsCountText');
+    if (countEl) countEl.innerText = window._activeModalReviews.length + ' reviews';
 }
 
 // -------------------------------------------------------------
