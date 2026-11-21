@@ -956,7 +956,7 @@ const PROPERTIES_DATA = {
         googleMapsUrl: 'https://www.google.com/maps/place/Paramount+Hotel+Midtown/@25.1935038,55.2626443,17z/data=!3m1!4b1!4m9!3m8!1s0x3e5f69d5faac1b65:0xda1f575a717d9e3e!5m2!4m1!1i2!8m2!3d25.193499!4d55.2652192!16s%2Fg%2F11g7zdxfjk?hl=en&entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D',
         googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1932111,55.2654858&hl=en&z=15&output=embed',
         neighborhoodTitle: 'Business Bay & Downtown Dubai',
-        neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
+        neighborhoodDesc: '',
         aboutThisSpace: `Start your day with a dip in the luxurious infinity pool on the rooftop at 64th floor, taking in the sweeping Burj Khalifa and Downtown skyline view, then enjoy that same iconic view right from your own private balcony.
 
 This one-bedroom apartment in Business Bay near Downtown offers five-star amenities and a stylish, comfortable interior. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most sought-after neighbourhoods.`,
@@ -2763,10 +2763,12 @@ function openPropertyDetail(propId) {
                     </iframe>
                 </div>
 
+                ${data.neighborhoodTitle || data.neighborhoodDesc ? `
                 <div style="margin-top: 24px;">
-                    <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 8px;">${data.neighborhoodTitle || 'Dubai Prime Neighborhood'}</h4>
-                    <p style="font-size: 14px; color: #374151; line-height: 1.6;">${data.neighborhoodDesc || data.location}</p>
+                    ${data.neighborhoodTitle ? `<h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: ${data.neighborhoodDesc ? '8px' : '0'};">${data.neighborhoodTitle}</h4>` : ''}
+                    ${data.neighborhoodDesc ? `<p style="font-size: 14px; color: #374151; line-height: 1.6; margin: 0;">${data.neighborhoodDesc}</p>` : ''}
                 </div>
+                ` : ''}
             </div>
 
             <!-- Full-Width Payment Protection Banner (Exact Image 4 Match) -->
