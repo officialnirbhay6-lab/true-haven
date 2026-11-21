@@ -245,7 +245,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "living_room",
         name: "Living room",
-        subtitle: "Sofa bed · 65\" 4K Smart TV · City views",
+        subtitle: "Sofa bed",
         thumbnail: "assets/paramount/living_room_1.jpg",
         photos: [
             "assets/paramount/living_room_1.jpg",
@@ -267,7 +267,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "kitchenette",
         name: "Kitchenette",
-        subtitle: "Full kitchen with modern appliances",
+        subtitle: "",
         thumbnail: "assets/paramount/kitchenette_1.jpg",
         photos: [
             "assets/paramount/kitchenette_1.jpg",
@@ -280,7 +280,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "dining_area",
         name: "Dining area",
-        subtitle: "Designer 4-seater dining setup",
+        subtitle: "",
         thumbnail: "assets/paramount/dining_area_1.jpg",
         photos: [
             "assets/paramount/dining_area_1.jpg",
@@ -290,7 +290,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "bedroom",
         name: "Bedroom",
-        subtitle: "King bed · Luxury Egyptian cotton linens · En-suite",
+        subtitle: "1 king bed",
         thumbnail: "assets/paramount/bedroom_1.jpg",
         photos: [
             "assets/paramount/bedroom_1.jpg",
@@ -310,7 +310,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "full_bathroom",
         name: "Full bathroom",
-        subtitle: "Luxury bath & rain shower",
+        subtitle: "",
         thumbnail: "assets/paramount/full_bathroom_1.jpg",
         photos: [
             "assets/paramount/full_bathroom_1.jpg",
@@ -321,7 +321,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "wc",
         name: "WC",
-        subtitle: "Guest powder room",
+        subtitle: "",
         thumbnail: "assets/paramount/wc_1.jpg",
         photos: [
             "assets/paramount/wc_1.jpg",
@@ -331,7 +331,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "balcony",
         name: "Balcony",
-        subtitle: "Private balcony with iconic Burj Khalifa & skyline views",
+        subtitle: "Burj Khalifa view",
         thumbnail: "assets/paramount/balcony_1.jpg",
         photos: [
             "assets/paramount/balcony_1.jpg",
@@ -350,7 +350,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "gym",
         name: "Gym",
-        subtitle: "State-of-the-art tower fitness center",
+        subtitle: "",
         thumbnail: "assets/paramount/gym_1.jpg",
         photos: [
             "assets/paramount/gym_1.jpg",
@@ -361,7 +361,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "pool",
         name: "Pool",
-        subtitle: "64th-floor rooftop infinity pool with panoramic views",
+        subtitle: "",
         thumbnail: "assets/paramount/pool_1.jpg",
         photos: [
             "assets/paramount/pool_1.jpg",
@@ -377,7 +377,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "children_s_playroom",
         name: "Children's playroom",
-        subtitle: "Kids dedicated recreational play zone",
+        subtitle: "",
         thumbnail: "assets/paramount/children_s_playroom_1.jpg",
         photos: [
             "assets/paramount/children_s_playroom_1.jpg",
@@ -389,7 +389,7 @@ const PARAMOUNT_CATEGORIES_MANIFEST = [
     {
         id: "additional_photos",
         name: "Additional photos",
-        subtitle: "Paramount Midtown building, lobby, cinema, and architecture",
+        subtitle: "",
         thumbnail: "assets/paramount/additional_photos_1.jpg",
         photos: [
             "assets/paramount/additional_photos_1.jpg",
@@ -409,7 +409,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "living_room",
         name: "Living room",
-        subtitle: "Direct Burj Khalifa & Fountain views · Sofa bed",
+        subtitle: "Sofa bed",
         thumbnail: "assets/burj_vista/burj_living_room_1.jpg",
         photos: [
             "assets/burj_vista/burj_living_room_1.jpg",
@@ -430,7 +430,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "kitchenette",
         name: "Kitchenette",
-        subtitle: "Modern kitchen with full appliances",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_kitchenette_1.jpg",
         photos: [
             "assets/burj_vista/burj_kitchenette_1.jpg",
@@ -442,7 +442,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "dining_area",
         name: "Dining area",
-        subtitle: "Dining space overlooking Downtown Dubai",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_dining_area_1.jpg",
         photos: [
             "assets/burj_vista/burj_dining_area_1.jpg",
@@ -457,7 +457,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "bedroom",
         name: "Bedroom",
-        subtitle: "King bed · Premium bedding · En-suite bath",
+        subtitle: "1 king bed",
         thumbnail: "assets/burj_vista/burj_bedroom_1.jpg",
         photos: [
             "assets/burj_vista/burj_bedroom_1.jpg",
@@ -477,7 +477,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "full_bathroom",
         name: "Full bathroom",
-        subtitle: "Luxury marble bath & shower",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_full_bathroom_1.jpg",
         photos: [
             "assets/burj_vista/burj_full_bathroom_1.jpg",
@@ -490,7 +490,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "wc",
         name: "WC",
-        subtitle: "Powder room",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_wc_1.jpg",
         photos: [
             "assets/burj_vista/burj_wc_1.jpg",
@@ -501,7 +501,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "balcony",
         name: "Balcony",
-        subtitle: "Spectacular front-row Burj Khalifa & Fountain view",
+        subtitle: "Burj Khalifa view",
         thumbnail: "assets/burj_vista/burj_balcony_1.jpg",
         photos: [
             "assets/burj_vista/burj_balcony_1.jpg",
@@ -518,7 +518,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "gym",
         name: "Gym",
-        subtitle: "Burj Vista fully equipped fitness center",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_gym_1.jpg",
         photos: [
             "assets/burj_vista/burj_gym_1.jpg",
@@ -530,7 +530,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "pool",
         name: "Pool",
-        subtitle: "Residences swimming pool with Burj Khalifa views",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_pool_1.jpg",
         photos: [
             "assets/burj_vista/burj_pool_1.jpg",
@@ -542,7 +542,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "children_s_playroom",
         name: "Children's playroom",
-        subtitle: "Indoor playroom for kids",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_children_s_playroom_1.jpg",
         photos: [
             "assets/burj_vista/burj_children_s_playroom_1.jpg",
@@ -552,7 +552,7 @@ const BURJ_VISTA_CATEGORIES_MANIFEST = [
     {
         id: "additional_photos",
         name: "Additional photos",
-        subtitle: "Burj Vista tower, direct AC Dubai Mall skybridge, and lobby",
+        subtitle: "",
         thumbnail: "assets/burj_vista/burj_additional_photos_1.jpg",
         photos: [
             "assets/burj_vista/burj_additional_photos_1.jpg",
@@ -1390,6 +1390,24 @@ function moveCarousel(trackId, direction) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Close Photo Gallery / Modals on Escape Key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closePhotoGalleryModal();
+            closeReviewsModal();
+            const am = document.getElementById('amenitiesModal');
+            if (am) am.style.display = 'none';
+        }
+    });
+
+    // Support direct photo tour query / hash route
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('modal') === 'PHOTO_TOUR_SCROLLABLE' || window.location.hash.includes('PHOTO_TOUR_SCROLLABLE')) {
+        const propId = (window.location.hash.includes('burj-vista') || urlParams.get('room_id') === '1762128215305557732' || urlParams.get('prop') === 'burj-vista') ? 'burj-vista' : 'paramount';
+        openPropertyDetail(propId);
+        openPhotoGalleryModal(propId);
+    }
+
     
     // Filter Pills Logic
     const filterPills = document.querySelectorAll('.filter-pill');
@@ -1622,7 +1640,7 @@ function openPropertyDetail(propId) {
                 <img src="${data.photos[4] || data.photos[0]}" alt="${data.name}" style="grid-column: 3 / 4; grid-row: 2 / 3; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.92" onmouseout="this.style.opacity=1">
             </div>
             <button class="button-secondary" onclick="event.stopPropagation(); openPhotoGalleryModal('${propId}')" style="position: absolute; bottom: 20px; right: 20px; background: #FFFFFF; border: 1px solid #222222; border-radius: 8px; padding: 7px 15px; font-weight: 600; font-size: 14px; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); cursor: pointer;">
-                <i class="fa-solid fa-grip" style="font-size: 13px;"></i> Show all photos
+                <i class="fa-solid fa-grip" style="font-size: 13px;"></i> Show all ${isParamount ? '73' : '68'} photos
             </button>
         </div>
         <style>
@@ -1641,7 +1659,7 @@ function openPropertyDetail(propId) {
                 ${data.photos.slice(0, 10).map(p => `<img src="${p}" alt="${data.name}" class="mobile-hero-img">`).join('')}
             </div>
             <div class="mobile-photo-counter" onclick="openPhotoGalleryModal('${propId}')">
-                <i class="fa-solid fa-grip" style="font-size: 11px; margin-right: 4px;"></i> 1 / ${data.photos.length}
+                <i class="fa-solid fa-grip" style="font-size: 11px; margin-right: 4px;"></i> 1 / ${isParamount ? '73' : '68'}
             </div>
         </div>
     `;
@@ -3092,7 +3110,7 @@ function openPhotoGalleryModal(propId) {
             <h1 style="font-size: 26px; font-weight: 700; color: #222222; margin: 0 0 24px;">Photo tour</h1>
 
             <!-- 1. Top Category Cards Grid (Exact Image 2 Match: 5 Columns) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px 16px; margin-bottom: 48px;">
+            <div class="photo-tour-cat-grid">
                 ${categories.map(cat => `
                     <div onclick="scrollToPhotoCategory('${cat.id}')" style="cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                         <div style="width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; background: #F3F4F6; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
@@ -3114,7 +3132,7 @@ function openPhotoGalleryModal(propId) {
                         <h2 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 4px;">${cat.name}</h2>
                         ${cat.subtitle ? `<div style="font-size: 14px; color: #717171; margin-bottom: 20px;">${cat.subtitle}</div>` : '<div style="margin-bottom: 16px;"></div>'}
                         
-                        <div style="display: grid; grid-template-columns: ${cat.photos.length === 1 ? '1fr' : 'repeat(auto-fit, minmax(480px, 1fr))'}; gap: 20px;">
+                        <div class="photo-tour-room-grid" style="display: grid; grid-template-columns: ${cat.photos.length === 1 ? '1fr' : 'repeat(2, 1fr)'}; gap: 20px;">
                             ${cat.photos.map((src, idx) => `
                                 <div style="border-radius: 14px; overflow: hidden; background: #F3F4F6; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                                     <img src="${src}" alt="${cat.name} - Photo ${idx + 1}" style="width: 100%; height: auto; max-height: 720px; object-fit: cover; display: block;" loading="lazy">
