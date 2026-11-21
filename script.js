@@ -2441,57 +2441,6 @@ function openPropertyDetail(propId) {
                         </button>
                     </div>
 
-                    <!-- Calendar / Dates Section (Exact Image 4 Match) -->
-                    <div id="pdpCalendarSection" style="margin-bottom: 32px; padding-bottom: 24px;">
-                        <div style="margin-bottom: 20px;">
-                            <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 4px;">2 nights in Dubai</h3>
-                            <p style="font-size: 14px; color: #717171; margin: 0;">14 Dec 2026 – 16 Dec 2026</p>
-                        </div>
-
-                        <!-- 2 Months Side by Side Calendar matching Image 4 -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
-                            <!-- Month 1: November 2026 -->
-                            <div>
-                                <div style="font-weight: 700; font-size: 15px; color: #222222; text-align: center; margin-bottom: 16px;">November 2026</div>
-                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; color: #717171; margin-bottom: 10px; font-weight: 600;">
-                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                                </div>
-                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 13px; font-weight: 500; color: #222222;">
-                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                                    <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                                    <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                                    <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                                    <span>29</span><span>30</span>
-                                </div>
-                            </div>
-
-                            <!-- Month 2: December 2026 -->
-                            <div>
-                                <div style="font-weight: 700; font-size: 15px; color: #222222; text-align: center; margin-bottom: 16px;">December 2026</div>
-                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; color: #717171; margin-bottom: 10px; font-weight: 600;">
-                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                                </div>
-                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 13px; font-weight: 500; color: #222222;">
-                                    <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-                                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-                                    <span>13</span>
-                                    <span style="background: #222222; color: #FFFFFF; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">14</span>
-                                    <span style="background: #F7F7F7; color: #222222; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">15</span>
-                                    <span style="background: #222222; color: #FFFFFF; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">16</span>
-                                    <span>17</span><span>18</span><span>19</span>
-                                    <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-                                    <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Calendar Footer (Exact Image 4 Match) -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; font-size: 14px;">
-                            <span style="color: #222222; font-size: 18px; cursor: pointer;" title="Keyboard shortcuts"><i class="fa-regular fa-keyboard"></i></span>
-                            <button onclick="alert('Select dates directly on Airbnb reservation');" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline; cursor: pointer;">Clear dates</button>
-                        </div>
-                    </div>
-
                 </div> <!-- END detail-left-col -->
 
                 <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 & 4 Match) -->
