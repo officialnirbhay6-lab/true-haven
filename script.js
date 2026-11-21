@@ -953,7 +953,7 @@ const PROPERTIES_DATA = {
         reviews: PARAMOUNT_REVIEWS_LIST,
         lat: 25.1932111,
         lng: 55.2654858,
-        googleMapsUrl: 'https://www.google.com/maps/search/paramount+building+dubai/@25.1932111,55.2654858,14z?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D',
+        googleMapsUrl: 'https://www.google.com/maps/place/Paramount+Hotel+Midtown/@25.1935038,55.2626443,17z/data=!3m1!4b1!4m9!3m8!1s0x3e5f69d5faac1b65:0xda1f575a717d9e3e!5m2!4m1!1i2!8m2!3d25.193499!4d55.2652192!16s%2Fg%2F11g7zdxfjk?hl=en&entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D',
         googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1932111,55.2654858&hl=en&z=15&output=embed',
         neighborhoodTitle: 'Business Bay & Downtown Dubai',
         neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
@@ -1388,7 +1388,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         reviews: BURJ_VISTA_REVIEWS_LIST,
         lat: 25.1984429,
         lng: 55.2707577,
-        googleMapsUrl: 'https://www.google.com/maps/place/Burj+Vista+-+Sheikh+Mohammed+bin+Rashid+Blvd+-+Burj+Khalifa+-+Downtown+Dubai+-+Dubai+-+United+Arab+Emirates/@25.1984429,55.2681828,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f42808f1ff1f9:0x881a49d26650dce8!8m2!3d25.1984429!4d55.2707577!16s%2Fg%2F11f147nrcy?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D',
+        googleMapsUrl: 'https://www.google.com/maps/place/Burj+Vista+-+Sheikh+Mohammed+bin+Rashid+Blvd+-+Burj+Khalifa+-+Downtown+Dubai+-+Dubai+-+United+Arab+Emirates/@25.1984477,55.2681828,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f42808f1ff1f9:0x881a49d26650dce8!8m2!3d25.1984429!4d55.2707577!16s%2Fg%2F11f147nrcy?hl=en&entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D',
         googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1984429,55.2707577&hl=en&z=16&output=embed',
         neighborhoodTitle: 'Downtown Dubai',
         neighborhoodDesc: 'Located along Sheikh Mohammed Bin Rashid Boulevard, Burj Vista is directly connected to Dubai Mall and the Burj Khalifa / Dubai Metro station via an internal air-conditioned sky bridge. You are mere steps away from the Dubai Fountain, Dubai Opera, and Downtown’s world-renowned dining and shopping destinations.',
@@ -2753,19 +2753,36 @@ function openPropertyDetail(propId) {
 
             <!-- Full-Width Location Map ("Where you'll be" - Interactive Google Maps Embed) -->
             <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB; width: 100%;">
-                <div style="margin-bottom: 20px;">
-                    <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
-                    <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
+                <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
+                        <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
+                    </div>
+                    <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #222222; text-decoration: none; border: 1px solid #DDDDDD; border-radius: 999px; padding: 9px 18px; background: #FFFFFF; transition: all 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='#FFFFFF'">
+                        <i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>
+                        <span>Open in Google Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
+                    </a>
                 </div>
                 
                 <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 460px; border: 1px solid #DDDDDD; background: #E5E7EB; width: 100%;">
-                    <!-- Floating Search Pill (Airbnb Match, positioned top-right) -->
-                    <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); cursor: pointer;">
+                    <!-- Full-area Clickable Map Overlay to open exact Google Maps location -->
+                    <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="position: absolute; inset: 0; z-index: 5; cursor: pointer; text-decoration: none;" title="Click map to open in Google Maps"></a>
+
+                    <!-- Floating Search Pill (Airbnb Match, positioned top-right, z-index 10) -->
+                    <div class="map-floating-search-pill" onclick="event.stopPropagation(); openMapActivitiesModal('${propId}')" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); cursor: pointer;">
                         <i class="fa-solid fa-magnifying-glass" style="font-size: 13px; color: #222222;"></i>
                         <span>Find things to do</span>
                     </div>
 
-                    <!-- Interactive Google Maps Embed -->
+                    <!-- Floating Bottom Open in Google Maps Badge (z-index 10) -->
+                    <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="position: absolute; bottom: 16px; left: 16px; z-index: 10; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 9px 18px; font-size: 13px; font-weight: 600; color: #222222; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); text-decoration: none; transition: transform 0.15s, background 0.15s;" onmouseover="this.style.background='#F7F7F7'; this.style.transform='scale(1.02)'" onmouseout="this.style.background='#FFFFFF'; this.style.transform='scale(1)'">
+                        <i class="fa-solid fa-location-dot" style="color: #FF385C; font-size: 14px;"></i>
+                        <span>Open in Google Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
+                    </a>
+
+                    <!-- Interactive Google Maps Embed (Clean, no hotel place card) -->
                     <iframe
                         id="propertyMapIframe"
                         src="${data.googleMapsEmbedUrl}"
