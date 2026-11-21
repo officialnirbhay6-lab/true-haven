@@ -2227,7 +2227,7 @@ function openPropertyDetail(propId) {
                     <a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank" class="nav-social-btn ig" title="Follow us on Instagram (@truehavenstays)">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="https://www.facebook.com/truehavenstays" target="_blank" class="nav-social-btn fb" title="Follow us on Facebook">
+                    <a href="https://www.facebook.com/people/True-haven/61594153920778/?mibextid=wwXIfr" target="_blank" class="nav-social-btn fb" title="Follow us on Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                 </div>
@@ -2877,7 +2877,7 @@ function openPropertyDetail(propId) {
                             <li><a href="https://wa.me/971525821668?text=Hello%20True%20Haven!%20I'd%20like%20to%20inquire%20about%20a%20luxury%20stay%20in%20Dubai." target="_blank" style="color: #25D366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Concierge</a></li>
                             <li><a href="tel:+971525821668"><i class="fa-solid fa-phone"></i> Direct Reservations Call</a></li>
                             <li><a href="https://www.instagram.com/truehavenstays/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram Community</a></li>
-                            <li><a href="https://www.facebook.com/truehavenstays" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook Page</a></li>
+                            <li><a href="https://www.facebook.com/people/True-haven/61594153920778/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook Page</a></li>
                         </ul>
                     </div>
                 </div>
