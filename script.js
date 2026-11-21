@@ -1860,6 +1860,19 @@ document.addEventListener('DOMContentLoaded', () => {
         openPhotoGalleryModal(propId);
     }
 
+    // Handle Browser Back / Forward buttons smoothly
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash;
+        if (!hash || hash === '#' || hash === '#properties') {
+            closePropertyDetailPage();
+        } else if (hash === '#paramount' || hash === '#burj-vista') {
+            const id = hash.replace('#', '');
+            if (window.currentPropertyId !== id) {
+                openPropertyDetail(id);
+            }
+        }
+    });
+
     
     // Filter Pills Logic
     const filterPills = document.querySelectorAll('.filter-pill');
@@ -2985,13 +2998,23 @@ function openPropertyDetail(propId) {
 
 
 function closePropertyDetailPage() {
-    closeReviewsModal();
+    try {
+        if (typeof closeReviewsModal === 'function') closeReviewsModal();
+        if (typeof closeAmenitiesModal === 'function') closeAmenitiesModal();
+        if (typeof closePhotoGalleryModal === 'function') closePhotoGalleryModal();
+        if (typeof closeGenericModal === 'function') closeGenericModal();
+    } catch(err) {
+        console.warn('Error closing modals:', err);
+    }
+
     const pageContainer = document.getElementById('propertyDetailPage');
     const mainPage = document.getElementById('mainPage');
     if (pageContainer) pageContainer.style.display = 'none';
     if (mainPage) mainPage.style.display = 'block';
+    document.body.style.overflow = 'auto';
     window.currentPropertyId = null;
     window.scrollTo(0, 0);
+
     if (window.location.hash) {
         try { history.pushState(null, '', window.location.pathname + window.location.search); } catch(e) {}
     }
@@ -3386,6 +3409,7 @@ function openReviewsModal(propId) {
     `;
 
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
     modal.onclick = function(e) {
         if (e.target === modal) {
             closeReviewsModal();
@@ -3397,6 +3421,14 @@ function openReviewsModal(propId) {
         updateAirbnbCarouselNav('modalRatingsScroll', 'modalRatingsPrevWrap', 'modalRatingsNextWrap');
         updateAirbnbCarouselNav('modalMentionPillsWrap', 'modalMentionPrevWrap', 'modalMentionNextWrap');
     }, 60);
+}
+
+function closeReviewsModal() {
+    const modal = document.getElementById('reviewsModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+    document.body.style.overflow = 'auto';
 }
 
 function renderFullReviewsListHtml(reviews) {
