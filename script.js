@@ -238,11 +238,332 @@ const BURJ_VISTA_PHOTOS = [
     "assets/burj_vista/burj_seq_72.png"
 ];
 
+// =============================================================
+// AIRBNB EXACT PHOTO TOUR MANIFESTS (11 Categories, Image 2 Match)
+// =============================================================
 const PARAMOUNT_CATEGORIES_MANIFEST = [
-    { id: "all_photos", name: "Full Photo Tour", photos: PARAMOUNT_PHOTOS }
+    {
+        id: "living_room",
+        name: "Living room",
+        subtitle: "Sofa bed · 65\" 4K Smart TV · City views",
+        thumbnail: "assets/paramount/living_room_1.jpg",
+        photos: [
+            "assets/paramount/living_room_1.jpg",
+            "assets/paramount/living_room_2.jpg",
+            "assets/paramount/living_room_3.jpg",
+            "assets/paramount/living_room_4.jpg",
+            "assets/paramount/living_room_5.jpg",
+            "assets/paramount/living_room_6.jpg",
+            "assets/paramount/living_room_7.jpg",
+            "assets/paramount/living_room_8.jpg",
+            "assets/paramount/living_room_9.jpg",
+            "assets/paramount/living_room_10.jpg",
+            "assets/paramount/living_room_11.jpg",
+            "assets/paramount/living_room_12.jpg",
+            "assets/paramount/living_room_13.jpg",
+            "assets/paramount/living_room_14.jpg"
+        ]
+    },
+    {
+        id: "kitchenette",
+        name: "Kitchenette",
+        subtitle: "Full kitchen with modern appliances",
+        thumbnail: "assets/paramount/kitchenette_1.jpg",
+        photos: [
+            "assets/paramount/kitchenette_1.jpg",
+            "assets/paramount/kitchenette_2.jpg",
+            "assets/paramount/kitchenette_3.jpg",
+            "assets/paramount/kitchenette_4.jpg",
+            "assets/paramount/kitchenette_5.jpg"
+        ]
+    },
+    {
+        id: "dining_area",
+        name: "Dining area",
+        subtitle: "Designer 4-seater dining setup",
+        thumbnail: "assets/paramount/dining_area_1.jpg",
+        photos: [
+            "assets/paramount/dining_area_1.jpg",
+            "assets/paramount/dining_area_2.jpg"
+        ]
+    },
+    {
+        id: "bedroom",
+        name: "Bedroom",
+        subtitle: "King bed · Luxury Egyptian cotton linens · En-suite",
+        thumbnail: "assets/paramount/bedroom_1.jpg",
+        photos: [
+            "assets/paramount/bedroom_1.jpg",
+            "assets/paramount/bedroom_2.jpg",
+            "assets/paramount/bedroom_3.jpg",
+            "assets/paramount/bedroom_4.jpg",
+            "assets/paramount/bedroom_5.jpg",
+            "assets/paramount/bedroom_6.jpg",
+            "assets/paramount/bedroom_7.jpg",
+            "assets/paramount/bedroom_8.jpg",
+            "assets/paramount/bedroom_9.jpg",
+            "assets/paramount/bedroom_10.jpg",
+            "assets/paramount/bedroom_11.jpg",
+            "assets/paramount/bedroom_12.jpg"
+        ]
+    },
+    {
+        id: "full_bathroom",
+        name: "Full bathroom",
+        subtitle: "Luxury bath & rain shower",
+        thumbnail: "assets/paramount/full_bathroom_1.jpg",
+        photos: [
+            "assets/paramount/full_bathroom_1.jpg",
+            "assets/paramount/full_bathroom_2.jpg",
+            "assets/paramount/full_bathroom_3.jpg"
+        ]
+    },
+    {
+        id: "wc",
+        name: "WC",
+        subtitle: "Guest powder room",
+        thumbnail: "assets/paramount/wc_1.jpg",
+        photos: [
+            "assets/paramount/wc_1.jpg",
+            "assets/paramount/wc_2.jpg"
+        ]
+    },
+    {
+        id: "balcony",
+        name: "Balcony",
+        subtitle: "Private balcony with iconic Burj Khalifa & skyline views",
+        thumbnail: "assets/paramount/balcony_1.jpg",
+        photos: [
+            "assets/paramount/balcony_1.jpg",
+            "assets/paramount/balcony_2.jpg",
+            "assets/paramount/balcony_3.jpg",
+            "assets/paramount/balcony_4.jpg",
+            "assets/paramount/balcony_5.jpg",
+            "assets/paramount/balcony_6.jpg",
+            "assets/paramount/balcony_7.jpg",
+            "assets/paramount/balcony_8.jpg",
+            "assets/paramount/balcony_9.jpg",
+            "assets/paramount/balcony_10.jpg",
+            "assets/paramount/balcony_11.jpg"
+        ]
+    },
+    {
+        id: "gym",
+        name: "Gym",
+        subtitle: "State-of-the-art tower fitness center",
+        thumbnail: "assets/paramount/gym_1.jpg",
+        photos: [
+            "assets/paramount/gym_1.jpg",
+            "assets/paramount/gym_2.jpg",
+            "assets/paramount/gym_3.jpg"
+        ]
+    },
+    {
+        id: "pool",
+        name: "Pool",
+        subtitle: "64th-floor rooftop infinity pool with panoramic views",
+        thumbnail: "assets/paramount/pool_1.jpg",
+        photos: [
+            "assets/paramount/pool_1.jpg",
+            "assets/paramount/pool_2.jpg",
+            "assets/paramount/pool_3.jpg",
+            "assets/paramount/pool_4.jpg",
+            "assets/paramount/pool_5.jpg",
+            "assets/paramount/pool_6.jpg",
+            "assets/paramount/pool_7.jpg",
+            "assets/paramount/pool_8.jpg"
+        ]
+    },
+    {
+        id: "children_s_playroom",
+        name: "Children's playroom",
+        subtitle: "Kids dedicated recreational play zone",
+        thumbnail: "assets/paramount/children_s_playroom_1.jpg",
+        photos: [
+            "assets/paramount/children_s_playroom_1.jpg",
+            "assets/paramount/children_s_playroom_2.jpg",
+            "assets/paramount/children_s_playroom_3.jpg",
+            "assets/paramount/children_s_playroom_4.jpg"
+        ]
+    },
+    {
+        id: "additional_photos",
+        name: "Additional photos",
+        subtitle: "Paramount Midtown building, lobby, cinema, and architecture",
+        thumbnail: "assets/paramount/additional_photos_1.jpg",
+        photos: [
+            "assets/paramount/additional_photos_1.jpg",
+            "assets/paramount/additional_photos_2.jpg",
+            "assets/paramount/additional_photos_3.jpg",
+            "assets/paramount/additional_photos_4.jpg",
+            "assets/paramount/additional_photos_5.jpg",
+            "assets/paramount/additional_photos_6.jpg",
+            "assets/paramount/additional_photos_7.jpg",
+            "assets/paramount/additional_photos_8.jpg",
+            "assets/paramount/additional_photos_9.jpg"
+        ]
+    }
 ];
 
-// Property Database
+const BURJ_VISTA_CATEGORIES_MANIFEST = [
+    {
+        id: "living_room",
+        name: "Living room",
+        subtitle: "Direct Burj Khalifa & Fountain views · Sofa bed",
+        thumbnail: "assets/burj_vista/burj_living_room_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_living_room_1.jpg",
+            "assets/burj_vista/burj_living_room_2.jpg",
+            "assets/burj_vista/burj_living_room_3.jpg",
+            "assets/burj_vista/burj_living_room_4.jpg",
+            "assets/burj_vista/burj_living_room_5.jpg",
+            "assets/burj_vista/burj_living_room_6.jpg",
+            "assets/burj_vista/burj_living_room_7.jpg",
+            "assets/burj_vista/burj_living_room_8.jpg",
+            "assets/burj_vista/burj_living_room_9.jpg",
+            "assets/burj_vista/burj_living_room_10.jpg",
+            "assets/burj_vista/burj_living_room_11.jpg",
+            "assets/burj_vista/burj_living_room_12.jpg",
+            "assets/burj_vista/burj_living_room_13.jpg"
+        ]
+    },
+    {
+        id: "kitchenette",
+        name: "Kitchenette",
+        subtitle: "Modern kitchen with full appliances",
+        thumbnail: "assets/burj_vista/burj_kitchenette_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_kitchenette_1.jpg",
+            "assets/burj_vista/burj_kitchenette_2.jpg",
+            "assets/burj_vista/burj_kitchenette_3.jpg",
+            "assets/burj_vista/burj_kitchenette_4.jpg"
+        ]
+    },
+    {
+        id: "dining_area",
+        name: "Dining area",
+        subtitle: "Dining space overlooking Downtown Dubai",
+        thumbnail: "assets/burj_vista/burj_dining_area_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_dining_area_1.jpg",
+            "assets/burj_vista/burj_dining_area_2.jpg",
+            "assets/burj_vista/burj_dining_area_3.jpg",
+            "assets/burj_vista/burj_dining_area_4.jpg",
+            "assets/burj_vista/burj_dining_area_5.jpg",
+            "assets/burj_vista/burj_dining_area_6.jpg",
+            "assets/burj_vista/burj_dining_area_7.jpg"
+        ]
+    },
+    {
+        id: "bedroom",
+        name: "Bedroom",
+        subtitle: "King bed · Premium bedding · En-suite bath",
+        thumbnail: "assets/burj_vista/burj_bedroom_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_bedroom_1.jpg",
+            "assets/burj_vista/burj_bedroom_2.jpg",
+            "assets/burj_vista/burj_bedroom_3.jpg",
+            "assets/burj_vista/burj_bedroom_4.jpg",
+            "assets/burj_vista/burj_bedroom_5.jpg",
+            "assets/burj_vista/burj_bedroom_6.jpg",
+            "assets/burj_vista/burj_bedroom_7.jpg",
+            "assets/burj_vista/burj_bedroom_8.jpg",
+            "assets/burj_vista/burj_bedroom_9.jpg",
+            "assets/burj_vista/burj_bedroom_10.jpg",
+            "assets/burj_vista/burj_bedroom_11.jpg",
+            "assets/burj_vista/burj_bedroom_12.jpg"
+        ]
+    },
+    {
+        id: "full_bathroom",
+        name: "Full bathroom",
+        subtitle: "Luxury marble bath & shower",
+        thumbnail: "assets/burj_vista/burj_full_bathroom_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_full_bathroom_1.jpg",
+            "assets/burj_vista/burj_full_bathroom_2.jpg",
+            "assets/burj_vista/burj_full_bathroom_3.jpg",
+            "assets/burj_vista/burj_full_bathroom_4.jpg",
+            "assets/burj_vista/burj_full_bathroom_5.jpg"
+        ]
+    },
+    {
+        id: "wc",
+        name: "WC",
+        subtitle: "Powder room",
+        thumbnail: "assets/burj_vista/burj_wc_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_wc_1.jpg",
+            "assets/burj_vista/burj_wc_2.jpg",
+            "assets/burj_vista/burj_wc_3.jpg"
+        ]
+    },
+    {
+        id: "balcony",
+        name: "Balcony",
+        subtitle: "Spectacular front-row Burj Khalifa & Fountain view",
+        thumbnail: "assets/burj_vista/burj_balcony_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_balcony_1.jpg",
+            "assets/burj_vista/burj_balcony_2.jpg",
+            "assets/burj_vista/burj_balcony_3.jpg",
+            "assets/burj_vista/burj_balcony_4.jpg",
+            "assets/burj_vista/burj_balcony_5.jpg",
+            "assets/burj_vista/burj_balcony_6.jpg",
+            "assets/burj_vista/burj_balcony_7.jpg",
+            "assets/burj_vista/burj_balcony_8.jpg",
+            "assets/burj_vista/burj_balcony_9.jpg"
+        ]
+    },
+    {
+        id: "gym",
+        name: "Gym",
+        subtitle: "Burj Vista fully equipped fitness center",
+        thumbnail: "assets/burj_vista/burj_gym_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_gym_1.jpg",
+            "assets/burj_vista/burj_gym_2.jpg",
+            "assets/burj_vista/burj_gym_3.jpg",
+            "assets/burj_vista/burj_gym_4.jpg"
+        ]
+    },
+    {
+        id: "pool",
+        name: "Pool",
+        subtitle: "Residences swimming pool with Burj Khalifa views",
+        thumbnail: "assets/burj_vista/burj_pool_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_pool_1.jpg",
+            "assets/burj_vista/burj_pool_2.jpg",
+            "assets/burj_vista/burj_pool_3.jpg",
+            "assets/burj_vista/burj_pool_4.jpg"
+        ]
+    },
+    {
+        id: "children_s_playroom",
+        name: "Children's playroom",
+        subtitle: "Indoor playroom for kids",
+        thumbnail: "assets/burj_vista/burj_children_s_playroom_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_children_s_playroom_1.jpg",
+            "assets/burj_vista/burj_children_s_playroom_2.jpg"
+        ]
+    },
+    {
+        id: "additional_photos",
+        name: "Additional photos",
+        subtitle: "Burj Vista tower, direct AC Dubai Mall skybridge, and lobby",
+        thumbnail: "assets/burj_vista/burj_additional_photos_1.jpg",
+        photos: [
+            "assets/burj_vista/burj_additional_photos_1.jpg",
+            "assets/burj_vista/burj_additional_photos_2.jpg",
+            "assets/burj_vista/burj_additional_photos_3.jpg",
+            "assets/burj_vista/burj_additional_photos_4.jpg",
+            "assets/burj_vista/burj_additional_photos_5.jpg"
+        ]
+    }
+];
+
 const PARAMOUNT_REVIEWS_LIST = [
     {
         "name": "Christiane",
@@ -2726,8 +3047,12 @@ function openAmenitiesModalDirect(propId) {
 // -------------------------------------------------------------
 // PHOTO GALLERY MODAL
 // -------------------------------------------------------------
+// -------------------------------------------------------------
+// EXACT AIRBNB PHOTO TOUR MODAL (Image 2 100% Match)
+// -------------------------------------------------------------
 function openPhotoGalleryModal(propId) {
-    const data = PROPERTIES_DATA[propId];
+    const targetId = propId || window.currentPropertyId || 'paramount';
+    const data = PROPERTIES_DATA[targetId];
     if (!data) return;
 
     let galleryModal = document.getElementById('photoGalleryModal');
@@ -2738,62 +3063,75 @@ function openPhotoGalleryModal(propId) {
         document.body.appendChild(galleryModal);
     }
 
-    let categories;
-    if (propId === 'paramount' && typeof PARAMOUNT_CATEGORIES_MANIFEST !== 'undefined') {
-        categories = PARAMOUNT_CATEGORIES_MANIFEST;
-    } else if (propId === 'burj-vista' && typeof BURJ_VISTA_CATEGORIES_MANIFEST !== 'undefined') {
-        categories = BURJ_VISTA_CATEGORIES_MANIFEST;
-    } else {
-        categories = [
-            { name: "All Photos", photos: data.photos }
-        ];
-    }
-
-    let activeNavCategory = categories[0].name;
+    const categories = (targetId === 'paramount') ? PARAMOUNT_CATEGORIES_MANIFEST : BURJ_VISTA_CATEGORIES_MANIFEST;
+    const isParamount = (targetId === 'paramount');
+    const priceDisplay = isParamount ? '₹51,314' : '₹56,379';
 
     galleryModal.innerHTML = `
-        <div class="gallery-nav-bar">
-            <button class="gallery-back-btn" onclick="closePhotoGalleryModal()">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="gallery-title">${data.name}</div>
-            <div class="gallery-actions">
-                <button class="gallery-action-btn" title="Share" onclick="shareProperty('${propId}')">
-                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        <!-- Sticky Top Bar (Exact Image 2 Match) -->
+        <div style="position: sticky; top: 0; background: #FFFFFF; z-index: 100; border-bottom: 1px solid #EBEBEB; padding: 16px 24px;">
+            <div style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+                <button onclick="closePhotoGalleryModal()" style="background: none; border: none; font-size: 16px; cursor: pointer; color: #222222; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='none'" title="Back to listing">
+                    <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button class="gallery-action-btn" title="Save" onclick="toggleSaveProperty(this)">
-                    <i class="fa-regular fa-heart"></i>
-                </button>
+                <div style="display: flex; gap: 16px;">
+                    <button onclick="shareProperty('${targetId}')" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #222222; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; text-decoration: underline;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='none'">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+                    </button>
+                    <button onclick="toggleSaveProperty(this)" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #222222; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; text-decoration: underline;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='none'">
+                        <i class="fa-regular fa-heart"></i> Save
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="gallery-layout-body">
-            <div class="gallery-left-category-nav" id="galleryCategoryNav">
-                ${categories.map(cat => {
-                    const firstPhoto = cat.photos && cat.photos.length > 0 ? cat.photos[0] : data.photos[0];
-                    return `
-                        <div class="gallery-cat-tab ${cat.name === activeNavCategory ? 'active' : ''}" onclick="scrollToGalleryCategory('${cat.name.replace(/[^a-zA-Z0-9]/g, '_')}', this)">
-                            <img src="${firstPhoto}" alt="${cat.name}">
-                            <span>${cat.name}</span>
+        <!-- Scrollable Photo Tour Body (Exact Image 2 Match) -->
+        <div style="max-width: 1120px; margin: 0 auto; padding: 32px 24px 100px;">
+            
+            <!-- Heading (Exact Image 2 Match) -->
+            <h1 style="font-size: 26px; font-weight: 700; color: #222222; margin: 0 0 24px;">Photo tour</h1>
+
+            <!-- 1. Top Category Cards Grid (Exact Image 2 Match: 5 Columns) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px 16px; margin-bottom: 48px;">
+                ${categories.map(cat => `
+                    <div onclick="scrollToPhotoCategory('${cat.id}')" style="cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; background: #F3F4F6; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+                            <img src="${cat.thumbnail}" alt="${cat.name}" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                    `;
-                }).join('')}
+                        <div style="font-size: 14px; font-weight: 600; color: #222222; line-height: 1.3;">
+                            ${cat.name}
+                        </div>
+                    </div>
+                `).join('')}
             </div>
 
-            <div class="gallery-right-photo-stream" id="galleryPhotoStream">
+            <div style="height: 1px; background: #EBEBEB; margin: 40px 0;"></div>
+
+            <!-- 2. Room by Room Photo Stream (Exact Image 2 Match) -->
+            <div>
                 ${categories.map(cat => `
-                    <div class="gallery-category-stream-group" id="group_${cat.name.replace(/[^a-zA-Z0-9]/g, '_')}">
-                        <div class="gallery-cat-heading">${cat.name}</div>
-                        <div class="gallery-cat-photos-grid">
+                    <div id="photo_sec_${cat.id}" style="margin-bottom: 56px; scroll-margin-top: 90px;">
+                        <h2 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 4px;">${cat.name}</h2>
+                        ${cat.subtitle ? `<div style="font-size: 14px; color: #717171; margin-bottom: 20px;">${cat.subtitle}</div>` : '<div style="margin-bottom: 16px;"></div>'}
+                        
+                        <div style="display: grid; grid-template-columns: ${cat.photos.length === 1 ? '1fr' : 'repeat(auto-fit, minmax(480px, 1fr))'}; gap: 20px;">
                             ${cat.photos.map((src, idx) => `
-                                <div class="gallery-photo-item">
-                                    <img src="${src}" alt="${data.name} - ${cat.name} ${idx + 1}" loading="lazy">
+                                <div style="border-radius: 14px; overflow: hidden; background: #F3F4F6; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                    <img src="${src}" alt="${cat.name} - Photo ${idx + 1}" style="width: 100%; height: auto; max-height: 720px; object-fit: cover; display: block;" loading="lazy">
                                 </div>
                             `).join('')}
                         </div>
                     </div>
                 `).join('')}
             </div>
+
+        </div>
+
+        <!-- Floating Sticky Bottom CTA (Exact Image 2 Match) -->
+        <div style="position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 1000; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.2));">
+            <a href="${data.airbnbUrl}" target="_blank" style="background: #E51D56; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 14px 32px; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.15s, background 0.15s;" onmouseover="this.style.background='#D90B4A'; this.style.transform='scale(1.02)'" onmouseout="this.style.background='#E51D56'; this.style.transform='scale(1)'">
+                Reserve · ${priceDisplay}
+            </a>
         </div>
     `;
 
@@ -2807,19 +3145,11 @@ function closePhotoGalleryModal() {
     document.body.style.overflow = 'auto';
 }
 
-function scrollToGalleryCategory(categoryId, tabElement) {
-    const group = document.getElementById('group_' + categoryId);
-    const stream = document.getElementById('galleryPhotoStream');
-    if (group && stream) {
-        stream.scrollTo({
-            top: group.offsetTop - 20,
-            behavior: 'smooth'
-        });
+function scrollToPhotoCategory(catId) {
+    const target = document.getElementById('photo_sec_' + catId);
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
     }
-
-    const tabs = document.querySelectorAll('.gallery-cat-tab');
-    tabs.forEach(t => t.classList.remove('active'));
-    if (tabElement) tabElement.classList.add('active');
 }
 
 // -------------------------------------------------------------
