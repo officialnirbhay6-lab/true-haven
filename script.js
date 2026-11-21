@@ -253,8 +253,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "3 days ago",
         "stay": "Stayed a few nights",
-        "text": "Very nice Apartment. Well equiped. Great view. Bar, Restaurant, Pool on top was perfect. We come again.",
-        "hostResponse": null
+        "text": "Very nice Apartment. Well equiped. Great view. Bar, Restaurant, Pool on top was perfect. We come again."
     },
     {
         "name": "Weronika",
@@ -265,12 +264,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "1 week ago",
         "stay": "Stayed a few nights",
-        "text": "Clean, spacious and elegant with special view on on Burj Khalifa from 58 th floor !! We would love to come back ! It was a perfect first impression of Dubai for my mum stay. Thank you Prince for quick responses and clear instructions ☺️ Perfect stay ❤️ The building has beautiful 180* pool on the 64th floor (something like aura sky pool but for business bay) sometimes very busy",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "4 days ago",
-            "text": "Thank you, Weronika! We're thrilled you and your mum enjoyed your stay and the stunning views of Burj Khalifa. Your kind words mean so much to us. We can't wait to welcome you back for another perfect visit! ❤️"
-        }
+        "text": "Clean, spacious and elegant with special view on on Burj Khalifa from 58 th floor !! We would love to come back ! It was a perfect first impression of Dubai for my mum stay. Thank you Prince for quick responses and clear instructions ☺️ Perfect stay ❤️ The building has beautiful 180* pool on the 64th floor (something like aura sky pool but for business bay) sometimes very busy"
     },
     {
         "name": "Merlinda",
@@ -281,12 +275,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "3 weeks ago",
         "stay": "Stayed a few nights",
-        "text": "We rented the apartment for three nights and were absolutely delighted! Everything was simply great: The apartment was very clean, cozy and very well equipped. We felt comfortable from the very first moment. The stay was really great, and we would come back anytime. Thank you so much for the wonderful time! Highly recommended! ⭐⭐⭐⭐⭐",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "2 weeks ago",
-            "text": "Thank you, Merlinda! We’re thrilled to hear you enjoyed your stay and felt at home. Your kind words mean a lot to us. We can’t wait to welcome you back for another wonderful visit!"
-        }
+        "text": "We rented the apartment for three nights and were absolutely delighted! Everything was simply great: The apartment was very clean, cozy and very well equipped. We felt comfortable from the very first moment. The stay was really great, and we would come back anytime. Thank you so much for the wonderful time! Highly recommended! ⭐⭐⭐⭐⭐"
     },
     {
         "name": "Harish",
@@ -297,12 +286,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed one night",
-        "text": "This 1BHK was absolute perfection! The view of the Burj Khalifa is breathtaking, especially at night. Swimming in the rooftop pool with the skyline right in front of you was an amazing highlight. The kitchen is fully equipped with everything you need, and the place was spotless and modern. On top of that, the host was super approachable, helpful, and easy to communicate with throughout our stay. I am sad that I booked it for only 1 night. Would 100% stay here again and highly recommend it!",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "2 weeks ago",
-            "text": "Thank you, Harish! We're thrilled you enjoyed your stay and the breathtaking views. Your kind words about our hospitality mean so much to us. We can't wait to welcome you back for a longer visit!"
-        }
+        "text": "This 1BHK was absolute perfection! The view of the Burj Khalifa is breathtaking, especially at night. Swimming in the rooftop pool with the skyline right in front of you was an amazing highlight. The kitchen is fully equipped with everything you need, and the place was spotless and modern. On top of that, the host was super approachable, helpful, and easy to communicate with throughout our stay. I am sad that I booked it for only 1 night. Would 100% stay here again and highly recommend it!"
     },
     {
         "name": "Goda",
@@ -313,12 +297,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "3 weeks ago",
         "stay": "Stayed a few nights",
-        "text": "The view is absolutely beautiful, everything is so well-maintained, and the location is wonderful. Everything is very clean, and every little detail has been thoughtfully considered. I will definitely come back! ❤️",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "2 weeks ago",
-            "text": "Thank you, Goda! We're thrilled to hear you enjoyed the beautiful view and our well-maintained property. Your kind words about the details mean a lot to us. We can't wait to welcome you back for another wonderful stay! ❤️"
-        }
+        "text": "The view is absolutely beautiful, everything is so well-maintained, and the location is wonderful. Everything is very clean, and every little detail has been thoughtfully considered. I will definitely come back! ❤️"
     },
     {
         "name": "Ahmed Enad",
@@ -329,12 +308,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed a few nights",
-        "text": "The stay was wonderful, and the hosts Prince & Ruchi were helpful and responsive. The place is worth the price. Thank you very much.",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "4 weeks ago",
-            "text": "Thank you, Ahmed! We’re thrilled to hear you had a wonderful stay and found our team helpful. Your kind words mean a lot to us. We can't wait to welcome you back for another great experience!"
-        }
+        "text": "The stay was wonderful, and the hosts Prince & Ruchi were helpful and responsive. The place is worth the price. Thank you very much."
     },
     {
         "name": "Shana",
@@ -345,12 +319,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed a few nights",
-        "text": "Great location! The property was clean, modern, and well-maintained. The host was extremely responsive and quick to answer any questions. Overall, a wonderful experience, and I would definitely recommend staying here!",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "4 weeks ago",
-            "text": "Thank you, Shana, for your kind words! We're thrilled you enjoyed your stay and appreciated our location and service. Your recommendation means a lot to us. We look forward to welcoming you back soon!"
-        }
+        "text": "Great location! The property was clean, modern, and well-maintained. The host was extremely responsive and quick to answer any questions. Overall, a wonderful experience, and I would definitely recommend staying here!"
     },
     {
         "name": "Berkay",
@@ -361,12 +330,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed about a week",
-        "text": "The stay was excellent. Great location. Everything was clean in the accommodation and once again exceeded our expectations. We'd love to come back.",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "4 weeks ago",
-            "text": "Thank you, Berkay! We're thrilled to hear you had a top-notch stay and that our location and cleanliness exceeded your expectations. We can’t wait to welcome you back for another wonderful visit!"
-        }
+        "text": "The stay was excellent. Great location. Everything was clean in the accommodation and once again exceeded our expectations. We'd love to come back."
     },
     {
         "name": "Blake",
@@ -377,12 +341,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed one night",
-        "text": "10/10 clean and spacious! Great view",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "4 weeks ago",
-            "text": "Thank you, Blake! We’re thrilled you enjoyed your stay and found everything clean and spacious. Your kind words mean a lot to us. We look forward to welcoming you back for another great experience!"
-        }
+        "text": "10/10 clean and spacious! Great view"
     },
     {
         "name": "奕翔 (Yi Xiang)",
@@ -393,8 +352,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "October 2026",
         "stay": "Stayed a few nights",
-        "text": "The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located. It was a great stay!",
-        "hostResponse": null
+        "text": "The room was clean and tidy. The apartment had all the necessary amenities and was conveniently located. It was a great stay!"
     },
     {
         "name": "Matteo",
@@ -405,12 +363,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed one night",
-        "text": "The place was very clean, with a balcony and a very nice view of the Burj Khalifa. The pool is worth a visit, and the price is very reasonable. I recommend it!",
-        "hostResponse": {
-            "responder": "Ruchi",
-            "date": "September 2026",
-            "text": "We are glad that you had a great time staying with us. We are also very delighted to host you. Hope you will visit us soon. Thank you! 😊"
-        }
+        "text": "The place was very clean, with a balcony and a very nice view of the Burj Khalifa. The pool is worth a visit, and the price is very reasonable. I recommend it!"
     },
     {
         "name": "Solomon",
@@ -421,8 +374,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed a few nights",
-        "text": "Beautiful Property with stunning views of Burj Khalifa",
-        "hostResponse": null
+        "text": "Beautiful Property with stunning views of Burj Khalifa"
     },
     {
         "name": "Orhan",
@@ -433,8 +385,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed a few nights",
-        "text": "The host was very friendly and helpful. Immediate help in a few minutes. The apartment is highly recommended. Nothing is lacking. The view from the balcony is simply fantastic. We were very satisfied.👌😀",
-        "hostResponse": null
+        "text": "The host was very friendly and helpful. Immediate help in a few minutes. The apartment is highly recommended. Nothing is lacking. The view from the balcony is simply fantastic. We were very satisfied.👌😀"
     },
     {
         "name": "Krishnil",
@@ -445,8 +396,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed a few nights",
-        "text": "Nice and clean place. Really enjoyed it.",
-        "hostResponse": null
+        "text": "Nice and clean place. Really enjoyed it."
     },
     {
         "name": "Erwan",
@@ -457,8 +407,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "2 weeks ago",
         "stay": "Stayed a few nights",
-        "text": "👌🏼👌🏼👌🏼",
-        "hostResponse": null
+        "text": "👌🏼👌🏼👌🏼"
     },
     {
         "name": "Romain",
@@ -469,8 +418,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "1 week ago",
         "stay": "Stayed one night",
-        "text": "Top",
-        "hostResponse": null
+        "text": "Top"
     },
     {
         "name": "Valeria",
@@ -481,8 +429,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed a few nights",
-        "text": "Alright",
-        "hostResponse": null
+        "text": "Alright"
     },
     {
         "name": "兴俊 (Xingjun)",
@@ -493,8 +440,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed a few nights",
-        "text": "The view from the pool is beautiful.",
-        "hostResponse": null
+        "text": "The view from the pool is beautiful."
     },
     {
         "name": "Nawaf",
@@ -505,8 +451,7 @@ const PARAMOUNT_REVIEWS_LIST = [
         "rating": 5,
         "time": "September 2026",
         "stay": "Stayed one night",
-        "text": "Very nice",
-        "hostResponse": null
+        "text": "Very nice"
     }
 ];
 const BURJ_VISTA_REVIEWS_LIST = [
@@ -2504,17 +2449,6 @@ function renderFullReviewsListHtml(reviews) {
             <p style="font-size: 15px; color: #374151; line-height: 1.6; margin: 0;">
                 ${rev.text}
             </p>
-
-            <!-- Host Response If Any (Formatted cleanly matching Airbnb) -->
-            ${rev.hostResponse ? `
-                <div style="margin-top: 14px; padding: 14px 18px; background: #F7F7F7; border-radius: 12px; margin-left: 20px; border-left: 3px solid #222222;">
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                        <strong style="font-size: 13px; color: #222222;">Response from Ruchi</strong>
-                        <span style="font-size: 12px; color: #717171;">· ${rev.hostResponse.date}</span>
-                    </div>
-                    <div style="font-size: 13px; color: #4B5563; line-height: 1.5;">${rev.hostResponse.text}</div>
-                </div>
-            ` : ''}
         </div>
     `).join('');
 }
