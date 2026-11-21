@@ -954,7 +954,7 @@ const PROPERTIES_DATA = {
         lat: 25.1932111,
         lng: 55.2654858,
         googleMapsUrl: 'https://www.google.com/maps/search/paramount+building+dubai/@25.1932111,55.2654858,14z?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D',
-        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Paramount+Hotel+Midtown,+Business+Bay,+Dubai&ll=25.1932111,55.2654858&z=14&t=&ie=UTF8&iwloc=&output=embed',
+        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1932111,55.2654858&hl=en&z=15&output=embed',
         neighborhoodTitle: 'Business Bay & Downtown Dubai',
         neighborhoodDesc: 'Situated in Paramount Tower Hotel & Residences Midtown on Al Mustaqbal Street, Business Bay. Just a 7-minute drive to Dubai Mall and Burj Khalifa, with rapid access to Sheikh Zayed Road, Dubai Canal Promenade, and fine dining hotspots throughout Downtown and DIFC.',
         aboutThisSpace: `Start your day with a dip in the luxurious infinity pool on the rooftop at 64th floor, taking in the sweeping Burj Khalifa and Downtown skyline view, then enjoy that same iconic view right from your own private balcony.
@@ -1389,7 +1389,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         lat: 25.1984429,
         lng: 55.2707577,
         googleMapsUrl: 'https://www.google.com/maps/place/Burj+Vista+-+Sheikh+Mohammed+bin+Rashid+Blvd+-+Burj+Khalifa+-+Downtown+Dubai+-+Dubai+-+United+Arab+Emirates/@25.1984429,55.2681828,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f42808f1ff1f9:0x881a49d26650dce8!8m2!3d25.1984429!4d55.2707577!16s%2Fg%2F11f147nrcy?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D',
-        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Burj+Vista,+Sheikh+Mohammed+bin+Rashid+Blvd,+Downtown+Dubai&ll=25.1984429,55.2707577&z=16&t=&ie=UTF8&iwloc=&output=embed',
+        googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1984429,55.2707577&hl=en&z=16&output=embed',
         neighborhoodTitle: 'Downtown Dubai',
         neighborhoodDesc: 'Located along Sheikh Mohammed Bin Rashid Boulevard, Burj Vista is directly connected to Dubai Mall and the Burj Khalifa / Dubai Metro station via an internal air-conditioned sky bridge. You are mere steps away from the Dubai Fountain, Dubai Opera, and Downtown’s world-renowned dining and shopping destinations.',
         aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.
@@ -2753,16 +2753,9 @@ function openPropertyDetail(propId) {
 
             <!-- Full-Width Location Map ("Where you'll be" - Interactive Google Maps Embed) -->
             <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB; width: 100%;">
-                <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
-                    <div>
-                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
-                        <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
-                    </div>
-                    <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #222222; text-decoration: none; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; background: #FFFFFF; transition: background 0.2s;">
-                        <i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>
-                        <span>Open in Google Maps</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
-                    </a>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
+                    <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
                 </div>
                 
                 <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 460px; border: 1px solid #DDDDDD; background: #E5E7EB; width: 100%;">
