@@ -1038,106 +1038,324 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
             registrationDetails: "BUS-PAR-KJYVF"
         },
         categorizedAmenities: [
-            {
-                category: "Bathroom",
-                icon: "fa-bath",
-                items: [
-                    { text: "Bath", available: true },
-                    { text: "Hairdryer", available: true },
-                    { text: "Shampoo", available: true },
-                    { text: "Body soap", available: true },
-                    { text: "Hot water", available: true },
-                    { text: "Shower gel", available: true }
-                ]
-            },
-            {
-                category: "Bedroom and laundry",
-                icon: "fa-bed",
-                items: [
-                    { text: "Washing machine", available: true },
-                    { text: "Essentials (Towels, bed sheets, soap and toilet paper)", available: true },
-                    { text: "Hangers", available: true },
-                    { text: "Room-darkening blinds", available: true },
-                    { text: "Iron", available: true },
-                    { text: "Clothes storage: wardrobe", available: true }
-                ]
-            },
-            {
-                category: "Entertainment",
-                icon: "fa-tv",
-                items: [
-                    { text: "TV (65-inch Smart TV in living room; 55-inch Smart TV in bedroom)", available: true }
-                ]
-            },
-            {
-                category: "Heating and cooling",
-                icon: "fa-snowflake",
-                items: [
-                    { text: "Air conditioning", available: true }
-                ]
-            },
-            {
-                category: "Home safety",
-                icon: "fa-shield-halved",
-                items: [
-                    { text: "Smoke alarm", available: true },
-                    { text: "Carbon monoxide alarm", available: true },
-                    { text: "Fire extinguisher", available: true },
-                    { text: "First aid kit", available: true }
-                ]
-            },
-            {
-                category: "Internet and office",
-                icon: "fa-wifi",
-                items: [
-                    { text: "Wifi (Free high-speed internet throughout)", available: true }
-                ]
-            },
-            {
-                category: "Kitchen and dining",
-                icon: "fa-utensils",
-                items: [
-                    { text: "Kitchen (Space where guests can cook their own meals)", available: true },
-                    { text: "Fridge", available: true },
-                    { text: "Microwave", available: true },
-                    { text: "Cooking basics (Pots and pans, oil, salt and pepper)", available: true },
-                    { text: "Crockery and cutlery (Bowls, chopsticks, plates, cups, etc.)", available: true },
-                    { text: "Freezer", available: true },
-                    { text: "Dishwasher", available: true },
-                    { text: "Oven", available: true },
-                    { text: "Kettle", available: true },
-                    { text: "Coffee maker", available: true },
-                    { text: "Wine glasses", available: true },
-                    { text: "Toaster", available: true },
-                    { text: "Dining table", available: true }
-                ]
-            },
-            {
-                category: "Outdoor",
-                icon: "fa-chair",
-                items: [
-                    { text: "Outdoor furniture", available: true }
-                ]
-            },
-            {
-                category: "Parking and facilities",
-                icon: "fa-square-parking",
-                items: [
-                    { text: "Free parking on premises", available: true },
-                    { text: "Pool (64th Floor Rooftop Infinity Pool)", available: true },
-                    { text: "Lift (Lift doorway 32\" / 81cm wide, depth 52\" / 132cm)", available: true },
-                    { text: "Gym (State-of-the-art fitness center)", available: true }
-                ]
-            },
-            {
-                category: "Not included",
-                icon: "fa-circle-xmark",
-                items: [
-                    { text: "Exterior security cameras on property", available: false },
-                    { text: "Tumble dryer", available: false },
-                    { text: "Heating", available: false }
-                ]
-            }
+                  {
+                            "category": "Bathroom",
+                            "items": [
+                                      {
+                                                "title": "Bath",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bath"
+                                      },
+                                      {
+                                                "title": "Hairdryer",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wind"
+                                      },
+                                      {
+                                                "title": "Shampoo",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bottle-droplet"
+                                      },
+                                      {
+                                                "title": "Body soap",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-soap"
+                                      },
+                                      {
+                                                "title": "Hot water",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-faucet-drip"
+                                      },
+                                      {
+                                                "title": "Shower gel",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-pump-soap"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Bedroom and laundry",
+                            "items": [
+                                      {
+                                                "title": "Washing machine",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-soap"
+                                      },
+                                      {
+                                                "title": "Essentials",
+                                                "subtitle": "Towels, bed sheets, soap and toilet paper",
+                                                "available": true,
+                                                "icon": "fa-solid fa-pump-soap"
+                                      },
+                                      {
+                                                "title": "Hangers",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-shirt"
+                                      },
+                                      {
+                                                "title": "Room-darkening blinds",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-blinds"
+                                      },
+                                      {
+                                                "title": "Iron",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-shirt"
+                                      },
+                                      {
+                                                "title": "Clothes storage: wardrobe",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-door-closed"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Entertainment",
+                            "items": [
+                                      {
+                                                "title": "TV",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-tv"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Family",
+                            "items": [
+                                      {
+                                                "title": "Cot",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-baby-carriage"
+                                      },
+                                      {
+                                                "title": "High chair",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Heating and cooling",
+                            "items": [
+                                      {
+                                                "title": "Air conditioning",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-regular fa-snowflake"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Home safety",
+                            "items": [
+                                      {
+                                                "title": "Smoke alarm",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bell"
+                                      },
+                                      {
+                                                "title": "Carbon monoxide alarm",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-triangle-exclamation"
+                                      },
+                                      {
+                                                "title": "Fire extinguisher",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-fire-extinguisher"
+                                      },
+                                      {
+                                                "title": "First aid kit",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kit-medical"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Internet and office",
+                            "items": [
+                                      {
+                                                "title": "Wifi",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wifi"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Kitchen and dining",
+                            "items": [
+                                      {
+                                                "title": "Kitchen",
+                                                "subtitle": "Space where guests can cook their own meals",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kitchen-set"
+                                      },
+                                      {
+                                                "title": "Fridge",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-snowflake"
+                                      },
+                                      {
+                                                "title": "Microwave",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-tv"
+                                      },
+                                      {
+                                                "title": "Cooking basics",
+                                                "subtitle": "Pots and pans, oil, salt and pepper",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kitchen-set"
+                                      },
+                                      {
+                                                "title": "Crockery and cutlery",
+                                                "subtitle": "Plates, bowls, cups, cutlery and other utensils",
+                                                "available": true,
+                                                "icon": "fa-solid fa-utensils"
+                                      },
+                                      {
+                                                "title": "Freezer",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-snowflake"
+                                      },
+                                      {
+                                                "title": "Dishwasher",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-faucet"
+                                      },
+                                      {
+                                                "title": "Oven",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-fire-burner"
+                                      },
+                                      {
+                                                "title": "Kettle",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-mug-hot"
+                                      },
+                                      {
+                                                "title": "Coffee maker",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-mug-saucer"
+                                      },
+                                      {
+                                                "title": "Wine glasses",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wine-glass"
+                                      },
+                                      {
+                                                "title": "Toaster",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bread-slice"
+                                      },
+                                      {
+                                                "title": "Dining table",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Outdoor",
+                            "items": [
+                                      {
+                                                "title": "Outdoor furniture",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Parking and facilities",
+                            "items": [
+                                      {
+                                                "title": "Free multistorey car park on premises",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-car"
+                                      },
+                                      {
+                                                "title": "Pool",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-person-swimming"
+                                      },
+                                      {
+                                                "title": "Lift",
+                                                "subtitle": "The home or building has a lift that’s at least 52 inches (132cm) deep and a doorway at least 32 inches (81cm) wide",
+                                                "available": true,
+                                                "icon": "fa-solid fa-elevator"
+                                      },
+                                      {
+                                                "title": "Gym",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-dumbbell"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Services",
+                            "items": [
+                                      {
+                                                "title": "Self check-in",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-key"
+                                      },
+                                      {
+                                                "title": "Smart lock",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-lock"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Not included",
+                            "items": [
+                                      {
+                                                "title": "Private entrance",
+                                                "subtitle": "",
+                                                "available": false,
+                                                "icon": "fa-solid fa-door-closed"
+                                      },
+                                      {
+                                                "title": "Heating",
+                                                "subtitle": "",
+                                                "available": false,
+                                                "icon": "fa-solid fa-temperature-arrow-down"
+                                      }
+                            ]
+                  }
         ]
     },
     'burj-vista': {
@@ -1254,106 +1472,336 @@ Enjoy five-star building amenities and a stylish, comfortable interior, directly
             registrationDetails: "BUR-BUR-0XCRY"
         },
         categorizedAmenities: [
-            {
-                category: "Bathroom",
-                icon: "fa-bath",
-                items: [
-                    { text: "Bath", available: true },
-                    { text: "Hairdryer", available: true },
-                    { text: "Shampoo", available: true },
-                    { text: "Body soap", available: true },
-                    { text: "Hot water", available: true },
-                    { text: "Shower gel", available: true }
-                ]
-            },
-            {
-                category: "Bedroom and laundry",
-                icon: "fa-bed",
-                items: [
-                    { text: "Washing machine", available: true },
-                    { text: "Essentials (Towels, bed sheets, soap and toilet paper)", available: true },
-                    { text: "Hangers", available: true },
-                    { text: "Room-darkening blinds", available: true },
-                    { text: "Iron", available: true },
-                    { text: "Clothes storage: wardrobe", available: true }
-                ]
-            },
-            {
-                category: "Entertainment",
-                icon: "fa-tv",
-                items: [
-                    { text: "TV (65-inch Smart TV in living room; 55-inch Smart TV in bedroom)", available: true }
-                ]
-            },
-            {
-                category: "Heating and cooling",
-                icon: "fa-snowflake",
-                items: [
-                    { text: "Air conditioning", available: true }
-                ]
-            },
-            {
-                category: "Home safety",
-                icon: "fa-shield-halved",
-                items: [
-                    { text: "Smoke alarm", available: true },
-                    { text: "Carbon monoxide alarm", available: true },
-                    { text: "Fire extinguisher", available: true },
-                    { text: "First aid kit", available: true }
-                ]
-            },
-            {
-                category: "Internet and office",
-                icon: "fa-wifi",
-                items: [
-                    { text: "Wifi (Free high-speed internet throughout)", available: true }
-                ]
-            },
-            {
-                category: "Kitchen and dining",
-                icon: "fa-utensils",
-                items: [
-                    { text: "Kitchen (Space where guests can cook their own meals)", available: true },
-                    { text: "Fridge", available: true },
-                    { text: "Microwave", available: true },
-                    { text: "Cooking basics (Pots and pans, oil, salt and pepper)", available: true },
-                    { text: "Crockery and cutlery (Bowls, chopsticks, plates, cups, etc.)", available: true },
-                    { text: "Freezer", available: true },
-                    { text: "Dishwasher", available: true },
-                    { text: "Oven", available: true },
-                    { text: "Kettle", available: true },
-                    { text: "Coffee maker", available: true },
-                    { text: "Wine glasses", available: true },
-                    { text: "Toaster", available: true },
-                    { text: "Dining table", available: true }
-                ]
-            },
-            {
-                category: "Outdoor",
-                icon: "fa-chair",
-                items: [
-                    { text: "Outdoor furniture", available: true }
-                ]
-            },
-            {
-                category: "Parking and facilities",
-                icon: "fa-square-parking",
-                items: [
-                    { text: "Free parking on premises", available: true },
-                    { text: "Pool (64th Floor Rooftop Infinity Pool)", available: true },
-                    { text: "Lift (Lift doorway 32\" / 81cm wide, depth 52\" / 132cm)", available: true },
-                    { text: "Gym (State-of-the-art fitness center)", available: true }
-                ]
-            },
-            {
-                category: "Not included",
-                icon: "fa-circle-xmark",
-                items: [
-                    { text: "Exterior security cameras on property", available: false },
-                    { text: "Tumble dryer", available: false },
-                    { text: "Heating", available: false }
-                ]
-            }
+                  {
+                            "category": "Bathroom",
+                            "items": [
+                                      {
+                                                "title": "Bath",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bath"
+                                      },
+                                      {
+                                                "title": "Hairdryer",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wind"
+                                      },
+                                      {
+                                                "title": "Cleaning products",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-spray-can-sparkles"
+                                      },
+                                      {
+                                                "title": "Shampoo",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bottle-droplet"
+                                      },
+                                      {
+                                                "title": "Hot water",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-faucet-drip"
+                                      },
+                                      {
+                                                "title": "Shower gel",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-pump-soap"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Bedroom and laundry",
+                            "items": [
+                                      {
+                                                "title": "Washing machine",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-soap"
+                                      },
+                                      {
+                                                "title": "Essentials",
+                                                "subtitle": "Towels, bed sheets, soap and toilet paper",
+                                                "available": true,
+                                                "icon": "fa-solid fa-pump-soap"
+                                      },
+                                      {
+                                                "title": "Hangers",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-shirt"
+                                      },
+                                      {
+                                                "title": "Room-darkening blinds",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-blinds"
+                                      },
+                                      {
+                                                "title": "Iron",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-shirt"
+                                      },
+                                      {
+                                                "title": "Clothes drying rack",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-boxes-packing"
+                                      },
+                                      {
+                                                "title": "Clothes storage: wardrobe",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-door-closed"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Entertainment",
+                            "items": [
+                                      {
+                                                "title": "TV",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-tv"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Family",
+                            "items": [
+                                      {
+                                                "title": "Cot",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-baby-carriage"
+                                      },
+                                      {
+                                                "title": "High chair",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Heating and cooling",
+                            "items": [
+                                      {
+                                                "title": "Air conditioning",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-regular fa-snowflake"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Home safety",
+                            "items": [
+                                      {
+                                                "title": "Exterior security cameras on property",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-video"
+                                      },
+                                      {
+                                                "title": "Smoke alarm",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bell"
+                                      },
+                                      {
+                                                "title": "Carbon monoxide alarm",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-triangle-exclamation"
+                                      },
+                                      {
+                                                "title": "Fire extinguisher",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-fire-extinguisher"
+                                      },
+                                      {
+                                                "title": "First aid kit",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kit-medical"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Internet and office",
+                            "items": [
+                                      {
+                                                "title": "Wifi",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wifi"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Kitchen and dining",
+                            "items": [
+                                      {
+                                                "title": "Kitchen",
+                                                "subtitle": "Space where guests can cook their own meals",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kitchen-set"
+                                      },
+                                      {
+                                                "title": "Fridge",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-snowflake"
+                                      },
+                                      {
+                                                "title": "Microwave",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-tv"
+                                      },
+                                      {
+                                                "title": "Cooking basics",
+                                                "subtitle": "Pots and pans, oil, salt and pepper",
+                                                "available": true,
+                                                "icon": "fa-solid fa-kitchen-set"
+                                      },
+                                      {
+                                                "title": "Crockery and cutlery",
+                                                "subtitle": "Plates, bowls, cups, cutlery and other utensils",
+                                                "available": true,
+                                                "icon": "fa-solid fa-utensils"
+                                      },
+                                      {
+                                                "title": "Freezer",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-snowflake"
+                                      },
+                                      {
+                                                "title": "Dishwasher",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-faucet"
+                                      },
+                                      {
+                                                "title": "Oven",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-fire-burner"
+                                      },
+                                      {
+                                                "title": "Kettle",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-mug-hot"
+                                      },
+                                      {
+                                                "title": "Coffee maker",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-mug-saucer"
+                                      },
+                                      {
+                                                "title": "Wine glasses",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-wine-glass"
+                                      },
+                                      {
+                                                "title": "Toaster",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-bread-slice"
+                                      },
+                                      {
+                                                "title": "Dining table",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Outdoor",
+                            "items": [
+                                      {
+                                                "title": "Private patio or balcony",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-panorama"
+                                      },
+                                      {
+                                                "title": "Outdoor furniture",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-chair"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Parking and facilities",
+                            "items": [
+                                      {
+                                                "title": "Free multistorey car park on premises",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-car"
+                                      },
+                                      {
+                                                "title": "Pool",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-person-swimming"
+                                      },
+                                      {
+                                                "title": "Lift",
+                                                "subtitle": "The home or building has a lift that’s at least 52 inches (132cm) deep and a doorway at least 32 inches (81cm) wide",
+                                                "available": true,
+                                                "icon": "fa-solid fa-elevator"
+                                      },
+                                      {
+                                                "title": "Gym",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-dumbbell"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Services",
+                            "items": [
+                                      {
+                                                "title": "Host greets you",
+                                                "subtitle": "",
+                                                "available": true,
+                                                "icon": "fa-solid fa-user-check"
+                                      }
+                            ]
+                  },
+                  {
+                            "category": "Not included",
+                            "items": [
+                                      {
+                                                "title": "Private entrance",
+                                                "subtitle": "",
+                                                "available": false,
+                                                "icon": "fa-solid fa-door-closed"
+                                      },
+                                      {
+                                                "title": "Heating",
+                                                "subtitle": "",
+                                                "available": false,
+                                                "icon": "fa-solid fa-temperature-arrow-down"
+                                      }
+                            ]
+                  }
         ]
     }
 };
@@ -1402,7 +1850,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Support direct photo tour query / hash route
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('modal') === 'PHOTO_TOUR_SCROLLABLE' || window.location.hash.includes('PHOTO_TOUR_SCROLLABLE')) {
+    if (urlParams.get('modal') === 'AMENITIES' || window.location.hash.includes('amenities') || window.location.pathname.includes('/amenities')) {
+        const propId = (window.location.hash.includes('burj-vista') || urlParams.get('room_id') === '1762128215305557732' || urlParams.get('prop') === 'burj-vista') ? 'burj-vista' : 'paramount';
+        openPropertyDetail(propId);
+        openAmenitiesModalDirect(propId);
+    } else if (urlParams.get('modal') === 'PHOTO_TOUR_SCROLLABLE' || window.location.hash.includes('PHOTO_TOUR_SCROLLABLE')) {
         const propId = (window.location.hash.includes('burj-vista') || urlParams.get('room_id') === '1762128215305557732' || urlParams.get('prop') === 'burj-vista') ? 'burj-vista' : 'paramount';
         openPropertyDetail(propId);
         openPhotoGalleryModal(propId);
@@ -1940,21 +2392,34 @@ function openPropertyDetail(propId) {
                     <div id="pdpAmenitiesSection" style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">What this place offers</h3>
                         
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; font-size: 16px; color: #222222; margin-bottom: 24px;">
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-water-ladder" style="width: 24px; font-size: 20px; color: #222;"></i> <span>${isParamount ? '64th Floor Rooftop Infinity Pool' : 'Residences Swimming Pool with Burj View'}</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-eye" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Burj Khalifa & Skyline view</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Fast wifi (Free high-speed)</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-square-parking" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Free parking on premises</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-utensils" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Fully equipped kitchen</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-dumbbell" style="width: 24px; font-size: 20px; color: #222;"></i> <span>State-of-the-art gym</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 20px; color: #222;"></i> <span>65" & 55" 4K Smart TVs</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-snowflake" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Central air conditioning</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-elevator" style="width: 24px; font-size: 20px; color: #222;"></i> <span>High-speed elevator</span></div>
-                            <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-shield-halved" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Smoke & Carbon monoxide alarms</span></div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; font-size: 16px; color: #222222; margin-bottom: 28px;">
+                            ${isParamount ? `
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-kitchen-set" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Kitchen</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Wifi</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-car" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Free multistorey car park on premises</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-person-swimming" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Pool</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 20px; color: #222;"></i> <span>TV</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-elevator" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Lift</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-soap" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Washing machine</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-regular fa-snowflake" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Air conditioning</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-bath" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Bath</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-baby-carriage" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Cot</span></div>
+                            ` : `
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-kitchen-set" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Kitchen</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-wifi" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Wifi</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-car" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Free multistorey car park on premises</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-person-swimming" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Pool</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-tv" style="width: 24px; font-size: 20px; color: #222;"></i> <span>TV</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-elevator" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Lift</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-soap" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Washing machine</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-regular fa-snowflake" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Air conditioning</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-bath" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Bath</span></div>
+                                <div style="display: flex; align-items: center; gap: 16px;"><i class="fa-solid fa-dumbbell" style="width: 24px; font-size: 20px; color: #222;"></i> <span>Gym</span></div>
+                            `}
                         </div>
 
-                        <button onclick="openAmenitiesModalDirect('${propId}')" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background 0.2s;">
-                            Show all ${data.categorizedAmenities ? '35+' : '50+'} amenities
+                        <button onclick="openAmenitiesModalDirect('${propId}')" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='#FFFFFF'">
+                            Show all ${isParamount ? '41' : '43'} amenities
                         </button>
                     </div>
 
@@ -3029,36 +3494,158 @@ function searchModalReviewsList(query) {
 }
 
 // -------------------------------------------------------------
-// AMENITIES MODAL DIRECT
+// EXACT AIRBNB AMENITIES MODAL ENGINE (100% Match to Reference)
 // -------------------------------------------------------------
 function openAmenitiesModalDirect(propId) {
     const targetId = propId || window.currentPropertyId || 'paramount';
     const data = PROPERTIES_DATA[targetId];
-    const amenitiesModal = document.getElementById('amenitiesModal');
-    if (!amenitiesModal) return;
+    if (!data) return;
 
-    if (data && data.categorizedAmenities) {
-        const modalContainer = amenitiesModal.querySelector('.modal-scroll-body');
-        if (modalContainer) {
-            modalContainer.innerHTML = `
-                <div class="amenities-category-list">
-                    ${data.categorizedAmenities.map(cat => `
-                        <div class="amenity-cat-block ${cat.category === 'Not included' ? 'unavailable-block' : ''}">
-                            <h4 class="cat-title ${cat.category === 'Not included' ? 'text-muted' : ''}"><i class="fa-solid ${cat.icon}"></i> ${cat.category}</h4>
-                            <ul class="cat-items">
-                                ${cat.items.map(item => `
-                                    <li class="${!item.available ? 'unavailable' : ''}">
-                                        <i class="fa-solid ${item.available ? 'fa-check' : 'fa-xmark'}"></i> ${item.text}
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
+    let amenitiesModal = document.getElementById('amenitiesModal');
+    if (!amenitiesModal) {
+        amenitiesModal = document.createElement('div');
+        amenitiesModal.id = 'amenitiesModal';
+        document.body.appendChild(amenitiesModal);
     }
-    amenitiesModal.style.display = 'block';
+
+    const categories = data.categorizedAmenities || [];
+
+    amenitiesModal.className = 'modal-overlay active';
+    amenitiesModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    `;
+
+    amenitiesModal.innerHTML = `
+        <div class="airbnb-amenities-dialog" style="background: #FFFFFF; border-radius: 24px; width: 100%; max-width: 780px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 16px 48px rgba(0,0,0,0.22); overflow: hidden; position: relative;">
+            
+            <!-- Sticky Modal Header (Exact Reference Match) -->
+            <div style="padding: 24px 28px 16px; display: flex; flex-direction: column; border-bottom: 1px solid #EBEBEB; position: sticky; top: 0; background: #FFFFFF; z-index: 10;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: #222222; margin: 0;">What this place offers</h2>
+                    <button onclick="closeAmenitiesModal()" style="background: none; border: none; font-size: 16px; cursor: pointer; color: #222222; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='none'" title="Close">
+                        <i class="fa-solid fa-xmark" style="font-size: 18px;"></i>
+                    </button>
+                </div>
+                
+                <!-- Search Amenities Pill Input (Exact Reference Match) -->
+                <div id="amenitiesSearchWrapper" style="display: flex; align-items: center; gap: 12px; border: 1px solid #B0B0B0; border-radius: 9999px; padding: 12px 18px; background: #FFFFFF; transition: border-color 0.2s, box-shadow 0.2s;">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 16px; color: #717171;"></i>
+                    <input type="text" id="amenitiesSearchInput" placeholder="Search amenities" style="border: none; outline: none; width: 100%; font-size: 15px; color: #222222; background: transparent; font-family: inherit;" oninput="filterAmenities(this.value)">
+                    <button id="clearAmenitiesSearchBtn" onclick="clearAmenitiesSearch()" style="display: none; background: none; border: none; cursor: pointer; color: #717171; font-size: 14px; padding: 0 4px;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable Categories & Amenities List (Exact Reference Match) -->
+            <div id="amenitiesScrollContainer" style="padding: 8px 28px 32px; overflow-y: auto; -webkit-overflow-scrolling: touch; flex: 1;">
+                ${categories.map(cat => `
+                    <div class="amenity-category-block" data-category="${cat.category}">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #222222; margin: 28px 0 4px;">${cat.category}</h3>
+                        <div>
+                            ${cat.items.map(item => `
+                                <div class="amenity-item-row" data-text="${(item.title + ' ' + (item.subtitle || '')).toLowerCase()}" style="display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid #EBEBEB;">
+                                    <div style="width: 28px; text-align: center; flex-shrink: 0; padding-top: 2px;">
+                                        <i class="${item.icon}" style="font-size: 22px; color: ${item.available ? '#222222' : '#717171'};"></i>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 16px; font-weight: 400; color: ${item.available ? '#222222' : '#717171'}; line-height: 1.4; ${item.available ? '' : 'text-decoration: line-through;'}">
+                                            ${item.title}
+                                        </div>
+                                        ${item.subtitle ? `<div style="font-size: 14px; color: #717171; margin-top: 4px; line-height: 1.4;">${item.subtitle}</div>` : ''}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+        </div>
+    `;
+
+    document.body.style.overflow = 'hidden';
+
+    // Click outside backdrop to close
+    amenitiesModal.onclick = (e) => {
+        if (e.target === amenitiesModal) {
+            closeAmenitiesModal();
+        }
+    };
+}
+
+function closeAmenitiesModal() {
+    const amenitiesModal = document.getElementById('amenitiesModal');
+    if (amenitiesModal) {
+        amenitiesModal.style.display = 'none';
+        amenitiesModal.style.opacity = '0';
+        amenitiesModal.style.visibility = 'hidden';
+        amenitiesModal.style.pointerEvents = 'none';
+        amenitiesModal.classList.remove('active');
+    }
+    document.body.style.overflow = 'auto';
+}
+
+function filterAmenities(query) {
+    const q = (query || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('clearAmenitiesSearchBtn');
+    if (clearBtn) clearBtn.style.display = q ? 'block' : 'none';
+
+    const catBlocks = document.querySelectorAll('.amenity-category-block');
+    let totalVisible = 0;
+
+    catBlocks.forEach(block => {
+        const rows = block.querySelectorAll('.amenity-item-row');
+        let visibleInCat = 0;
+        rows.forEach(row => {
+            const text = row.getAttribute('data-text') || '';
+            if (!q || text.includes(q)) {
+                row.style.display = 'flex';
+                visibleInCat++;
+                totalVisible++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        block.style.display = visibleInCat > 0 ? 'block' : 'none';
+    });
+
+    let noResults = document.getElementById('amenitiesNoResults');
+    if (totalVisible === 0) {
+        if (!noResults) {
+            noResults = document.createElement('div');
+            noResults.id = 'amenitiesNoResults';
+            noResults.style.cssText = 'text-align: center; padding: 48px 24px; color: #717171; font-size: 16px;';
+            const container = document.getElementById('amenitiesScrollContainer');
+            if (container) container.appendChild(noResults);
+        }
+        noResults.innerText = 'No amenities found matching "' + query + '"';
+        noResults.style.display = 'block';
+    } else if (noResults) {
+        noResults.style.display = 'none';
+    }
+}
+
+function clearAmenitiesSearch() {
+    const input = document.getElementById('amenitiesSearchInput');
+    if (input) {
+        input.value = '';
+        filterAmenities('');
+        input.focus();
+    }
 }
 
 // -------------------------------------------------------------
