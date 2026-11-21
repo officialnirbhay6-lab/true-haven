@@ -1625,6 +1625,7 @@ function openPropertyDetail(propId) {
     if (!data) return;
 
     window.currentPropertyId = propId;
+    const isParamount = (propId === 'paramount');
     const pageContainer = document.getElementById('propertyDetailPage');
     const mainPage = document.getElementById('mainPage');
     if (!pageContainer || !mainPage) return;
@@ -1663,9 +1664,7 @@ function openPropertyDetail(propId) {
             </div>
         </div>
     `;
-
     // Exact data matching reference images
-    const isParamount = (propId === 'paramount');
     
     // Price display matching exact Airbnb reference images
     const priceDisplay = isParamount ? '₹51,314' : '₹56,379';
