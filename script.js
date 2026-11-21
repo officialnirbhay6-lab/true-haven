@@ -1391,7 +1391,7 @@ This one-bedroom apartment in Business Bay near Downtown offers five-star amenit
         googleMapsUrl: 'https://www.google.com/maps/place/Burj+Vista+-+Sheikh+Mohammed+bin+Rashid+Blvd+-+Burj+Khalifa+-+Downtown+Dubai+-+Dubai+-+United+Arab+Emirates/@25.1984477,55.2681828,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f42808f1ff1f9:0x881a49d26650dce8!8m2!3d25.1984429!4d55.2707577!16s%2Fg%2F11f147nrcy?hl=en&entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D',
         googleMapsEmbedUrl: 'https://maps.google.com/maps?q=25.1984429,55.2707577&hl=en&z=16&output=embed',
         neighborhoodTitle: 'Downtown Dubai',
-        neighborhoodDesc: 'Located along Sheikh Mohammed Bin Rashid Boulevard, Burj Vista is directly connected to Dubai Mall and the Burj Khalifa / Dubai Metro station via an internal air-conditioned sky bridge. You are mere steps away from the Dubai Fountain, Dubai Opera, and Downtown’s world-renowned dining and shopping destinations.',
+        neighborhoodDesc: '',
         aboutThisSpace: `Wake up to sweeping views of the Burj Khalifa and the Dubai Fountain from this luxurious one-bedroom apartment in the heart of Downtown Dubai.
 
 Enjoy five-star building amenities and a stylish, comfortable interior, directly connected to Dubai Mall and Dubai Metro through an internal AC skybridge. Perfect for couples, families, or business travellers looking for comfort and convenience in one of the city's most iconic addresses.`,
