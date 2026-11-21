@@ -1252,6 +1252,35 @@ function toggleSaveProperty(btn) {
 }
 
 // Open Full-Page Immersive Property Detail View (Matching Airbnb Layout & Hierarchy)
+
+// -------------------------------------------------------------
+// AIRBNB CAROUSEL SLIDER ENGINE (Exact Airbnb Image 1 & 2 Match)
+// -------------------------------------------------------------
+function scrollAirbnbCarousel(carouselId, direction) {
+    const el = document.getElementById(carouselId);
+    if (!el) return;
+    const scrollAmount = direction === 'left' ? -280 : 280;
+    el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+}
+
+function updateAirbnbCarouselNav(carouselId, prevWrapId, nextWrapId) {
+    const el = document.getElementById(carouselId);
+    const prev = document.getElementById(prevWrapId);
+    const next = document.getElementById(nextWrapId);
+    if (!el) return;
+
+    // Tolerance for subpixel scroll rendering
+    const atStart = el.scrollLeft <= 8;
+    const atEnd = (el.scrollLeft + el.clientWidth) >= (el.scrollWidth - 10);
+
+    if (prev) {
+        prev.style.display = atStart ? 'none' : 'flex';
+    }
+    if (next) {
+        next.style.display = atEnd ? 'none' : 'flex';
+    }
+}
+
 function openPropertyDetail(propId) {
     const data = PROPERTIES_DATA[propId];
     if (!data) return;
@@ -1570,7 +1599,7 @@ function openPropertyDetail(propId) {
                     ` : ''}
 
                     <!-- Amenities Section ("What this place offers" matching Airbnb) -->
-                    <div id="pdpAmenitiesSection" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
+                    <div id="pdpAmenitiesSection" style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
                         <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">What this place offers</h3>
                         
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; font-size: 16px; color: #222222; margin-bottom: 24px;">
@@ -1591,288 +1620,60 @@ function openPropertyDetail(propId) {
                         </button>
                     </div>
 
-                    <!-- Reviews Section (Grand Reviews Hero & Breakdown - Exact Image 3 Match) -->
-                    <div id="pdpReviewsSection" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB;">
-                        
-                        <!-- Laurel Wreath Hero Centered (Image 3) -->
-                        <div style="text-align: center; margin-bottom: 28px;">
-                            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px;">
-                                <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0;">
-                                    <defs>
-                                        <linearGradient id="laurelGoldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#E2B148" />
-                                            <stop offset="50%" stop-color="#F9D976" />
-                                            <stop offset="100%" stop-color="#B8860B" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldLeft)" stroke-width="2.5" stroke-linecap="round" />
-                                    <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldLeft)" />
-                                    <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldLeft)" />
-                                    <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldLeft)" />
-                                    <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldLeft)" />
-                                    <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldLeft)" />
-                                    <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldLeft)" />
-                                </svg>
-                                <div style="font-size: 72px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${ratingDisplay}</div>
-                                <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0; transform: scaleX(-1);">
-                                    <defs>
-                                        <linearGradient id="laurelGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#E2B148" />
-                                            <stop offset="50%" stop-color="#F9D976" />
-                                            <stop offset="100%" stop-color="#B8860B" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldRight)" stroke-width="2.5" stroke-linecap="round" />
-                                    <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldRight)" />
-                                    <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldRight)" />
-                                    <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldRight)" />
-                                    <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldRight)" />
-                                    <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldRight)" />
-                                    <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldRight)" />
-                                </svg>
-                            </div>
-                            <div style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 6px;">Guest favourite</div>
-                            <div style="font-size: 15px; color: #717171; max-width: 480px; margin: 0 auto 6px; line-height: 1.45;">
-                                This home is in the <strong style="color: #222222; font-weight: 700;">top 10%</strong> of eligible listings based on ratings, reviews and reliability
-                            </div>
-                            <a href="#" onclick="openReviewsModal('${propId}'); return false;" style="font-size: 13px; color: #717171; text-decoration: underline;">How reviews work</a>
+                    <!-- Calendar / Dates Section (Exact Image 4 Match) -->
+                    <div id="pdpCalendarSection" style="margin-bottom: 32px; padding-bottom: 24px;">
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 4px;">2 nights in Dubai</h3>
+                            <p style="font-size: 14px; color: #717171; margin: 0;">14 Dec 2026 – 16 Dec 2026</p>
                         </div>
 
-                        <!-- 7-Column Rating Breakdown Grid (Exact Image 3 Match) -->
-                        <div class="rating-breakdown-7cols">
-                            <!-- Overall rating -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 10px;">Overall rating</div>
-                                <div style="display: flex; flex-direction: column; gap: 4px;">
-                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
-                                        <span style="width: 8px;">5</span>
-                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px; overflow: hidden;">
-                                            <div style="width: 100%; height: 100%; background: #222222;"></div>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
-                                        <span style="width: 8px;">4</span>
-                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
-                                        <span style="width: 8px;">3</span>
-                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
-                                        <span style="width: 8px;">2</span>
-                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
-                                        <span style="width: 8px;">1</span>
-                                        <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
-                                    </div>
+                        <!-- 2 Months Side by Side Calendar matching Image 4 -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+                            <!-- Month 1: November 2026 -->
+                            <div>
+                                <div style="font-weight: 700; font-size: 15px; color: #222222; text-align: center; margin-bottom: 16px;">November 2026</div>
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; color: #717171; margin-bottom: 10px; font-weight: 600;">
+                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 13px; font-weight: 500; color: #222222;">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                                    <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                                    <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                                    <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+                                    <span>29</span><span>30</span>
                                 </div>
                             </div>
 
-                            <!-- Cleanliness -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-                            </div>
-
-                            <!-- Accuracy -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Accuracy</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-circle-check"></i></div>
-                            </div>
-
-                            <!-- Check-in -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Check-in</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-key"></i></div>
-                            </div>
-
-                            <!-- Communication -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Communication</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-message"></i></div>
-                            </div>
-
-                            <!-- Location -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Location</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-map-location-dot"></i></div>
-                            </div>
-
-                            <!-- Value -->
-                            <div class="rating-col-item">
-                                <div style="font-size: 13px; font-weight: 600; color: #222222;">Value</div>
-                                <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
-                                <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-tag"></i></div>
-                            </div>
-                        </div>
-
-                        <!-- Divider -->
-                        <div style="height: 1px; background: #EBEBEB; margin: 32px 0 24px;"></div>
-
-                        <!-- Guests mention Pills Row (Exact Image 3 Match) -->
-                        <h3 style="font-size: 18px; font-weight: 700; color: #222222; margin-bottom: 16px;">Guests mention</h3>
-
-                        <div class="guests-mention-pills-wrap" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px;">
-                            ${isParamount ? `
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏊 Pool 4</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 9</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 10</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 5</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏷️ Amenities 3</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 3</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏢 Condition 2</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📦 Value 2</button>
-                            ` : `
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 11</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 11</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 7</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 5</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🔢 Check-in 3</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🗺️ Nearby 3</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">👟 Walkability 2</button>
-                                <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🚆 Getting around &gt;</button>
-                            `}
-                        </div>
-
-                        <!-- Property Specific Reviews Grid -->
-                        <div id="pdpInlineReviewsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 28px; margin-bottom: 28px;">
-                            ${reviews.slice(0, 6).map(rev => `
-                                <div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                    <div>
-                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                                            ${rev.avatarUrl ? `
-                                                <img src="${rev.avatarUrl}" alt="${rev.name}" style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
-                                            ` : `
-                                                <div style="width: 46px; height: 46px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">
-                                                    ${rev.initial || rev.name.charAt(0)}
-                                                </div>
-                                            `}
-                                            <div>
-                                                <div style="font-size: 16px; font-weight: 700; color: #222;">${rev.name}</div>
-                                                <div style="font-size: 13px; color: #717171;">${rev.location || 'Verified Guest'}</div>
-                                            </div>
-                                        </div>
-                                        <div style="font-size: 12px; font-weight: 600; color: #222; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-                                            <span>${'★'.repeat(rev.rating || 5)}</span>
-                                            <span style="color: #717171; font-weight: 400;">· ${rev.time}${rev.stay ? ' · ' + rev.stay : ''}</span>
-                                        </div>
-                                        <p style="font-size: 14px; color: #374151; line-height: 1.55; margin: 0;">"${rev.text}"</p>
-                                    </div>
+                            <!-- Month 2: December 2026 -->
+                            <div>
+                                <div style="font-weight: 700; font-size: 15px; color: #222222; text-align: center; margin-bottom: 16px;">December 2026</div>
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; color: #717171; margin-bottom: 10px; font-weight: 600;">
+                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
                                 </div>
-                            `).join('')}
-                        </div>
-
-                        <button onclick="openReviewsModal('${propId}')" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s;">
-                            Show all ${reviewsCount} reviews
-                        </button>
-                    </div>
-
-                    <!-- Location Map ("Where you'll be" - Interactive Google Maps Embed) -->
-                    <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid #EBEBEB;">
-                        <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
-                            <div>
-                                <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
-                                <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 13px; font-weight: 500; color: #222222;">
+                                    <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                                    <span>13</span>
+                                    <span style="background: #222222; color: #FFFFFF; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">14</span>
+                                    <span style="background: #F7F7F7; color: #222222; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">15</span>
+                                    <span style="background: #222222; color: #FFFFFF; border-radius: 50%; font-weight: 700; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">16</span>
+                                    <span>17</span><span>18</span><span>19</span>
+                                    <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+                                    <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                                </div>
                             </div>
-                            <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #222222; text-decoration: none; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; background: #FFFFFF; transition: background 0.2s;">
-                                <i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>
-                                <span>Open in Google Maps</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
-                            </a>
-                        </div>
-                        
-                        <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 440px; border: 1px solid #DDDDDD; background: #E5E7EB;">
-                            <!-- Floating Search Pill (Airbnb Match, positioned top-right so it never blocks Google Maps info box) -->
-                            <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); cursor: pointer;">
-                                <i class="fa-solid fa-magnifying-glass" style="font-size: 13px; color: #222222;"></i>
-                                <span>Find things to do</span>
-                            </div>
-
-                            <!-- Interactive Google Maps Embed -->
-                            <iframe
-                                id="propertyMapIframe"
-                                src="${data.googleMapsEmbedUrl}"
-                                width="100%"
-                                height="100%"
-                                style="border: 0; width: 100%; height: 100%; display: block;"
-                                allowfullscreen=""
-                                loading="eager"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="${data.name} Location Map">
-                            </iframe>
                         </div>
 
-                        <div style="margin-top: 24px;">
-                            <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 8px;">${data.neighborhoodTitle || 'Dubai Prime Neighborhood'}</h4>
-                            <p style="font-size: 14px; color: #374151; line-height: 1.6;">${data.neighborhoodDesc || data.location}</p>
+                        <!-- Calendar Footer (Exact Image 4 Match) -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; font-size: 14px;">
+                            <span style="color: #222222; font-size: 18px; cursor: pointer;" title="Keyboard shortcuts"><i class="fa-regular fa-keyboard"></i></span>
+                            <button onclick="alert('Select dates directly on Airbnb reservation');" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline; cursor: pointer;">Clear dates</button>
                         </div>
                     </div>
 
-                    <!-- Payment Protection Banner (Exact Image 4 Match) -->
-                    <div style="border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 22px 0; margin: 36px 0 28px; display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
-                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" style="flex-shrink: 0;">
-                            <path d="M16 3L5 7V15C5 21.8 9.7 28.1 16 29.8C22.3 28.1 27 21.8 27 15V7L16 3Z" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 16L15 19L20 13" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <div style="font-size: 14px; color: #717171; max-width: 650px; line-height: 1.45;">
-                            To help protect your payment, always use Airbnb to send money and communicate with hosts.
-                        </div>
-                    </div>
+                </div> <!-- END detail-left-col -->
 
-                    <!-- Things to Know (5-Item Grid - Exact Image 4 Match) -->
-                    <div class="things-to-know-section" style="margin-bottom: 48px;">
-                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">Things to know</h3>
-                        
-                        <div class="ttk-grid-5cols" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px;">
-                            <!-- Instant Book -->
-                            <div>
-                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">⚡</div>
-                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Instant Book</h4>
-                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">You can book this stay without waiting for host approval.</p>
-                            </div>
-
-                            <!-- Check in -->
-                            <div>
-                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🚪</div>
-                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Check in after 3:00 pm</h4>
-                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">Check out before 11:00 am, self check-in with smart lock</p>
-                            </div>
-
-                            <!-- House rules -->
-                            <div>
-                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📋</div>
-                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">House rules</h4>
-                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Review these details for a smooth stay.</p>
-                                <a href="#" onclick="openHouseRulesModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
-                            </div>
-
-                            <!-- Safety & property -->
-                            <div>
-                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🛡️</div>
-                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Safety & property</h4>
-                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Carbon monoxide alarm, smoke alarm</p>
-                                <a href="#" onclick="openSafetyModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
-                            </div>
-
-                            <!-- Free cancellation -->
-                            <div>
-                                <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📅</div>
-                                <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Free cancellation before 30 November. Cancel before 7 December for a partial refund.</h4>
-                                <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Review this host's full policy for details.</p>
-                                <a href="#" onclick="openCancellationModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 Match) -->
+                <!-- Right Column Sticky Reservation Booking Engine (Exact Image 1 & 4 Match) -->
                 <div class="detail-right-col" style="position: sticky; top: 100px;">
                     
                     <!-- Top Pill Card (Exact Image 1 Match) -->
@@ -1888,52 +1689,48 @@ function openPropertyDetail(propId) {
                         </div>
                     `}
 
-                    <!-- Main Booking Box (Exact Image 1 Match) -->
-                    <div class="booking-card-airbnb" style="border: 1px solid #DDDDDD; border-radius: 12px; padding: 24px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); background: #FFFFFF;">
+                    <!-- Sticky Booking Card -->
+                    <div class="booking-card-airbnb" style="border: 1px solid #DDDDDD; border-radius: 16px; padding: 24px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); background: #FFFFFF;">
                         
-                        <!-- Price Header Line -->
-                        <div style="margin-bottom: 22px; display: flex; align-items: baseline; flex-wrap: wrap;">
-                            ${strikethroughPrice ? `
-                                <span id="bookingCardStrikethrough" style="font-size: 18px; color: #717171; text-decoration: line-through; margin-right: 8px;">${strikethroughPrice}</span>
-                            ` : ''}
-                            <span id="bookingCardPrice" style="font-size: 22px; font-weight: 700; color: #222222; text-decoration: underline;">${priceDisplay}</span>
-                            <span id="bookingCardPeriod" style="font-size: 15px; color: #222222; font-weight: 400; margin-left: 4px;">for 2 nights</span>
+                        <!-- Nightly Price Header -->
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px;">
+                            ${strikethroughPrice ? `<span style="font-size: 18px; color: #717171; text-decoration: line-through;">${strikethroughPrice}</span>` : ''}
+                            <span style="font-size: 24px; font-weight: 800; color: #222222;">${priceDisplay}</span>
+                            <span style="font-size: 16px; color: #717171;">for 2 nights</span>
                         </div>
 
-                        <!-- Exact Airbnb Date & Guest Box (Exact Image 1 Match) -->
+                        <!-- Date Picker / Guest Selector Box -->
                         <div style="border: 1px solid #B0B0B0; border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
-                            <!-- Top Row: Check-in / Checkout -->
                             <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #B0B0B0;">
-                                <div style="padding: 10px 14px; border-right: 1px solid #B0B0B0; background: #FFFFFF;">
-                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">CHECK-IN</div>
-                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">12/14/2026</div>
+                                <div style="padding: 10px 12px; border-right: 1px solid #B0B0B0; cursor: pointer;">
+                                    <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #222222; letter-spacing: 0.5px;">Check-in</div>
+                                    <div style="font-size: 14px; color: #222222; margin-top: 2px;">12/14/2026</div>
                                 </div>
-                                <div style="padding: 10px 14px; background: #FFFFFF;">
-                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">CHECKOUT</div>
-                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">12/16/2026</div>
+                                <div style="padding: 10px 12px; cursor: pointer;">
+                                    <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #222222; letter-spacing: 0.5px;">Checkout</div>
+                                    <div style="font-size: 14px; color: #222222; margin-top: 2px;">12/16/2026</div>
                                 </div>
                             </div>
-                            <!-- Bottom Row: Guests -->
-                            <div style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; background: #FFFFFF;">
+                            <div style="padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
                                 <div>
-                                    <div style="font-size: 10px; font-weight: 800; color: #222222; letter-spacing: 0.5px; line-height: 1; margin-bottom: 4px;">GUESTS</div>
-                                    <div style="font-size: 14px; font-weight: 400; color: #222222; line-height: 1.2;">1 guest</div>
+                                    <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #222222; letter-spacing: 0.5px;">Guests</div>
+                                    <div style="font-size: 14px; color: #222222; margin-top: 2px;">1 guest</div>
                                 </div>
                                 <i class="fa-solid fa-chevron-down" style="font-size: 13px; color: #222222;"></i>
                             </div>
                         </div>
 
-                        <!-- Free Cancellation Notice Pill -->
-                        <div style="background: #F7F7F7; border-radius: 8px; padding: 12px 14px; text-align: center; font-size: 13px; font-weight: 500; color: #222222; margin-bottom: 16px;">
+                        <!-- Free Cancellation Banner -->
+                        <div style="background: #F7F7F7; border-radius: 8px; padding: 12px; text-align: center; font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 16px;">
                             Free cancellation before 30 November
                         </div>
 
-                        <!-- Primary Reserve Button (Hot Pink Airbnb Style) -->
-                        <a href="${data.airbnbUrl}" id="airbnbReserveBtn" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 48px; border-radius: 8px; background: #E51D56; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;">
+                        <!-- Reserve Button -->
+                        <a href="${data.airbnbUrl}" target="_blank" style="display: block; width: 100%; text-align: center; background: #E51D56; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 14px; border-radius: 8px; text-decoration: none; transition: background 0.2s; box-shadow: 0 2px 4px rgba(229,29,86,0.2);">
                             Reserve
                         </a>
 
-                        <div style="text-align: center; font-size: 14px; color: #717171; margin-top: 14px; margin-bottom: 4px;">
+                        <div style="text-align: center; font-size: 14px; color: #717171; margin-top: 14px;">
                             You won't be charged yet
                         </div>
                     </div>
@@ -1946,8 +1743,309 @@ function openPropertyDetail(propId) {
                     </div>
                 </div>
 
+            </div> <!-- END detail-body-layout (Two-Column Section Ends Here) -->
+
+            <!-- Full-Width Divider Line (Exact Image 4 Match) -->
+            <div style="height: 1px; background: #EBEBEB; margin: 48px 0;"></div>
+
+            <!-- Full-Width Reviews Section (Grand Reviews Hero & Breakdown - Exact Image 1 & 4 Match) -->
+            <div id="pdpReviewsSection" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB; width: 100%;">
+                
+                <!-- Laurel Wreath Hero Centered (Image 1 & 4) -->
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px;">
+                        <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0;">
+                            <defs>
+                                <linearGradient id="laurelGoldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E2B148" />
+                                    <stop offset="50%" stop-color="#F9D976" />
+                                    <stop offset="100%" stop-color="#B8860B" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldLeft)" stroke-width="2.5" stroke-linecap="round" />
+                            <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldLeft)" />
+                            <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldLeft)" />
+                            <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldLeft)" />
+                            <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldLeft)" />
+                            <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldLeft)" />
+                            <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldLeft)" />
+                        </svg>
+                        <div style="font-size: 72px; font-weight: 800; color: #222222; line-height: 1; letter-spacing: -1px;">${ratingDisplay}</div>
+                        <svg viewBox="0 0 40 60" width="36" height="54" style="flex-shrink: 0; transform: scaleX(-1);">
+                            <defs>
+                                <linearGradient id="laurelGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E2B148" />
+                                    <stop offset="50%" stop-color="#F9D976" />
+                                    <stop offset="100%" stop-color="#B8860B" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 28 55 C 16 42 10 24 22 5" fill="none" stroke="url(#laurelGoldRight)" stroke-width="2.5" stroke-linecap="round" />
+                            <ellipse cx="27" cy="50" rx="3.5" ry="6.5" transform="rotate(-30 27 50)" fill="url(#laurelGoldRight)" />
+                            <ellipse cx="20" cy="42" rx="3.5" ry="7" transform="rotate(-40 20 42)" fill="url(#laurelGoldRight)" />
+                            <ellipse cx="14" cy="32" rx="3.5" ry="7.5" transform="rotate(-35 14 32)" fill="url(#laurelGoldRight)" />
+                            <ellipse cx="12" cy="22" rx="3.5" ry="7.5" transform="rotate(-25 12 22)" fill="url(#laurelGoldRight)" />
+                            <ellipse cx="15" cy="12" rx="3.2" ry="7" transform="rotate(-10 15 12)" fill="url(#laurelGoldRight)" />
+                            <ellipse cx="22" cy="5" rx="3" ry="6" transform="rotate(15 22 5)" fill="url(#laurelGoldRight)" />
+                        </svg>
+                    </div>
+                    <div style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 6px;">Guest favourite</div>
+                    <div style="font-size: 15px; color: #717171; max-width: 480px; margin: 0 auto 6px; line-height: 1.45;">
+                        This home is in the <strong style="color: #222222; font-weight: 700;">top 10%</strong> of eligible listings based on ratings, reviews and reliability
+                    </div>
+                    <a href="#" onclick="openReviewsModal('${propId}'); return false;" style="font-size: 13px; color: #717171; text-decoration: underline;">How reviews work</a>
+                </div>
+
+                <!-- 7-Column Rating Breakdown Grid (Exact Image 1 & 4 Match: Full Width Fit to Screen) -->
+                <div class="rating-breakdown-7cols">
+                    <!-- Overall rating -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 10px;">Overall rating</div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                <span style="width: 8px;">5</span>
+                                <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px; overflow: hidden;">
+                                    <div style="width: 100%; height: 100%; background: #222222;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                <span style="width: 8px;">4</span>
+                                <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                <span style="width: 8px;">3</span>
+                                <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                <span style="width: 8px;">2</span>
+                                <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
+                                <span style="width: 8px;">1</span>
+                                <div style="flex: 1; height: 4px; background: #EBEBEB; border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cleanliness -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                    </div>
+
+                    <!-- Accuracy -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Accuracy</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-circle-check"></i></div>
+                    </div>
+
+                    <!-- Check-in -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Check-in</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-key"></i></div>
+                    </div>
+
+                    <!-- Communication -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Communication</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-regular fa-message"></i></div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Location</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-map-location-dot"></i></div>
+                    </div>
+
+                    <!-- Value -->
+                    <div class="rating-col-item">
+                        <div style="font-size: 13px; font-weight: 600; color: #222222;">Value</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #222222; margin: 4px 0 12px;">5.0</div>
+                        <div style="font-size: 22px; color: #222222;"><i class="fa-solid fa-tag"></i></div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div style="height: 1px; background: #EBEBEB; margin: 32px 0 24px;"></div>
+
+                <!-- Guests mention Pills with Interactive Circular Slide Buttons (Exact Image 1 & 3 Match) -->
+                <h3 style="font-size: 18px; font-weight: 700; color: #222222; margin-bottom: 16px;">Guests mention</h3>
+
+                <div class="pdp-mention-carousel-wrapper" style="position: relative; margin-bottom: 28px;">
+                    <!-- Left Arrow Button with Gradient Fade -->
+                    <div id="pdpMentionPrevWrap" style="display: none; position: absolute; left: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to right, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-start; pointer-events: none;">
+                        <button onclick="scrollAirbnbCarousel('pdpMentionPillsScroll', 'left')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                            <i class="fa-solid fa-chevron-left" style="font-size: 11px; color: #222222;"></i>
+                        </button>
+                    </div>
+
+                    <!-- Scrollable Mention Pills -->
+                    <div id="pdpMentionPillsScroll" onscroll="updateAirbnbCarouselNav('pdpMentionPillsScroll', 'pdpMentionPrevWrap', 'pdpMentionNextWrap')" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
+                        ${isParamount ? `
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏊 Pool 4</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 9</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 10</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 5</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏷️ Amenities 3</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 3</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🏢 Condition 2</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📦 Value 2</button>
+                        ` : `
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🖼️ View 11</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🎁 Hospitality 11</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">📍 Location 7</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🧽 Cleanliness 5</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🔢 Check-in 3</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🗺️ Nearby 3</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">👟 Walkability 2</button>
+                            <button class="guest-mention-pill" onclick="openReviewsModal('${propId}')">🚆 Getting around 2</button>
+                        `}
+                    </div>
+
+                    <!-- Right Arrow Button with Gradient Fade -->
+                    <div id="pdpMentionNextWrap" style="display: flex; position: absolute; right: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to left, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-end; pointer-events: none;">
+                        <button onclick="scrollAirbnbCarousel('pdpMentionPillsScroll', 'right')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                            <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #222222;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2-Column Full-Width Reviews Preview Grid (Exact Airbnb Match) -->
+                <div id="pdpInlineReviewsGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 80px; margin-top: 32px; margin-bottom: 32px;">
+                    ${reviews.slice(0, 6).map(rev => `
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
+                                ${rev.avatarUrl ? `
+                                    <img src="${rev.avatarUrl}" alt="${rev.name}" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                                ` : `
+                                    <div style="width: 48px; height: 48px; border-radius: 50%; background: ${rev.color || '#0F1E36'}; color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0;">
+                                        ${rev.initial || rev.name.charAt(0)}
+                                    </div>
+                                `}
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 700; color: #222222;">${rev.name}</div>
+                                    <div style="font-size: 14px; color: #717171;">${rev.location || 'Verified Guest'}</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 12px; font-weight: 600; color: #222222; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                                <span>${'★'.repeat(rev.rating || 5)}</span>
+                                <span style="color: #717171; font-weight: 400;">· ${rev.time}${rev.stay ? ' · ' + rev.stay : ''}</span>
+                            </div>
+                            <p style="font-size: 15px; color: #374151; line-height: 1.6; margin: 0;">"${rev.text}"</p>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <button onclick="openReviewsModal('${propId}')" style="border: 1px solid #222222; background: #FFFFFF; color: #222222; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background 0.2s;">
+                    Show all ${reviewsCount} reviews
+                </button>
             </div>
-        </div>
+
+            <!-- Full-Width Divider Line (Exact Image 4 Match) -->
+            <div style="height: 1px; background: #EBEBEB; margin: 48px 0;"></div>
+
+            <!-- Full-Width Location Map ("Where you'll be" - Interactive Google Maps Embed) -->
+            <div id="pdpLocationSection" class="property-map-wrapper" style="margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #EBEBEB; width: 100%;">
+                <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin: 0 0 6px;">Where you'll be</h3>
+                        <p style="font-size: 15px; color: #717171; margin: 0;">Dubai, United Arab Emirates</p>
+                    </div>
+                    <a href="${data.googleMapsUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #222222; text-decoration: none; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; background: #FFFFFF; transition: background 0.2s;">
+                        <i class="fa-solid fa-location-dot" style="color: #FF385C;"></i>
+                        <span>Open in Google Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; color: #717171;"></i>
+                    </a>
+                </div>
+                
+                <div id="propertyMapWrap" style="position: relative; border-radius: 16px; overflow: hidden; height: 460px; border: 1px solid #DDDDDD; background: #E5E7EB; width: 100%;">
+                    <!-- Floating Search Pill (Airbnb Match, positioned top-right) -->
+                    <div class="map-floating-search-pill" onclick="openMapActivitiesModal('${propId}')" style="position: absolute; top: 14px; right: 14px; z-index: 10; background: #FFFFFF; border: 1px solid #DDDDDD; border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; color: #222222; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); cursor: pointer;">
+                        <i class="fa-solid fa-magnifying-glass" style="font-size: 13px; color: #222222;"></i>
+                        <span>Find things to do</span>
+                    </div>
+
+                    <!-- Interactive Google Maps Embed -->
+                    <iframe
+                        id="propertyMapIframe"
+                        src="${data.googleMapsEmbedUrl}"
+                        width="100%"
+                        height="100%"
+                        style="border: 0; width: 100%; height: 100%; display: block;"
+                        allowfullscreen=""
+                        loading="eager"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="${data.name} Location Map">
+                    </iframe>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 8px;">${data.neighborhoodTitle || 'Dubai Prime Neighborhood'}</h4>
+                    <p style="font-size: 14px; color: #374151; line-height: 1.6;">${data.neighborhoodDesc || data.location}</p>
+                </div>
+            </div>
+
+            <!-- Full-Width Payment Protection Banner (Exact Image 4 Match) -->
+            <div style="border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 22px 0; margin: 36px 0 28px; display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left; width: 100%;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" style="flex-shrink: 0;">
+                    <path d="M16 3L5 7V15C5 21.8 9.7 28.1 16 29.8C22.3 28.1 27 21.8 27 15V7L16 3Z" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 16L15 19L20 13" stroke="#FF385C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div style="font-size: 14px; color: #717171; max-width: 650px; line-height: 1.45;">
+                    To help protect your payment, always use Airbnb to send money and communicate with hosts.
+                </div>
+            </div>
+
+            <!-- Full-Width Things to Know (Exact Image 4 Match) -->
+            <div class="things-to-know-section" style="margin-bottom: 48px; width: 100%;">
+                <h3 style="font-size: 22px; font-weight: 700; color: #222222; margin-bottom: 24px;">Things to know</h3>
+                
+                <div class="ttk-grid-5cols" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px;">
+                    <!-- Instant Book -->
+                    <div>
+                        <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">⚡</div>
+                        <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Instant Book</h4>
+                        <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">You can book this stay without waiting for host approval.</p>
+                    </div>
+
+                    <!-- Check in -->
+                    <div>
+                        <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🚪</div>
+                        <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Check in after 3:00 pm</h4>
+                        <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0;">Check out before 11:00 am, self check-in with smart lock</p>
+                    </div>
+
+                    <!-- House rules -->
+                    <div>
+                        <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📋</div>
+                        <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">House rules</h4>
+                        <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Review these details for a smooth stay.</p>
+                        <a href="#" onclick="openHouseRulesModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
+                    </div>
+
+                    <!-- Safety & property -->
+                    <div>
+                        <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">🛡️</div>
+                        <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Safety & property</h4>
+                        <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Carbon monoxide alarm, smoke alarm</p>
+                        <a href="#" onclick="openSafetyModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
+                    </div>
+
+                    <!-- Free cancellation -->
+                    <div>
+                        <div style="font-size: 24px; margin-bottom: 12px; line-height: 1;">📅</div>
+                        <h4 style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 6px;">Free cancellation before 30 November</h4>
+                        <p style="font-size: 14px; color: #717171; line-height: 1.45; margin: 0 0 6px;">Cancel before 7 December for a partial refund.</p>
+                        <a href="#" onclick="openCancellationModal('${propId}'); return false;" style="font-size: 14px; font-weight: 600; color: #222222; text-decoration: underline;">Show more &gt;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- END container mobile-pdp-container -->
 
         <!-- Fixed Floating Mobile Bottom Bar Matching Airbnb UX -->
         <div class="mobile-fixed-bottom-bar">
@@ -2205,6 +2303,9 @@ function bookOnWhatsApp(propId) {
 // -------------------------------------------------------------
 // AIRBNB EXACT REVIEWS MODAL (Exact Image 2 Match)
 // -------------------------------------------------------------
+// -------------------------------------------------------------
+// AIRBNB EXACT REVIEWS MODAL (Exact Image 1 & 2 Match)
+// -------------------------------------------------------------
 function openReviewsModal(propId) {
     const targetId = propId || window.currentPropertyId || 'paramount';
     const data = PROPERTIES_DATA[targetId];
@@ -2243,7 +2344,8 @@ function openReviewsModal(propId) {
         { key: 'clean', label: 'Cleanliness 5', icon: '🧽' },
         { key: 'check-in', label: 'Check-in 3', icon: '🔢' },
         { key: 'downtown', label: 'Nearby 3', icon: '🗺️' },
-        { key: 'walk', label: 'Walkability 2', icon: '👟' }
+        { key: 'walk', label: 'Walkability 2', icon: '👟' },
+        { key: 'transit', label: 'Getting around 2', icon: '🚆' }
     ];
 
     modal.innerHTML = `
@@ -2300,11 +2402,20 @@ function openReviewsModal(propId) {
                     </div>
                 </div>
 
-                <!-- 2. Horizontal Rating Breakdown Strip with Scroll (Exact Image 2 Match) -->
-                <div style="position: relative; margin-bottom: 24px;">
-                    <div id="modalRatingsScroll" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- 2. Horizontal Rating Breakdown Strip with Interactive Circular Slide Buttons (Exact Image 1 & 2 Match) -->
+                <div class="modal-ratings-carousel-wrapper" style="position: relative; margin-bottom: 24px; padding: 0 4px;">
+                    
+                    <!-- Left Slide Button with Gradient Fade -->
+                    <div id="modalRatingsPrevWrap" style="display: none; position: absolute; left: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to right, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-start; pointer-events: none;">
+                        <button onclick="scrollAirbnbCarousel('modalRatingsScroll', 'left')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                            <i class="fa-solid fa-chevron-left" style="font-size: 11px; color: #222222;"></i>
+                        </button>
+                    </div>
+
+                    <!-- Scrollable Categories Strip -->
+                    <div id="modalRatingsScroll" onscroll="updateAirbnbCarouselNav('modalRatingsScroll', 'modalRatingsPrevWrap', 'modalRatingsNextWrap')" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
                         <!-- Overall rating -->
-                        <div style="min-width: 140px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 135px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222; margin-bottom: 8px;">Overall rating</div>
                             <div style="display: flex; flex-direction: column; gap: 3px;">
                                 <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #717171;">
@@ -2319,58 +2430,83 @@ function openReviewsModal(propId) {
                         </div>
 
                         <!-- Cleanliness -->
-                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 95px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Cleanliness</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
                         </div>
 
                         <!-- Accuracy -->
-                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 95px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Accuracy</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-regular fa-circle-check"></i></div>
                         </div>
 
                         <!-- Check-in -->
-                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 95px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Check-in</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-key"></i></div>
                         </div>
 
                         <!-- Communication -->
-                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 95px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Communication</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-regular fa-message"></i></div>
                         </div>
 
                         <!-- Location -->
-                        <div style="min-width: 90px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
+                        <div style="min-width: 95px; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #EBEBEB;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Location</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-map-location-dot"></i></div>
                         </div>
 
                         <!-- Value -->
-                        <div style="min-width: 90px; flex-shrink: 0;">
+                        <div style="min-width: 95px; flex-shrink: 0;">
                             <div style="font-size: 13px; font-weight: 600; color: #222222;">Value</div>
                             <div style="font-size: 16px; font-weight: 800; color: #222222; margin: 4px 0 8px;">5.0</div>
                             <div style="font-size: 20px; color: #222222;"><i class="fa-solid fa-tag"></i></div>
                         </div>
                     </div>
+
+                    <!-- Right Slide Button with Gradient Fade -->
+                    <div id="modalRatingsNextWrap" style="display: flex; position: absolute; right: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to left, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-end; pointer-events: none;">
+                        <button onclick="scrollAirbnbCarousel('modalRatingsScroll', 'right')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                            <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #222222;"></i>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- 3. Guests Mention Horizontal Strip with Scroll (Exact Image 2 Match) -->
+                <!-- 3. Guests Mention Horizontal Strip with Interactive Circular Slide Buttons (Exact Image 1 & 2 Match) -->
                 <div style="margin-bottom: 24px;">
                     <div style="font-size: 16px; font-weight: 700; color: #222222; margin-bottom: 12px;">Guests mention</div>
-                    <div id="modalMentionPillsWrap" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; -ms-overflow-style: none;">
-                        ${guestsMentionList.map(item => `
-                            <button class="guest-mention-pill" onclick="filterModalByMentionKey('${targetId}', '${item.key}', this)" style="flex-shrink: 0; background: #F7F7F7; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: #222222; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-                                <span>${item.icon}</span> <span>${item.label}</span>
+                    <div class="modal-mention-carousel-wrapper" style="position: relative; padding: 0 2px;">
+                        
+                        <!-- Left Slide Button with Gradient Fade -->
+                        <div id="modalMentionPrevWrap" style="display: none; position: absolute; left: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to right, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-start; pointer-events: none;">
+                            <button onclick="scrollAirbnbCarousel('modalMentionPillsWrap', 'left')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                                <i class="fa-solid fa-chevron-left" style="font-size: 11px; color: #222222;"></i>
                             </button>
-                        `).join('')}
+                        </div>
+
+                        <!-- Scrollable Pills Strip -->
+                        <div id="modalMentionPillsWrap" onscroll="updateAirbnbCarouselNav('modalMentionPillsWrap', 'modalMentionPrevWrap', 'modalMentionNextWrap')" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
+                            ${guestsMentionList.map(item => `
+                                <button class="guest-mention-pill" onclick="filterModalByMentionKey('${targetId}', '${item.key}', this)" style="flex-shrink: 0; background: #F7F7F7; border: 1px solid #DDDDDD; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: #222222; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                                    <span>${item.icon}</span> <span>${item.label}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+
+                        <!-- Right Slide Button with Gradient Fade -->
+                        <div id="modalMentionNextWrap" style="display: flex; position: absolute; right: 0; top: 0; bottom: 0; width: 64px; background: linear-gradient(to left, #FFFFFF 65%, rgba(255,255,255,0)); z-index: 10; align-items: center; justify-content: flex-end; pointer-events: none;">
+                            <button onclick="scrollAirbnbCarousel('modalMentionPillsWrap', 'right')" style="pointer-events: auto; width: 32px; height: 32px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDDDDD; box-shadow: 0 2px 6px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.12)'">
+                                <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #222222;"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -2401,7 +2537,7 @@ function openReviewsModal(propId) {
                     </div>
                 </div>
 
-                <!-- 5. Vertical List of All 19 Reviews (Exact Image 2 Match) -->
+                <!-- 5. Vertical List of All Reviews (Pure Reviews, No Responses) -->
                 <div id="modalReviewsList" style="display: flex; flex-direction: column; gap: 24px;">
                     ${renderFullReviewsListHtml(reviews)}
                 </div>
@@ -2416,6 +2552,12 @@ function openReviewsModal(propId) {
             closeReviewsModal();
         }
     };
+
+    // Initialize slide buttons visibility immediately after render
+    setTimeout(() => {
+        updateAirbnbCarouselNav('modalRatingsScroll', 'modalRatingsPrevWrap', 'modalRatingsNextWrap');
+        updateAirbnbCarouselNav('modalMentionPillsWrap', 'modalMentionPrevWrap', 'modalMentionNextWrap');
+    }, 60);
 }
 
 function renderFullReviewsListHtml(reviews) {

@@ -63,6 +63,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    max-width: 100%;
 }
 
 body {
@@ -72,6 +74,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden !important;
+    max-width: 100%;
 }
 
 a {
@@ -3609,11 +3613,12 @@ img {
 /* 7-Column Rating Breakdown Grid (Image 3) */
 .rating-breakdown-7cols {
     display: grid;
-    grid-template-columns: 1.2fr repeat(6, 1fr);
+    grid-template-columns: 1.3fr repeat(6, 1fr);
     gap: 0;
     margin-top: 32px;
     border-top: 1px solid #EBEBEB;
     padding-top: 24px;
+    width: 100%;
 }
 
 .rating-col-item {
@@ -3622,6 +3627,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .rating-col-item:first-child {
@@ -3735,4 +3742,11 @@ img {
     overflow: hidden;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
     animation: slideUpModal 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+.property-detail-page-container {
+    overflow-x: hidden !important;
+    max-width: 100%;
+    width: 100%;
 }
