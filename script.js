@@ -1158,11 +1158,16 @@ function showTrueHavenToast(message) {
         toast.innerHTML = '<i class="fa-solid fa-check"></i> <span id="toastMsg"></span>';
         document.body.appendChild(toast);
     }
+    toast.style.display = 'flex';
     const msgEl = document.getElementById('toastMsg') || toast.querySelector('span');
     if (msgEl) msgEl.innerText = message || 'Link copied to clipboard';
     toast.classList.add('show');
-    setTimeout(() => {
+    if (window._toastTimeout) clearTimeout(window._toastTimeout);
+    window._toastTimeout = setTimeout(() => {
         toast.classList.remove('show');
+        setTimeout(() => {
+            if (!toast.classList.contains('show')) toast.style.display = 'none';
+        }, 300);
     }, 2800);
 }
 
@@ -1979,6 +1984,7 @@ function openPropertyDetail(propId) {
 
 
 function closePropertyDetailPage() {
+    closeReviewsModal();
     const pageContainer = document.getElementById('propertyDetailPage');
     const mainPage = document.getElementById('mainPage');
     if (pageContainer) pageContainer.style.display = 'none';
@@ -2208,6 +2214,11 @@ function openReviewsModal(propId) {
     `;
 
     modal.style.display = 'flex';
+    modal.onclick = function(e) {
+        if (e.target === modal) {
+            closeReviewsModal();
+        }
+    };
 }
 
 function renderReviewsHtml(reviews) {
